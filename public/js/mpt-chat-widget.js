@@ -138,13 +138,13 @@ What's your biggest headache right now?`,
       margin: 0 0 2px 0;
       font-size: 15px;
       font-weight: 600;
-      color: white;
+      color: #FFFFFF !important;
     }
 
     .mpt-chat-widget .header-text p {
       margin: 0;
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.9) !important;
     }
 
     .mpt-chat-widget .status-indicator {
