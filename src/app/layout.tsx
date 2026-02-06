@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Alata } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -29,6 +30,12 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        {/* AI Chat Widget for Product Inquiries */}
+        <div id="mpt-chat-widget"></div>
+        <Script 
+          src="/js/mpt-chat-widget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
