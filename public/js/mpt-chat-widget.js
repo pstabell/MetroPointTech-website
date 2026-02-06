@@ -138,12 +138,13 @@ What's your biggest headache right now?`,
       margin: 0 0 2px 0;
       font-size: 15px;
       font-weight: 600;
+      color: white;
     }
 
     .mpt-chat-widget .header-text p {
       margin: 0;
       font-size: 12px;
-      opacity: 0.9;
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .mpt-chat-widget .status-indicator {
@@ -199,21 +200,26 @@ What's your biggest headache right now?`,
     .mpt-chat-widget .message.bot .message-content { float: left; }
     .mpt-chat-widget .message.user .message-content { float: right; }
 
-    .mpt-chat-widget .message-text {
-      background: white;
-      border: 1px solid var(--border-color);
-      border-radius: 16px 16px 16px 4px;
+    /* Bot messages - light gray bubble */
+    .mpt-chat-widget .message.bot .message-text {
+      background: #F3F4F6;
+      border: none;
+      border-radius: 4px 16px 16px 16px;
       padding: 12px 16px;
       font-size: 14px;
       line-height: 1.5;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      color: #1F2937;
     }
 
+    /* User messages - navy blue bubble */
     .mpt-chat-widget .message.user .message-text {
       background: var(--primary-color);
       color: white;
-      border-color: var(--primary-color);
+      border: none;
       border-radius: 16px 16px 4px 16px;
+      padding: 12px 16px;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .mpt-chat-widget .message-buttons {
