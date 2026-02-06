@@ -497,6 +497,11 @@ What's your biggest headache right now?`,
             userInfo: this.userInfo
           })
         });
+        
+        // If we have user info with email, submit to CRM
+        if (this.userInfo.email) {
+          this.submitToCRM(this.userInfo);
+        }
 
         const data = await response.json();
 
@@ -582,6 +587,36 @@ What's your biggest headache right now?`,
         .replace(/\n/g, '<br>')
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.*?)\*/g, '<em>$1</em>');
+    }
+    
+    // Submit lead to MPT-CRM and auto-enroll in drip campaign
+    async submitToCRM(userInfo) {
+      try {
+        const crmData = {
+          firstName: userInfo.firstName || '',
+          lastName: userInfo.lastName || '',
+          email: userInfo.email,
+          phone: userInfo.phone || '',
+          company: userInfo.company || '',
+          formType: 'contact-form',
+          source: 'chatbot',
+          sourceUrl: window.location.href,
+          notes: `Chat lead from ${window.location.hostname}`,
+          agencySize: userInfo.agencySize || '',
+          currentAms: userInfo.currentAms || '',
+          interest: userInfo.primaryInterest || 'commission_tracking'
+        };
+        
+        await fetch('https://www.metropointtech.com/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(crmData)
+        });
+        
+        console.log('✅ Lead submitted to MPT-CRM:', userInfo.email);
+      } catch (error) {
+        console.error('CRM submission error:', error);
+      }
     }
   }
 
