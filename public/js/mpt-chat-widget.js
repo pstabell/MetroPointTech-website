@@ -488,14 +488,24 @@ What's your biggest headache right now?`,
       this.isLoading = true;
 
       try {
+        // Build request body - separate message from action
+        const requestBody = {
+          context: { page: window.location.pathname },
+          userInfo: this.userInfo
+        };
+        
+        // If action is provided, send as action (button click)
+        // Otherwise send as message (typed text)
+        if (action) {
+          requestBody.action = action;
+        } else {
+          requestBody.message = content;
+        }
+        
         const response = await fetch(this.config.apiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            message: content || action,
-            context: { page: window.location.pathname },
-            userInfo: this.userInfo
-          })
+          body: JSON.stringify(requestBody)
         });
         
         // If we have user info with email, submit to CRM
