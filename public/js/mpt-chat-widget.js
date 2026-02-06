@@ -561,7 +561,13 @@ What's your biggest headache right now?`,
       }
 
       container.innerHTML = html;
-      container.scrollTop = container.scrollHeight;
+      
+      // Scroll to show the latest bot message from the TOP (not bottom)
+      const messages = container.querySelectorAll('.message');
+      if (messages.length > 0) {
+        const lastMessage = messages[messages.length - 1];
+        lastMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
 
       container.querySelectorAll('.action-button').forEach(btn => {
         btn.addEventListener('click', (e) => {
