@@ -14,16 +14,46 @@ if (process.env.SENDGRID_API_KEY) {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    console.log('=== Contact Form API Request Started ===');
+    console.log('Environment check:', {
+      hasSupabaseUrl: !!process.env.SUPABASE_URL,
+      hasSupabaseKey: !!process.env.SUPABASE_ANON_KEY,
+      hasSendGridKey: !!process.env.SENDGRID_API_KEY,
+      hasEmailTo: !!process.env.EMAIL_TO,
+      hasFromEmail: !!process.env.SENDGRID_FROM_EMAIL,
+    });
+
+    let body;
+    try {
+      body = await request.json();
+      console.log('✓ Request body parsed successfully');
+    } catch (parseError) {
+      console.error('❌ FAIL: Request body parsing failed:', parseError);
+      return NextResponse.json(
+        { error: 'Invalid JSON in request body' },
+        { status: 400 }
+      );
+    }
+
+    console.log('Request fields present:', {
+      hasName: !!body.name,
+      hasEmail: !!body.email,
+      hasProduct: !!body.product,
+      hasMessage: !!body.message,
+      hasPhone: !!body.phone,
+      hasCompany: !!body.company,
+    });
 
     // Validate required fields (adjusted for MetroPointTech.com form fields)
     if (!body.name || !body.email || !body.product || !body.message) {
+      console.error('❌ FAIL: Missing required fields');
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
     }
 
+    console.log('✓ Field validation passed');
     const timestamp = new Date().toISOString();
 
     // Map product field to project type for CRM compatibility
@@ -41,61 +71,92 @@ export async function POST(request: Request) {
     // ========================================
     let contactId: string | null = null;
     if (supabase) {
+      console.log('✓ Supabase client initialized, starting database operations...');
       try {
         // Parse name into first/last
         const nameParts = body.name.trim().split(' ');
         const firstName = nameParts[0] || '';
         const lastName = nameParts.slice(1).join(' ') || '';
+        console.log('✓ Name parsed:', { firstName, lastName });
 
+        console.log('Checking for existing contact with email:', body.email.toLowerCase());
         // Check if contact already exists by email
-        const { data: existing } = await supabase
+        const { data: existing, error: existingError } = await supabase
           .from('contacts')
           .select('id')
           .eq('email', body.email.toLowerCase())
           .single();
 
+        if (existingError && existingError.code !== 'PGRST116') {
+          console.error('❌ FAIL: Error checking existing contact:', existingError);
+          throw new Error(`Existing contact lookup failed: ${existingError.message}`);
+        }
+
         if (existing) {
+          console.log('✓ Found existing contact:', existing.id);
           contactId = existing.id;
-          // Update existing contact with new info
-          await supabase
-            .from('contacts')
-            .update({
-              last_contacted: timestamp,
-              notes: `[Product Inquiry ${new Date().toLocaleDateString()}] ${projectType} - ${body.message.substring(0, 200)}`,
-            })
-            .eq('id', contactId);
+          try {
+            // Update existing contact with new info
+            const { error: updateError } = await supabase
+              .from('contacts')
+              .update({
+                last_contacted: timestamp,
+                notes: `[Product Inquiry ${new Date().toLocaleDateString()}] ${projectType} - ${body.message.substring(0, 200)}`,
+              })
+              .eq('id', contactId);
+
+            if (updateError) {
+              console.error('❌ FAIL: Error updating existing contact:', updateError);
+              throw new Error(`Contact update failed: ${updateError.message}`);
+            }
+            console.log('✓ Existing contact updated successfully');
+          } catch (updateErr) {
+            console.error('❌ FAIL: Contact update error:', updateErr);
+            throw updateErr;
+          }
         } else {
+          console.log('Creating new contact...');
+          const contactData = {
+            first_name: firstName,
+            last_name: lastName,
+            email: body.email.toLowerCase(),
+            phone: body.phone || null,
+            company: body.company || null,
+            type: 'lead',
+            source: 'Website',
+            source_detail: `MetroPointTech.com Contact Form - ${projectType}`,
+            notes: `Product Interest: ${projectType}\nMessage: ${body.message}`,
+            tags: ['website-lead', 'product-inquiry', body.product],
+            email_status: 'active',
+          };
+          console.log('Contact data to insert:', contactData);
+
           // Create new contact
           const { data: newContact, error } = await supabase
             .from('contacts')
-            .insert({
-              first_name: firstName,
-              last_name: lastName,
-              email: body.email.toLowerCase(),
-              phone: body.phone || null,
-              company: body.company || null,
-              type: 'lead',
-              source: 'Website',
-              source_detail: `MetroPointTech.com Contact Form - ${projectType}`,
-              notes: `Product Interest: ${projectType}\nMessage: ${body.message}`,
-              tags: ['website-lead', 'product-inquiry', body.product],
-              email_status: 'active',
-            })
+            .insert(contactData)
             .select('id')
             .single();
 
+          if (error) {
+            console.error('❌ FAIL: Supabase contact insert error:', error);
+            throw new Error(`Contact insert failed: ${error.message}`);
+          }
+
           if (newContact) {
             contactId = newContact.id;
-          }
-          if (error) {
-            console.error('Supabase insert error:', error);
+            console.log('✓ New contact created with ID:', contactId);
+          } else {
+            console.error('❌ FAIL: Contact insert returned no data');
+            throw new Error('Contact insert returned no data');
           }
         }
 
         // Log activity
         if (contactId) {
+          console.log('Logging activity for contact:', contactId);
           try {
-            await supabase
+            const { error: activityError } = await supabase
               .from('activities')
               .insert({
                 contact_id: contactId,
@@ -103,8 +164,14 @@ export async function POST(request: Request) {
                 description: `Product inquiry: ${projectType}`,
                 created_at: timestamp,
               });
-          } catch {
-            // Activity insert is non-blocking
+
+            if (activityError) {
+              console.error('❌ WARNING: Activity insert failed (non-blocking):', activityError);
+            } else {
+              console.log('✓ Activity logged successfully');
+            }
+          } catch (activityErr) {
+            console.error('❌ WARNING: Activity insert error (non-blocking):', activityErr);
           }
         }
 
@@ -112,6 +179,7 @@ export async function POST(request: Request) {
         // 1b. Auto-enroll in Lead Drip Campaign
         // ========================================
         if (contactId && !existing) {
+          console.log('Enrolling new contact in drip campaign...');
           try {
             // Build drip schedule: Day 0, 2, 5, 10, 18, 28
             const dripDays = [0, 2, 5, 10, 18, 28];
@@ -146,7 +214,7 @@ export async function POST(request: Request) {
               };
             });
 
-            await supabase.from('campaign_enrollments').insert({
+            const { error: enrollError } = await supabase.from('campaign_enrollments').insert({
               contact_id: contactId,
               campaign_id: 'lead-drip',
               campaign_name: 'Lead Nurture (4 Week)',
@@ -160,22 +228,35 @@ export async function POST(request: Request) {
               next_email_scheduled: stepSchedule[0].scheduled_for,
             });
 
+            if (enrollError) {
+              console.error('❌ WARNING: Drip enrollment failed (non-blocking):', enrollError);
+            } else {
+              console.log('✓ Drip campaign enrollment successful');
+            }
+
             // Log campaign enrollment activity
-            await supabase.from('activities').insert({
+            const { error: campaignActivityError } = await supabase.from('activities').insert({
               contact_id: contactId,
               type: 'campaign_enrolled',
               description: 'Auto-enrolled in Lead Nurture (4 Week) drip campaign from product inquiry form.',
               created_at: timestamp,
             });
+
+            if (campaignActivityError) {
+              console.error('❌ WARNING: Campaign activity log failed (non-blocking):', campaignActivityError);
+            } else {
+              console.log('✓ Campaign enrollment activity logged');
+            }
           } catch (enrollError) {
-            console.error('Drip enrollment error (non-blocking):', enrollError);
+            console.error('❌ WARNING: Drip enrollment error (non-blocking):', enrollError);
           }
 
           // ========================================
           // 1c. Auto-create Deal in Sales Pipeline
           // ========================================
+          console.log('Creating deal in sales pipeline...');
           try {
-            await supabase.from('deals').insert({
+            const { error: dealError } = await supabase.from('deals').insert({
               title: `Product Lead: ${body.name} - ${projectType}`,
               contact_id: contactId,
               stage: 'lead',
@@ -185,21 +266,31 @@ export async function POST(request: Request) {
               description: `Product Interest: ${projectType}\nMessage: ${body.message}`,
               priority: 'medium',
             });
+
+            if (dealError) {
+              console.error('❌ WARNING: Deal creation failed (non-blocking):', dealError);
+            } else {
+              console.log('✓ Deal created successfully');
+            }
           } catch (dealError) {
-            console.error('Deal creation error (non-blocking):', dealError);
+            console.error('❌ WARNING: Deal creation error (non-blocking):', dealError);
           }
         }
       } catch (dbError) {
-        console.error('Database error (non-blocking):', dbError);
-        // Don't fail the form submission if DB fails
+        console.error('❌ FAIL: Database operation failed:', dbError);
+        throw new Error(`Database error: ${dbError.message || dbError}`);
       }
+    } else {
+      console.log('⚠️ Supabase client not initialized - skipping database operations');
     }
 
     // ========================================
     // 2. Send Notification Email to Sales Team
     // ========================================
+    console.log('Starting notification email process...');
     try {
       if (process.env.SENDGRID_API_KEY) {
+        console.log('✓ SendGrid API key found, sending notification email...');
         const notificationEmail = {
           to: process.env.EMAIL_TO || 'sales@metropointtech.com',
           from: {
@@ -245,16 +336,21 @@ export async function POST(request: Request) {
         };
 
         await sgMail.send(notificationEmail);
+        console.log('✓ Notification email sent successfully');
+      } else {
+        console.log('⚠️ SendGrid API key not found - skipping notification email');
       }
     } catch (emailError) {
-      console.error('Notification email error (non-blocking):', emailError);
+      console.error('❌ WARNING: Notification email failed (non-blocking):', emailError);
     }
 
     // ========================================
     // 3. Send Confirmation Email to Prospect
     // ========================================
+    console.log('Starting confirmation email process...');
     try {
       if (process.env.SENDGRID_API_KEY) {
+        console.log('Sending confirmation email to prospect...');
         const confirmationEmail = {
           to: body.email,
           from: {
@@ -302,19 +398,28 @@ export async function POST(request: Request) {
         };
 
         await sgMail.send(confirmationEmail);
+        console.log('✓ Confirmation email sent successfully');
+      } else {
+        console.log('⚠️ SendGrid API key not found - skipping confirmation email');
       }
     } catch (confirmError) {
-      console.error('Confirmation email error (non-blocking):', confirmError);
+      console.error('❌ WARNING: Confirmation email failed (non-blocking):', confirmError);
     }
 
+    console.log('=== Contact Form API Request Completed Successfully ===');
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully', contactId },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error('❌ FATAL ERROR: Contact form processing failed:', error);
+    console.error('Error details:', {
+      message: error?.message,
+      stack: error?.stack,
+      name: error?.name,
+    });
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: error?.message },
       { status: 500 }
     );
   }
