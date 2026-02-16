@@ -1,5 +1,14 @@
 import { NextResponse } from 'next/server';
 
+export async function GET() {
+  console.log('GET request received');
+  return NextResponse.json({
+    message: 'Contact API is working',
+    method: 'GET',
+    timestamp: new Date().toISOString()
+  });
+}
+
 export async function POST(request: Request) {
   try {
     console.log('=== BASIC TEST API Started ===');
