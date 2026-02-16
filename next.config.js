@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: [],
   },
+  experimental: {
+    serverComponentsExternalPackages: ['@supabase/supabase-js']
+  }
 }
 
 module.exports = nextConfig

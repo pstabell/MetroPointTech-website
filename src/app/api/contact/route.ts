@@ -1,69 +1,79 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://qgtjpdviboxxlrivwcan.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFndGpwZHZpYm94eGxyaXZ3Y2FuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkyNzc0MzIsImV4cCI6MjA4NDg1MzQzMn0.c4HugHTbj1FJ79pLnJ3an45Kg9nOjGDNmH00pv0foJA';
 
 export async function GET() {
-  console.log('GET request received');
   return NextResponse.json({
-    message: 'Contact API is working',
-    method: 'GET',
+    message: 'Contact API is working with GET',
     timestamp: new Date().toISOString()
   });
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  console.log('=== Contact API POST Started ===');
+  
   try {
-    console.log('=== BASIC TEST API Started ===');
+    // Parse body
+    const body = await request.json();
+    console.log('Received:', body);
     
-    // Test 1: Can we even get here?
-    console.log('✅ Test 1: API function started successfully');
-    
-    // Test 2: Can we parse JSON?
-    let body;
-    try {
-      body = await request.json();
-      console.log('✅ Test 2: JSON parsing successful');
-      console.log('Received data:', JSON.stringify(body));
-    } catch (parseError) {
-      console.error('❌ Test 2 FAILED: JSON parse error:', parseError);
-      return NextResponse.json({
-        error: 'JSON parse failed',
-        details: parseError.message
-      }, { status: 400 });
+    // Validate required fields
+    if (!body.name || !body.email || !body.product || !body.message) {
+      return NextResponse.json(
+        { error: 'Missing required fields: name, email, product, message' },
+        { status: 400 }
+      );
     }
 
-    // Test 3: Can we access environment variables?
-    console.log('Environment test:', {
-      nodeEnv: process.env.NODE_ENV,
-      hasSupabaseUrl: !!process.env.SUPABASE_URL,
-      hasSupabaseKey: !!process.env.SUPABASE_ANON_KEY,
-      envKeys: Object.keys(process.env).filter(k => k.includes('SUPABASE') || k.includes('SENDGRID'))
-    });
+    // Initialize Supabase
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Test 4: Basic validation
-    if (!body.name || !body.email) {
-      console.log('❌ Test 4 FAILED: Missing required fields');
-      return NextResponse.json({
-        error: 'Missing required fields',
-        received: Object.keys(body)
-      }, { status: 400 });
+    // Save to database
+    const nameParts = body.name.trim().split(' ');
+    const firstName = nameParts[0] || '';
+    const lastName = nameParts.slice(1).join(' ') || '';
+
+    const { data, error } = await supabase
+      .from('contacts')
+      .insert({
+        first_name: firstName,
+        last_name: lastName,
+        email: body.email.toLowerCase(),
+        phone: body.phone || null,
+        company: body.company || null,
+        type: 'lead',
+        source: 'Website',
+        source_detail: `MetroPointTech.com Contact Form - ${body.product}`,
+        notes: `Product Interest: ${body.product}\nMessage: ${body.message}`,
+        tags: ['website-lead', 'product-inquiry'],
+        email_status: 'active'
+      })
+      .select('id')
+      .single();
+
+    if (error) {
+      console.error('Database error:', error);
+      return NextResponse.json(
+        { error: 'Failed to save contact', details: error.message },
+        { status: 500 }
+      );
     }
-    console.log('✅ Test 4: Basic validation passed');
 
-    // Test 5: Return success
-    console.log('✅ All basic tests passed - returning success');
+    console.log('Contact saved successfully:', data.id);
+
     return NextResponse.json({
       success: true,
-      message: 'Basic API test successful',
-      receivedData: body,
-      timestamp: new Date().toISOString()
+      message: 'Contact saved successfully',
+      contactId: data.id
     });
 
   } catch (error) {
-    console.error('❌ FATAL: Unexpected error in basic test:', error);
-    return NextResponse.json({
-      error: 'Fatal error in basic test',
-      message: error.message,
-      stack: error.stack,
-      name: error.name
-    }, { status: 500 });
+    console.error('API Error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error', details: error.message },
+      { status: 500 }
+    );
   }
 }
