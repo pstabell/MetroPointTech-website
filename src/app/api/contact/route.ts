@@ -3,8 +3,8 @@ import { createClient } from '@supabase/supabase-js';
 import sgMail from '@sendgrid/mail';
 
 // Initialize Supabase (lazy — only when env vars are available)
-const supabaseUrl = process.env.SUPABASE_URL || '';
-const supabaseKey = process.env.SUPABASE_ANON_KEY || '';
+const supabaseUrl = process.env.SUPABASE_URL || 'https://qgtjpdviboxxlrivwcan.supabase.co';
+const supabaseKey = process.env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFndGpwZHZpYm94eGxyaXZ3Y2FuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkyNzc0MzIsImV4cCI6MjA4NDg1MzQzMn0.c4HugHTbj1FJ79pLnJ3an45Kg9nOjGDNmH00pv0foJA';
 const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
 // Initialize SendGrid
@@ -292,9 +292,9 @@ export async function POST(request: Request) {
       if (process.env.SENDGRID_API_KEY) {
         console.log('✓ SendGrid API key found, sending notification email...');
         const notificationEmail = {
-          to: process.env.EMAIL_TO || 'sales@metropointtech.com',
+          to: process.env.EMAIL_TO || 'support@metropointtech.com',
           from: {
-            email: process.env.SENDGRID_FROM_EMAIL || 'noreply@metropointtech.com',
+            email: process.env.SENDGRID_FROM_EMAIL || 'support@metropointtech.com',
             name: 'Metro Point Tech Website',
           },
           subject: `🚀 New Product Inquiry: ${body.name} — ${projectType}`,
@@ -354,7 +354,7 @@ export async function POST(request: Request) {
         const confirmationEmail = {
           to: body.email,
           from: {
-            email: process.env.SENDGRID_FROM_EMAIL || 'noreply@metropointtech.com',
+            email: process.env.SENDGRID_FROM_EMAIL || 'support@metropointtech.com',
             name: process.env.SENDGRID_FROM_NAME || 'Metro Point Tech Team',
           },
           subject: 'Thank you for your interest in Metro Point Tech',
