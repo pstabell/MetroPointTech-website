@@ -1,300 +1,332 @@
+import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Services | Metro Point Technology',
+  description: 'Technology services that actually make sense. System optimization, integrations, custom development, and AI-powered solutions - all delivered with a personal touch.',
+}
+
+const services = [
+  {
+    icon: '⚡',
+    title: 'System Optimization',
+    tagline: 'Get more from what you already have',
+    description: "You've invested in software. Let's make sure it's actually working for you, not the other way around. We'll dig into your existing tools, find the hidden features you're not using, and tune everything so your team can work smarter.",
+    highlights: [
+      'Audit your current tech stack',
+      'Unlock features you didn\'t know existed',
+      'Speed up slow workflows',
+      'Train your team on best practices',
+    ],
+    gradient: 'from-blue-500 to-cyan-400',
+    bgColor: 'bg-blue-50',
+    iconBg: 'bg-blue-100',
+  },
+  {
+    icon: '🔗',
+    title: 'Integration & Automation',
+    tagline: 'Connect the dots, automate the boring stuff',
+    description: "Tired of copying data between systems? We build bridges between your tools so information flows automatically. Your CRM talks to your accounting software. Your email syncs with your database. Everything just... works.",
+    highlights: [
+      'Connect apps that don\'t naturally talk',
+      'Eliminate manual data entry',
+      'Set up automated workflows',
+      'Real-time syncing between systems',
+    ],
+    gradient: 'from-purple-500 to-pink-400',
+    bgColor: 'bg-purple-50',
+    iconBg: 'bg-purple-100',
+  },
+  {
+    icon: '🛠️',
+    title: 'Custom Development',
+    tagline: 'When off-the-shelf just won\'t cut it',
+    description: "Sometimes you need something built just for you. Whether it's a web app to manage your unique process, a mobile tool for your field team, or an internal dashboard that actually shows what matters - we'll build it.",
+    highlights: [
+      'Web applications & portals',
+      'Mobile apps (iOS & Android)',
+      'Custom business tools & dashboards',
+      'Internal systems & workflows',
+    ],
+    gradient: 'from-orange-500 to-amber-400',
+    bgColor: 'bg-orange-50',
+    iconBg: 'bg-orange-100',
+  },
+  {
+    icon: '🤖',
+    title: 'AI-Powered Solutions',
+    tagline: 'Work faster with a digital teammate',
+    description: "AI isn't just hype - it's a real way to get more done in less time. We'll help you find where AI makes sense for YOUR business, then implement solutions that actually deliver results (not just cool demos).",
+    highlights: [
+      'AI-assisted content & communications',
+      'Smart document processing',
+      'Intelligent chatbots & assistants',
+      'Automated analysis & reporting',
+    ],
+    gradient: 'from-green-500 to-emerald-400',
+    bgColor: 'bg-green-50',
+    iconBg: 'bg-green-100',
+  },
+  {
+    icon: '📞',
+    title: 'Business Phone System',
+    tagline: 'Ditch the expensive phone bills',
+    description: "Why pay $30-50 per user for RingCentral or Lightspeed when you could pay a fraction of that? We build custom VoIP phone systems that do everything the big guys do - for way less. Plus, our systems come with an AI receptionist that never takes a sick day.",
+    highlights: [
+      'Web & mobile softphone apps',
+      'AI receptionist that answers 24/7',
+      'Call recording & voicemail transcription',
+      'Keep your existing phone numbers',
+    ],
+    gradient: 'from-teal-500 to-cyan-400',
+    bgColor: 'bg-teal-50',
+    iconBg: 'bg-teal-100',
+  },
+]
+
 export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Custom Integration Services
+      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-24 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-block px-4 py-2 bg-accent/20 text-accent-light rounded-full text-sm font-medium mb-6">
+            Technology that works for YOU
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            No Jargon. No Fluff.
+            <br />
+            <span className="text-accent">Just Results.</span>
           </h1>
-          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            We don't just provide software - we become your technology partner.
-            Our team specializes in connecting your existing systems to create a unified,
-            efficient workflow that matches how YOUR agency operates.
+          <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            We're not here to sell you buzzwords. We're here to solve real problems, 
+            streamline your operations, and help your business run smoother.
           </p>
-        </div>
-      </section>
-
-      {/* Why Custom Integrations Matter */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-            Your Agency is Unique. Your Technology Should Be Too.
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-5xl mb-4">🔌</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Carrier Connections</h3>
-              <p className="text-primary">
-                Direct API integrations with your carriers for real-time quoting,
-                policy downloads, and commission data. No more manual entry.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl mb-4">🔄</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Rater Integrations</h3>
-              <p className="text-primary">
-                Connect to EZLynx, Applied Epic, Vertafore, or any rating platform.
-                Quote data flows directly into your AMS automatically.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl mb-4">📊</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Accounting Sync</h3>
-              <p className="text-primary">
-                QuickBooks, Xero, or your existing accounting system - we'll sync
-                commission data, invoicing, and financial reporting automatically.
-              </p>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              Let's Talk →
+            </Link>
+            <a
+              href="#services"
+              className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
+            >
+              See Our Services
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Our Approach */}
-      <section className="py-16 bg-neutral-lighter">
+      {/* Services Grid */}
+      <section id="services" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-            How We Work With You
-          </h2>
-          <div className="space-y-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="flex items-start">
-                <div className="text-3xl mr-4 text-accent">1.</div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-primary">Discovery Call</h3>
-                  <p className="text-primary">
-                    We spend time understanding your current workflow, pain points, and the
-                    systems you're already using. What carriers do you write with? What raters?
-                    What's frustrating you most about your current setup?
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="flex items-start">
-                <div className="text-3xl mr-4 text-accent">2.</div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-primary">Custom Integration Plan</h3>
-                  <p className="text-primary">
-                    We map out exactly which integrations will save you the most time and eliminate
-                    the most errors. No cookie-cutter solutions - this is designed specifically for
-                    how YOUR agency operates.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="flex items-start">
-                <div className="text-3xl mr-4 text-accent">3.</div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-primary">Phased Implementation</h3>
-                  <p className="text-primary">
-                    We don't flip a switch and disrupt your business. Integrations are implemented
-                    gradually, tested thoroughly, and refined based on your feedback. You stay in
-                    control the entire time.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <div className="flex items-start">
-                <div className="text-3xl mr-4 text-accent">4.</div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-primary">Ongoing Support & Optimization</h3>
-                  <p className="text-primary">
-                    As carriers update their APIs or you add new systems, we maintain and optimize
-                    your integrations. Your technology partner for the long haul.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              What We Do Best
+            </h2>
+            <p className="text-xl text-neutral-light max-w-2xl mx-auto">
+              Four ways we help businesses like yours get ahead
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Integration Examples */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-            Real-World Integration Examples
-          </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-neutral-lighter p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Carrier Direct Downloads</h3>
-              <p className="text-primary mb-4">
-                We can connect to carrier APIs to automatically download:
-              </p>
-              <ul className="space-y-2 text-primary">
-                <li>✓ Policy documents and declarations pages</li>
-                <li>✓ Commission statements and payment data</li>
-                <li>✓ Loss runs and claims information</li>
-                <li>✓ Renewal notices and policy changes</li>
-                <li>✓ Real-time policy status updates</li>
-              </ul>
-            </div>
-
-            <div className="bg-neutral-lighter p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Email & Document Processing</h3>
-              <p className="text-primary mb-4">
-                Smart automation for routine tasks:
-              </p>
-              <ul className="space-y-2 text-primary">
-                <li>✓ Parse commission emails and auto-record payments</li>
-                <li>✓ Extract policy numbers from email attachments</li>
-                <li>✓ Auto-file documents to correct client folders</li>
-                <li>✓ Send automated renewal reminders to clients</li>
-                <li>✓ Alert team when quotes are ready for review</li>
-              </ul>
-            </div>
-
-            <div className="bg-neutral-lighter p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Rater Platform Integration</h3>
-              <p className="text-primary mb-4">
-                Connect your favorite rating tools:
-              </p>
-              <ul className="space-y-2 text-primary">
-                <li>✓ Pull quote data into AMS automatically</li>
-                <li>✓ Sync client contact information both ways</li>
-                <li>✓ Track which quotes convert to policies</li>
-                <li>✓ Unified dashboard showing all activity</li>
-                <li>✓ No more duplicate data entry</li>
-              </ul>
-            </div>
-
-            <div className="bg-neutral-lighter p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Custom Workflows</h3>
-              <p className="text-primary mb-4">
-                Build workflows that match your process:
-              </p>
-              <ul className="space-y-2 text-primary">
-                <li>✓ Multi-step approval processes for large accounts</li>
-                <li>✓ Automated task assignment based on policy type</li>
-                <li>✓ Custom notifications for specific triggers</li>
-                <li>✓ Role-based access and permissions</li>
-                <li>✓ Integration with your CRM or lead sources</li>
-              </ul>
-            </div>
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className={`${service.bgColor} rounded-2xl p-8 transition-all hover:shadow-xl hover:-translate-y-1 group`}
+              >
+                {/* Icon */}
+                <div className={`${service.iconBg} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform`}>
+                  {service.icon}
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-2xl font-bold text-primary mb-2">{service.title}</h3>
+                <p className={`text-lg font-medium bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-4`}>
+                  {service.tagline}
+                </p>
+                <p className="text-neutral-light mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                
+                {/* Highlights */}
+                <ul className="space-y-2">
+                  {service.highlights.map((highlight, i) => (
+                    <li key={i} className="flex items-center text-neutral">
+                      <span className="text-accent mr-2">✓</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Work With Us */}
-      <section className="py-16 bg-gradient-to-br from-accent-light to-accent">
+      {/* How We Work */}
+      <section className="py-20 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-            Built by an Agent Who Gets It
-          </h2>
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg mb-6 text-primary">
-              Our founder has been an active insurance agent for over 30 years. He built this
-              technology because he was frustrated with the same disconnected systems you're
-              dealing with right now.
-            </p>
-            <p className="text-lg mb-6 text-primary">
-              When we talk about carrier integrations, commission tracking, renewal workflows,
-              and policy management - we're not guessing. We live this every single day.
-            </p>
-            <p className="text-lg font-semibold text-primary">
-              We understand insurance operations because we ARE insurance operators.
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              How We Work Together
+            </h2>
+            <p className="text-xl text-neutral-light max-w-2xl mx-auto">
+              Simple, straightforward, no surprises
             </p>
           </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Discovery Call',
+                description: "We hop on a call (free, no pressure) and you tell us what's bugging you. What's slow? What's broken? What do you wish your tech could do?",
+                icon: '💬',
+              },
+              {
+                step: '02',
+                title: 'Game Plan',
+                description: "We put together a clear plan with real timelines and honest pricing. No mystery fees, no scope creep surprises.",
+                icon: '📋',
+              },
+              {
+                step: '03',
+                title: 'Build & Iterate',
+                description: "We get to work, keeping you in the loop the whole time. You'll see progress, give feedback, and we adjust as needed.",
+                icon: '🔨',
+              },
+              {
+                step: '04',
+                title: 'Launch & Support',
+                description: "We don't just hand off and disappear. We make sure everything's running smooth and we're here when you need us.",
+                icon: '🚀',
+              },
+            ].map((item, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="text-accent font-bold text-sm mb-2">STEP {item.step}</div>
+                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                <p className="text-neutral-light">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Pricing Approach */}
-      <section className="py-16 bg-white">
+      {/* Why Us Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-            Transparent Pricing Model
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-neutral-lighter p-8 rounded-xl mb-6">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Discovery Call: Free</h3>
-              <p className="text-primary">
-                No obligation. We'll discuss your needs and see if we're a good fit.
-                Even if we're not, you'll walk away with ideas for improving your workflow.
-              </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                Why Work With Us?
+              </h2>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-2xl">
+                    🎯
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary mb-1">We Speak Human</h3>
+                    <p className="text-neutral-light">No tech jargon or confusing acronyms. We explain things in plain English and make sure you actually understand what we're building.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-2xl">
+                    💪
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary mb-1">Business-First Thinking</h3>
+                    <p className="text-neutral-light">We're not just coders - we understand business. Every solution is designed to actually move the needle on what matters to you.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-2xl">
+                    🤝
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary mb-1">Real Partnership</h3>
+                    <p className="text-neutral-light">We're not a faceless agency. You'll work directly with people who know your project inside and out, and who actually care about your success.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-2xl">
+                    ⚡
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary mb-1">AI-Accelerated Delivery</h3>
+                    <p className="text-neutral-light">We use AI tools internally to work faster and smarter. That means quicker turnarounds and better results for you.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div className="bg-neutral-lighter p-8 rounded-xl mb-6">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Integration Scoping: $500</h3>
-              <p className="text-primary mb-4">
-                Deep-dive into your systems, carriers, and workflows. We'll deliver a detailed
-                integration plan with timeline and cost estimates for each component.
-              </p>
-              <p className="text-sm text-primary italic">
-                This fee is credited toward implementation if you move forward.
-              </p>
-            </div>
-
-            <div className="bg-neutral-lighter p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Custom Integration Development</h3>
-              <p className="text-primary mb-4">
-                Priced based on complexity and scope. Typical projects range from $2,500 for
-                simple integrations to $15,000+ for comprehensive multi-carrier, multi-system setups.
-              </p>
-              <p className="text-primary">
-                All integration work includes testing, documentation, training, and 90 days of
-                post-launch support.
-              </p>
+            <div className="relative">
+              <div className="bg-gradient-to-br from-accent/20 to-primary/10 rounded-3xl p-8 md:p-12">
+                <div className="bg-white rounded-2xl p-8 shadow-xl">
+                  <div className="text-center">
+                    <div className="text-5xl mb-4">💡</div>
+                    <h3 className="text-2xl font-bold text-primary mb-4">Not Sure Where to Start?</h3>
+                    <p className="text-neutral-light mb-6">
+                      That's totally fine. Book a free discovery call and we'll figure it out together. 
+                      No commitment, no hard sell - just a conversation.
+                    </p>
+                    <Link
+                      href="/contact"
+                      className="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all"
+                    >
+                      Schedule a Call
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Who This Is For */}
-      <section className="py-16 bg-neutral-lighter">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-            Is This Right For Your Agency?
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-bold mb-4 text-accent">This IS for you if:</h3>
-              <ul className="space-y-3 text-primary">
-                <li>✓ You're tired of re-entering the same data multiple times</li>
-                <li>✓ You want your systems to talk to each other</li>
-                <li>✓ You're ready to invest in efficiency and automation</li>
-                <li>✓ You write enough premium that time savings = money savings</li>
-                <li>✓ You want technology customized to YOUR workflow, not vice versa</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-bold mb-4 text-primary">This is NOT for you if:</h3>
-              <ul className="space-y-3 text-primary">
-                <li>✗ You're looking for a cheap, out-of-the-box solution</li>
-                <li>✗ You're not ready to invest in custom development</li>
-                <li>✗ You prefer manual processes and spreadsheets</li>
-                <li>✗ You're a solo agent writing minimal premium</li>
-                <li>✗ You want plug-and-play software with no customization</li>
-              </ul>
-            </div>
-          </div>
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-dark text-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Let's Talk About Your Technology Stack
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Ready to Make Your Tech
+            <br />
+            <span className="text-accent">Work For You?</span>
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Schedule a free discovery call to explore how custom integrations could
-            transform your agency's efficiency.
+          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+            Whether you've got a specific project in mind or just know something needs to change, 
+            let's talk. The first call is always free.
           </p>
-          <a
-            href="/contact"
-            className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
-          >
-            Schedule Discovery Call
-          </a>
-          <p className="mt-6 text-sm text-blue-100">
-            No pressure, no sales pitch - just a conversation about your needs
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+            >
+              Get Started →
+            </Link>
+            <a
+              href="mailto:support@metropointtech.com"
+              className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
+            >
+              Email Us Directly
+            </a>
+          </div>
+          <p className="mt-8 text-sm text-blue-200">
+            📞 Or call us at <a href="tel:+12394267058" className="underline hover:text-white">(239) 426-7058</a>
           </p>
         </div>
       </section>
