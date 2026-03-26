@@ -13,11 +13,18 @@ export default function Contact() {
     message: ''
   })
 
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+<<<<<<< Updated upstream
     
+=======
+    setStatus('submitting')
+    setErrorMessage('')
+
+>>>>>>> Stashed changes
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -27,6 +34,7 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
 
+<<<<<<< Updated upstream
       if (response.ok) {
         setSubmitted(true)
       } else {
@@ -36,6 +44,24 @@ export default function Contact() {
     } catch (error) {
       console.error('Form submission error:', error)
       // You could add error state here if needed
+=======
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      setStatus('success')
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        product: '',
+        message: ''
+      })
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage('Sorry, there was an error sending your message. Please try emailing us directly at sales@metropointtech.com')
+>>>>>>> Stashed changes
     }
   }
 
@@ -68,13 +94,19 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-bold text-neutral mb-6">Request a Demo</h2>
 
-              {submitted ? (
+              {status === 'success' ? (
                 <div className="bg-accent/10 border-2 border-accent rounded-xl p-8 text-center">
                   <div className="text-5xl mb-4">✓</div>
                   <h3 className="text-2xl font-bold text-neutral mb-3">Thank You!</h3>
-                  <p className="text-neutral-light">
+                  <p className="text-neutral-light mb-4">
                     We've received your message and will get back to you within 24 hours.
                   </p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="text-accent hover:text-accent-dark font-semibold transition-colors"
+                  >
+                    ← Send Another Message
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -176,11 +208,19 @@ export default function Contact() {
                     />
                   </div>
 
+                  {/* Error Message */}
+                  {status === 'error' && (
+                    <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                      <p className="text-red-700 text-sm">{errorMessage}</p>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
+                    disabled={status === 'submitting'}
+                    className="w-full bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {status === 'submitting' ? 'Sending...' : 'Send Message'}
                   </button>
 
                   <p className="text-sm text-neutral-light text-center">
