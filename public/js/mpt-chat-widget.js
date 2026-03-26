@@ -17,13 +17,23 @@
   };
 
   // Insurance-focused greeting
-  const CHAT_MESSAGES = {
-    welcome: `Hey! 👋 I'm Metro Bot — built BY insurance pros, FOR insurance pros.
+  const isAmsApp = window.location.pathname.includes('ams-app');
+
+  const CHAT_MESSAGES = isAmsApp ? {
+    welcome: `Hey there! 👋 I'm Jack, your Agent Commission Tracker assistant.
+
+What brings you here today?`,
+    buttons: [
+      { text: '💬 Just exploring', action: 'exploring' },
+      { text: '📊 Track my commissions', action: 'track_commissions' },
+      { text: '📞 Talk to Our Team', action: 'contact_sales' }
+    ]
+  } : {
+    welcome: `Hey! 👋 I'm Jack — built BY insurance pros, FOR insurance pros.
 
 Tired of chasing carrier statements? Wondering if you got paid right? I totally get it.
 
 What's your biggest headache right now?`,
-    
     buttons: [
       { text: '💰 Commission tracking', action: 'commission_tracking' },
       { text: '📋 Agency management', action: 'ams_platform' },
@@ -384,7 +394,7 @@ What's your biggest headache right now?`,
             <div class="header-content">
               <div class="avatar">🤖</div>
               <div class="header-text">
-                <h3>Metro Bot</h3>
+                <h3>Jack</h3>
                 <p><span class="status-indicator"></span>Online • Built for Insurance</p>
               </div>
             </div>
@@ -477,6 +487,16 @@ What's your biggest headache right now?`,
     }
 
     async sendMessage(content, action = null) {
+      // Direct actions that should navigate instead of chat
+      if (action === 'start_trial') {
+        window.open('https://ams.metropointtech.com/login', '_blank');
+        return;
+      }
+      if (action === 'contact_sales') {
+        window.open('https://www.metropointtech.com/contact', '_blank');
+        return;
+      }
+
       this.messages.push({
         id: Date.now().toString(),
         type: 'user',
@@ -488,10 +508,17 @@ What's your biggest headache right now?`,
       this.isLoading = true;
 
       try {
-        // Build request body - separate message from action
+        // Build conversation history
+        const conversationHistory = this.messages
+          .filter(m => m.type === 'user' || m.type === 'bot')
+          .slice(1)
+          .slice(-6)
+          .map(m => ({ type: m.type, content: typeof m.content === 'string' ? m.content.substring(0, 300) : '' }));
+
         const requestBody = {
           context: { page: window.location.pathname },
-          userInfo: this.userInfo
+          userInfo: this.userInfo,
+          conversationHistory: conversationHistory
         };
         
         // If action is provided, send as action (button click)
