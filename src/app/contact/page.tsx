@@ -19,7 +19,13 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     
+=======
+    setStatus('submitting')
+    setErrorMessage('')
+
+>>>>>>> Stashed changes
 =======
     setStatus('submitting')
     setErrorMessage('')
@@ -35,6 +41,7 @@ export default function Contact() {
       })
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       if (response.ok) {
         setSubmitted(true)
       } else {
@@ -45,6 +52,8 @@ export default function Contact() {
       console.error('Form submission error:', error)
       // You could add error state here if needed
 =======
+=======
+>>>>>>> Stashed changes
       if (!response.ok) {
         throw new Error('Failed to send message')
       }
@@ -61,6 +70,9 @@ export default function Contact() {
     } catch (error) {
       setStatus('error')
       setErrorMessage('Sorry, there was an error sending your message. Please try emailing us directly at sales@metropointtech.com')
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
   }
