@@ -15,11 +15,28 @@ export default function Contact() {
 
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement form submission (email service or backend API)
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        console.error('Form submission failed')
+        // You could add error state here if needed
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      // You could add error state here if needed
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
