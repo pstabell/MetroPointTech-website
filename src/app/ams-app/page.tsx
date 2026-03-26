@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import ViewToggle from '@/components/ViewToggle'
 
 export const metadata: Metadata = {
   title: 'Agent Commission Tracker | Metro Point Technology',
@@ -82,43 +83,13 @@ export default function AmsAppPage() {
         </div>
       </section>
 
-      {/* Features with Screenshots */}
+      {/* Features with Agent/Agency Toggle */}
       <section className="py-16 md:py-24 bg-neutral-lightest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Stop Losing Money to Commission Errors
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+            Built for Agents and Agencies
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/reconciliation.png" alt="Commission reconciliation" width={1440} height={900} className="w-full h-auto" />
-              </div>
-              <h3 className="font-bold text-xl mt-4 mb-2">Automated Reconciliation</h3>
-              <p className="text-neutral-dark">Import carrier statements and match payments to policies automatically. Discrepancies are highlighted instantly.</p>
-            </div>
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/carriers.png" alt="Carrier management" width={1440} height={900} className="w-full h-auto" />
-              </div>
-              <h3 className="font-bold text-xl mt-4 mb-2">Carrier Management</h3>
-              <p className="text-neutral-dark">All your carriers in one place. Progressive, Travelers, Safeco, and many more P&amp;C carriers supported.</p>
-            </div>
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/ledger.png" alt="Policy revenue ledger" width={1440} height={900} className="w-full h-auto" />
-              </div>
-              <h3 className="font-bold text-xl mt-4 mb-2">Policy Revenue Ledger</h3>
-              <p className="text-neutral-dark">Track every commission dollar across all your policies in one clear ledger. Know exactly what you are owed.</p>
-            </div>
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/renewals.png" alt="Pending policy renewals" width={1440} height={900} className="w-full h-auto" />
-              </div>
-              <h3 className="font-bold text-xl mt-4 mb-2">Pending Renewals</h3>
-              <p className="text-neutral-dark">Never miss a renewal. Track upcoming policy renewals and their commission status at a glance.</p>
-            </div>
-          </div>
+          <ViewToggle />
         </div>
       </section>
 
