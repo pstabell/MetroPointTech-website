@@ -90,33 +90,33 @@ export default function AmsAppPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-              <Image src="/images/ams-app/reconciliation.png" alt="Commission reconciliation" width={1344} height={980} className="w-full h-auto" />
-              <div className="p-5 bg-white">
-                <h3 className="font-bold text-xl mb-2">Automated Reconciliation</h3>
-                <p className="text-neutral-dark">Import carrier statements and match payments to policies automatically. Discrepancies are highlighted instantly.</p>
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                <Image src="/images/ams-app/reconciliation.png" alt="Commission reconciliation" width={1440} height={900} className="w-full h-auto" />
               </div>
+              <h3 className="font-bold text-xl mt-4 mb-2">Automated Reconciliation</h3>
+              <p className="text-neutral-dark">Import carrier statements and match payments to policies automatically. Discrepancies are highlighted instantly.</p>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-              <Image src="/images/ams-app/carriers.png" alt="Carrier management" width={1344} height={980} className="w-full h-auto" />
-              <div className="p-5 bg-white">
-                <h3 className="font-bold text-xl mb-2">Carrier Management</h3>
-                <p className="text-neutral-dark">All your carriers in one place. Progressive, Travelers, Safeco, and many more P&amp;C carriers supported.</p>
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                <Image src="/images/ams-app/carriers.png" alt="Carrier management" width={1440} height={900} className="w-full h-auto" />
               </div>
+              <h3 className="font-bold text-xl mt-4 mb-2">Carrier Management</h3>
+              <p className="text-neutral-dark">All your carriers in one place. Progressive, Travelers, Safeco, and many more P&amp;C carriers supported.</p>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-              <Image src="/images/ams-app/ledger.png" alt="Policy revenue ledger" width={1344} height={980} className="w-full h-auto" />
-              <div className="p-5 bg-white">
-                <h3 className="font-bold text-xl mb-2">Policy Revenue Ledger</h3>
-                <p className="text-neutral-dark">Track every commission dollar across all your policies in one clear ledger. Know exactly what you are owed.</p>
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                <Image src="/images/ams-app/ledger.png" alt="Policy revenue ledger" width={1440} height={900} className="w-full h-auto" />
               </div>
+              <h3 className="font-bold text-xl mt-4 mb-2">Policy Revenue Ledger</h3>
+              <p className="text-neutral-dark">Track every commission dollar across all your policies in one clear ledger. Know exactly what you are owed.</p>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-              <Image src="/images/ams-app/renewals.png" alt="Pending policy renewals" width={1344} height={980} className="w-full h-auto" />
-              <div className="p-5 bg-white">
-                <h3 className="font-bold text-xl mb-2">Pending Renewals</h3>
-                <p className="text-neutral-dark">Never miss a renewal. Track upcoming policy renewals and their commission status at a glance.</p>
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                <Image src="/images/ams-app/renewals.png" alt="Pending policy renewals" width={1440} height={900} className="w-full h-auto" />
               </div>
+              <h3 className="font-bold text-xl mt-4 mb-2">Pending Renewals</h3>
+              <p className="text-neutral-dark">Never miss a renewal. Track upcoming policy renewals and their commission status at a glance.</p>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function AmsAppPage() {
                 </p>
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/reconciliation.png" alt="Upload and import commission statements" width={1344} height={980} className="w-full h-auto" />
+                <Image src="/images/ams-app/reconciliation.png" alt="Upload and import commission statements" width={1440} height={900} className="w-full h-auto" />
               </div>
             </div>
 
@@ -150,7 +150,7 @@ export default function AmsAppPage() {
                 </p>
               </div>
               <div className="md:order-1 rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/ledger.png" alt="Automatic policy revenue reconciliation" width={1344} height={980} className="w-full h-auto" />
+                <Image src="/images/ams-app/ledger.png" alt="Automatic policy revenue reconciliation" width={1440} height={900} className="w-full h-auto" />
               </div>
             </div>
 
@@ -163,7 +163,7 @@ export default function AmsAppPage() {
                 </p>
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/reports.png" alt="Commission reports for disputing underpayments" width={1344} height={980} className="w-full h-auto" />
+                <Image src="/images/ams-app/reports.png" alt="Commission reports for disputing underpayments" width={1440} height={900} className="w-full h-auto" />
               </div>
             </div>
           </div>
@@ -175,19 +175,19 @@ export default function AmsAppPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">See It In Action</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-              <Image src="/images/ams-app/customers.png" alt="Customer management" width={1344} height={980} className="w-full h-auto" />
-              <div className="p-5 bg-white">
-                <h3 className="font-bold text-xl mb-2">Customer Management</h3>
-                <p className="text-neutral-dark">See every customer, their policies, carriers, and commission activity at a glance.</p>
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                <Image src="/images/ams-app/customers.png" alt="Customer management" width={1440} height={900} className="w-full h-auto" />
               </div>
+              <h3 className="font-bold text-xl mt-4 mb-2">Customer Management</h3>
+              <p className="text-neutral-dark">See every customer, their policies, carriers, and commission activity at a glance.</p>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-              <Image src="/images/ams-app/ledger-reports.png" alt="Detailed ledger reports" width={1344} height={980} className="w-full h-auto" />
-              <div className="p-5 bg-white">
-                <h3 className="font-bold text-xl mb-2">Detailed Reports</h3>
-                <p className="text-neutral-dark">Comprehensive revenue analytics with transaction details, policy summaries, and export to CSV.</p>
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                <Image src="/images/ams-app/ledger-reports.png" alt="Detailed ledger reports" width={1440} height={900} className="w-full h-auto" />
               </div>
+              <h3 className="font-bold text-xl mt-4 mb-2">Detailed Reports</h3>
+              <p className="text-neutral-dark">Comprehensive revenue analytics with transaction details, policy summaries, and export to CSV.</p>
             </div>
           </div>
         </div>
