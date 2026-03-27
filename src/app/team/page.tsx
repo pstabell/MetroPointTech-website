@@ -249,46 +249,53 @@ const team: TeamMember[] = [
 export default function TeamPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero with Patrick */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+      {/* Hero with Patrick + Team Intro */}
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Patrick Photo - Left */}
-            <div className="flex-shrink-0">
-              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-accent shadow-lg">
-                <Image
-                  src={team[0].photo}
-                  alt={team[0].name}
-                  width={176}
-                  height={176}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="text-center mt-3">
-                <div className="font-bold text-lg">{team[0].name}</div>
-                <div className="text-accent text-sm font-semibold">{team[0].title}</div>
-                <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1">
-                  Founder &middot; 30 Years Insurance
-                </span>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Left Side - Patrick */}
+            <div className="flex flex-col items-center md:items-start">
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0">
+                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                    <Image
+                      src={team[0].photo}
+                      alt={team[0].name}
+                      width={128}
+                      height={128}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="font-bold text-xl">{team[0].name}</div>
+                  <div className="text-accent font-semibold text-sm">{team[0].title}</div>
+                  <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1 mb-3">
+                    Founder &middot; 30 Years Insurance
+                  </span>
+                  <p className="text-blue-100 text-sm leading-relaxed">
+                    Patrick brings 30 years of insurance industry experience to every decision. He started as a licensed agent, worked every role in the agency, and founded Metro Point Technology with a radical idea: build an entire company where AI team members handle execution while a seasoned veteran sets the vision.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Intro Text - Right */}
-            <div className="flex-1">
+            {/* Right Side - Meet Our Team */}
+            <div>
               <h1 className="text-3xl md:text-4xl font-bold mb-4">
                 Meet Our Management Team
               </h1>
-              <p className="text-lg text-blue-100 mb-3">
+              <p className="text-blue-100 mb-3">
                 15 team members. One visionary founder with 30 years of industry
                 experience. 14 AI-powered professionals operating 24/7 with the
                 capacity of 150 people.
               </p>
-              <p className="text-blue-200 mb-3">
+              <p className="text-blue-200 text-sm mb-3">
                 This is not a future concept. This is how we operate today. Every
                 team member listed here is active, accountable, and delivering real
                 results right now.
               </p>
-              <p className="text-accent font-semibold">
+              <p className="text-accent font-semibold text-sm">
                 A world-class operation powered by AI — enterprise-level results,
                 24/7 availability, at a fraction of the cost.
               </p>
