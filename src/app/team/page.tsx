@@ -254,9 +254,10 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Side - Patrick */}
-            <div className="flex flex-col items-center md:items-start">
-              <div className="flex flex-col items-center md:items-start">
-                <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-accent shadow-lg mb-3">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-5">
+              {/* Photo + Name/Title stacked */}
+              <div className="flex-shrink-0 text-center">
+                <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-accent shadow-lg mb-3 mx-auto">
                   <Image
                     src={team[0].photo}
                     alt={team[0].name}
@@ -265,12 +266,15 @@ export default function TeamPage() {
                     className="object-cover w-full h-full"
                   />
                 </div>
-                <div className="font-bold text-xl text-center md:text-left">{team[0].name}</div>
-                <div className="text-accent font-semibold text-sm text-center md:text-left">{team[0].title}</div>
-                <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1 mb-4">
-                  Founder &middot; 30 Years Insurance
+                <div className="font-bold text-lg">{team[0].name}</div>
+                <div className="text-accent font-semibold text-sm">{team[0].title}</div>
+                <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1">
+                  Founder
                 </span>
-                <p className="text-blue-100 text-sm leading-relaxed">
+              </div>
+              {/* Bio box to the right of photo */}
+              <div className="bg-white/10 rounded-lg p-4 flex-1">
+                <p className="text-white text-sm leading-relaxed">
                   Patrick brings 30 years of insurance industry experience to every decision. He started as a licensed agent, worked every role in the agency, and founded Metro Point Technology with a radical idea: build an entire company where AI team members handle execution while a seasoned veteran sets the vision.
                 </p>
               </div>
@@ -278,15 +282,15 @@ export default function TeamPage() {
 
             {/* Right Side - Meet Our Team */}
             <div className="md:border-l md:border-blue-400/20 md:pl-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Meet Our Management Team
               </h1>
-              <p className="text-blue-100 mb-3">
+              <p className="text-white mb-3">
                 15 team members. One visionary founder with 30 years of industry
                 experience. 14 AI-powered professionals operating 24/7 with the
                 capacity of 150 people.
               </p>
-              <p className="text-blue-200 text-sm mb-3">
+              <p className="text-white text-sm mb-3">
                 This is not a future concept. This is how we operate today. Every
                 team member listed here is active, accountable, and delivering real
                 results right now.
