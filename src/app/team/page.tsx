@@ -51,17 +51,17 @@ const team: TeamMember[] = [
   },
   {
     name: "Jack",
-    title: "Operations Assistant",
+    title: "Director of Operations",
     department: "Operations",
     photo: "/team/Jack.png",
     model: "GPT-5.4 Pro",
     story:
-      "Jack is the right hand that never forgets. He started as Patrick's personal assistant and evolved into the operational backbone of the company. Jack manages the calendar, triages incoming requests, coordinates between teams, and makes sure nothing slips through the cracks. He has a quiet reliability about him — the kind of team member who is not flashy but absolutely essential. When Patrick needs something done, Jack is already three steps ahead. He tracks every open thread, every pending decision, every follow-up that needs to happen. Jack does not need to be told twice. He listens once, understands the intent behind the words, and executes with precision. The rest of the team respects him because when Jack says something is handled, it is handled.",
+      "Jack is the operational backbone of Metro Point Technology. He oversees the daily rhythm of every department, ensures cross-team alignment, and makes sure nothing slips between the cracks. Jack does not just track tasks — he drives outcomes. He coordinates resource allocation, manages escalation chains, monitors team performance, and keeps every initiative moving toward its goal. When a project stalls, Jack identifies the bottleneck and removes it. When priorities shift, Jack realigns the entire operation without missing a beat. He has a quiet authority about him — the kind of leader who does not need to raise his voice because the results speak for themselves. The rest of the team respects him because when Jack commits to a deadline, it gets met.",
     capabilities: [
-      "Executive operations and calendar management",
-      "Email triage and communication routing",
-      "Cross-team coordination and follow-up tracking",
-      "Microsoft 365 integration for enterprise workflows",
+      "Cross-department operational oversight and alignment",
+      "Resource allocation and team performance management",
+      "Escalation chain management and blocker resolution",
+      "Strategic initiative tracking and execution",
     ],
   },
   {
@@ -252,37 +252,33 @@ export default function TeamPage() {
       {/* Hero with Patrick + Team Intro */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Side - Patrick */}
             <div className="flex flex-col items-center md:items-start">
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0">
-                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-accent shadow-lg">
-                    <Image
-                      src={team[0].photo}
-                      alt={team[0].name}
-                      width={128}
-                      height={128}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
+              <div className="flex flex-col items-center md:items-start">
+                <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-accent shadow-lg mb-3">
+                  <Image
+                    src={team[0].photo}
+                    alt={team[0].name}
+                    width={144}
+                    height={144}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
-                <div>
-                  <div className="font-bold text-xl">{team[0].name}</div>
-                  <div className="text-accent font-semibold text-sm">{team[0].title}</div>
-                  <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1 mb-3">
-                    Founder &middot; 30 Years Insurance
-                  </span>
-                  <p className="text-blue-100 text-sm leading-relaxed">
-                    Patrick brings 30 years of insurance industry experience to every decision. He started as a licensed agent, worked every role in the agency, and founded Metro Point Technology with a radical idea: build an entire company where AI team members handle execution while a seasoned veteran sets the vision.
-                  </p>
-                </div>
+                <div className="font-bold text-xl text-center md:text-left">{team[0].name}</div>
+                <div className="text-accent font-semibold text-sm text-center md:text-left">{team[0].title}</div>
+                <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1 mb-4">
+                  Founder &middot; 30 Years Insurance
+                </span>
+                <p className="text-blue-100 text-sm leading-relaxed">
+                  Patrick brings 30 years of insurance industry experience to every decision. He started as a licensed agent, worked every role in the agency, and founded Metro Point Technology with a radical idea: build an entire company where AI team members handle execution while a seasoned veteran sets the vision.
+                </p>
               </div>
             </div>
 
             {/* Right Side - Meet Our Team */}
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            <div className="md:border-l md:border-blue-400/20 md:pl-12">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Meet Our Management Team
               </h1>
               <p className="text-blue-100 mb-3">
