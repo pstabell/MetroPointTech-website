@@ -273,7 +273,7 @@ export default function TeamPage() {
                 </span>
               </div>
               {/* Bio box to the right of photo */}
-              <div className="bg-white/10 rounded-lg p-4 flex-1">
+              <div className="bg-white/10 rounded-xl p-5 max-w-xs">
                 <p className="text-white text-sm leading-relaxed">
                   Patrick brings 30 years of insurance industry experience to every decision. He started as a licensed agent, worked every role in the agency, and founded Metro Point Technology with a radical idea: build an entire company where AI team members handle execution while a seasoned veteran sets the vision.
                 </p>
@@ -282,8 +282,8 @@ export default function TeamPage() {
 
             {/* Right Side - Meet Our Team */}
             <div className="md:border-l md:border-blue-400/20 md:pl-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Meet Our Management Team
+              <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Meet Our<br />Management Team
               </h1>
               <p className="text-white mb-3">
                 15 team members. One visionary founder with 30 years of industry
