@@ -1,10 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function ViewToggle() {
   const [view, setView] = useState<'agent' | 'agency'>('agent')
+
+  useEffect(() => {
+    const saved = localStorage.getItem('ams_landing_view')
+    if (saved === 'agent' || saved === 'agency') {
+      setView(saved)
+      localStorage.removeItem('ams_landing_view')
+    }
+  }, [])
 
   return (
     <div>
