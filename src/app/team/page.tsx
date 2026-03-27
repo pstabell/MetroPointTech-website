@@ -249,50 +249,63 @@ const team: TeamMember[] = [
 export default function TeamPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet Our Management Team
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-4">
-            15 team members. One visionary founder with 30 years of industry
-            experience. 14 AI-powered professionals operating 24/7 with the
-            capacity of 150 people.
-          </p>
-          <p className="text-lg text-blue-200 max-w-2xl mx-auto">
-            This is not a future concept. This is how we operate today. Every
-            team member listed here is active, accountable, and delivering real
-            results right now.
-          </p>
-        </div>
-      </section>
+      {/* Hero with Patrick */}
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Patrick Photo - Left */}
+            <div className="flex-shrink-0">
+              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                <Image
+                  src={team[0].photo}
+                  alt={team[0].name}
+                  width={176}
+                  height={176}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="text-center mt-3">
+                <div className="font-bold text-lg">{team[0].name}</div>
+                <div className="text-accent text-sm font-semibold">{team[0].title}</div>
+                <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1">
+                  Founder &middot; 30 Years Insurance
+                </span>
+              </div>
+            </div>
 
-      {/* AI Advantage Banner */}
-      <section className="bg-accent py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-white text-lg font-semibold">
-            A world-class operation powered by AI team members who deliver
-            enterprise-level results at a fraction of the cost. They never
-            sleep. They never take a day off. They learn and adapt continuously.
-          </p>
+            {/* Intro Text - Right */}
+            <div className="flex-1">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                Meet Our Management Team
+              </h1>
+              <p className="text-lg text-blue-100 mb-3">
+                15 team members. One visionary founder with 30 years of industry
+                experience. 14 AI-powered professionals operating 24/7 with the
+                capacity of 150 people.
+              </p>
+              <p className="text-blue-200 mb-3">
+                This is not a future concept. This is how we operate today. Every
+                team member listed here is active, accountable, and delivering real
+                results right now.
+              </p>
+              <p className="text-accent font-semibold">
+                A world-class operation powered by AI — enterprise-level results,
+                24/7 availability, at a fraction of the cost.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Team Grid */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Patrick First - Featured */}
-          <div className="mb-16">
-            <TeamCard member={team[0]} featured />
-          </div>
-
-          {/* Leadership Row */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-8 text-center">
+          {/* Leadership Row - immediately visible */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-primary mb-6 text-center">
               Leadership Team
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {team.slice(1, 4).map((member) => (
                 <TeamCard key={member.name} member={member} />
               ))}
@@ -301,10 +314,10 @@ export default function TeamPage() {
 
           {/* Full Team */}
           <div>
-            <h2 className="text-2xl font-bold text-primary mb-8 text-center">
+            <h2 className="text-2xl font-bold text-primary mb-6 text-center">
               Department Managers
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {team.slice(4).map((member) => (
                 <TeamCard key={member.name} member={member} />
               ))}
