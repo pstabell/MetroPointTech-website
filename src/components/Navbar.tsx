@@ -33,6 +33,9 @@ export default function Navbar() {
             <Link href="/about" className="text-primary hover:text-primary transition">
               About
             </Link>
+            <Link href="/team" className="text-primary hover:text-primary transition">
+              Our Team
+            </Link>
             <Link href="/contact" className="text-primary hover:text-primary transition">
               Contact
             </Link>
@@ -73,6 +76,9 @@ export default function Navbar() {
             </Link>
             <Link href="/about" className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition">
               About
+            </Link>
+            <Link href="/team" className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition">
+              Our Team
             </Link>
             <Link href="/contact" className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition">
               Contact
