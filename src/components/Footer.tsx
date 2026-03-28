@@ -55,6 +55,11 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/commission-calculator" className="text-blue-100 hover:text-accent transition">
+                  Commission Leak Calculator
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
