@@ -94,8 +94,9 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-            Insights on AI infrastructure, insurance technology, and building
-            software that actually ships
+            Insights on AI infrastructure, insurance technology,
+            <br />
+            and building software that actually ships
           </p>
         </div>
       </section>
