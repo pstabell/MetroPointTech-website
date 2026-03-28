@@ -88,12 +88,12 @@ export default function BlogPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="gradient-primary text-white py-16 md:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-3 text-white">
             Blog
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
             Insights on AI infrastructure, insurance technology, and building
             software that actually ships
           </p>
@@ -101,9 +101,9 @@ export default function BlogPage() {
       </section>
 
       {/* Posts */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
+          <div className="space-y-6">
             {posts.map((post) => (
               <Link
                 key={post.slug}

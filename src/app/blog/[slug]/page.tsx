@@ -204,15 +204,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
     <main>
       {/* Header */}
-      <section className="gradient-primary text-white py-12 md:py-16">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-8 md:py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
-            className="text-white/70 hover:text-white text-sm mb-4 inline-block"
+            className="text-white/70 hover:text-white text-sm mb-3 inline-block"
           >
             &larr; Back to Blog
           </Link>
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-3">
             <span className="text-xs font-semibold bg-white/20 px-2.5 py-1 rounded-full">
               {post.category}
             </span>
