@@ -4,6 +4,79 @@ import { notFound } from "next/navigation";
 // Blog post content stored as simple objects
 // Maven and Spark can add new posts by adding entries here
 const blogPosts: Record<string, { title: string; date: string; category: string; readTime: string; content: string }> = {
+  "why-insurance-agencies-lose-thousands-to-commission-errors": {
+    title: "Why Insurance Agencies Lose Thousands to Commission Errors",
+    date: "March 28, 2026",
+    category: "Insurance",
+    readTime: "7 min read",
+    content: `If you ask most agency owners where they lose money, they usually point to missed sales, rising expenses, or carrier changes. What gets overlooked is the slow leak happening in the background: commission errors.
+
+A small underpayment on one policy does not feel dramatic. A missing endorsement commission may not get noticed at all. A split that was entered wrong can look like a harmless accounting issue. But when those errors stack up across renewals, endorsements, new business, and multiple carriers, agencies can lose thousands of dollars without realizing it.
+
+The problem is not just the error itself. The real problem is how easy it is for commission mistakes to hide inside normal operations.
+
+Where commission errors usually start
+
+Most agencies are juggling carrier statements, policy downloads, spreadsheets, AMS reports, and team notes at the same time. The more places the data lives, the easier it is for something to go wrong.
+
+Common failure points include carrier statements that do not clearly match the policies in your system, manual spreadsheet entry mistakes, wrong commission rates tied to the wrong carrier or product, renewal changes that never get reconciled, endorsements that pay differently than expected, producer splits that were set up incorrectly, and missing payments that nobody has time to chase down.
+
+None of these issues are rare. They are normal enough that teams start treating them like background noise.
+
+Why agencies miss the loss for so long
+
+Commission errors are dangerous because they rarely arrive as one big obvious problem. They show up as tiny mismatches scattered across weeks or months.
+
+That creates three major blind spots.
+
+First, teams are busy. Service work, renewals, quoting, and client communication always come first. Reconciling statements line by line gets pushed down the list.
+
+Second, most agencies rely on spreadsheets or fragmented reports. That means there is no fast way to compare expected commissions against what actually got paid.
+
+Third, many teams assume the carrier paid correctly unless something looks wildly off. But most losses are not wild. They are subtle.
+
+A two percent variance here. A missing renewal there. A policy that should have paid in February but never shows up. Individually, each issue feels too small to trigger a full investigation. Together, they create a serious revenue leak.
+
+The hidden cost goes beyond the missing money
+
+When commissions are wrong, the agency does not just lose revenue. It also loses time, confidence, and operational clarity.
+
+Someone has to stop what they are doing and investigate the issue. That often means pulling statements, checking policy details, emailing carrier reps, and rebuilding the math by hand. Even when the agency finds the problem, recovering the money can take more rounds of follow-up.
+
+That time cost adds up fast.
+
+Worse, inaccurate commission tracking makes it harder to answer basic business questions. Which carriers are paying accurately and on time. Which lines of business are most profitable. Which producers are driving clean revenue. What expected income should hit this month. How much money is still outstanding.
+
+If the underlying commission data is unreliable, every report built on top of it becomes less trustworthy.
+
+What this looks like in real life
+
+A growing agency may assume margins are tightening, when the real issue is that endorsement income is not being reconciled consistently.
+
+A principal may trust that the book is performing well, while finance staff are quietly spending hours every week hunting down missing commission lines.
+
+The result is the same: money slips out, nobody sees the full picture, and the team stays stuck in reactive cleanup.
+
+How to reduce commission leakage
+
+The fix is not telling your team to work harder in spreadsheets. The fix is building a repeatable reconciliation process.
+
+That means your agency needs a way to track expected commission by policy, compare expected amounts against actual carrier payments, spot missing short or delayed commissions quickly, flag discrepancies before they age out, and keep a clear history of what was disputed and what was recovered.
+
+When that process becomes consistent, errors stop hiding.
+
+How Agency Commission Tracker helps
+
+Agency Commission Tracker gives agencies a cleaner way to see what should have been paid, what was actually paid, and where the gaps are.
+
+Instead of stitching together statements and spreadsheets manually, teams can identify discrepancies faster, follow up sooner, and protect revenue with less admin drag.
+
+That means fewer missed payments, less time spent auditing by hand, and more confidence in the numbers behind the business.
+
+The payoff is simple: your agency keeps more of the money it already earned.
+
+If your team is still tracking commissions in spreadsheets, there is a good chance revenue is slipping through the cracks. Agency Commission Tracker helps you catch errors faster, recover missed income, and finally trust your commission reporting. Learn more at www.MetroPointTechnology.com.`,
+  },
   "how-we-fixed-claude-code-broken-discord-channels": {
     title: "How We Fixed Claude Code's Broken Discord Channels with a Custom MCP Server",
     date: "March 27, 2026",

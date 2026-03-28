@@ -18,6 +18,15 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: "why-insurance-agencies-lose-thousands-to-commission-errors",
+    title: "Why Insurance Agencies Lose Thousands to Commission Errors",
+    excerpt:
+      "Commission errors rarely arrive as one big obvious problem. They hide in renewals, endorsements, and broken spreadsheet workflows. Here is where the money slips and how to stop the leak.",
+    date: "March 28, 2026",
+    category: "Insurance",
+    readTime: "7 min read",
+  },
+  {
     slug: "how-we-fixed-claude-code-broken-discord-channels",
     title: "How We Fixed Claude Code's Broken Discord Channels with a Custom MCP Server",
     excerpt:
