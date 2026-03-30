@@ -204,6 +204,14 @@ export default function Contact() {
                 </div>
 
                 <div className="bg-neutral-lighter rounded-xl p-6">
+                  <div className="text-3xl mb-3">📞</div>
+                  <h3 className="font-semibold text-neutral mb-2">Phone</h3>
+                  <a href="tel:+12394267058" className="text-primary hover:text-primary-dark">
+                    (239) 426-7058
+                  </a>
+                </div>
+
+                <div className="bg-neutral-lighter rounded-xl p-6">
                   <div className="text-3xl mb-3">🏢</div>
                   <h3 className="font-semibold text-neutral mb-2">Office</h3>
                   <p className="text-neutral-light">

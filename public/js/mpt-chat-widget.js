@@ -545,7 +545,7 @@ What's your biggest headache right now?`,
         this.messages.push({
           id: (Date.now() + 1).toString(),
           type: 'bot',
-          content: data.response || "I'm having a moment! Try again or call (239) 600-8159.",
+          content: data.response || "I'm having a moment! Try again or call (239) 426-7058.",
           timestamp: new Date(),
           buttons: data.buttons || null
         });
@@ -554,7 +554,7 @@ What's your biggest headache right now?`,
         this.messages.push({
           id: (Date.now() + 1).toString(),
           type: 'bot',
-          content: "Connection hiccup! Call us at (239) 600-8159 or try again.",
+          content: "Connection hiccup! Call us at (239) 426-7058 or try again.",
           timestamp: new Date()
         });
       } finally {

@@ -12,6 +12,11 @@ export default function Footer() {
               Insurance software built by an agent with 30 years of experience.
               We understand what agents need because we've been there.
             </p>
+            <div className="text-blue-100 space-y-1">
+              <p>📞 <a href="tel:+12394267058" className="hover:text-accent transition">(239) 426-7058</a></p>
+              <p>✉️ <a href="mailto:Support@MetroPointTech.com" className="hover:text-accent transition">Support@MetroPointTech.com</a></p>
+              <p>📍 Cape Coral, Florida</p>
+            </div>
           </div>
 
           {/* Products */}
