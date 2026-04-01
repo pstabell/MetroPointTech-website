@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Agent Commission Tracker | Metro Point Technology',
+  title: 'AI Commission Tracker | Metro Point Technology',
   description: 'Track policies, reconcile carrier statements, and catch every dollar. Start with a free trial.',
 }
 
@@ -15,7 +15,7 @@ export default function CommissionTrackerProduct() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-accent font-semibold mb-4">FOR INDEPENDENT AGENTS</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Agent Commission Tracker
+              AI Commission Tracker
             </h1>
             <p className="text-xl mb-8">
               Insurance agents lose thousands of dollars every year to commission errors.
@@ -23,9 +23,7 @@ export default function CommissionTrackerProduct() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.agentcommissiontracker.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://www.metropointtech.com/ams-app"
                 className="bg-accent text-white hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Start Free 14-Day Trial
@@ -246,9 +244,7 @@ export default function CommissionTrackerProduct() {
             No credit card required. See how much you've been leaving on the table.
           </p>
           <a
-            href="https://www.agentcommissiontracker.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://www.metropointtech.com/ams-app"
             className="inline-block bg-accent text-white hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition"
           >
             Get Started Free

@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import ViewToggle from '@/components/ViewToggle'
 
 export const metadata: Metadata = {
-  title: 'Agent Commission Tracker | Metro Point Technology',
+  title: 'AI Commission Tracker | Metro Point Technology',
   description: 'Track commissions, catch discrepancies, and ensure you get paid every dollar you earned. Built for insurance agents. 14-day free trial, $19.99/month.',
 }
 
@@ -24,7 +24,7 @@ export default function AmsAppPage() {
               </h1>
               <p className="text-xl mb-8 text-blue-100">
                 Insurance agents lose thousands every year to commission errors and missed payments.
-                Agent Commission Tracker automatically reconciles your carrier statements, catches discrepancies,
+                AI Commission Tracker automatically reconciles your carrier statements, catches discrepancies,
                 and ensures you get paid what you earned.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -48,7 +48,7 @@ export default function AmsAppPage() {
             <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-white/30">
               <Image
                 src="/images/ams-app/dashboard.png"
-                alt="Agent Commission Tracker Dashboard"
+                alt="AI Commission Tracker Dashboard"
                 width={1920}
                 height={1080}
                 className="w-full h-auto"
@@ -201,7 +201,7 @@ export default function AmsAppPage() {
             Stop Leaving Money on the Table
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            If Agent Commission Tracker helps you recover even one missed payment, the trial has already proven its value.
+            If AI Commission Tracker helps you recover even one missed payment, the trial has already proven its value.
           </p>
           <a
             href={trialUrl}

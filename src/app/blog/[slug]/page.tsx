@@ -65,9 +65,9 @@ That means your agency needs a way to track expected commission by policy, compa
 
 When that process becomes consistent, errors stop hiding.
 
-How Agency Commission Tracker helps
+How AI Commission Tracker helps
 
-Agency Commission Tracker gives agencies a cleaner way to see what should have been paid, what was actually paid, and where the gaps are.
+AI Commission Tracker gives agencies a cleaner way to see what should have been paid, what was actually paid, and where the gaps are.
 
 Instead of stitching together statements and spreadsheets manually, teams can identify discrepancies faster, follow up sooner, and protect revenue with less admin drag.
 
@@ -75,7 +75,7 @@ That means fewer missed payments, less time spent auditing by hand, and more con
 
 The payoff is simple: your agency keeps more of the money it already earned.
 
-If your team is still tracking commissions in spreadsheets, there is a good chance revenue is slipping through the cracks. Agency Commission Tracker helps you catch errors faster, recover missed income, and finally trust your commission reporting. Learn more at www.MetroPointTechnology.com.`,
+If your team is still tracking commissions in spreadsheets, there is a good chance revenue is slipping through the cracks. AI Commission Tracker helps you catch errors faster, recover missed income, and finally trust your commission reporting. Learn more at www.MetroPointTechnology.com.`,
   },
   "how-we-fixed-claude-code-broken-discord-channels": {
     title: "How We Fixed Claude Code's Broken Discord Channels with a Custom MCP Server",
@@ -119,7 +119,7 @@ Once you have identified the discrepancy, document everything. Write down the po
 
 Contact the carrier's commission department directly. Be specific about which policies are affected and what the correct amounts should be. Carriers receive hundreds of dispute requests, so the clearer and more organized your documentation is, the faster it gets resolved.
 
-Agent Commission Tracker helps agencies catch discrepancies earlier and recover missed revenue. Learn more at www.MetroPointTechnology.com.`,
+AI Commission Tracker helps agencies catch discrepancies earlier and recover missed revenue. Learn more at www.MetroPointTechnology.com.`,
   },
   "5-signs-your-agency-needs-a-commission-tracker": {
     title: "5 Signs Your Agency Needs a Commission Tracker",
@@ -140,7 +140,7 @@ Sign 4: Your team is spending too much time on manual follow-up. Every hour spen
 
 Sign 5: You have no visibility into commission trends. Without a system tracking your commissions over time, you cannot see patterns. Which carriers pay on time? Which ones consistently underpay? What is your recovery rate?
 
-If your agency is seeing any of these warning signs, take a closer look at Agent Commission Tracker at ams.metropointtech.com and see how much time and revenue you could recover.`,
+If your agency is seeing any of these warning signs, take a closer look at AI Commission Tracker at metropointtech.com/ams-app and see how much time and revenue you could recover.`,
   },
   "automated-reconciliation-saves-10-hours": {
     title: "How Automated Reconciliation Saves Insurance Agencies 10+ Hours a Month",
@@ -157,7 +157,7 @@ The time savings are significant. What used to take 10 hours can be done in unde
 
 Agencies that switch to automated reconciliation typically discover they were missing 2 to 5 percent of their expected commissions. On a book of $500,000 in annual commission revenue, that is $10,000 to $25,000 per year recovered.
 
-Agent Commission Tracker helps teams focus on exceptions instead of rebuilding the process every month. Learn more at ams.metropointtech.com.`,
+AI Commission Tracker helps teams focus on exceptions instead of rebuilding the process every month. Learn more at metropointtech.com/ams-app.`,
   },
   "hidden-cost-of-spreadsheet-commission-tracking": {
     title: "The Hidden Cost of Spreadsheet Commission Tracking",
@@ -178,7 +178,7 @@ The fourth hidden cost is missed revenue. Without automated matching between car
 
 The fifth hidden cost is opportunity cost. Every hour your team spends on manual reconciliation is an hour they are not spending on clients, renewals, or growth.
 
-See how Agent Commission Tracker helps agencies reduce manual work and catch more errors at ams.metropointtech.com.`,
+See how AI Commission Tracker helps agencies reduce manual work and catch more errors at metropointtech.com/ams-app.`,
   },
 };
 

@@ -20,7 +20,7 @@
   const isAmsApp = window.location.pathname.includes('ams-app');
 
   const CHAT_MESSAGES = isAmsApp ? {
-    welcome: `Hey there! 👋 I'm Jack, your Agent Commission Tracker assistant.
+    welcome: `Hey there! 👋 I'm Jack, your AI Commission Tracker assistant.
 
 What brings you here today?`,
     buttons: [

@@ -48,7 +48,7 @@ const posts: BlogPost[] = [
     slug: "5-signs-your-agency-needs-a-commission-tracker",
     title: "5 Signs Your Agency Needs a Commission Tracker",
     excerpt:
-      "Still using spreadsheets to track commissions? Here are five signs your agency has outgrown manual tracking and why Agent Commission Tracker helps you recover missed revenue.",
+      "Still using spreadsheets to track commissions? Here are five signs your agency has outgrown manual tracking and why AI Commission Tracker helps you recover missed revenue.",
     date: "March 27, 2026",
     category: "Insurance",
     readTime: "5 min read",

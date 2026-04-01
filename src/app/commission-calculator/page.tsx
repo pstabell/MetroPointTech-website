@@ -238,13 +238,13 @@ export default function CommissionCalculatorPage() {
               {/* CTA Section */}
               <div className="bg-gradient-to-br from-primary to-primary-dark rounded-xl p-6 md:p-8 text-white text-center">
                 <h3 className="text-2xl font-bold mb-3">
-                  Agency Commission Tracker catches these leaks automatically.
+                  AI Commission Tracker catches these leaks automatically.
                 </h3>
                 <p className="text-blue-100 mb-6 text-lg">
                   Stop losing revenue to commission errors. Upload your carrier statements and see exactly where the money goes.
                 </p>
                 <a
-                  href="https://ams-nextjs.vercel.app/signup"
+                  href="https://www.metropointtech.com/ams-app"
                   className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition shadow-lg"
                 >
                   Start Your Free Trial
