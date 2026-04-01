@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import ViewToggle from '@/components/ViewToggle'
+import AgencyCalculator from '@/components/AgencyCalculator'
 
 export const metadata: Metadata = {
   title: 'AI Commission Tracker | Metro Point Technology',
@@ -89,7 +90,7 @@ export default function AmsAppPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
             Built for Agents and Agencies
           </h2>
-          <ViewToggle />
+          <ViewToggle agencyExtra={<AgencyCalculator />} />
         </div>
       </section>
 

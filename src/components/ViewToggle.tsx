@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-export default function ViewToggle() {
+export default function ViewToggle({ agencyExtra }: { agencyExtra?: React.ReactNode } = {}) {
   const [view, setView] = useState<'agent' | 'agency'>('agent')
 
   useEffect(() => {
@@ -113,6 +113,7 @@ export default function ViewToggle() {
               <p className="text-neutral-dark">The full agency experience is available in dark mode for comfortable extended use.</p>
             </div>
           </div>
+          {agencyExtra}
         </div>
       )}
     </div>
