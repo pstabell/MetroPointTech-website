@@ -6,11 +6,11 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Insurance Software Built by Agents, <span className="text-accent">for Agents</span>
+            Autonomous Insurance Software <span className="text-accent">That Works for You</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-blue-100">
-            30 years of agency experience transformed into powerful software solutions.
-            We build what we need, so you know it works.
+            30 years of agency experience. Zero-touch operations. Agentic AI that runs your back office
+            while you focus on selling. This is not another filing cabinet — this is a digital employee.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -36,14 +36,14 @@ export default function Hero() {
               <div className="text-sm text-blue-100">30 years of agency experience</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl mb-2">💡</div>
-              <div className="text-lg font-semibold mb-1">Community-Driven</div>
-              <div className="text-sm text-blue-100">Features shaped by agent feedback</div>
+              <div className="text-3xl mb-2">🤖</div>
+              <div className="text-lg font-semibold mb-1">Agentic AI</div>
+              <div className="text-sm text-blue-100">Autonomous workflows, not chatbots</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-3xl mb-2">🚀</div>
-              <div className="text-lg font-semibold mb-1">No Client Services</div>
-              <div className="text-sm text-blue-100">Products, not custom projects</div>
+              <div className="text-3xl mb-2">⚡</div>
+              <div className="text-lg font-semibold mb-1">Zero-Touch Operations</div>
+              <div className="text-sm text-blue-100">Your back office runs itself</div>
             </div>
           </div>
         </div>

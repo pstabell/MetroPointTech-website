@@ -3,9 +3,9 @@ import Link from 'next/link'
 export default function ProductShowcase() {
   const products = [
     {
-      name: 'AMS Platform',
-      subtitle: 'For Insurance Agencies',
-      description: 'Multi-tenant commission platform with real-time agent visibility. Watch commissions update LIVE as you reconcile carrier statements.',
+      name: 'AAMS Platform',
+      subtitle: 'Autonomous Agency Management',
+      description: 'The autonomous evolution of legacy AMS. Zero-touch commission reconciliation, agentic workflows, and real-time agent visibility — your agency on autopilot.',
       icon: '🏢',
       features: [
         '3-Status Commission Tracking (Due → Reconciled → Paid)',
@@ -22,16 +22,16 @@ export default function ProductShowcase() {
       borderColor: 'accent',
     },
     {
-      name: 'Commission Tracker',
+      name: 'AAMS Solo',
       subtitle: 'For Independent Agents',
-      description: 'Track policies, reconcile carrier statements, and catch every dollar. The foundation that grows with you.',
+      description: 'Autonomous commission tracking that catches every dollar. Agentic reconciliation runs while you sell. The foundation that grows with you.',
       icon: '💰',
       features: [
         'Policy & commission tracking',
-        'Automated reconciliation',
+        'Agentic reconciliation',
         'Statement import & matching',
         'Revenue ledger & reports',
-        'Upgrade to Agency Mode as you grow',
+        'Upgrade to AAMS Agency as you grow',
       ],
       pricing: 'Start Free Trial',
       setupFee: 'No credit card required',
@@ -53,7 +53,7 @@ export default function ProductShowcase() {
         'ACORD forms generation',
       ],
       pricing: 'Coming Soon',
-      setupFee: 'Bundled with Commission Tracker',
+      setupFee: 'Bundled with AAMS Solo',
       link: '/contact',
       cta: 'Join Waitlist',
       highlight: false,
@@ -85,10 +85,10 @@ export default function ProductShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Our Product Suite
+            Autonomous Product Suite
           </h2>
           <p className="text-xl text-primary max-w-3xl mx-auto">
-            Choose the solution that fits your business today. Upgrade as you grow.
+            From solo agent to full agency — autonomous operations at every level.
           </p>
         </div>
 

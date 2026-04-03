@@ -5,10 +5,10 @@ export default function CallToAction() {
     <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-primary-dark text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Ready to Transform Your Agency Operations?
+          Ready for Autonomous Operations?
         </h2>
         <p className="text-xl mb-8 text-blue-100">
-          Join agencies and agents who trust software built by someone who understands the business.
+          Legacy AMS platforms make you do the work. AAMS does the work for you. Built by an active agent with 30 years of experience.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

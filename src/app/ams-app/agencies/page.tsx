@@ -10,5 +10,5 @@ export default function AgenciesRedirect() {
     }
     router.replace('/ams-app#features')
   }, [router])
-  return <div className="min-h-screen flex items-center justify-center">Loading AI Commission Tracker...</div>
+  return <div className="min-h-screen flex items-center justify-center">Loading AAMS for Agencies...</div>
 }

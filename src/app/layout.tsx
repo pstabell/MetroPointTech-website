@@ -9,9 +9,9 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata' })
 
 export const metadata: Metadata = {
-  title: 'Metro Point Technology | Insurance Software Built by Agents',
-  description: 'Insurance software built by an active agent with 30 years of experience. AMS, Commission Tracking, and CRM solutions designed for agencies and independent agents.',
-  keywords: 'insurance software, agency management system, commission tracking, insurance CRM, agent tools',
+  title: 'Metro Point Technology | Autonomous Insurance Software',
+  description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
+  keywords: 'AAMS, autonomous agency management system, agentic AI, zero-touch operations, insurance software, commission tracking, insurance CRM',
 }
 
 export default function RootLayout({

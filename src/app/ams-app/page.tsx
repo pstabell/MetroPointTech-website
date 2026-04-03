@@ -5,8 +5,8 @@ import ViewToggle from '@/components/ViewToggle'
 import AgencyCalculator from '@/components/AgencyCalculator'
 
 export const metadata: Metadata = {
-  title: 'AI Commission Tracker | Metro Point Technology',
-  description: 'Track commissions, catch discrepancies, and ensure you get paid every dollar you earned. Built for insurance agents. 14-day free trial, $19.99/month.',
+  title: 'AAMS — Autonomous Agency Management System | Metro Point Technology',
+  description: 'The autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations for insurance agencies. 14-day free trial.',
 }
 
 export default function AmsAppPage() {
@@ -19,14 +19,14 @@ export default function AmsAppPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="text-accent font-semibold mb-4">BUILT FOR INSURANCE AGENTS</div>
+              <div className="text-accent font-semibold mb-4">AUTONOMOUS AGENCY MANAGEMENT SYSTEM</div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Track Commissions. Catch Every Dollar.
+                Your Agency, on Autopilot. Zero-Touch Operations.
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Insurance agents lose thousands every year to commission errors and missed payments.
-                AI Commission Tracker automatically reconciles your carrier statements, catches discrepancies,
-                and ensures you get paid what you earned.
+                Legacy AMS platforms are just digital filing cabinets. AAMS is a digital employee.
+                Autonomous commission reconciliation, agentic workflows, and zero-touch operations
+                that run your agency while you focus on selling.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -49,7 +49,7 @@ export default function AmsAppPage() {
             <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-white/30">
               <Image
                 src="/images/ams-app/dashboard.png"
-                alt="AI Commission Tracker Dashboard"
+                alt="AAMS Dashboard — Autonomous Commission Reconciliation"
                 width={1920}
                 height={1080}
                 className="w-full h-auto"
@@ -65,16 +65,16 @@ export default function AmsAppPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary">10+</div>
-              <div className="text-sm text-neutral-dark mt-1">Hours Saved Monthly</div>
+              <div className="text-3xl font-bold text-primary">Zero-Touch</div>
+              <div className="text-sm text-neutral-dark mt-1">Autonomous Operations</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary">100%</div>
               <div className="text-sm text-neutral-dark mt-1">Commission Visibility</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">P&amp;C</div>
-              <div className="text-sm text-neutral-dark mt-1">Progressive, Travelers, Safeco &amp; More</div>
+              <div className="text-3xl font-bold text-primary">Agentic</div>
+              <div className="text-sm text-neutral-dark mt-1">AI-Powered Workflows</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary">$19.99</div>
@@ -88,7 +88,7 @@ export default function AmsAppPage() {
       <section className="py-16 md:py-24 bg-neutral-lightest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-            Built for Agents and Agencies
+            Autonomous Operations for Agents and Agencies
           </h2>
           <ViewToggle agencyExtra={<AgencyCalculator />} />
         </div>
@@ -116,9 +116,9 @@ export default function AmsAppPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className="md:order-2">
                 <div className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
-                <h3 className="text-2xl font-bold mb-4">Auto-Reconcile</h3>
+                <h3 className="text-2xl font-bold mb-4">Agentic Reconciliation</h3>
                 <p className="text-lg text-neutral-dark">
-                  Our system matches every payment against your policies and highlights any discrepancies instantly. No more hours of manual cross-referencing.
+                  Zero-touch matching of payments to policies. The system identifies and flags discrepancies autonomously — no manual cross-referencing.
                 </p>
               </div>
               <div className="md:order-1 rounded-xl overflow-hidden shadow-lg border-2 border-primary">
@@ -173,11 +173,11 @@ export default function AmsAppPage() {
             One plan. Everything included. No setup fees. Cancel anytime.
           </p>
           <div className="max-w-md mx-auto bg-white border-2 border-primary rounded-2xl p-8 shadow-xl">
-            <div className="text-sm font-semibold text-primary mb-2">SOLO AGENT</div>
+            <div className="text-sm font-semibold text-primary mb-2">AAMS SOLO</div>
             <div className="text-5xl font-bold mb-2">$19.99</div>
             <div className="text-neutral-dark mb-8">per month</div>
             <ul className="text-left space-y-3 mb-8">
-              {['Unlimited Policy Tracking', 'Advanced Reporting & Analytics', 'Automated Reconciliation', 'Excel Import/Export', 'All Major P&C Carriers', 'Priority Support'].map((feature) => (
+              {['Unlimited Policy Tracking', 'Advanced Reporting & Analytics', 'Agentic Reconciliation', 'Excel Import/Export', 'All Major P&C Carriers', 'Priority Support'].map((feature) => (
                 <li key={feature} className="flex items-center gap-3">
                   <span className="text-green-500 text-xl">✓</span>
                   <span>{feature}</span>
@@ -199,10 +199,10 @@ export default function AmsAppPage() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Stop Leaving Money on the Table
+            Your Agency Deserves Autonomy
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            If AI Commission Tracker helps you recover even one missed payment, the trial has already proven its value.
+            Legacy AMS platforms make you do the work. AAMS does the work for you. Autonomous reconciliation, zero-touch operations, and agentic workflows — starting today.
           </p>
           <a
             href={trialUrl}
