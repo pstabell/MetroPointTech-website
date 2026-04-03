@@ -1,15 +1,13 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
-import ViewToggle from '@/components/ViewToggle'
-import AgencyCalculator from '@/components/AgencyCalculator'
+import AAMSContent from '@/components/AAMSContent'
 
 export const metadata: Metadata = {
   title: 'AAMS — Autonomous Agency Management System | Metro Point Technology',
   description: 'The autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations for insurance agencies. 14-day free trial.',
 }
 
-export default function AmsAppPage() {
+export default function AAMSPage() {
   const trialUrl = 'https://ams.metropointtech.com/login'
 
   return (
@@ -43,7 +41,7 @@ export default function AmsAppPage() {
                 </a>
               </div>
               <p className="text-sm text-blue-200 mt-4">
-                No credit card required. Cancel anytime. $19.99/month after trial.
+                No credit card required. Cancel anytime.
               </p>
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-white/30">
@@ -77,120 +75,72 @@ export default function AmsAppPage() {
               <div className="text-sm text-neutral-dark mt-1">AI-Powered Workflows</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">$19.99</div>
-              <div className="text-sm text-neutral-dark mt-1">Per Month</div>
+              <div className="text-3xl font-bold text-primary">2 Floors</div>
+              <div className="text-sm text-neutral-dark mt-1">Solo Agent & Agency</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features with Agent/Agency Toggle */}
-      <section className="py-16 md:py-24 bg-neutral-lightest">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-            Autonomous Operations for Agents and Agencies
-          </h2>
-          <ViewToggle agencyExtra={<AgencyCalculator />} />
-        </div>
-      </section>
+      {/* Dynamic Content: Toggle, How It Works, See It In Action */}
+      <AAMSContent />
 
-      {/* How It Works */}
-      <section id="how-it-works" className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">How It Works</h2>
-
-          <div className="space-y-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div>
-                <div className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
-                <h3 className="text-2xl font-bold mb-4">Upload Your Statements</h3>
-                <p className="text-lg text-neutral-dark">
-                  Import your carrier commission statements via CSV, Excel, or manual entry. We support Progressive, Travelers, Safeco, and many other P&amp;C carriers.
-                </p>
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/reconciliation.png" alt="Upload and import commission statements" width={1440} height={900} className="w-full h-auto" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div className="md:order-2">
-                <div className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
-                <h3 className="text-2xl font-bold mb-4">Agentic Reconciliation</h3>
-                <p className="text-lg text-neutral-dark">
-                  Zero-touch matching of payments to policies. The system identifies and flags discrepancies autonomously — no manual cross-referencing.
-                </p>
-              </div>
-              <div className="md:order-1 rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/ledger.png" alt="Automatic policy revenue reconciliation" width={1440} height={900} className="w-full h-auto" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div>
-                <div className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>
-                <h3 className="text-2xl font-bold mb-4">Get Paid Right</h3>
-                <p className="text-lg text-neutral-dark">
-                  Use our reports to dispute underpayments with an agency or carriers. Know exactly what you earned and what you are owed.
-                </p>
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/reports.png" alt="Commission reports for disputing underpayments" width={1440} height={900} className="w-full h-auto" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* More Screenshots */}
-      <section className="py-16 md:py-24 bg-neutral-lightest">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">See It In Action</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/customers.png" alt="Customer management" width={1440} height={900} className="w-full h-auto" />
-              </div>
-              <h3 className="font-bold text-xl mt-4 mb-2">Customer Management</h3>
-              <p className="text-neutral-dark">See every customer, their policies, carriers, and commission activity at a glance.</p>
-            </div>
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
-                <Image src="/images/ams-app/ledger-reports.png" alt="Detailed ledger reports" width={1440} height={900} className="w-full h-auto" />
-              </div>
-              <h3 className="font-bold text-xl mt-4 mb-2">Detailed Reports</h3>
-              <p className="text-neutral-dark">Comprehensive revenue analytics with transaction details, policy summaries, and export to CSV.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
+      {/* Pricing — Static, Both Tiers */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple Pricing</h2>
           <p className="text-lg text-neutral-dark max-w-2xl mx-auto mb-12">
-            One plan. Everything included. No setup fees. Cancel anytime.
+            A fraction of what legacy AMS platforms charge. Full autonomous operations included.
           </p>
-          <div className="max-w-md mx-auto bg-white border-2 border-primary rounded-2xl p-8 shadow-xl">
-            <div className="text-sm font-semibold text-primary mb-2">AAMS SOLO</div>
-            <div className="text-5xl font-bold mb-2">$19.99</div>
-            <div className="text-neutral-dark mb-8">per month</div>
-            <ul className="text-left space-y-3 mb-8">
-              {['Unlimited Policy Tracking', 'Advanced Reporting & Analytics', 'Agentic Reconciliation', 'Excel Import/Export', 'All Major P&C Carriers', 'Priority Support'].map((feature) => (
-                <li key={feature} className="flex items-center gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href={trialUrl}
-              className="block w-full py-4 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg text-lg transition text-center"
-            >
-              Start Free 14-Day Trial
-            </a>
-            <p className="text-sm text-neutral-dark mt-4">No credit card required. Secure payment via Stripe.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* AAMS Solo */}
+            <div className="bg-white border-2 border-primary rounded-2xl p-8 shadow-xl">
+              <div className="text-sm font-semibold text-primary mb-2">AAMS SOLO</div>
+              <div className="text-sm text-neutral-dark mb-4">For Independent Agents</div>
+              <div className="text-5xl font-bold mb-2">$19.99</div>
+              <div className="text-neutral-dark mb-8">per month</div>
+              <ul className="text-left space-y-3 mb-8">
+                {['Unlimited Policy Tracking', 'Agentic Reconciliation', 'Advanced Reporting & Analytics', 'Excel Import/Export', 'All Major P&C Carriers', 'Priority Support'].map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <span className="text-green-500 text-xl">&#10003;</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={trialUrl}
+                className="block w-full py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg text-lg transition text-center"
+              >
+                Start Free 14-Day Trial
+              </a>
+              <p className="text-sm text-neutral-dark mt-4">No credit card required.</p>
+            </div>
+
+            {/* AAMS Agency */}
+            <div className="bg-white border-2 border-violet-600 rounded-2xl p-8 shadow-xl relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-semibold px-4 py-1 rounded-full">
+                MOST POPULAR
+              </div>
+              <div className="text-sm font-semibold text-violet-600 mb-2">AAMS AGENCY</div>
+              <div className="text-sm text-neutral-dark mb-4">For Agency Owners & Managers</div>
+              <div className="text-5xl font-bold mb-2">$99.99</div>
+              <div className="text-neutral-dark mb-8">per month</div>
+              <ul className="text-left space-y-3 mb-8">
+                {['Everything in AAMS Solo', 'Multi-Agent Management', 'Commission Splits & Chargebacks', 'Admin Panel & Role Hierarchy', 'Real-Time Agent Visibility', 'Multi-Location Support'].map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <span className="text-violet-500 text-xl">&#10003;</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/contact"
+                className="block w-full py-4 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg text-lg transition text-center"
+              >
+                Request Agency Demo
+              </a>
+              <p className="text-sm text-neutral-dark mt-4">Custom onboarding included.</p>
+            </div>
           </div>
         </div>
       </section>
