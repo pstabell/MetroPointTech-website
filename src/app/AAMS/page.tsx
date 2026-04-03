@@ -94,7 +94,7 @@ export default function AAMSPage() {
             Why Agencies Switch to AAMS
           </h2>
           <p className="text-lg text-neutral-dark text-center max-w-3xl mx-auto mb-12">
-            Legacy AMS platforms cover 20% of your carriers through IVANS. The other 80% — commercial GL, workers comp, flood, surplus lines, MGAs, specialty carriers — has zero automation. You reconcile all of that by hand. AAMS handles every carrier, every line, every format.
+            IVANS handles 60-80% of your commission downloads, but the remaining 20-40% — MGAs, wholesale brokers, regional carriers, complex commercial lines — lands on your desk as PDFs and spreadsheets with zero automation. AAMS handles every carrier, every line, every format.
           </p>
 
           {/* Competitive Pricing Table */}
@@ -175,7 +175,7 @@ export default function AAMSPage() {
               <div className="text-4xl mb-4">&#9889;</div>
               <h3 className="text-xl font-bold mb-3">Every Carrier, Every Line</h3>
               <p className="text-neutral-dark">
-                IVANS only covers home and auto. AAMS processes every carrier statement in any format — PDF, Excel, CSV. Commercial, surplus, flood, specialty. No limitations.
+                IVANS gets you 60-80% of the way. The remaining 20-40% — MGAs, wholesale brokers, non-standard carriers, stripped transactions — lands on your desk. AAMS processes every statement in any format. PDF, Excel, CSV. No limitations.
               </p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-md text-center">
