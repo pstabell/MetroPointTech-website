@@ -180,9 +180,9 @@ export default function AAMSPage() {
             </div>
             <div className="bg-white rounded-xl p-8 shadow-md text-center">
               <div className="text-4xl mb-4">&#128274;</div>
-              <h3 className="text-xl font-bold mb-3">No Lock-In</h3>
+              <h3 className="text-xl font-bold mb-3">No Lock-In, No Exit Fees</h3>
               <p className="text-neutral-dark">
-                14-day free trial. No credit card required. No setup fees. No multi-year contracts. Cancel anytime. Start today, see results this week.
+                14-day free trial. No credit card required. No setup fees. No multi-year contracts. No exit fees. Export all your data in minutes and take it with you. We earn your business every month.
               </p>
             </div>
           </div>
