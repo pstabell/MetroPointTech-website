@@ -162,6 +162,32 @@ export default function AAMSPage() {
             </p>
           </div>
 
+          {/* Industry Data */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <h3 className="text-2xl font-bold text-center mb-8">The Industry Is Moving to Autonomous</h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-md text-center">
+                <div className="text-4xl font-bold text-primary mb-2">72%</div>
+                <p className="text-sm text-neutral-dark">of agencies say commercial submissions need greater automation</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center">
+                <div className="text-4xl font-bold text-primary mb-2">51%</div>
+                <p className="text-sm text-neutral-dark">want data uploads from management systems fully automated</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center">
+                <div className="text-4xl font-bold text-accent mb-2">29%</div>
+                <p className="text-sm text-neutral-dark">now prioritize real-time data over traditional policy downloads (up from 12% in 2024)</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center">
+                <div className="text-4xl font-bold text-primary mb-2">700+</div>
+                <p className="text-sm text-neutral-dark">industry professionals surveyed</p>
+              </div>
+            </div>
+            <p className="text-xs text-neutral-dark text-center mt-4">
+              Source: 2025 Insurance Agency-Carrier Connectivity Trends Survey Report, Ivans
+            </p>
+          </div>
+
           {/* Three Advantage Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white rounded-xl p-8 shadow-md text-center">
