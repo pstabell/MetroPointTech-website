@@ -16,28 +16,28 @@
     theme: 'professional'
   };
 
-  // Insurance-focused greeting
-  const isAmsApp = window.location.pathname.includes('ams-app');
+  // AAMS product greeting
+  const isAAMS = window.location.pathname.includes('AAMS') || window.location.pathname.includes('ams-app');
 
-  const CHAT_MESSAGES = isAmsApp ? {
-    welcome: `Hey there! 👋 I'm Jack, your AI Commission Tracker assistant.
+  const CHAT_MESSAGES = isAAMS ? {
+    welcome: `Hey there! I'm Jack, your AAMS assistant.
 
-What brings you here today?`,
+Autonomous Agency Management System — built by an agent with 30 years of experience. What can I help you with?`,
     buttons: [
-      { text: '💬 Just exploring', action: 'exploring' },
-      { text: '📊 Track my commissions', action: 'track_commissions' },
-      { text: '📞 Talk to Our Team', action: 'contact_sales' }
+      { text: '💬 What is AAMS?', action: 'exploring' },
+      { text: '📊 Autonomous commission tracking', action: 'track_commissions' },
+      { text: '📞 Talk to the team', action: 'contact_sales' }
     ]
   } : {
-    welcome: `Hey! 👋 I'm Jack — built BY insurance pros, FOR insurance pros.
+    welcome: `Hey! I'm Jack — built BY insurance pros, FOR insurance pros.
 
-Tired of chasing carrier statements? Wondering if you got paid right? I totally get it.
+Legacy AMS platforms are just filing cabinets. Ours is a digital employee. Autonomous reconciliation, zero-touch operations, agentic workflows.
 
 What's your biggest headache right now?`,
     buttons: [
-      { text: '💰 Commission tracking', action: 'commission_tracking' },
-      { text: '📋 Agency management', action: 'ams_platform' },
-      { text: '📞 Talk to our team', action: 'contact_sales' }
+      { text: '💰 Autonomous commission tracking', action: 'commission_tracking' },
+      { text: '📋 AAMS for agencies', action: 'ams_platform' },
+      { text: '📞 Talk to the team', action: 'contact_sales' }
     ]
   };
 
