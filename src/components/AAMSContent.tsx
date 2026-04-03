@@ -239,6 +239,193 @@ export default function AAMSContent() {
           </div>
         </div>
       </section>
+
+      {/* Pricing Comparison Tables */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple Pricing</h2>
+          <p className="text-lg text-neutral-dark max-w-2xl mx-auto mb-12">
+            A fraction of what legacy AMS platforms charge. Full autonomous operations included. 14-day free trial on every plan.
+          </p>
+
+          {!isAgency ? (
+            /* Solo Agent Comparison — 3 columns */
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {/* Starter */}
+              <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-lg flex flex-col">
+                <div className="text-sm font-semibold text-primary mb-1">AAMS STARTER</div>
+                <div className="text-4xl font-bold mb-1">$19.99</div>
+                <div className="text-neutral-dark mb-6 text-sm">per month</div>
+                <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
+                  {[
+                    { feature: 'Unlimited Policy Tracking', included: true },
+                    { feature: 'Manual Reconciliation', included: true },
+                    { feature: 'Revenue Ledger & Reports', included: true },
+                    { feature: 'Excel Import/Export', included: true },
+                    { feature: 'All Major P&C Carriers', included: true },
+                    { feature: 'AI Agentic Reconciliation', included: false },
+                    { feature: 'AI Coaching & Alerts', included: false },
+                    { feature: 'Email Statement Forwarding', included: false },
+                    { feature: 'Auto-Processing', included: false },
+                  ].map((item) => (
+                    <li key={item.feature} className="flex items-center gap-2">
+                      <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
+                        {item.included ? '\u2713' : '\u2717'}
+                      </span>
+                      <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition text-center">
+                  Start Free Trial
+                </a>
+              </div>
+
+              {/* Pro */}
+              <div className="bg-white border-2 border-accent rounded-2xl p-6 shadow-xl flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  MOST POPULAR
+                </div>
+                <div className="text-sm font-semibold text-accent mb-1">AAMS PRO</div>
+                <div className="text-4xl font-bold mb-1">$49.99</div>
+                <div className="text-neutral-dark mb-6 text-sm">per month</div>
+                <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
+                  {[
+                    { feature: 'Unlimited Policy Tracking', included: true },
+                    { feature: 'Manual Reconciliation', included: true },
+                    { feature: 'Revenue Ledger & Reports', included: true },
+                    { feature: 'Excel Import/Export', included: true },
+                    { feature: 'All Major P&C Carriers', included: true },
+                    { feature: 'AI Agentic Reconciliation', included: true },
+                    { feature: 'AI Coaching & Alerts', included: true },
+                    { feature: 'Email Statement Forwarding', included: false },
+                    { feature: 'Auto-Processing', included: false },
+                  ].map((item) => (
+                    <li key={item.feature} className="flex items-center gap-2">
+                      <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
+                        {item.included ? '\u2713' : '\u2717'}
+                      </span>
+                      <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition text-center">
+                  Start Free Trial
+                </a>
+              </div>
+
+              {/* Autopilot */}
+              <div className="bg-white border-2 border-primary rounded-2xl p-6 shadow-lg flex flex-col">
+                <div className="text-sm font-semibold text-primary mb-1">AAMS AUTOPILOT</div>
+                <div className="text-4xl font-bold mb-1">$79.99</div>
+                <div className="text-neutral-dark mb-6 text-sm">per month</div>
+                <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
+                  {[
+                    { feature: 'Unlimited Policy Tracking', included: true },
+                    { feature: 'Manual Reconciliation', included: true },
+                    { feature: 'Revenue Ledger & Reports', included: true },
+                    { feature: 'Excel Import/Export', included: true },
+                    { feature: 'All Major P&C Carriers', included: true },
+                    { feature: 'AI Agentic Reconciliation', included: true },
+                    { feature: 'AI Coaching & Alerts', included: true },
+                    { feature: 'Email Statement Forwarding', included: true },
+                    { feature: 'Auto-Processing', included: true },
+                  ].map((item) => (
+                    <li key={item.feature} className="flex items-center gap-2">
+                      <span className="text-green-500">{'\u2713'}</span>
+                      <span>{item.feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition text-center">
+                  Start Free Trial
+                </a>
+              </div>
+            </div>
+          ) : (
+            /* Agency Comparison — 2 columns */
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {/* Self-Service */}
+                <div className="bg-white border-2 border-violet-400 rounded-2xl p-8 shadow-lg flex flex-col">
+                  <div className="text-sm font-semibold text-violet-600 mb-1">AAMS AGENCY</div>
+                  <div className="text-sm text-neutral-dark mb-4">Self-Service</div>
+                  <div className="text-5xl font-bold mb-1">$99.99</div>
+                  <div className="text-neutral-dark mb-6">per month</div>
+                  <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
+                    {[
+                      { feature: 'Everything in AAMS Solo', included: true },
+                      { feature: 'Multi-Agent Management', included: true },
+                      { feature: 'Commission Splits & Chargebacks', included: true },
+                      { feature: 'Admin Panel & Role Hierarchy', included: true },
+                      { feature: 'Real-Time Agent Visibility', included: true },
+                      { feature: 'Multi-Location Support', included: true },
+                      { feature: 'E-Signatures (BoldSign)', included: true },
+                      { feature: 'AI Agentic Reconciliation', included: false },
+                      { feature: 'AI Back Office Agent', included: false },
+                      { feature: 'Email Auto-Processing', included: false },
+                    ].map((item) => (
+                      <li key={item.feature} className="flex items-center gap-2">
+                        <span className={item.included ? 'text-violet-500' : 'text-gray-300'}>
+                          {item.included ? '\u2713' : '\u2717'}
+                        </span>
+                        <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $49.99/mo each</div>
+                  <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-violet-500 hover:bg-violet-600 text-white font-semibold rounded-lg transition text-center">
+                    Start Free 14-Day Trial
+                  </a>
+                </div>
+
+                {/* AI */}
+                <div className="bg-white border-2 border-violet-600 rounded-2xl p-8 shadow-xl flex flex-col relative">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-semibold px-4 py-1 rounded-full">
+                    MOST POPULAR
+                  </div>
+                  <div className="text-sm font-semibold text-violet-600 mb-1">AAMS AGENCY</div>
+                  <div className="text-sm text-neutral-dark mb-4">With AI Agent</div>
+                  <div className="text-5xl font-bold mb-1">$199.99</div>
+                  <div className="text-neutral-dark mb-6">per month</div>
+                  <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
+                    {[
+                      { feature: 'Everything in Self-Service', included: true },
+                      { feature: 'Multi-Agent Management', included: true },
+                      { feature: 'Commission Splits & Chargebacks', included: true },
+                      { feature: 'Admin Panel & Role Hierarchy', included: true },
+                      { feature: 'Real-Time Agent Visibility', included: true },
+                      { feature: 'Multi-Location Support', included: true },
+                      { feature: 'E-Signatures (BoldSign)', included: true },
+                      { feature: 'AI Agentic Reconciliation', included: true },
+                      { feature: 'AI Back Office Agent', included: true },
+                      { feature: 'Email Auto-Processing', included: true },
+                    ].map((item) => (
+                      <li key={item.feature} className="flex items-center gap-2">
+                        <span className="text-violet-500">{'\u2713'}</span>
+                        <span>{item.feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $99.99/mo each</div>
+                  <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-center">
+                    Start Free 14-Day Trial
+                  </a>
+                </div>
+              </div>
+
+              {/* AI Action Bucket Add-On */}
+              <div className="mt-8 max-w-md mx-auto bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
+                <div className="text-sm font-semibold text-neutral-dark mb-1">AI ACTION BUCKET</div>
+                <div className="text-2xl font-bold">$99.99 <span className="text-sm font-normal text-neutral-dark">one-time</span></div>
+                <p className="text-sm text-neutral-dark mt-2">600 additional AI actions. Purchase when you need more. No auto-recurring charges.</p>
+              </div>
+            </div>
+          )}
+
+          <p className="text-sm text-neutral-dark mt-8">All plans include a 14-day free trial. No credit card required. Cancel anytime.</p>
+        </div>
+      </section>
     </>
   )
 }

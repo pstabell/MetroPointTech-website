@@ -85,65 +85,7 @@ export default function AAMSPage() {
       {/* Dynamic Content: Toggle, How It Works, See It In Action */}
       <AAMSContent />
 
-      {/* Pricing — Static, Both Tiers */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple Pricing</h2>
-          <p className="text-lg text-neutral-dark max-w-2xl mx-auto mb-12">
-            A fraction of what legacy AMS platforms charge. Full autonomous operations included.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* AAMS Solo */}
-            <div className="bg-white border-2 border-primary rounded-2xl p-8 shadow-xl">
-              <div className="text-sm font-semibold text-primary mb-2">AAMS SOLO</div>
-              <div className="text-sm text-neutral-dark mb-4">For Independent Agents</div>
-              <div className="text-5xl font-bold mb-2">$19.99</div>
-              <div className="text-neutral-dark mb-8">per month</div>
-              <ul className="text-left space-y-3 mb-8">
-                {['Unlimited Policy Tracking', 'Agentic Reconciliation', 'Advanced Reporting & Analytics', 'Excel Import/Export', 'All Major P&C Carriers', 'Priority Support'].map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <span className="text-green-500 text-xl">&#10003;</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={trialUrl}
-                className="block w-full py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg text-lg transition text-center"
-              >
-                Start Free 14-Day Trial
-              </a>
-              <p className="text-sm text-neutral-dark mt-4">No credit card required.</p>
-            </div>
-
-            {/* AAMS Agency */}
-            <div className="bg-white border-2 border-violet-600 rounded-2xl p-8 shadow-xl relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-semibold px-4 py-1 rounded-full">
-                MOST POPULAR
-              </div>
-              <div className="text-sm font-semibold text-violet-600 mb-2">AAMS AGENCY</div>
-              <div className="text-sm text-neutral-dark mb-4">For Agency Owners & Managers</div>
-              <div className="text-5xl font-bold mb-2">$99.99</div>
-              <div className="text-neutral-dark mb-8">per month</div>
-              <ul className="text-left space-y-3 mb-8">
-                {['Everything in AAMS Solo', 'Multi-Agent Management', 'Commission Splits & Chargebacks', 'Admin Panel & Role Hierarchy', 'Real-Time Agent Visibility', 'Multi-Location Support'].map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <span className="text-violet-500 text-xl">&#10003;</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="/contact"
-                className="block w-full py-4 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg text-lg transition text-center"
-              >
-                Request Agency Demo
-              </a>
-              <p className="text-sm text-neutral-dark mt-4">Custom onboarding included.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Pricing is inside AAMSContent, responds to toggle */}
 
       {/* Final CTA */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
