@@ -87,6 +87,108 @@ export default function AAMSPage() {
 
       {/* Pricing is inside AAMSContent, responds to toggle */}
 
+      {/* Why AAMS — Competitive Advantage */}
+      <section className="py-16 md:py-24 bg-neutral-lightest">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+            Why Agencies Switch to AAMS
+          </h2>
+          <p className="text-lg text-neutral-dark text-center max-w-3xl mx-auto mb-12">
+            Legacy AMS platforms cover 20% of your carriers through IVANS. The other 80% — commercial GL, workers comp, flood, surplus lines, MGAs, specialty carriers — has zero automation. You reconcile all of that by hand. AAMS handles every carrier, every line, every format.
+          </p>
+
+          {/* Competitive Pricing Table */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <h3 className="text-2xl font-bold text-center mb-8">See How We Compare</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-primary text-white">
+                    <th className="text-left p-4 rounded-tl-lg">Platform</th>
+                    <th className="text-center p-4">Monthly Cost</th>
+                    <th className="text-center p-4">AI Included</th>
+                    <th className="text-center p-4">Setup Fees</th>
+                    <th className="text-center p-4 rounded-tr-lg">Contract</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-accent/10 border-2 border-accent font-semibold">
+                    <td className="p-4">AAMS</td>
+                    <td className="text-center p-4">$99 - $199/mo</td>
+                    <td className="text-center p-4 text-green-600">Yes</td>
+                    <td className="text-center p-4 text-green-600">$0</td>
+                    <td className="text-center p-4 text-green-600">None</td>
+                  </tr>
+                  <tr className="bg-white border-b border-gray-200">
+                    <td className="p-4 text-neutral-dark">Applied Epic</td>
+                    <td className="text-center p-4 text-neutral-dark">$200 - $500/user</td>
+                    <td className="text-center p-4 text-red-500">No</td>
+                    <td className="text-center p-4 text-red-500">$5,000+</td>
+                    <td className="text-center p-4 text-red-500">Multi-year</td>
+                  </tr>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <td className="p-4 text-neutral-dark">Vertafore AMS360</td>
+                    <td className="text-center p-4 text-neutral-dark">$150 - $400/user</td>
+                    <td className="text-center p-4 text-red-500">No</td>
+                    <td className="text-center p-4 text-red-500">$3,000+</td>
+                    <td className="text-center p-4 text-red-500">Multi-year</td>
+                  </tr>
+                  <tr className="bg-white border-b border-gray-200">
+                    <td className="p-4 text-neutral-dark">EZLynx</td>
+                    <td className="text-center p-4 text-neutral-dark">$100 - $300/user</td>
+                    <td className="text-center p-4 text-red-500">No</td>
+                    <td className="text-center p-4 text-red-500">$1,500+</td>
+                    <td className="text-center p-4 text-red-500">Annual</td>
+                  </tr>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <td className="p-4 text-neutral-dark">HawkSoft</td>
+                    <td className="text-center p-4 text-neutral-dark">$200 - $300 flat</td>
+                    <td className="text-center p-4 text-red-500">No</td>
+                    <td className="text-center p-4 text-red-500">$2,000+</td>
+                    <td className="text-center p-4 text-red-500">Annual</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <td className="p-4 text-neutral-dark">Manual (Admin Employee)</td>
+                    <td className="text-center p-4 text-neutral-dark">$3,000 - $5,000</td>
+                    <td className="text-center p-4 text-red-500">No</td>
+                    <td className="text-center p-4 text-neutral-dark">Training</td>
+                    <td className="text-center p-4 text-neutral-dark">Ongoing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-neutral-dark text-center mt-4">
+              A 10-user agency with AAMS AI pays $1,099/month. The same agency on Applied Epic pays $2,000 - $5,000/month with no AI.
+            </p>
+          </div>
+
+          {/* Three Advantage Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white rounded-xl p-8 shadow-md text-center">
+              <div className="text-4xl mb-4">&#128176;</div>
+              <h3 className="text-xl font-bold mb-3">Commission Leakage</h3>
+              <p className="text-neutral-dark">
+                Most agencies lose 1-5% of commission revenue to undetected errors. AAMS catches every discrepancy autonomously. One recovered payment pays for the entire year.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-8 shadow-md text-center">
+              <div className="text-4xl mb-4">&#9889;</div>
+              <h3 className="text-xl font-bold mb-3">Every Carrier, Every Line</h3>
+              <p className="text-neutral-dark">
+                IVANS only covers home and auto. AAMS processes every carrier statement in any format — PDF, Excel, CSV. Commercial, surplus, flood, specialty. No limitations.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-8 shadow-md text-center">
+              <div className="text-4xl mb-4">&#128274;</div>
+              <h3 className="text-xl font-bold mb-3">No Lock-In</h3>
+              <p className="text-neutral-dark">
+                14-day free trial. No credit card required. No setup fees. No multi-year contracts. Cancel anytime. Start today, see results this week.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
