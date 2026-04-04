@@ -656,6 +656,20 @@ What's your biggest headache right now?`,
           if (action) this.sendMessage('', action);
         });
       });
+
+      // Also wire up quick-solutions buttons below the input
+      const quickSolutionsEl = this.widget.querySelector('.quick-solutions');
+      if (quickSolutionsEl) {
+        quickSolutionsEl.querySelectorAll('.action-button').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const action = e.target.dataset.action;
+            if (action) {
+              this.sendMessage('', action);
+              quickSolutionsEl.innerHTML = '';
+            }
+          });
+        });
+      }
     }
 
     formatContent(content) {
