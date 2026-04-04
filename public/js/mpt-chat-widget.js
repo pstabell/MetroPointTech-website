@@ -36,7 +36,7 @@ Legacy AMS platforms are just filing cabinets. Ours is a digital employee. Auton
 What's your biggest headache right now?`,
     buttons: [
       { text: '💰 Autonomous commission tracking', action: 'commission_tracking' },
-      { text: '📋 AAMS for agencies', action: 'ams_platform' },
+      { text: '📋 AAMS for Agents & Agencies', action: 'ams_platform' },
       { text: '📞 Talk to the team', action: 'contact_sales' }
     ]
   };
