@@ -7,7 +7,7 @@
   'use strict';
 
   const MPT_CHAT_CONFIG = {
-    apiUrl: 'https://mpt-ai-chat-api.vercel.app/api/chat',
+    apiUrl: '/api/chat',
     primaryColor: '#003B5C',
     secondaryColor: '#F8FAFC',
     position: 'bottom-right',
