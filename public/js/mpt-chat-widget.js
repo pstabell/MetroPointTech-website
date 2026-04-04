@@ -346,10 +346,9 @@ What's your biggest headache right now?`,
 
     .mpt-chat-widget .quick-solutions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding: 8px 16px 12px;
-      border-top: 1px solid var(--border-color);
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 16px 14px;
       background: var(--secondary-color);
       border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
@@ -359,21 +358,22 @@ What's your biggest headache right now?`,
     }
 
     .mpt-chat-widget .quick-solutions .action-button {
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 13px;
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      border: 1.5px solid var(--primary-color);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
       cursor: pointer;
-      transition: background 0.2s;
-      flex: 1;
-      min-width: 0;
-      text-align: center;
+      transition: all 0.2s;
+      text-align: left;
+      width: 100%;
     }
 
     .mpt-chat-widget .quick-solutions .action-button:hover {
-      background: var(--primary-hover);
+      background: var(--primary-color);
+      color: white;
     }
 
     @media (max-width: 768px) {
@@ -441,7 +441,7 @@ What's your biggest headache right now?`,
 
           <div class="chat-input">
             <div class="input-container">
-              <textarea placeholder="Type your headache or click a solution below..." rows="1" maxlength="500"></textarea>
+              <textarea placeholder="Type your message here..." rows="1" maxlength="500"></textarea>
               <button class="send-button" disabled aria-label="Send">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
