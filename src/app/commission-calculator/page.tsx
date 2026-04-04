@@ -241,7 +241,7 @@ export default function CommissionCalculatorPage() {
                   AI Commission Tracker catches these leaks automatically.
                 </h3>
                 <p className="text-blue-100 mb-6 text-lg">
-                  Stop losing revenue to commission errors. Upload your carrier statements and see exactly where the money goes.
+                  Stop losing revenue to commission errors. Upload your commission statements and see exactly where the money goes.
                 </p>
                 <a
                   href="https://www.metropointtech.com/ams-app"
