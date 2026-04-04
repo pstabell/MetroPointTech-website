@@ -84,7 +84,7 @@ export default function CommissionCalculatorPage() {
             Free Commission Leak Calculator
           </h1>
           <p className="text-lg md:text-xl text-blue-100">
-            Find out if your carriers are underpaying you in 30 seconds
+            Find out if you're underpaid in 30 seconds
           </p>
         </div>
       </section>
