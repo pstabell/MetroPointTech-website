@@ -344,6 +344,38 @@ What's your biggest headache right now?`,
       cursor: not-allowed;
     }
 
+    .mpt-chat-widget .quick-solutions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px 16px 12px;
+      border-top: 1px solid var(--border-color);
+      background: var(--secondary-color);
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+
+    .mpt-chat-widget .quick-solutions:empty {
+      display: none;
+    }
+
+    .mpt-chat-widget .quick-solutions .action-button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .mpt-chat-widget .quick-solutions .action-button:hover {
+      background: var(--primary-hover);
+    }
+
     @media (max-width: 768px) {
       .mpt-chat-widget { bottom: 16px; right: 16px; left: 16px; }
       .mpt-chat-widget .chat-window { width: 100%; height: 450px; }
@@ -409,7 +441,7 @@ What's your biggest headache right now?`,
 
           <div class="chat-input">
             <div class="input-container">
-              <textarea placeholder="Type your message..." rows="1" maxlength="500"></textarea>
+              <textarea placeholder="Type your headache or click a solution below..." rows="1" maxlength="500"></textarea>
               <button class="send-button" disabled aria-label="Send">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -417,6 +449,7 @@ What's your biggest headache right now?`,
               </button>
             </div>
           </div>
+          <div class="quick-solutions"></div>
         </div>
       `;
 
@@ -573,24 +606,30 @@ What's your biggest headache right now?`,
       const container = this.widget.querySelector('.messages-container');
       let html = '';
 
+      let quickSolutionsHtml = '';
       this.messages.forEach(msg => {
-        let buttonsHtml = '';
+        // Buttons go to the quick-solutions area below the input, not inside the message
         if (msg.buttons) {
-          buttonsHtml = `<div class="message-buttons">${msg.buttons.map(b => 
+          quickSolutionsHtml = `${msg.buttons.map(b =>
             `<button class="action-button" data-action="${b.action}">${b.text}</button>`
-          ).join('')}</div>`;
+          ).join('')}`;
         }
 
         html += `
           <div class="message ${msg.type}">
             <div class="message-content">
               <div class="message-text">${this.formatContent(msg.content)}</div>
-              ${buttonsHtml}
             </div>
             <div class="message-time">${msg.timestamp.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</div>
           </div>
         `;
       });
+
+      // Render quick solution buttons below the input
+      const quickSolutions = this.widget.querySelector('.quick-solutions');
+      if (quickSolutions) {
+        quickSolutions.innerHTML = quickSolutionsHtml;
+      }
 
       if (this.isTyping) {
         html += `
