@@ -29,7 +29,7 @@ PRODUCT — AAMS (Autonomous Agency Management System):
 
 PRICING:
 - Solo Agent Plan: $19.99/month — for individual producers tracking their own commissions
-- Agency Plans: $99 to $999/month depending on agency size and features
+- Agency Plans: $99 to $199/month depending on agency size and features
 - CRM Add-on: $29/month
 - No setup fees, no exit fees, cancel anytime, full data portability
 - Free trial available, no credit card required
