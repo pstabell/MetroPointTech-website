@@ -27,12 +27,21 @@ PRODUCT — AAMS (Autonomous Agency Management System):
 - Handles the 20-40% of commission data that IVANS cannot process (MGAs, wholesale brokers, regional carriers)
 - Reduces commission leakage by catching errors humans miss
 
+PRODUCT — AAMS CRM (NOW LIVE):
+- AI-powered CRM with autonomous agents Closer and Pulse built in
+- Closer: shops policies, sends ACORD forms to MGAs, compares quotes side-by-side, flags coverage red flags
+- Pulse: manages renewals (90/60/30 day reminders), client health scoring, follow-up scheduling
+- 18 ACORD form generators (personal + commercial) — auto-populated from contact data
+- 7-stage sales pipeline with hard-gate enforcement for surplus lines agency-billed policies
+- MGA submission tracking and quote comparison spreadsheet
+- Available at crm.metropointtech.com
+
 PRICING:
-- Solo Agent Plan: $19.99/month — for individual producers tracking their own commissions
-- Agency Plans: $99 to $199/month depending on agency size and features
-- CRM Add-on: $29/month
+- AAMS: $99/user/month — commission tracking, reconciliation, policy management, AI back office
+- AAMS CRM: $99/user/month — sales pipeline, ACORD forms, MGA submissions, quote comparison, Closer + Pulse AI agents
+- Both together: $198/user/month
 - No setup fees, no exit fees, cancel anytime, full data portability
-- Free trial available, no credit card required
+- 14-day free trial, no credit card required
 
 KEY DIFFERENTIATORS vs Applied Epic, Vertafore, HawkSoft:
 - 73% cheaper than legacy platforms
