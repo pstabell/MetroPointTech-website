@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import AIAgentCheckout from '@/components/AIAgentCheckout'
 
 export const metadata: Metadata = {
   title: 'AI Agent Teams | Metro Point Technology',
@@ -18,6 +19,7 @@ const plans = [
     platforms: 2,
     badge: null,
     accent: false,
+    planKey: 'basic' as const,
     features: [
       'Dedicated cloud-based AI agent on our secure infrastructure',
       'Connects to up to 2 of your existing platforms',
@@ -41,6 +43,7 @@ const plans = [
     platforms: 5,
     badge: 'Most Popular',
     accent: true,
+    planKey: 'premium' as const,
     features: [
       'Everything in Basic, plus:',
       'Connects to up to 5 of your existing platforms',
@@ -246,16 +249,7 @@ export default function AIAgentTeamsPage() {
                   </p>
                 </div>
 
-                <Link
-                  href="/contact"
-                  className={`block w-full text-center py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 ${
-                    plan.accent
-                      ? 'bg-accent hover:bg-accent-dark text-white shadow-lg'
-                      : 'bg-primary hover:bg-primary-dark text-white'
-                  }`}
-                >
-                  Get Started
-                </Link>
+                <AIAgentCheckout plan={plan.planKey} accent={plan.accent} />
               </div>
             ))}
           </div>
