@@ -41,7 +41,7 @@ export default function ProductShowcase() {
       borderColor: 'primary',
     },
     {
-      name: 'AI Agent Teams',
+      name: 'AI Agents',
       subtitle: 'Your Own AI Employee',
       description: 'A dedicated AI agent hosted on our infrastructure, connected to your agency platforms. Commission reconciliation, data entry, renewal tracking, and system-to-system sync — done automatically, 24/7.',
       icon: '🤖',
