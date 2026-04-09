@@ -35,7 +35,7 @@ export default function ProductShowcase() {
       ],
       pricing: '$99/user/mo add-on',
       setupFee: 'Requires AAMS Platform subscription',
-      link: '/AAMS/agencies',
+      link: '/AAMS-CRM',
       cta: 'See Details',
       highlight: false,
       borderColor: 'primary',
