@@ -5,7 +5,7 @@ import Image from 'next/image'
 import AgencyCalculator from '@/components/AgencyCalculator'
 
 export default function AAMSContent() {
-  const [view, setView] = useState<'agent' | 'agency'>('agent')
+  const [view, setView] = useState<'agent' | 'agency'>('agency')
 
   useEffect(() => {
     const saved = localStorage.getItem('ams_landing_view')
