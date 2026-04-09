@@ -110,17 +110,7 @@ export default function AAMSCRMPage() {
         </div>
       </section>
 
-      {/* Pricing Banner */}
-      <section className="py-8 bg-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-white text-xl font-bold">
-            $99/user/month add-on &nbsp;&bull;&nbsp; Requires AAMS Agency subscription ($199/mo)
-          </p>
-          <p className="text-white/80 text-sm mt-1">
-            Solo agents: upgrade to Agency tier first, then add CRM. Full agency operations for $298/mo.
-          </p>
-        </div>
-      </section>
+      {/* spacer — gold strip removed */}
 
       {/* Features */}
       <section className="py-20 bg-white">
@@ -180,43 +170,68 @@ export default function AAMSCRMPage() {
         </div>
       </section>
 
-      {/* How to Get CRM */}
+      {/* Pricing */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              How to Add CRM
+              Simple Pricing
             </h2>
+            <p className="text-lg text-neutral-light max-w-2xl mx-auto">
+              AAMS CRM is an add-on to the AAMS Platform. You must have an active AAMS Agency subscription to add CRM.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                step: '01',
-                icon: '🏢',
-                title: 'Get AAMS Agency',
-                description: 'Sign up for AAMS Platform on the Agency tier ($199/mo). Already have it? Skip to step 2.',
-              },
-              {
-                step: '02',
-                icon: '➕',
-                title: 'Add CRM',
-                description: 'Inside your AAMS dashboard, add the CRM module for $99/user/month. Instant activation.',
-              },
-              {
-                step: '03',
-                icon: '🚀',
-                title: 'Start Selling',
-                description: 'Closer and Pulse are ready to work. Import your contacts, set up your pipeline, and let the AI agents handle the rest.',
-              },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <div className="text-accent font-bold text-sm mb-2">STEP {item.step}</div>
-                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
-                <p className="text-neutral-light">{item.description}</p>
+          <div className="max-w-lg mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl ring-2 ring-primary overflow-hidden">
+              <div className="p-8 md:p-10">
+                <div className="text-5xl mb-4">📇</div>
+                <h3 className="text-2xl font-bold text-primary mb-2">AAMS CRM</h3>
+                <p className="text-accent font-semibold mb-6">AI-Powered Sales & Quoting</p>
+
+                <div className="border-t border-neutral-lighter pt-6 mb-6">
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-4xl font-bold text-primary">$99</span>
+                    <span className="text-neutral-light">/user/month</span>
+                  </div>
+                  <p className="text-sm text-neutral-light">Add-on to AAMS Agency ($199/mo)</p>
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {[
+                    'AI agent Closer — shops policies, compares quotes, flags red flags',
+                    'AI agent Pulse — renewal reminders, client health, follow-ups',
+                    '18 ACORD form generators (personal + commercial)',
+                    '7-stage sales pipeline with hard-gate enforcement',
+                    'MGA submission tracking & quote comparison',
+                    'Full contact management with tags and search',
+                    'Task management with priorities and due dates',
+                    'Role-based access (Admin, Manager, Agent, Owner)',
+                  ].map((feature, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-accent mr-2 flex-shrink-0">✓</span>
+                      <span className="text-sm text-primary">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="https://ams.metropointtech.com/login"
+                  className="block w-full text-center bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
+                >
+                  Add CRM to My AAMS
+                </Link>
               </div>
-            ))}
+            </div>
+
+            <div className="mt-6 text-center space-y-2">
+              <p className="text-sm text-neutral-light">
+                Don't have AAMS yet? <Link href="/AAMS/agencies" className="text-accent font-semibold hover:underline">Sign up for AAMS Agency first</Link>
+              </p>
+              <p className="text-sm text-neutral-light">
+                Solo agents: upgrade to the Agency tier ($199/mo), then add CRM for $99/user/mo.
+              </p>
+            </div>
           </div>
         </div>
       </section>
