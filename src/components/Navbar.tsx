@@ -30,6 +30,9 @@ export default function Navbar() {
             <Link href="/services" className="text-primary hover:text-primary transition">
               Services
             </Link>
+            <Link href="/ai-agent-teams" className="text-primary hover:text-primary transition">
+              AI Agents
+            </Link>
             <Link href="/about" className="text-primary hover:text-primary transition">
               About
             </Link>
@@ -79,6 +82,9 @@ export default function Navbar() {
             </Link>
             <Link href="/services" className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition">
               Services
+            </Link>
+            <Link href="/ai-agent-teams" className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition">
+              AI Agents
             </Link>
             <Link href="/about" className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition">
               About
