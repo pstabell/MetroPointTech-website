@@ -21,6 +21,12 @@ const nextConfig = {
         destination: 'https://www.metropointtech.com/AAMS',
         permanent: true,
       },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'app.agentcommissiontracker.com' }],
+        destination: 'https://ams.metropointtech.com/login',
+        permanent: true,
+      },
     ]
   },
 }
