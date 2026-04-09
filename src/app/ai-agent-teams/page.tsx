@@ -4,7 +4,7 @@ import AIAgentCheckout from '@/components/AIAgentCheckout'
 
 export const metadata: Metadata = {
   title: 'AI Agent Teams | Metro Point Technology',
-  description: 'Your own dedicated AI employee, connected to your agency systems. 24/7 back-office automation for insurance agencies. Two plans: Basic ($499/mo) and Premium ($999/mo).',
+  description: 'Your own dedicated AI employee, connected to your agency systems. 24/7 back-office automation for insurance agencies. Two plans: Basic ($499.99/mo) and Premium ($999.99/mo).',
   keywords: 'AI agent, insurance automation, back office automation, commission reconciliation, agency management, AI employee, insurance technology',
 }
 
@@ -12,8 +12,8 @@ const plans = [
   {
     name: 'AI Agent Basic',
     tagline: 'Your own AI employee, connected to your systems',
-    setupPrice: '$999',
-    monthlyPrice: '$499',
+    setupPrice: '$999.99',
+    monthlyPrice: '$499.99',
     setupHours: '4 hours',
     monthlyHours: '1 hour',
     platforms: 2,
@@ -36,8 +36,8 @@ const plans = [
   {
     name: 'AI Agent Premium',
     tagline: 'Full-service AI operations for your entire agency',
-    setupPrice: '$1,999',
-    monthlyPrice: '$999',
+    setupPrice: '$1,999.99',
+    monthlyPrice: '$999.99',
     setupHours: '8 hours',
     monthlyHours: '2 hours',
     platforms: 5,

@@ -37,8 +37,8 @@ PRODUCT — AAMS CRM (NOW LIVE):
 - Available at crm.metropointtech.com
 
 PRICING:
-- AAMS: $99/user/month — commission tracking, reconciliation, policy management, AI back office
-- AAMS CRM: $99/user/month — sales pipeline, ACORD forms, MGA submissions, quote comparison, Closer + Pulse AI agents
+- AAMS: $99.99/user/month — commission tracking, reconciliation, policy management, AI back office
+- AAMS CRM: $99.99/user/month — sales pipeline, ACORD forms, MGA submissions, quote comparison, Closer + Pulse AI agents
 - Both together: $198/user/month
 - No setup fees, no exit fees, cancel anytime, full data portability
 - 14-day free trial, no credit card required

@@ -279,7 +279,7 @@ export default function AMSProduct() {
                 <p className="text-primary">20+ agents, multiple locations</p>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold text-primary">$999/month</div>
+                <div className="text-2xl font-bold text-primary">$999.99/month</div>
                 <div className="text-sm text-primary">+ $10,000 setup</div>
               </div>
             </div>

@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'AAMS CRM | AI-Powered Sales & Quoting | Metro Point Technology',
-  description: 'Autonomous CRM built for insurance agencies. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99/user/mo add-on to AAMS Platform.',
+  description: 'Autonomous CRM built for insurance agencies. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99.99/user/mo add-on to AAMS Platform.',
   keywords: 'insurance CRM, AI sales, ACORD forms, insurance quoting, renewal management, agency CRM, insurance pipeline',
 }
 
@@ -191,10 +191,10 @@ export default function AAMSCRMPage() {
 
                 <div className="border-t border-neutral-lighter pt-6 mb-6">
                   <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-4xl font-bold text-primary">$99</span>
+                    <span className="text-4xl font-bold text-primary">$99.99</span>
                     <span className="text-neutral-light">/user/month</span>
                   </div>
-                  <p className="text-sm text-neutral-light">Add-on to AAMS Agency ($199/mo)</p>
+                  <p className="text-sm text-neutral-light">Add-on to AAMS Agency ($199.99/mo)</p>
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -229,7 +229,7 @@ export default function AAMSCRMPage() {
                 Don't have AAMS yet? <Link href="/AAMS/agencies" className="text-accent font-semibold hover:underline">Sign up for AAMS Agency first</Link>
               </p>
               <p className="text-sm text-neutral-light">
-                Solo agents: upgrade to the Agency tier ($199/mo), then add CRM for $99/user/mo.
+                Solo agents: upgrade to the Agency tier ($199.99/mo), then add CRM for $99.99/user/mo.
               </p>
             </div>
           </div>

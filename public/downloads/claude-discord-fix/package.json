@@ -1,0 +1,26 @@
+{
+  "name": "claude-discord-mcp-server",
+  "version": "1.0.0",
+  "description": "Custom MCP server to replace Claude Code's broken Discord channels plugin (GitHub Issue #36477)",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "discord.js": "^14.18.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "claude-code",
+    "discord",
+    "mcp",
+    "model-context-protocol",
+    "channels-fix"
+  ],
+  "license": "MIT",
+  "author": "Metro Point Technology (https://www.MetroPointTechnology.com)"
+}
