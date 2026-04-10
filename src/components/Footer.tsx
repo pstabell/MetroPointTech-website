@@ -24,18 +24,23 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Products</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/products/ams" className="text-blue-100 hover:text-accent transition">
-                  AMS Platform
+                <Link href="/AAMS" className="text-blue-100 hover:text-accent transition">
+                  AAMS Platform
                 </Link>
               </li>
               <li>
-                <Link href="/products/commission-tracker" className="text-blue-100 hover:text-accent transition">
-                  Commission Tracker
+                <Link href="/AAMS-CRM" className="text-blue-100 hover:text-accent transition">
+                  AAMS-CRM
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-blue-100 hover:text-accent transition">
-                  Agent CRM (Q1 2026)
+                <Link href="/AAMS/agents" className="text-blue-100 hover:text-accent transition">
+                  AAMS-Solo
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-agent-teams" className="text-blue-100 hover:text-accent transition">
+                  AI Agents
                 </Link>
               </li>
               <li>
