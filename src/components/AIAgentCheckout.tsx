@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 interface AIAgentCheckoutProps {
-  plan: 'basic' | 'premium'
+  plan: 'basic' | 'premium' | 'enterprise'
   accent: boolean
 }
 

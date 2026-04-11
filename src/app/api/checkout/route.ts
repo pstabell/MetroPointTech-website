@@ -4,7 +4,7 @@ import Stripe from 'stripe'
 /* ------------------------------------------------------------------ */
 /* POST /api/checkout                                                  */
 /* Creates a Stripe Checkout session for AI Agent Teams plans.         */
-/* Body: { plan: 'basic' | 'premium', email: string }                 */
+/* Body: { plan: 'basic' | 'premium' | 'enterprise', email: string }   */
 /* ------------------------------------------------------------------ */
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
@@ -22,6 +22,11 @@ const PLANS: Record<string, { monthly: string; setup: string; name: string }> = 
     setup: process.env.STRIPE_PRICE_AI_PREMIUM_SETUP || '',
     name: 'AI Agent Premium',
   },
+  enterprise: {
+    monthly: process.env.STRIPE_PRICE_AI_ENTERPRISE_MONTHLY || '',
+    setup: process.env.STRIPE_PRICE_AI_ENTERPRISE_SETUP || '',
+    name: 'AI Agent Enterprise',
+  },
 }
 
 export async function POST(req: NextRequest) {
@@ -29,7 +34,7 @@ export async function POST(req: NextRequest) {
   const { plan, email } = body as { plan?: string; email?: string }
 
   if (!plan || !PLANS[plan]) {
-    return NextResponse.json({ error: 'Invalid plan. Must be basic or premium.' }, { status: 400 })
+    return NextResponse.json({ error: 'Invalid plan. Must be basic, premium, or enterprise.' }, { status: 400 })
   }
   if (!email) {
     return NextResponse.json({ error: 'Email is required.' }, { status: 400 })

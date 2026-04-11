@@ -4,7 +4,7 @@ import AIAgentCheckout from '@/components/AIAgentCheckout'
 
 export const metadata: Metadata = {
   title: 'AI Agent Teams | Metro Point Technology',
-  description: 'Your own dedicated AI employee, connected to your agency systems. 24/7 back-office automation for insurance agencies. Two plans: Basic ($499.99/mo) and Premium ($999.99/mo).',
+  description: 'Your own dedicated AI employees, connected to your agency systems. 24/7 back-office automation for insurance agencies. Three plans: Basic ($499.99/mo), Premium ($999.99/mo), and Enterprise ($2,499.99/mo).',
   keywords: 'AI agent, insurance automation, back office automation, commission reconciliation, agency management, AI employee, insurance technology',
 }
 
@@ -56,6 +56,29 @@ const plans = [
     ],
     idealFor: 'Agencies running HawkSoft + AgencyZoom + accounting software + carrier portals + CRM that need everything tied together seamlessly.',
     platformExamples: 'e.g. Applied Epic + AgencyZoom + QuickBooks + carrier portals + CRM',
+  },
+  {
+    name: 'AI Agent Enterprise',
+    tagline: 'A three-agent AI team replacing your entire back-office department',
+    setupPrice: '$4,999.99',
+    monthlyPrice: '$2,499.99',
+    setupHours: '20 hours',
+    monthlyHours: '4 hours',
+    platforms: 10,
+    badge: null,
+    accent: false,
+    planKey: 'enterprise' as const,
+    features: [
+      'Everything in Premium, plus:',
+      '3 dedicated AI agents working in parallel',
+      'Connects to up to 10 of your existing platforms',
+      '20 hours of setup and configuration (priority queue)',
+      'Custom workflow development built around your agency',
+      'Quarterly agent performance audit and tuning',
+      'Double the monthly training and optimization time',
+    ],
+    idealFor: 'Agencies with 10+ producers and multiple operational systems that want to replace their entire back-office team with a coordinated AI workforce.',
+    platformExamples: 'e.g. Applied Epic + AgencyZoom + QuickBooks + 3 carrier portals + Salesforce + DocuSign + Google Workspace + HubSpot',
   },
 ]
 
@@ -176,11 +199,11 @@ export default function AIAgentTeamsPage() {
               Choose Your Plan
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
-              Two straightforward plans. No hidden fees. No long-term contracts.
+              Three straightforward plans. No hidden fees. No long-term contracts.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {plans.map((plan, index) => (
               <div
                 key={index}
