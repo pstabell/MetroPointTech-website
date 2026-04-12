@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Alata } from 'next/font/google'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -36,6 +38,8 @@ export default function RootLayout({
           src="/js/mpt-chat-widget.js"
           strategy="afterInteractive"
         />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
