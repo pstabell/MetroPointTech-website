@@ -40,6 +40,26 @@ export default function RootLayout({
         />
         <Analytics />
         <SpeedInsights />
+        <Script id="mkt-hub-analytics" strategy="afterInteractive">{`
+          (function(){
+            var d='https://mpt-marketing-hub.vercel.app/api/analytics/drain';
+            function send(){
+              try{navigator.sendBeacon(d,JSON.stringify([{
+                eventType:'pageview',path:location.pathname,
+                origin:location.origin,referrer:document.referrer||'',
+                queryParams:location.search||'',
+                timestamp:Date.now(),
+                projectId:'metropointtech',
+                deviceType:/Mobi/i.test(navigator.userAgent)?'mobile':'desktop',
+                vercelEnvironment:'production'
+              }]))}catch(e){}
+            }
+            send();
+            var pushState=history.pushState;
+            history.pushState=function(){pushState.apply(this,arguments);send()};
+            window.addEventListener('popstate',send);
+          })();
+        `}</Script>
       </body>
     </html>
   )
