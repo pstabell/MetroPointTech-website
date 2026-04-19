@@ -271,7 +271,7 @@ export default function AAMSContent() {
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple Pricing</h2>
           <p className="text-lg text-neutral-dark max-w-2xl mx-auto mb-12">
-            A fraction of what legacy AMS platforms charge. Full autonomous operations included. 14-day free trial on every plan.
+            A fraction of what legacy AMS platforms charge. Full autonomous operations included. 14-day free trial on every plan — no credit card required on AAMS Starter and AAMS Agency Self-Service, card required on higher tiers.
           </p>
 
           {!isAgency ? (
@@ -369,9 +369,9 @@ export default function AAMSContent() {
               </div>
             </div>
           ) : (
-            /* Agency Comparison — 2 columns */
+            /* Agency Comparison — 3 columns */
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {/* Self-Service */}
                 <div className="bg-white border-2 border-violet-400 rounded-2xl p-8 shadow-lg flex flex-col">
                   <div className="text-sm font-semibold text-violet-600 mb-1">AAMS AGENCY</div>
@@ -438,6 +438,37 @@ export default function AAMSContent() {
                     Start Free 14-Day Trial
                   </a>
                 </div>
+
+                {/* AI Plus */}
+                <div className="bg-white border-2 border-violet-700 rounded-2xl p-8 shadow-lg flex flex-col relative">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-700 text-white text-xs font-semibold px-4 py-1 rounded-full">
+                    BEST VALUE
+                  </div>
+                  <div className="text-sm font-semibold text-violet-700 mb-1">AAMS AGENCY AI</div>
+                  <div className="text-sm text-neutral-dark mb-4">Plus — 3 Seats Bundled</div>
+                  <div className="text-5xl font-bold mb-1">$299.99</div>
+                  <div className="text-neutral-dark mb-6">per month</div>
+                  <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
+                    {[
+                      { feature: 'Everything in Agency AI', included: true },
+                      { feature: 'Three Full AI Seats Included', included: true },
+                      { feature: 'AI Agentic Reconciliation', included: true },
+                      { feature: 'AI Back Office Agent', included: true },
+                      { feature: 'Email Auto-Processing', included: true },
+                      { feature: 'Shared Agency Dashboard', included: true },
+                      { feature: 'Priority Onboarding', included: true },
+                    ].map((item) => (
+                      <li key={item.feature} className="flex items-center gap-2">
+                        <span className="text-violet-600">{'\u2713'}</span>
+                        <span>{item.feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs text-neutral-dark mb-4">3 users included. Save $100/mo vs buying seats separately. Extra users: $99.99/mo each.</div>
+                  <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-violet-700 hover:bg-violet-800 text-white font-semibold rounded-lg transition text-center">
+                    Subscribe Now
+                  </a>
+                </div>
               </div>
 
               {/* AI Action Bucket Add-On */}
@@ -449,7 +480,11 @@ export default function AAMSContent() {
             </div>
           )}
 
-          <p className="text-sm text-neutral-dark mt-8">All plans include a 14-day free trial. No credit card required. Cancel anytime.</p>
+          <p className="text-sm text-neutral-dark mt-8">
+            AAMS Starter ($19.99) and AAMS Agency Self-Service ($99.99) come with a 14-day free trial — no credit card required.
+            AAMS Pro, Autopilot, and Agency AI also include a 14-day free trial but require a credit card at signup.
+            AAMS Agency AI Plus ($299.99) has no trial — it is a volume-discount plan billed on day one. Cancel anytime.
+          </p>
         </div>
       </section>
     </>
