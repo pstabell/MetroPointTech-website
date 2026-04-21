@@ -337,9 +337,10 @@ export default async function BlogPostPage({
           <h2 className="text-2xl font-serif font-bold text-primary mb-4">
             Want to learn more?
           </h2>
-          <p className="text-neutral-light mb-6">
-            Metro Point Technology builds intelligent software solutions for
-            businesses. Let us know how we can help.
+          <p className="text-neutral-light mb-6 text-center">
+            Metro Point Technology builds intelligent software solutions for businesses.
+            <br />
+            Let us know how we can help.
           </p>
           <Link
             href="/contact"
