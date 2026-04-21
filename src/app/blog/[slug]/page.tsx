@@ -242,6 +242,42 @@ See how AI Commission Tracker helps agencies reduce manual work and catch more e
   },
 };
 
+// Curated inline image pool — pulled from email-images/commission-problems.
+// Renderer picks 2 deterministically from this list per post (seeded by slug)
+// so the same article always shows the same images, but different articles
+// look visually distinct.
+const INLINE_IMAGE_POOL = [
+  "commission-problems/commission-13.jpg",
+  "commission-problems/commission-16.jpg",
+  "commission-problems/commission-17.jpg",
+  "commission-problems/commission-18.jpg",
+  "commission-problems/commission-19.jpg",
+  "commission-problems/commission-20.jpg",
+  "commission-problems/commission-24.jpg",
+  "commission-problems/commission-29.jpg",
+  "commission-problems/commission-30.jpg",
+  "commission-problems/pexels-3483098.jpg",
+  "commission-problems/pexels-4475523.jpg",
+  "commission-problems/pexels-6694543.jpg",
+  "commission-problems/pexels-7821702.jpg",
+];
+
+const SUPABASE_PUBLIC_BASE =
+  "https://umedbjslspilqakwnapa.supabase.co/storage/v1/object/public/email-images/";
+
+function pickInlineImages(slug: string, featured: string | null | undefined): string[] {
+  // Cheap deterministic hash so the same slug always picks the same pair.
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  const pool = INLINE_IMAGE_POOL.filter(
+    (p) => !featured || !featured.includes(p)
+  );
+  const a = pool[h % pool.length];
+  let b = pool[(h * 7 + 13) % pool.length];
+  if (a === b) b = pool[(h + 5) % pool.length];
+  return [SUPABASE_PUBLIC_BASE + a, SUPABASE_PUBLIC_BASE + b];
+}
+
 // ---- Lightweight markdown rendering --------------------------------
 // Turns Maven's markdown-flavored body into proper HTML blocks. Supports
 // ## h2 headings, ### h3 subheads, - bullets, > blockquotes, **bold**, and
@@ -399,6 +435,19 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const blocks = renderMarkdownBlocks(post.content);
+  const inlineImages = pickInlineImages(slug, post.featured_image_url);
+  // Insert inline images after the 2nd and 4th h2 sections so the eye
+  // zigzags down the page. Float left then right.
+  const h2Indices: number[] = [];
+  blocks.forEach((b, i) => { if (b.kind === "h2") h2Indices.push(i); });
+  // Position values are the index in `blocks` AFTER which to inject.
+  const injectAfter: Record<number, { url: string; side: "left" | "right" }> = {};
+  if (h2Indices[1] !== undefined && inlineImages[0]) {
+    injectAfter[h2Indices[1]] = { url: inlineImages[0], side: "left" };
+  }
+  if (h2Indices[3] !== undefined && inlineImages[1]) {
+    injectAfter[h2Indices[3]] = { url: inlineImages[1], side: "right" };
+  }
 
   return (
     <main>
@@ -428,7 +477,7 @@ export default async function BlogPostPage({
         </div>
       </section>
 
-      {/* Featured image (Supabase posts only; legacy posts omit this) */}
+      {/* Featured image — show the full image without cropping */}
       {post.featured_image_url && (
         <section className="bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
@@ -436,8 +485,7 @@ export default async function BlogPostPage({
             <img
               src={post.featured_image_url}
               alt={post.title}
-              className="w-full rounded-lg object-cover"
-              style={{ maxHeight: "400px" }}
+              className="w-full h-auto rounded-lg shadow-md"
             />
           </div>
         </section>
@@ -445,16 +493,32 @@ export default async function BlogPostPage({
 
       {/* Content */}
       <section className="py-12 bg-white">
-        <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
           {blocks.map((block, i) => {
+            const inject = injectAfter[i];
+            const injectedImg = inject ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                key={`img-${i}`}
+                src={inject.url}
+                alt=""
+                className={`rounded-lg shadow-md mb-4 w-full md:w-2/5 ${
+                  inject.side === "left"
+                    ? "md:float-left md:mr-6 md:mt-2"
+                    : "md:float-right md:ml-6 md:mt-2"
+                }`}
+              />
+            ) : null;
             if (block.kind === "h2") {
               return (
-                <h2
-                  key={i}
-                  className="text-2xl md:text-3xl font-serif font-bold text-primary mt-12 mb-4 leading-snug"
-                >
-                  {renderInline(block.text)}
-                </h2>
+                <React.Fragment key={i}>
+                  <h2
+                    className="text-2xl md:text-3xl font-serif font-bold text-primary mt-12 mb-4 leading-snug clear-both"
+                  >
+                    {renderInline(block.text)}
+                  </h2>
+                  {injectedImg}
+                </React.Fragment>
               );
             }
             if (block.kind === "h3") {
@@ -497,6 +561,8 @@ export default async function BlogPostPage({
               </p>
             );
           })}
+          {/* Clear floats so the next section doesn't wrap into the last image */}
+          <div className="clear-both"></div>
         </article>
       </section>
 
