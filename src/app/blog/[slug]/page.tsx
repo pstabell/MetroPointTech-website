@@ -265,17 +265,30 @@ const INLINE_IMAGE_POOL = [
 const SUPABASE_PUBLIC_BASE =
   "https://umedbjslspilqakwnapa.supabase.co/storage/v1/object/public/email-images/";
 
-function pickInlineImages(slug: string, featured: string | null | undefined): string[] {
-  // Cheap deterministic hash so the same slug always picks the same pair.
+function pickInlineImages(
+  slug: string,
+  featured: string | null | undefined,
+  count: number,
+): string[] {
+  // Cheap deterministic hash so the same slug always picks the same images.
   let h = 0;
   for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
   const pool = INLINE_IMAGE_POOL.filter(
     (p) => !featured || !featured.includes(p)
   );
-  const a = pool[h % pool.length];
-  let b = pool[(h * 7 + 13) % pool.length];
-  if (a === b) b = pool[(h + 5) % pool.length];
-  return [SUPABASE_PUBLIC_BASE + a, SUPABASE_PUBLIC_BASE + b];
+  // Pick `count` distinct entries using multiple hash variants.
+  const picks: string[] = [];
+  const seeds = [h, h * 7 + 13, h * 13 + 29, h * 17 + 41];
+  for (const seed of seeds) {
+    if (picks.length >= count) break;
+    let idx = seed % pool.length;
+    // Step through until we find one not already picked.
+    for (let tries = 0; tries < pool.length && picks.includes(pool[idx]); tries++) {
+      idx = (idx + 1) % pool.length;
+    }
+    picks.push(pool[idx]);
+  }
+  return picks.map((p) => SUPABASE_PUBLIC_BASE + p);
 }
 
 // ---- Lightweight markdown rendering --------------------------------
@@ -435,19 +448,39 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const blocks = renderMarkdownBlocks(post.content);
-  const inlineImages = pickInlineImages(slug, post.featured_image_url);
-  // Insert inline images after the 2nd and 4th h2 sections so the eye
-  // zigzags down the page. Float left then right.
+  // Find all h2 section starts. Decide image count by article length — short
+  // posts get 2 inline images, longer posts (5+ sections) get 3. Combined
+  // with the featured image at top that's 3–4 images per post, our target.
   const h2Indices: number[] = [];
   blocks.forEach((b, i) => { if (b.kind === "h2") h2Indices.push(i); });
-  // Position values are the index in `blocks` AFTER which to inject.
+  const imageCount = h2Indices.length >= 5 ? 3 : 2;
+  const inlineImages = pickInlineImages(slug, post.featured_image_url, imageCount);
+  // Drop images at evenly spaced h2 anchors (skip the very first so the
+  // featured image gets breathing room before the next visual). Alternate
+  // left/right so the eye zigzags down the page.
   const injectAfter: Record<number, { url: string; side: "left" | "right" }> = {};
-  if (h2Indices[1] !== undefined && inlineImages[0]) {
-    injectAfter[h2Indices[1]] = { url: inlineImages[0], side: "left" };
+  const anchors: number[] = [];
+  if (imageCount === 2 && h2Indices.length >= 4) {
+    anchors.push(h2Indices[1], h2Indices[3]);
+  } else if (imageCount === 2) {
+    anchors.push(h2Indices[1] ?? h2Indices[0], h2Indices[h2Indices.length - 1]);
+  } else if (imageCount === 3) {
+    // Three-image layout: roughly 1/4, 1/2, 3/4 through the h2 list.
+    const n = h2Indices.length;
+    anchors.push(
+      h2Indices[Math.max(1, Math.floor(n * 0.25))],
+      h2Indices[Math.floor(n * 0.5)],
+      h2Indices[Math.min(n - 1, Math.floor(n * 0.75))],
+    );
   }
-  if (h2Indices[3] !== undefined && inlineImages[1]) {
-    injectAfter[h2Indices[3]] = { url: inlineImages[1], side: "right" };
-  }
+  anchors.forEach((blockIdx, i) => {
+    if (inlineImages[i] !== undefined) {
+      injectAfter[blockIdx] = {
+        url: inlineImages[i],
+        side: i % 2 === 0 ? "left" : "right",
+      };
+    }
+  });
 
   return (
     <main>
