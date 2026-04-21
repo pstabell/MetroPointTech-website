@@ -1,8 +1,67 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { createClient } from "@supabase/supabase-js";
 
-// Blog post content stored as simple objects
-// Maven and Spark can add new posts by adding entries here
+export const dynamic = "force-dynamic";
+
+// Supabase creds — env-first with hardcoded public anon key fallback.
+const SUPABASE_URL =
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  "https://umedbjslspilqakwnapa.supabase.co";
+const SUPABASE_ANON_KEY =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtZWRianNsc3BpbHFha3duYXBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxNDQyODcsImV4cCI6MjA4NTcyMDI4N30.3aKfBRVZy2y1pU_oBWzyAr0TU0l5DXNmkNtRmGXJDGc";
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+type ResolvedPost = {
+  title: string;
+  date: string;
+  category: string;
+  readTime: string;
+  content: string;
+  featured_image_url?: string | null;
+};
+
+async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
+  try {
+    const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const column = UUID_RE.test(key) ? "id" : "slug";
+    const { data } = await sb
+      .from("mkt_blog_posts")
+      .select(
+        "title, body, product_or_service, published_at, featured_image_url"
+      )
+      .eq(column, key)
+      .eq("status", "published")
+      .single();
+    if (!data) return null;
+    const body = (data.body as string) || "";
+    const date = (data.published_at as string)
+      ? new Date(data.published_at as string).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      : "";
+    return {
+      title: (data.title as string) || "(untitled)",
+      date,
+      category: (data.product_or_service as string) || "Insurance",
+      readTime: body
+        ? `${Math.max(1, Math.round(body.length / 1500))} min read`
+        : "",
+      content: body,
+      featured_image_url: (data.featured_image_url as string) || null,
+    };
+  } catch {
+    return null;
+  }
+}
+
+// Hardcoded legacy blog posts. Preserved so existing URLs keep working even
+// if Supabase is unreachable. Any Supabase post with the same slug will
+// render the Supabase version instead.
 const blogPosts: Record<string, { title: string; date: string; category: string; readTime: string; content: string }> = {
   "why-insurance-agencies-lose-thousands-to-commission-errors": {
     title: "Why Insurance Agencies Lose Thousands to Commission Errors",
@@ -182,12 +241,24 @@ See how AI Commission Tracker helps agencies reduce manual work and catch more e
   },
 };
 
-export function generateStaticParams() {
-  return Object.keys(blogPosts).map((slug) => ({ slug }));
+async function resolvePost(slug: string): Promise<ResolvedPost | null> {
+  // Supabase wins over hardcoded legacy entries so republished posts reflect
+  // the latest edit. Fall back to the inline legacy map for the 6 original
+  // articles whose slugs are not in Supabase.
+  const sb = await loadFromSupabase(slug);
+  if (sb) return sb;
+  const legacy = blogPosts[slug];
+  if (!legacy) return null;
+  return { ...legacy };
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await resolvePost(slug);
   if (!post) return { title: "Post Not Found" };
   return {
     title: `${post.title} | Metro Point Technology Blog`,
@@ -195,8 +266,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug];
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await resolvePost(slug);
   if (!post) notFound();
 
   const paragraphs = post.content.split("\n\n").filter((p) => p.trim());
@@ -216,14 +292,33 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <span className="text-xs font-semibold bg-white/20 px-2.5 py-1 rounded-full">
               {post.category}
             </span>
-            <span className="text-sm text-white/70">{post.date}</span>
-            <span className="text-sm text-white/70">{post.readTime}</span>
+            {post.date && (
+              <span className="text-sm text-white/70">{post.date}</span>
+            )}
+            {post.readTime && (
+              <span className="text-sm text-white/70">{post.readTime}</span>
+            )}
           </div>
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-white">
             {post.title}
           </h1>
         </div>
       </section>
+
+      {/* Featured image (Supabase posts only; legacy posts omit this) */}
+      {post.featured_image_url && (
+        <section className="bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.featured_image_url}
+              alt={post.title}
+              className="w-full rounded-lg object-cover"
+              style={{ maxHeight: "400px" }}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Content */}
       <section className="py-12 bg-white">
