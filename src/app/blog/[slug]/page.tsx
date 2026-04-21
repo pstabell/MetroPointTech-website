@@ -1,3 +1,4 @@
+import * as React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
@@ -241,6 +242,128 @@ See how AI Commission Tracker helps agencies reduce manual work and catch more e
   },
 };
 
+// ---- Lightweight markdown rendering --------------------------------
+// Turns Maven's markdown-flavored body into proper HTML blocks. Supports
+// ## h2 headings, ### h3 subheads, - bullets, > blockquotes, **bold**, and
+// *italic*. Strips any leftover SEO frontmatter like "SEO Title:" lines
+// that bled in from the draft template.
+type Block =
+  | { kind: "h2"; text: string }
+  | { kind: "h3"; text: string }
+  | { kind: "p"; text: string }
+  | { kind: "ul"; items: string[] }
+  | { kind: "quote"; text: string };
+
+const STRIP_PREFIXES = [
+  "SEO Title:",
+  "Slug:",
+  "Meta Description:",
+  "CTA:",
+  "CTA URL:",
+  "Primary CTA:",
+  "Secondary CTA:",
+  "Landing Page URL:",
+  "Website URL:",
+  "Title:",
+];
+
+function renderMarkdownBlocks(raw: string): Block[] {
+  const lines = raw.split("\n");
+  const out: Block[] = [];
+  let para: string[] = [];
+  let list: string[] = [];
+
+  function flushPara() {
+    if (para.length === 0) return;
+    out.push({ kind: "p", text: para.join(" ").trim() });
+    para = [];
+  }
+  function flushList() {
+    if (list.length === 0) return;
+    out.push({ kind: "ul", items: list });
+    list = [];
+  }
+
+  for (const rawLine of lines) {
+    const line = rawLine.trimEnd();
+    const trimmed = line.trim();
+
+    // Skip the markdown frontmatter labels Maven leaves behind.
+    if (STRIP_PREFIXES.some((p) => trimmed.toLowerCase().startsWith(p.toLowerCase()))) {
+      continue;
+    }
+    // Blank line — flush whatever's in flight.
+    if (!trimmed) {
+      flushPara();
+      flushList();
+      continue;
+    }
+    // Heading 2.
+    if (trimmed.startsWith("## ")) {
+      flushPara();
+      flushList();
+      out.push({ kind: "h2", text: trimmed.slice(3).trim() });
+      continue;
+    }
+    // Heading 3 — sub-section, used for numbered points like "### 1. Missed".
+    if (trimmed.startsWith("### ")) {
+      flushPara();
+      flushList();
+      out.push({ kind: "h3", text: trimmed.slice(4).trim() });
+      continue;
+    }
+    // Single-# title at the very top — drop it; the page already shows it.
+    if (trimmed.startsWith("# ")) {
+      flushPara();
+      flushList();
+      continue;
+    }
+    // Blockquote.
+    if (trimmed.startsWith("> ")) {
+      flushPara();
+      flushList();
+      out.push({ kind: "quote", text: trimmed.slice(2).trim() });
+      continue;
+    }
+    // List item.
+    if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+      flushPara();
+      list.push(trimmed.slice(2).trim());
+      continue;
+    }
+    // Otherwise it's a paragraph line — accumulate.
+    flushList();
+    para.push(trimmed);
+  }
+  flushPara();
+  flushList();
+  return out;
+}
+
+// Inline transform: **bold** → <strong>, *italic* → <em>. Run after the
+// block split so we don't accidentally bold across paragraphs.
+function renderInline(text: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  // Combined regex for **bold** and *italic*. Bold checked first to avoid
+  // greedy single-asterisk matching inside double-asterisks.
+  const re = /(\*\*[^*]+\*\*|\*[^*]+\*)/g;
+  let lastIdx = 0;
+  let key = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > lastIdx) nodes.push(text.slice(lastIdx, m.index));
+    const tok = m[0];
+    if (tok.startsWith("**")) {
+      nodes.push(<strong key={key++}>{tok.slice(2, -2)}</strong>);
+    } else {
+      nodes.push(<em key={key++}>{tok.slice(1, -1)}</em>);
+    }
+    lastIdx = m.index + tok.length;
+  }
+  if (lastIdx < text.length) nodes.push(text.slice(lastIdx));
+  return nodes;
+}
+
 async function resolvePost(slug: string): Promise<ResolvedPost | null> {
   // Supabase wins over hardcoded legacy entries so republished posts reflect
   // the latest edit. Fall back to the inline legacy map for the 6 original
@@ -275,7 +398,7 @@ export default async function BlogPostPage({
   const post = await resolvePost(slug);
   if (!post) notFound();
 
-  const paragraphs = post.content.split("\n\n").filter((p) => p.trim());
+  const blocks = renderMarkdownBlocks(post.content);
 
   return (
     <main>
@@ -322,12 +445,58 @@ export default async function BlogPostPage({
 
       {/* Content */}
       <section className="py-12 bg-white">
-        <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg">
-          {paragraphs.map((p, i) => (
-            <p key={i} className="text-neutral leading-relaxed mb-6">
-              {p}
-            </p>
-          ))}
+        <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          {blocks.map((block, i) => {
+            if (block.kind === "h2") {
+              return (
+                <h2
+                  key={i}
+                  className="text-2xl md:text-3xl font-serif font-bold text-primary mt-12 mb-4 leading-snug"
+                >
+                  {renderInline(block.text)}
+                </h2>
+              );
+            }
+            if (block.kind === "h3") {
+              return (
+                <h3
+                  key={i}
+                  className="text-xl font-serif font-semibold text-primary mt-8 mb-3"
+                >
+                  {renderInline(block.text)}
+                </h3>
+              );
+            }
+            if (block.kind === "ul") {
+              return (
+                <ul key={i} className="list-disc pl-6 mb-6 space-y-2">
+                  {block.items.map((item, j) => (
+                    <li key={j} className="text-lg text-neutral leading-relaxed">
+                      {renderInline(item)}
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+            if (block.kind === "quote") {
+              return (
+                <blockquote
+                  key={i}
+                  className="border-l-4 border-accent bg-neutral-lighter pl-5 py-3 my-8 text-xl font-serif italic text-primary"
+                >
+                  {renderInline(block.text)}
+                </blockquote>
+              );
+            }
+            return (
+              <p
+                key={i}
+                className="text-lg text-neutral leading-relaxed mb-6"
+              >
+                {renderInline(block.text)}
+              </p>
+            );
+          })}
         </article>
       </section>
 
