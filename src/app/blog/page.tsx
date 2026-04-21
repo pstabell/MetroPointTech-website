@@ -29,71 +29,11 @@ interface BlogPost {
   isLegacy?: boolean;
 }
 
-// The 6 legacy posts that shipped with the original blog page. Kept inline
-// as hardcoded entries so they never disappear if Supabase is unreachable.
-// Supabase posts appear above these when published.
-const LEGACY_POSTS: BlogPost[] = [
-  {
-    slug: "why-insurance-agencies-lose-thousands-to-commission-errors",
-    title: "Why Insurance Agencies Lose Thousands to Commission Errors",
-    excerpt:
-      "Commission errors rarely arrive as one big obvious problem. They hide in renewals, endorsements, and broken spreadsheet workflows. Here is where the money slips and how to stop the leak.",
-    date: "March 28, 2026",
-    category: "Insurance",
-    readTime: "7 min read",
-    isLegacy: true,
-  },
-  {
-    slug: "how-we-fixed-claude-code-broken-discord-channels",
-    title: "How We Fixed Claude Code's Broken Discord Channels with a Custom MCP Server",
-    excerpt:
-      "Claude Code v2.1.85 has a confirmed bug where Discord channels stop processing after the first response. We built a custom MCP server to replace the broken plugin entirely.",
-    date: "March 27, 2026",
-    category: "AI Infrastructure",
-    readTime: "8 min read",
-    isLegacy: true,
-  },
-  {
-    slug: "how-to-dispute-underpaid-commissions-with-carriers",
-    title: "How to Dispute Underpaid Commissions with Carriers",
-    excerpt:
-      "A practical guide for insurance agents on identifying underpaid commissions, building a case, and getting carriers to pay what they owe.",
-    date: "March 27, 2026",
-    category: "Insurance",
-    readTime: "6 min read",
-    isLegacy: true,
-  },
-  {
-    slug: "5-signs-your-agency-needs-a-commission-tracker",
-    title: "5 Signs Your Agency Needs a Commission Tracker",
-    excerpt:
-      "Still using spreadsheets to track commissions? Here are five signs your agency has outgrown manual tracking and why AI Commission Tracker helps you recover missed revenue.",
-    date: "March 27, 2026",
-    category: "Insurance",
-    readTime: "5 min read",
-    isLegacy: true,
-  },
-  {
-    slug: "automated-reconciliation-saves-10-hours",
-    title: "How Automated Reconciliation Saves Insurance Agencies 10+ Hours a Month",
-    excerpt:
-      "Manual commission reconciliation quietly eats up more time than most agencies realize. Here is how automation helps agencies cut admin time and catch missed commissions faster.",
-    date: "March 26, 2026",
-    category: "Insurance",
-    readTime: "6 min read",
-    isLegacy: true,
-  },
-  {
-    slug: "hidden-cost-of-spreadsheet-commission-tracking",
-    title: "The Hidden Cost of Spreadsheet Commission Tracking",
-    excerpt:
-      "Spreadsheets might feel free, but the real cost of manual commission tracking is measured in lost revenue, wasted time, and missed discrepancies.",
-    date: "March 26, 2026",
-    category: "Insurance",
-    readTime: "5 min read",
-    isLegacy: true,
-  },
-];
+// The 6 legacy posts are now in Supabase (migrated 2026-04-21 with
+// social_generated_at preset to prevent spawn). This array is kept empty
+// as a safety net — if Supabase is fully unreachable the page just shows
+// an empty state instead of crashing. All rendering goes through Supabase.
+const LEGACY_POSTS: BlogPost[] = [];
 
 function categoryColor(cat: string) {
   switch (cat) {
