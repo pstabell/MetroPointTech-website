@@ -309,7 +309,11 @@ function pickInlineImages(
   count: number,
   pool: string[],
 ): string[] {
-  const filtered = pool.filter((p) => !featured || !featured.includes(p));
+  // Dedupe the pool by path — guarantees the seeded shuffle cannot hand
+  // back the same file twice regardless of what the storage list returned.
+  const seen = new Set<string>();
+  const unique = pool.filter(p => (seen.has(p) ? false : (seen.add(p), true)));
+  const filtered = unique.filter((p) => !featured || !featured.includes(p));
   if (filtered.length === 0) return [];
   const shuffled = seededShuffle(filtered, slug);
   const picks = shuffled.slice(0, Math.min(count, shuffled.length));
@@ -478,49 +482,51 @@ export default async function BlogPostPage({
   // with the featured image at top that's 3–4 images per post, our target.
   const h2Indices: number[] = [];
   blocks.forEach((b, i) => { if (b.kind === "h2") h2Indices.push(i); });
-  // Image count scales with article length: short articles get 3 inline
-  // images, longer articles (5+ h2 sections) get 4. Combined with the
-  // featured hero this yields 4-5 visuals per post.
-  const imageCount = h2Indices.length >= 5 ? 4 : 3;
+  // Anchor plan stays identical to the original 2-or-3 image layout that
+  // already looks clean on the bottom of every post. The ONE addition:
+  // a single intro image floated RIGHT near the top, anchored to the
+  // pull-quote (or lead paragraph if no quote exists). The bottom images
+  // keep their proven positions and left-side starting float.
+  const bottomCount = h2Indices.length >= 5 ? 3 : 2;
+  // One extra image for the intro placement. Pool must return enough
+  // distinct images to cover the full count.
+  const totalCount = bottomCount + 1;
   const inlinePool = await loadInlinePool();
-  const inlineImages = pickInlineImages(slug, post.featured_image_url, imageCount, inlinePool);
+  const inlineImages = pickInlineImages(slug, post.featured_image_url, totalCount, inlinePool);
 
-  // Anchor plan:
-  // 1. The first inline image drops RIGHT into the intro, before the first
-  //    h2. Anchor = the pull-quote if one exists, otherwise the lead
-  //    paragraph. This breaks up the top wall of text that readers see
-  //    immediately after the deck.
-  // 2. The rest follow h2 headings at evenly spaced intervals,
-  //    alternating left/right so the eye zigzags down the page.
   const injectAfter: Record<number, { url: string; side: "left" | "right" }> = {};
-  const anchors: Array<{ idx: number; side: "left" | "right" }> = [];
 
+  // Bottom anchors — same as before, alternating left/right starting LEFT.
+  const bottomAnchors: Array<{ idx: number; side: "left" | "right" }> = [];
+  if (bottomCount === 2 && h2Indices.length >= 4) {
+    bottomAnchors.push({ idx: h2Indices[1], side: "left" });
+    bottomAnchors.push({ idx: h2Indices[3], side: "right" });
+  } else if (bottomCount === 2) {
+    bottomAnchors.push({ idx: h2Indices[1] ?? h2Indices[0], side: "left" });
+    bottomAnchors.push({ idx: h2Indices[h2Indices.length - 1], side: "right" });
+  } else if (bottomCount === 3) {
+    const n = h2Indices.length;
+    bottomAnchors.push({ idx: h2Indices[Math.max(1, Math.floor(n * 0.25))], side: "left" });
+    bottomAnchors.push({ idx: h2Indices[Math.floor(n * 0.5)], side: "right" });
+    bottomAnchors.push({ idx: h2Indices[Math.min(n - 1, Math.floor(n * 0.75))], side: "left" });
+  }
+
+  // Intro image — always RIGHT, anchored to the pull-quote or lead paragraph.
   const firstQuoteIdx = blocks.findIndex(b => b.kind === "quote");
   const firstParaIdx = blocks.findIndex(b => b.kind === "p");
   const firstH2 = h2Indices[0] ?? Infinity;
-  const introAnchor = (firstQuoteIdx !== -1 && firstQuoteIdx < firstH2) ? firstQuoteIdx
+  const introAnchorIdx = (firstQuoteIdx !== -1 && firstQuoteIdx < firstH2) ? firstQuoteIdx
     : (firstParaIdx !== -1 && firstParaIdx < firstH2) ? firstParaIdx
     : -1;
-  if (introAnchor !== -1) anchors.push({ idx: introAnchor, side: "right" });
 
-  // Remaining images land after h2 sections. Skip the very first h2 (the
-  // intro image already sits just above it) and spread the rest evenly.
-  const remaining = imageCount - anchors.length;
-  const h2Pool = h2Indices.slice(1); // skip the first h2
-  if (remaining > 0 && h2Pool.length > 0) {
-    const step = Math.max(1, Math.floor(h2Pool.length / remaining));
-    for (let k = 0; k < remaining; k++) {
-      const slot = Math.min(k * step, h2Pool.length - 1);
-      const idx = h2Pool[slot];
-      const side: "left" | "right" = anchors.length % 2 === 0 ? "left" : "right";
-      // Avoid placing two images at the same block index.
-      if (!anchors.some(a => a.idx === idx)) anchors.push({ idx, side });
-    }
+  // Assign images. Intro first (img[0]), bottom anchors use img[1..n].
+  if (introAnchorIdx !== -1 && inlineImages[0] !== undefined) {
+    injectAfter[introAnchorIdx] = { url: inlineImages[0], side: "right" };
   }
-
-  anchors.forEach((a, i) => {
-    if (inlineImages[i] !== undefined) {
-      injectAfter[a.idx] = { url: inlineImages[i], side: a.side };
+  bottomAnchors.forEach((a, i) => {
+    const url = inlineImages[i + 1];
+    if (url !== undefined && !injectAfter[a.idx]) {
+      injectAfter[a.idx] = { url, side: a.side };
     }
   });
 
