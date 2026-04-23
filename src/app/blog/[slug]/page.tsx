@@ -256,20 +256,47 @@ const INLINE_IMAGE_POOL_FALLBACK = [
 const SUPABASE_PUBLIC_BASE =
   "https://umedbjslspilqakwnapa.supabase.co/storage/v1/object/public/email-images/";
 
-// Read the live list of commission-problems images from Supabase storage
-// at request time. Renames in the Image Library take effect on the next
-// blog render; we never ship hardcoded filenames that can break.
+// Read a broad pool of images from Supabase storage at request time.
+// Draws from several categories so blogs don't all look the same.
+// Renames in the Image Library take effect on the next blog render.
 async function loadInlinePool(): Promise<string[]> {
+  const categories = [
+    "agency-staff",
+    "happy-agency-team",
+    "commission-problems",
+    "insurance-industry",
+    "office-technology",
+  ];
   try {
     const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    const { data } = await sb.storage.from("email-images").list("commission-problems", { limit: 500 });
-    const files = (data || [])
-      .filter((f) => /\.(jpg|jpeg|png|gif|webp)$/i.test(f.name))
-      .map((f) => "commission-problems/" + f.name);
-    return files.length > 0 ? files : INLINE_IMAGE_POOL_FALLBACK;
+    const all: string[] = [];
+    for (const cat of categories) {
+      const { data } = await sb.storage.from("email-images").list(cat, { limit: 500 });
+      (data || []).forEach((f) => {
+        if (/\.(jpg|jpeg|png|gif|webp)$/i.test(f.name)) all.push(cat + "/" + f.name);
+      });
+    }
+    return all.length > 0 ? all : INLINE_IMAGE_POOL_FALLBACK;
   } catch {
     return INLINE_IMAGE_POOL_FALLBACK;
   }
+}
+
+// Seeded Fisher-Yates shuffle. Same slug always produces the same
+// sequence so readers on the same post see the same images, but
+// different posts get distinct random selections from the full library.
+function seededShuffle<T>(items: T[], slug: string): T[] {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < slug.length; i++) {
+    h = Math.imul(h ^ slug.charCodeAt(i), 16777619) >>> 0;
+  }
+  const arr = items.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    h = (Math.imul(h, 48271) + 1) >>> 0;
+    const j = h % (i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
 
 function pickInlineImages(
@@ -278,21 +305,10 @@ function pickInlineImages(
   count: number,
   pool: string[],
 ): string[] {
-  // Cheap deterministic hash so the same slug always picks the same images.
-  let h = 0;
-  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
   const filtered = pool.filter((p) => !featured || !featured.includes(p));
   if (filtered.length === 0) return [];
-  const picks: string[] = [];
-  const seeds = [h, h * 7 + 13, h * 13 + 29, h * 17 + 41];
-  for (const seed of seeds) {
-    if (picks.length >= count) break;
-    let idx = seed % filtered.length;
-    for (let tries = 0; tries < filtered.length && picks.includes(filtered[idx]); tries++) {
-      idx = (idx + 1) % filtered.length;
-    }
-    picks.push(filtered[idx]);
-  }
+  const shuffled = seededShuffle(filtered, slug);
+  const picks = shuffled.slice(0, Math.min(count, shuffled.length));
   return picks.map((p) => SUPABASE_PUBLIC_BASE + p);
 }
 
