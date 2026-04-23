@@ -246,47 +246,52 @@ See how AI Commission Tracker helps agencies reduce manual work and catch more e
 // Renderer picks 2 deterministically from this list per post (seeded by slug)
 // so the same article always shows the same images, but different articles
 // look visually distinct.
-const INLINE_IMAGE_POOL = [
-  "commission-problems/commission-13.jpg",
-  "commission-problems/commission-16.jpg",
-  "commission-problems/commission-17.jpg",
-  "commission-problems/commission-18.jpg",
-  "commission-problems/commission-19.jpg",
-  "commission-problems/commission-20.jpg",
-  "commission-problems/commission-24.jpg",
-  "commission-problems/commission-29.jpg",
-  "commission-problems/commission-30.jpg",
-  "commission-problems/pexels-3483098.jpg",
-  "commission-problems/pexels-4475523.jpg",
-  "commission-problems/pexels-6694543.jpg",
-  "commission-problems/pexels-7821702.jpg",
+// NOTE: this static list is a fallback. The renderer queries the bucket
+// at request time (see loadInlinePool) and uses whatever files actually
+// exist, so a rename in the Image Library no longer breaks the blog.
+const INLINE_IMAGE_POOL_FALLBACK = [
+  "commission-problems/commission-7.jpg",
 ];
 
 const SUPABASE_PUBLIC_BASE =
   "https://umedbjslspilqakwnapa.supabase.co/storage/v1/object/public/email-images/";
 
+// Read the live list of commission-problems images from Supabase storage
+// at request time. Renames in the Image Library take effect on the next
+// blog render; we never ship hardcoded filenames that can break.
+async function loadInlinePool(): Promise<string[]> {
+  try {
+    const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const { data } = await sb.storage.from("email-images").list("commission-problems", { limit: 500 });
+    const files = (data || [])
+      .filter((f) => /\.(jpg|jpeg|png|gif|webp)$/i.test(f.name))
+      .map((f) => "commission-problems/" + f.name);
+    return files.length > 0 ? files : INLINE_IMAGE_POOL_FALLBACK;
+  } catch {
+    return INLINE_IMAGE_POOL_FALLBACK;
+  }
+}
+
 function pickInlineImages(
   slug: string,
   featured: string | null | undefined,
   count: number,
+  pool: string[],
 ): string[] {
   // Cheap deterministic hash so the same slug always picks the same images.
   let h = 0;
   for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
-  const pool = INLINE_IMAGE_POOL.filter(
-    (p) => !featured || !featured.includes(p)
-  );
-  // Pick `count` distinct entries using multiple hash variants.
+  const filtered = pool.filter((p) => !featured || !featured.includes(p));
+  if (filtered.length === 0) return [];
   const picks: string[] = [];
   const seeds = [h, h * 7 + 13, h * 13 + 29, h * 17 + 41];
   for (const seed of seeds) {
     if (picks.length >= count) break;
-    let idx = seed % pool.length;
-    // Step through until we find one not already picked.
-    for (let tries = 0; tries < pool.length && picks.includes(pool[idx]); tries++) {
-      idx = (idx + 1) % pool.length;
+    let idx = seed % filtered.length;
+    for (let tries = 0; tries < filtered.length && picks.includes(filtered[idx]); tries++) {
+      idx = (idx + 1) % filtered.length;
     }
-    picks.push(pool[idx]);
+    picks.push(filtered[idx]);
   }
   return picks.map((p) => SUPABASE_PUBLIC_BASE + p);
 }
@@ -454,7 +459,8 @@ export default async function BlogPostPage({
   const h2Indices: number[] = [];
   blocks.forEach((b, i) => { if (b.kind === "h2") h2Indices.push(i); });
   const imageCount = h2Indices.length >= 5 ? 3 : 2;
-  const inlineImages = pickInlineImages(slug, post.featured_image_url, imageCount);
+  const inlinePool = await loadInlinePool();
+  const inlineImages = pickInlineImages(slug, post.featured_image_url, imageCount, inlinePool);
   // Drop images at evenly spaced h2 anchors (skip the very first so the
   // featured image gets breathing room before the next visual). Alternate
   // left/right so the eye zigzags down the page.
