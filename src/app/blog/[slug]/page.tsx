@@ -25,6 +25,7 @@ type ResolvedPost = {
   content: string;
   featured_image_url?: string | null;
   deck?: string | null;
+  image_seed?: string | null;
 };
 
 async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
@@ -34,7 +35,7 @@ async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
     const { data } = await sb
       .from("mkt_blog_posts")
       .select(
-        "title, body, product_or_service, published_at, featured_image_url, deck"
+        "title, body, product_or_service, published_at, featured_image_url, deck, image_seed"
       )
       .eq(column, key)
       .eq("status", "published")
@@ -58,6 +59,7 @@ async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
       content: body,
       featured_image_url: (data.featured_image_url as string) || null,
       deck: (data.deck as string) || null,
+      image_seed: (data.image_seed as string) || null,
     };
   } catch {
     return null;
@@ -304,7 +306,7 @@ function seededShuffle<T>(items: T[], slug: string): T[] {
 }
 
 function pickInlineImages(
-  slug: string,
+  seed: string,
   featured: string | null | undefined,
   count: number,
   pool: string[],
@@ -315,7 +317,7 @@ function pickInlineImages(
   const unique = pool.filter(p => (seen.has(p) ? false : (seen.add(p), true)));
   const filtered = unique.filter((p) => !featured || !featured.includes(p));
   if (filtered.length === 0) return [];
-  const shuffled = seededShuffle(filtered, slug);
+  const shuffled = seededShuffle(filtered, seed);
   const picks = shuffled.slice(0, Math.min(count, shuffled.length));
   return picks.map((p) => SUPABASE_PUBLIC_BASE + p);
 }
@@ -492,7 +494,11 @@ export default async function BlogPostPage({
   // distinct images to cover the full count.
   const totalCount = bottomCount + 1;
   const inlinePool = await loadInlinePool();
-  const inlineImages = pickInlineImages(slug, post.featured_image_url, totalCount, inlinePool);
+  // Use per-post image_seed when set so Patrick can nudge the renderer
+  // toward a fresh set of images without renaming the blog or touching
+  // the library. Falls back to slug for posts without a seed.
+  const shuffleSeed = post.image_seed || slug;
+  const inlineImages = pickInlineImages(shuffleSeed, post.featured_image_url, totalCount, inlinePool);
 
   const injectAfter: Record<number, { url: string; side: "left" | "right" }> = {};
 
