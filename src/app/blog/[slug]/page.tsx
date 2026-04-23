@@ -607,7 +607,7 @@ export default async function BlogPostPage({
                 key={`img-${i}`}
                 src={inject.url}
                 alt=""
-                className={`rounded-lg shadow-md mb-4 w-full md:w-2/5 ${
+                className={`rounded-lg shadow-md mb-4 w-full md:w-2/5 object-cover aspect-[4/3] ${
                   inject.side === "left"
                     ? "md:float-left md:mr-6 md:mt-2"
                     : "md:float-right md:ml-6 md:mt-2"
