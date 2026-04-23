@@ -24,6 +24,7 @@ type ResolvedPost = {
   readTime: string;
   content: string;
   featured_image_url?: string | null;
+  deck?: string | null;
 };
 
 async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
@@ -33,7 +34,7 @@ async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
     const { data } = await sb
       .from("mkt_blog_posts")
       .select(
-        "title, body, product_or_service, published_at, featured_image_url"
+        "title, body, product_or_service, published_at, featured_image_url, deck"
       )
       .eq(column, key)
       .eq("status", "published")
@@ -56,6 +57,7 @@ async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
         : "",
       content: body,
       featured_image_url: (data.featured_image_url as string) || null,
+      deck: (data.deck as string) || null,
     };
   } catch {
     return null;
@@ -548,10 +550,28 @@ export default async function BlogPostPage({
         </section>
       )}
 
+      {/* Deck / subhead — sits between hero image and article body to signal
+          "start reading here" without repeating the h1. Only renders when
+          the post has a deck field set. */}
+      {post.deck && (
+        <section className="bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-10">
+            <p className="text-lg md:text-xl font-serif italic text-neutral-light leading-relaxed">
+              {post.deck}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Content */}
-      <section className="py-12 bg-white">
+      <section className={`${post.deck ? 'pt-8 pb-12' : 'py-12'} bg-white`}>
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+          {/* firstParaIdx is used to flag the lead paragraph inside the
+              map below — bigger font, drop cap, more line-height. */}
+          {(() => null)()}
           {blocks.map((block, i) => {
+            const firstParaIdx = blocks.findIndex(b => b.kind === 'p');
+            const isFirstPara = i === firstParaIdx && block.kind === 'p';
             const inject = injectAfter[i];
             const injectedImg = inject ? (
               /* eslint-disable-next-line @next/next/no-img-element */
@@ -600,13 +620,28 @@ export default async function BlogPostPage({
               );
             }
             if (block.kind === "quote") {
+              // Pull-quote: magazine-style visual break. Any markdown line
+              // starting with "> " becomes one. Much larger than body,
+              // brand-navy, accent left bar, generous margins.
               return (
                 <blockquote
                   key={i}
-                  className="border-l-4 border-accent bg-neutral-lighter pl-5 py-3 my-8 text-xl font-serif italic text-primary"
+                  className="mpt-pullquote border-l-4 border-accent pl-6 md:pl-8 my-10 md:my-12 text-2xl md:text-3xl font-serif italic text-primary leading-snug"
                 >
                   {renderInline(block.text)}
                 </blockquote>
+              );
+            }
+            // Lead paragraph (first <p> of the article) gets bumped up in
+            // size and line-height so readers see where reading starts.
+            if (isFirstPara) {
+              return (
+                <p
+                  key={i}
+                  className="text-xl md:text-2xl font-serif text-neutral leading-relaxed mb-8 first-letter:text-6xl md:first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none"
+                >
+                  {renderInline(block.text)}
+                </p>
               );
             }
             return (
