@@ -478,33 +478,49 @@ export default async function BlogPostPage({
   // with the featured image at top that's 3–4 images per post, our target.
   const h2Indices: number[] = [];
   blocks.forEach((b, i) => { if (b.kind === "h2") h2Indices.push(i); });
-  const imageCount = h2Indices.length >= 5 ? 3 : 2;
+  // Image count scales with article length: short articles get 3 inline
+  // images, longer articles (5+ h2 sections) get 4. Combined with the
+  // featured hero this yields 4-5 visuals per post.
+  const imageCount = h2Indices.length >= 5 ? 4 : 3;
   const inlinePool = await loadInlinePool();
   const inlineImages = pickInlineImages(slug, post.featured_image_url, imageCount, inlinePool);
-  // Drop images at evenly spaced h2 anchors (skip the very first so the
-  // featured image gets breathing room before the next visual). Alternate
-  // left/right so the eye zigzags down the page.
+
+  // Anchor plan:
+  // 1. The first inline image drops RIGHT into the intro, before the first
+  //    h2. Anchor = the pull-quote if one exists, otherwise the lead
+  //    paragraph. This breaks up the top wall of text that readers see
+  //    immediately after the deck.
+  // 2. The rest follow h2 headings at evenly spaced intervals,
+  //    alternating left/right so the eye zigzags down the page.
   const injectAfter: Record<number, { url: string; side: "left" | "right" }> = {};
-  const anchors: number[] = [];
-  if (imageCount === 2 && h2Indices.length >= 4) {
-    anchors.push(h2Indices[1], h2Indices[3]);
-  } else if (imageCount === 2) {
-    anchors.push(h2Indices[1] ?? h2Indices[0], h2Indices[h2Indices.length - 1]);
-  } else if (imageCount === 3) {
-    // Three-image layout: roughly 1/4, 1/2, 3/4 through the h2 list.
-    const n = h2Indices.length;
-    anchors.push(
-      h2Indices[Math.max(1, Math.floor(n * 0.25))],
-      h2Indices[Math.floor(n * 0.5)],
-      h2Indices[Math.min(n - 1, Math.floor(n * 0.75))],
-    );
+  const anchors: Array<{ idx: number; side: "left" | "right" }> = [];
+
+  const firstQuoteIdx = blocks.findIndex(b => b.kind === "quote");
+  const firstParaIdx = blocks.findIndex(b => b.kind === "p");
+  const firstH2 = h2Indices[0] ?? Infinity;
+  const introAnchor = (firstQuoteIdx !== -1 && firstQuoteIdx < firstH2) ? firstQuoteIdx
+    : (firstParaIdx !== -1 && firstParaIdx < firstH2) ? firstParaIdx
+    : -1;
+  if (introAnchor !== -1) anchors.push({ idx: introAnchor, side: "right" });
+
+  // Remaining images land after h2 sections. Skip the very first h2 (the
+  // intro image already sits just above it) and spread the rest evenly.
+  const remaining = imageCount - anchors.length;
+  const h2Pool = h2Indices.slice(1); // skip the first h2
+  if (remaining > 0 && h2Pool.length > 0) {
+    const step = Math.max(1, Math.floor(h2Pool.length / remaining));
+    for (let k = 0; k < remaining; k++) {
+      const slot = Math.min(k * step, h2Pool.length - 1);
+      const idx = h2Pool[slot];
+      const side: "left" | "right" = anchors.length % 2 === 0 ? "left" : "right";
+      // Avoid placing two images at the same block index.
+      if (!anchors.some(a => a.idx === idx)) anchors.push({ idx, side });
+    }
   }
-  anchors.forEach((blockIdx, i) => {
+
+  anchors.forEach((a, i) => {
     if (inlineImages[i] !== undefined) {
-      injectAfter[blockIdx] = {
-        url: inlineImages[i],
-        side: i % 2 === 0 ? "left" : "right",
-      };
+      injectAfter[a.idx] = { url: inlineImages[i], side: a.side };
     }
   });
 
@@ -586,31 +602,32 @@ export default async function BlogPostPage({
                 }`}
               />
             ) : null;
+            // Wrapper — emits the block and, if this index has an image
+            // anchor, the floated image right after it so the following
+            // text wraps around the image on the opposite side.
+            const withImg = (node: React.ReactNode) => (
+              <React.Fragment key={i}>
+                {node}
+                {injectedImg}
+              </React.Fragment>
+            );
             if (block.kind === "h2") {
-              return (
-                <React.Fragment key={i}>
-                  <h2
-                    className="text-2xl md:text-3xl font-serif font-bold text-primary mt-12 mb-4 leading-snug clear-both"
-                  >
-                    {renderInline(block.text)}
-                  </h2>
-                  {injectedImg}
-                </React.Fragment>
+              return withImg(
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mt-12 mb-4 leading-snug clear-both">
+                  {renderInline(block.text)}
+                </h2>
               );
             }
             if (block.kind === "h3") {
-              return (
-                <h3
-                  key={i}
-                  className="text-xl font-serif font-semibold text-primary mt-8 mb-3"
-                >
+              return withImg(
+                <h3 className="text-xl font-serif font-semibold text-primary mt-8 mb-3">
                   {renderInline(block.text)}
                 </h3>
               );
             }
             if (block.kind === "ul") {
-              return (
-                <ul key={i} className="list-disc pl-6 mb-6 space-y-2">
+              return withImg(
+                <ul className="list-disc pl-6 mb-6 space-y-2">
                   {block.items.map((item, j) => (
                     <li key={j} className="text-lg text-neutral leading-relaxed">
                       {renderInline(item)}
@@ -623,11 +640,8 @@ export default async function BlogPostPage({
               // Pull-quote: magazine-style visual break. Any markdown line
               // starting with "> " becomes one. Much larger than body,
               // brand-navy, accent left bar, generous margins.
-              return (
-                <blockquote
-                  key={i}
-                  className="mpt-pullquote border-l-4 border-accent pl-6 md:pl-8 my-10 md:my-12 text-2xl md:text-3xl font-serif italic text-primary leading-snug"
-                >
+              return withImg(
+                <blockquote className="mpt-pullquote border-l-4 border-accent pl-6 md:pl-8 my-10 md:my-12 text-2xl md:text-3xl font-serif italic text-primary leading-snug">
                   {renderInline(block.text)}
                 </blockquote>
               );
@@ -635,20 +649,14 @@ export default async function BlogPostPage({
             // Lead paragraph (first <p> of the article) gets bumped up in
             // size and line-height so readers see where reading starts.
             if (isFirstPara) {
-              return (
-                <p
-                  key={i}
-                  className="text-xl md:text-2xl font-serif text-neutral leading-relaxed mb-8 first-letter:text-6xl md:first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none"
-                >
+              return withImg(
+                <p className="text-xl md:text-2xl font-serif text-neutral leading-relaxed mb-8 first-letter:text-6xl md:first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">
                   {renderInline(block.text)}
                 </p>
               );
             }
-            return (
-              <p
-                key={i}
-                className="text-lg text-neutral leading-relaxed mb-6"
-              >
+            return withImg(
+              <p className="text-lg text-neutral leading-relaxed mb-6">
                 {renderInline(block.text)}
               </p>
             );
