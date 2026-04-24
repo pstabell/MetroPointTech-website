@@ -43,7 +43,14 @@ export default function RootLayout({
         <Script id="mkt-hub-analytics" strategy="afterInteractive">{`
           (function(){
             var d='https://mpt-marketing-hub.vercel.app/api/analytics/drain';
+            try{
+              var q=new URLSearchParams(location.search);
+              if(q.get('mpt_internal')==='1'){localStorage.setItem('mpt_internal','1');console.log('[mpt] internal traffic opt-out enabled for this browser')}
+              if(q.get('mpt_internal')==='0'){localStorage.removeItem('mpt_internal');console.log('[mpt] internal traffic opt-out cleared')}
+            }catch(e){}
+            function isInternal(){try{return localStorage.getItem('mpt_internal')==='1'}catch(e){return false}}
             function send(){
+              if(isInternal())return;
               try{navigator.sendBeacon(d,JSON.stringify([{
                 eventType:'pageview',path:location.pathname,
                 origin:location.origin,referrer:document.referrer||'',
