@@ -231,7 +231,7 @@ export default function AAMSContent() {
                   {isAgency
                     ? 'Zero-touch matching across your entire book of business. The system reconciles every agent, every carrier, every policy autonomously.'
                     : isProducer
-                    ? 'Match payments to your tracked policies with the manual reconciliation workflow. Want the system to do it for you autonomously? Upgrade to Solo Agent or higher.'
+                    ? 'Match payments to your tracked policies with the manual reconciliation workflow. Want the system to do it for you autonomously? Upgrade to Solo Agent or Agency.'
                     : 'Zero-touch matching of payments to policies. The system identifies and flags discrepancies autonomously — no manual cross-referencing.'}
                 </p>
               </div>
