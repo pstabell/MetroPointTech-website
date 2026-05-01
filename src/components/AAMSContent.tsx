@@ -81,10 +81,10 @@ export default function AAMSContent() {
           {isProducer ? (
             <div>
               <p className="text-center text-lg text-neutral-dark mb-4 max-w-3xl mx-auto">
-                Producers at agencies use AAMS Producer free forever to track their own commissions, catch carrier underpayments, and make sure they get paid every dollar they earned on their split.
+                Agent commission tracking, free forever. Producers at agencies use AAMS Producer to see every commission earned, catch carrier underpayments, and make sure no dollar slips through.
               </p>
               <p className="text-center text-sm text-cyan-800 font-semibold mb-10 max-w-3xl mx-auto">
-                Your split is capped at 90% new / 80% renewal because the agency keeps 10% / 20%. Pure tracking, manual reconciliation. Upgrade to Solo Agent if you want autonomous reconciliation.
+                Built-in split cap: 90% new / 80% renewal. Manual reconciliation. Upgrade to AAMS Solo Agent any time to manage 100% of your commissions and turn on autonomous reconciliation.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
@@ -369,7 +369,7 @@ export default function AAMSContent() {
                   <div className="text-5xl font-bold mb-1">$0</div>
                   <div className="text-neutral-dark mb-3 text-sm">forever</div>
                   <div className="text-xs text-neutral-dark mb-6 italic text-left">
-                    For producers at agencies. Your commission split is capped at 90% new / 80% renewal because the agency keeps 10% / 20%.
+                    Agent commission tracking for producers at agencies. Built-in split cap: 90% new / 80% renewal.
                   </div>
                   <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
                     {[
@@ -397,18 +397,18 @@ export default function AAMSContent() {
 
                 {/* Upgrade hook */}
                 <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl p-8 shadow-lg flex flex-col text-left">
-                  <div className="text-sm font-semibold text-blue-100 mb-1">WANT AUTONOMOUS RECONCILIATION?</div>
+                  <div className="text-sm font-semibold text-blue-100 mb-1">READY TO MANAGE 100% OF YOUR COMMISSIONS?</div>
                   <div className="text-3xl font-bold mb-4">Upgrade to AAMS Solo Agent</div>
                   <p className="text-blue-100 mb-6">
-                    Move from manual to zero-touch. The system matches payments to policies, flags discrepancies, and runs your commission ops while you focus on selling. Same data, same logins — just remove the cap and turn on the AI.
+                    Drop the split cap and track 100% of your commissions — yours plus anything you handle as your own book. Move up to Pro or Autopilot to add autonomous reconciliation on top, so the system runs your commission ops while you focus on selling.
                   </p>
                   <ul className="space-y-2 mb-8 text-sm flex-grow">
-                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Agentic Reconciliation</li>
-                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Coaching & Alerts</li>
+                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> Manage 100% of commissions — no split cap</li>
+                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Agentic Reconciliation (Pro & Autopilot)</li>
+                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Coaching & Alerts (Pro & Autopilot)</li>
                     <li className="flex items-center gap-2"><span className="text-accent">✓</span> Email Statement Forwarding (Autopilot)</li>
-                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> Full uncapped commission tracking</li>
                   </ul>
-                  <div className="text-xs text-blue-200 mb-3">Starting at $19.99/mo · 14-day free trial</div>
+                  <div className="text-xs text-blue-200 mb-3">Starter $19.99/mo · Autonomous from $49.99/mo · 14-day free trial</div>
                   <button
                     onClick={() => setView('agent')}
                     className="block w-full py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition text-center"
