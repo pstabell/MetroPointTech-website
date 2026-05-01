@@ -252,7 +252,7 @@ export default function AAMSContent() {
                   {isAgency
                     ? 'Agency-wide reports show exactly what every carrier owes across all agents. Dispute underpayments with data, not guesswork.'
                     : isProducer
-                    ? 'Your reports show exactly what you were paid against what you were owed on every policy you wrote. Bring receipts to the agency owner if anything is short. Know what you earned and what you are owed.'
+                    ? 'Your reports show exactly what you were paid against what you were owed on every policy you wrote. Bring proof to the agency owner if anything is short. Know what you earned and what you are owed.'
                     : 'Use our reports to dispute underpayments with an agency or carriers. Know exactly what you earned and what you are owed.'}
                 </p>
               </div>
