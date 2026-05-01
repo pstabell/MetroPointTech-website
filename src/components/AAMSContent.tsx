@@ -423,8 +423,8 @@ export default function AAMSContent() {
             /* Solo Agent Comparison — 3 columns */
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* Starter */}
-              <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-lg flex flex-col">
-                <div className="text-sm font-semibold text-primary mb-1">AAMS STARTER</div>
+              <div className="bg-white border-2 border-teal-400 rounded-2xl p-6 shadow-lg flex flex-col">
+                <div className="text-sm font-semibold text-teal-600 mb-1">AAMS STARTER</div>
                 <div className="text-4xl font-bold mb-1">$19.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -447,17 +447,17 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition text-center">
+                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
 
               {/* Pro */}
-              <div className="bg-white border-2 border-accent rounded-2xl p-6 shadow-xl flex flex-col relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">
+              <div className="bg-white border-2 border-teal-600 rounded-2xl p-6 shadow-xl flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   MOST POPULAR
                 </div>
-                <div className="text-sm font-semibold text-accent mb-1">AAMS PRO</div>
+                <div className="text-sm font-semibold text-teal-600 mb-1">AAMS PRO</div>
                 <div className="text-4xl font-bold mb-1">$49.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -480,14 +480,17 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition text-center">
+                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
 
               {/* Autopilot */}
-              <div className="bg-white border-2 border-primary rounded-2xl p-6 shadow-lg flex flex-col">
-                <div className="text-sm font-semibold text-primary mb-1">AAMS AUTOPILOT</div>
+              <div className="bg-white border-2 border-teal-700 rounded-2xl p-6 shadow-lg flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  BEST VALUE
+                </div>
+                <div className="text-sm font-semibold text-teal-700 mb-1">AAMS AUTOPILOT</div>
                 <div className="text-4xl font-bold mb-1">$79.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -508,7 +511,7 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition text-center">
+                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
