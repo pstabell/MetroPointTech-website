@@ -75,8 +75,8 @@ export default function AAMSPage() {
               <div className="text-sm text-neutral-dark mt-1">AI-Powered Workflows</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">2 Floors</div>
-              <div className="text-sm text-neutral-dark mt-1">Solo Agent & Agency</div>
+              <div className="text-3xl font-bold text-primary">3 Personas</div>
+              <div className="text-sm text-neutral-dark mt-1">Producer, Solo Agent & Agency</div>
             </div>
           </div>
         </div>

@@ -4,38 +4,62 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import AgencyCalculator from '@/components/AgencyCalculator'
 
+type View = 'producer' | 'agent' | 'agency'
+
 export default function AAMSContent() {
-  const [view, setView] = useState<'agent' | 'agency'>('agency')
+  const [view, setView] = useState<View>('agency')
 
   useEffect(() => {
     const saved = localStorage.getItem('ams_landing_view')
-    if (saved === 'agent' || saved === 'agency') {
+    if (saved === 'producer' || saved === 'agent' || saved === 'agency') {
       setView(saved)
       localStorage.removeItem('ams_landing_view')
     }
   }, [])
 
+  const isProducer = view === 'producer'
+  const isAgent = view === 'agent'
   const isAgency = view === 'agency'
-  const borderColor = isAgency ? 'border-violet-600' : 'border-primary'
-  const stepBg = isAgency ? 'bg-violet-600' : 'bg-primary'
+
+  const borderColor = isAgency
+    ? 'border-violet-600'
+    : isProducer
+    ? 'border-teal-500'
+    : 'border-primary'
+  const stepBg = isAgency
+    ? 'bg-violet-600'
+    : isProducer
+    ? 'bg-teal-500'
+    : 'bg-primary'
 
   return (
     <>
-      {/* Features with Agent/Agency Toggle */}
+      {/* Features with Producer/Agent/Agency Toggle */}
       <section id="features" className="py-16 md:py-24 bg-neutral-lightest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-            Autonomous Operations for Agents and Agencies
+            Autonomous Operations for Producers, Agents, and Agencies
           </h2>
 
-          {/* Toggle Button */}
+          {/* Three-way Toggle Button */}
           <div className="flex justify-center mb-12">
             <div className="inline-flex bg-gray-100 rounded-xl p-1.5 border border-gray-200">
               <button
+                onClick={() => setView('producer')}
+                className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
+                  isProducer
+                    ? 'bg-teal-500 text-white shadow-lg'
+                    : 'text-gray-600 hover:text-gray-800'
+                }`}
+              >
+                Producer
+                <span className="ml-2 text-xs bg-white/20 px-2 py-0.5 rounded-full">FREE</span>
+              </button>
+              <button
                 onClick={() => setView('agent')}
-                className={`px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
-                  !isAgency
-                    ? 'bg-teal-600 text-white shadow-lg'
+                className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
+                  isAgent
+                    ? 'bg-teal-700 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -43,7 +67,7 @@ export default function AAMSContent() {
               </button>
               <button
                 onClick={() => setView('agency')}
-                className={`px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
+                className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgency
                     ? 'bg-violet-600 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
@@ -54,7 +78,46 @@ export default function AAMSContent() {
             </div>
           </div>
 
-          {!isAgency ? (
+          {isProducer ? (
+            <div>
+              <p className="text-center text-lg text-neutral-dark mb-4 max-w-3xl mx-auto">
+                Producers at agencies use AAMS Producer free forever to track their own commissions, catch carrier underpayments, and make sure they get paid every dollar they earned on their split.
+              </p>
+              <p className="text-center text-sm text-teal-700 font-semibold mb-10 max-w-3xl mx-auto">
+                Your split is capped at 90% new / 80% renewal because the agency keeps 10% / 20%. Pure tracking, manual reconciliation. Upgrade to Solo Agent if you want autonomous reconciliation.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                    <Image src="/images/ams-app/reconciliation.png" alt="Producer reconciliation" width={1440} height={900} className="w-full h-auto" />
+                  </div>
+                  <h3 className="font-bold text-xl mt-4 mb-2">Manual Reconciliation</h3>
+                  <p className="text-neutral-dark">Upload your commission statements and reconcile against your tracked policies. See what matched and what is missing.</p>
+                </div>
+                <div>
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                    <Image src="/images/ams-app/carriers.png" alt="Carrier tracking" width={1440} height={900} className="w-full h-auto" />
+                  </div>
+                  <h3 className="font-bold text-xl mt-4 mb-2">Carrier Tracking</h3>
+                  <p className="text-neutral-dark">All your appointed carriers in one place. Progressive, Travelers, Safeco, and the rest of the major P&C carriers.</p>
+                </div>
+                <div>
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                    <Image src="/images/ams-app/ledger.png" alt="Producer ledger" width={1440} height={900} className="w-full h-auto" />
+                  </div>
+                  <h3 className="font-bold text-xl mt-4 mb-2">Capped Split Ledger</h3>
+                  <p className="text-neutral-dark">Track every commission dollar against your agency split. Capped at 90% new / 80% renewal so the math reflects what actually lands in your pocket.</p>
+                </div>
+                <div>
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                    <Image src="/images/ams-app/f1-dark-dashboard.png" alt="Dashboard dark mode" width={1440} height={900} className="w-full h-auto" />
+                  </div>
+                  <h3 className="font-bold text-xl mt-4 mb-2">Dark Mode</h3>
+                  <p className="text-neutral-dark">Switch between light and dark themes. Same comfort as the paid tiers.</p>
+                </div>
+              </div>
+            </div>
+          ) : isAgent ? (
             <div>
               <p className="text-center text-lg text-neutral-dark mb-10 max-w-3xl mx-auto">
                 Solo agents use AAMS Solo to track their own commissions, catch discrepancies, and make sure they get paid every dollar they earned.
@@ -144,6 +207,8 @@ export default function AAMSContent() {
                 <p className="text-lg text-neutral-dark">
                   {isAgency
                     ? 'Import carrier commission statements for your entire agency. Reconcile across all agents and house accounts in one upload.'
+                    : isProducer
+                    ? 'Import your carrier commission statements via CSV, Excel, or manual entry. We support Progressive, Travelers, Safeco, and the rest of the major P&C carriers — same as the paid tiers.'
                     : 'Import your carrier commission statements via CSV, Excel, or manual entry. We support Progressive, Travelers, Safeco, and many other P&C carriers.'}
                 </p>
               </div>
@@ -159,17 +224,21 @@ export default function AAMSContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className="md:order-2">
                 <div className={`w-14 h-14 ${stepBg} text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>2</div>
-                <h3 className="text-2xl font-bold mb-4">Agentic Reconciliation</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  {isProducer ? 'Manual Reconciliation' : 'Agentic Reconciliation'}
+                </h3>
                 <p className="text-lg text-neutral-dark">
                   {isAgency
                     ? 'Zero-touch matching across your entire book of business. The system reconciles every agent, every carrier, every policy autonomously.'
+                    : isProducer
+                    ? 'Match payments to your tracked policies with the manual reconciliation workflow. Want the system to do it for you autonomously? Upgrade to Solo Agent or higher.'
                     : 'Zero-touch matching of payments to policies. The system identifies and flags discrepancies autonomously — no manual cross-referencing.'}
                 </p>
               </div>
               <div className={`md:order-1 rounded-xl overflow-hidden shadow-lg border-2 ${borderColor}`}>
                 <Image
                   src={isAgency ? '/images/ams-app/f2-policies.png' : '/images/ams-app/ledger.png'}
-                  alt="Agentic reconciliation"
+                  alt="Reconciliation"
                   width={1440} height={900} className="w-full h-auto"
                 />
               </div>
@@ -182,6 +251,8 @@ export default function AAMSContent() {
                 <p className="text-lg text-neutral-dark">
                   {isAgency
                     ? 'Agency-wide reports show exactly what every carrier owes across all agents. Dispute underpayments with data, not guesswork.'
+                    : isProducer
+                    ? 'Your reports show exactly what carriers paid against your capped split. Bring receipts to the agency owner if anything is short. Know what you earned and what you are owed.'
                     : 'Use our reports to dispute underpayments with an agency or carriers. Know exactly what you earned and what you are owed.'}
                 </p>
               </div>
@@ -243,14 +314,25 @@ export default function AAMSContent() {
       {/* Pricing Comparison Tables */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Toggle Button */}
+          {/* Three-way Toggle Button */}
           <div className="flex justify-center mb-8">
             <div className="inline-flex bg-gray-100 rounded-xl p-1.5 border border-gray-200">
               <button
+                onClick={() => setView('producer')}
+                className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
+                  isProducer
+                    ? 'bg-teal-500 text-white shadow-lg'
+                    : 'text-gray-600 hover:text-gray-800'
+                }`}
+              >
+                Producer
+                <span className="ml-2 text-xs bg-white/20 px-2 py-0.5 rounded-full">FREE</span>
+              </button>
+              <button
                 onClick={() => setView('agent')}
-                className={`px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
-                  !isAgency
-                    ? 'bg-teal-600 text-white shadow-lg'
+                className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
+                  isAgent
+                    ? 'bg-teal-700 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -258,7 +340,7 @@ export default function AAMSContent() {
               </button>
               <button
                 onClick={() => setView('agency')}
-                className={`px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
+                className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgency
                     ? 'bg-violet-600 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
@@ -271,10 +353,72 @@ export default function AAMSContent() {
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple Pricing</h2>
           <p className="text-lg text-neutral-dark max-w-2xl mx-auto mb-12">
-            A fraction of what legacy AMS platforms charge. Full autonomous operations included. 14-day free trial on every plan — no credit card required on AAMS Starter and AAMS Agency Self-Service, card required on higher tiers.
+            A fraction of what legacy AMS platforms charge. Full autonomous operations included on the paid tiers. Producer is free forever for producers at agencies — no credit card.
           </p>
 
-          {!isAgency ? (
+          {isProducer ? (
+            /* Producer view — Free card prominent + upgrade hook */
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                {/* Producer Free */}
+                <div className="bg-white border-2 border-teal-500 rounded-2xl p-8 shadow-xl flex flex-col relative">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    FREE FOREVER
+                  </div>
+                  <div className="text-sm font-semibold text-teal-600 mb-1">AAMS PRODUCER</div>
+                  <div className="text-5xl font-bold mb-1">$0</div>
+                  <div className="text-neutral-dark mb-3 text-sm">forever</div>
+                  <div className="text-xs text-neutral-dark mb-6 italic text-left">
+                    For producers at agencies. Your commission split is capped at 90% new / 80% renewal because the agency keeps 10% / 20%.
+                  </div>
+                  <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
+                    {[
+                      { feature: 'Unlimited Policy Tracking', included: true },
+                      { feature: 'Manual Reconciliation', included: true },
+                      { feature: 'Capped Split Ledger', included: true },
+                      { feature: 'Revenue Reports', included: true },
+                      { feature: 'Excel Import/Export', included: true },
+                      { feature: 'All Major P&C Carriers', included: true },
+                      { feature: 'AI Agentic Reconciliation', included: false },
+                      { feature: 'AI Coaching & Alerts', included: false },
+                    ].map((item) => (
+                      <li key={item.feature} className="flex items-center gap-2">
+                        <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
+                          {item.included ? '✓' : '✗'}
+                        </span>
+                        <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a href="https://ams.metropointtech.com/login?plan=producer&promo=PRODUCER_FREE" className="block w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition text-center">
+                    Get Started Free
+                  </a>
+                </div>
+
+                {/* Upgrade hook */}
+                <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl p-8 shadow-lg flex flex-col text-left">
+                  <div className="text-sm font-semibold text-blue-100 mb-1">WANT AUTONOMOUS RECONCILIATION?</div>
+                  <div className="text-3xl font-bold mb-4">Upgrade to AAMS Solo Agent</div>
+                  <p className="text-blue-100 mb-6">
+                    Move from manual to zero-touch. The system matches payments to policies, flags discrepancies, and runs your commission ops while you focus on selling. Same data, same logins — just remove the cap and turn on the AI.
+                  </p>
+                  <ul className="space-y-2 mb-8 text-sm flex-grow">
+                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Agentic Reconciliation</li>
+                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Coaching & Alerts</li>
+                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> Email Statement Forwarding (Autopilot)</li>
+                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> Full uncapped commission tracking</li>
+                  </ul>
+                  <div className="text-xs text-blue-200 mb-3">Starting at $19.99/mo · 14-day free trial</div>
+                  <button
+                    onClick={() => setView('agent')}
+                    className="block w-full py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition text-center"
+                  >
+                    See Solo Agent Plans
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : isAgent ? (
             /* Solo Agent Comparison — 3 columns */
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* Starter */}
@@ -296,7 +440,7 @@ export default function AAMSContent() {
                   ].map((item) => (
                     <li key={item.feature} className="flex items-center gap-2">
                       <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
-                        {item.included ? '\u2713' : '\u2717'}
+                        {item.included ? '✓' : '✗'}
                       </span>
                       <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
                     </li>
@@ -329,7 +473,7 @@ export default function AAMSContent() {
                   ].map((item) => (
                     <li key={item.feature} className="flex items-center gap-2">
                       <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
-                        {item.included ? '\u2713' : '\u2717'}
+                        {item.included ? '✓' : '✗'}
                       </span>
                       <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
                     </li>
@@ -358,7 +502,7 @@ export default function AAMSContent() {
                     { feature: 'Auto-Processing', included: true },
                   ].map((item) => (
                     <li key={item.feature} className="flex items-center gap-2">
-                      <span className="text-green-500">{'\u2713'}</span>
+                      <span className="text-green-500">✓</span>
                       <span>{item.feature}</span>
                     </li>
                   ))}
@@ -393,7 +537,7 @@ export default function AAMSContent() {
                     ].map((item) => (
                       <li key={item.feature} className="flex items-center gap-2">
                         <span className={item.included ? 'text-violet-500' : 'text-gray-300'}>
-                          {item.included ? '\u2713' : '\u2717'}
+                          {item.included ? '✓' : '✗'}
                         </span>
                         <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
                       </li>
@@ -428,7 +572,7 @@ export default function AAMSContent() {
                       { feature: 'Email Auto-Processing', included: true },
                     ].map((item) => (
                       <li key={item.feature} className="flex items-center gap-2">
-                        <span className="text-violet-500">{'\u2713'}</span>
+                        <span className="text-violet-500">✓</span>
                         <span>{item.feature}</span>
                       </li>
                     ))}
@@ -459,7 +603,7 @@ export default function AAMSContent() {
                       { feature: 'Priority Onboarding', included: true },
                     ].map((item) => (
                       <li key={item.feature} className="flex items-center gap-2">
-                        <span className="text-violet-600">{'\u2713'}</span>
+                        <span className="text-violet-600">✓</span>
                         <span>{item.feature}</span>
                       </li>
                     ))}
@@ -481,6 +625,7 @@ export default function AAMSContent() {
           )}
 
           <p className="text-sm text-neutral-dark mt-8">
+            AAMS Producer is free forever for producers at agencies — no credit card, capped commission split.
             AAMS Starter ($19.99) and AAMS Agency Self-Service ($99.99) come with a 14-day free trial — no credit card required.
             AAMS Pro, Autopilot, and Agency AI also include a 14-day free trial but require a credit card at signup.
             AAMS Agency AI Plus ($299.99) has no trial — it is a volume-discount plan billed on day one. Cancel anytime.
