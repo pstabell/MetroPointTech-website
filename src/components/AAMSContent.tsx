@@ -81,32 +81,32 @@ export default function AAMSContent() {
           {isProducer ? (
             <div>
               <p className="text-center text-lg text-neutral-dark mb-4 max-w-3xl mx-auto">
-                Agent commission tracking, free forever. Producers at agencies use AAMS Producer to see every commission earned, catch carrier underpayments, and make sure no dollar slips through.
+                Agent commission tracking, free forever. Producers at agencies use AAMS Producer to track their agency commission statements, catch carrier underpayments along the way, and make sure they get paid right on every commission they earn.
               </p>
               <p className="text-center text-sm text-cyan-800 font-semibold mb-10 max-w-3xl mx-auto">
-                Built-in split cap: 90% new / 80% renewal. Manual reconciliation. Upgrade to AAMS Solo Agent any time to manage 100% of your commissions and turn on autonomous reconciliation.
+                Manual reconciliation. Upgrade to AAMS Solo Agent any time to manage 100% of your commissions and turn on autonomous reconciliation.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
-                    <Image src="/images/ams-app/reconciliation.png" alt="Producer reconciliation" width={1440} height={900} className="w-full h-auto" />
+                    <Image src="/images/ams-app/reconciliation.png" alt="Agency commission statement reconciliation" width={1440} height={900} className="w-full h-auto" />
                   </div>
-                  <h3 className="font-bold text-xl mt-4 mb-2">Manual Reconciliation</h3>
-                  <p className="text-neutral-dark">Upload your commission statements and reconcile against your tracked policies. See what matched and what is missing.</p>
+                  <h3 className="font-bold text-xl mt-4 mb-2">Reconcile Your Agency Statement</h3>
+                  <p className="text-neutral-dark">Upload the agency commission statement you receive each cycle and reconcile it against the policies you've tracked. See what matched and what is missing.</p>
                 </div>
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
-                    <Image src="/images/ams-app/carriers.png" alt="Carrier tracking" width={1440} height={900} className="w-full h-auto" />
+                    <Image src="/images/ams-app/carriers.png" alt="Catch carrier underpayments" width={1440} height={900} className="w-full h-auto" />
                   </div>
-                  <h3 className="font-bold text-xl mt-4 mb-2">Carrier Tracking</h3>
-                  <p className="text-neutral-dark">All your appointed carriers in one place. Progressive, Travelers, Safeco, and the rest of the major P&C carriers.</p>
+                  <h3 className="font-bold text-xl mt-4 mb-2">Catch Carrier Underpayments</h3>
+                  <p className="text-neutral-dark">Spot when a carrier short-pays a commission against the policy you wrote. Win for the agency, win for your wallet.</p>
                 </div>
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
-                    <Image src="/images/ams-app/ledger.png" alt="Producer ledger" width={1440} height={900} className="w-full h-auto" />
+                    <Image src="/images/ams-app/ledger.png" alt="Personal revenue ledger" width={1440} height={900} className="w-full h-auto" />
                   </div>
-                  <h3 className="font-bold text-xl mt-4 mb-2">Capped Split Ledger</h3>
-                  <p className="text-neutral-dark">Track every commission dollar against your agency split. Capped at 90% new / 80% renewal so the math reflects what actually lands in your pocket.</p>
+                  <h3 className="font-bold text-xl mt-4 mb-2">Personal Revenue Ledger</h3>
+                  <p className="text-neutral-dark">Every commission dollar tracked in one ledger you control. Yours, separate from the agency's books, exportable any time.</p>
                 </div>
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
@@ -208,7 +208,7 @@ export default function AAMSContent() {
                   {isAgency
                     ? 'Import carrier commission statements for your entire agency. Reconcile across all agents and house accounts in one upload.'
                     : isProducer
-                    ? 'Import your carrier commission statements via CSV, Excel, or manual entry. We support Progressive, Travelers, Safeco, and the rest of the major P&C carriers — same as the paid tiers.'
+                    ? 'Import your agency commission statements via CSV, Excel, or manual entry. Whatever your agency hands you each pay cycle — monthly summary, per-carrier breakdown, anything in between — drops in the same way.'
                     : 'Import your carrier commission statements via CSV, Excel, or manual entry. We support Progressive, Travelers, Safeco, and many other P&C carriers.'}
                 </p>
               </div>
@@ -252,7 +252,7 @@ export default function AAMSContent() {
                   {isAgency
                     ? 'Agency-wide reports show exactly what every carrier owes across all agents. Dispute underpayments with data, not guesswork.'
                     : isProducer
-                    ? 'Your reports show exactly what carriers paid against your capped split. Bring receipts to the agency owner if anything is short. Know what you earned and what you are owed.'
+                    ? 'Your reports show exactly what you were paid against what you were owed on every policy you wrote. Bring receipts to the agency owner if anything is short. Know what you earned and what you are owed.'
                     : 'Use our reports to dispute underpayments with an agency or carriers. Know exactly what you earned and what you are owed.'}
                 </p>
               </div>
@@ -369,7 +369,8 @@ export default function AAMSContent() {
                   <div className="text-5xl font-bold mb-1">$0</div>
                   <div className="text-neutral-dark mb-3 text-sm">forever</div>
                   <div className="text-xs text-neutral-dark mb-6 italic text-left">
-                    Agent commission tracking for producers at agencies. Built-in split cap: 90% new / 80% renewal.
+                    <div>Agent commission tracking for producers at agencies.</div>
+                    <div className="mt-1">Built-in split cap: 90% new / 80% renewal.</div>
                   </div>
                   <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
                     {[
