@@ -24,12 +24,12 @@ export default function AAMSContent() {
   const borderColor = isAgency
     ? 'border-violet-600'
     : isProducer
-    ? 'border-teal-500'
+    ? 'border-cyan-700'
     : 'border-primary'
   const stepBg = isAgency
     ? 'bg-violet-600'
     : isProducer
-    ? 'bg-teal-500'
+    ? 'bg-cyan-700'
     : 'bg-primary'
 
   return (
@@ -48,7 +48,7 @@ export default function AAMSContent() {
                 onClick={() => setView('producer')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isProducer
-                    ? 'bg-teal-500 text-white shadow-lg'
+                    ? 'bg-cyan-700 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -59,7 +59,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agent')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgent
-                    ? 'bg-teal-700 text-white shadow-lg'
+                    ? 'bg-teal-600 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -83,33 +83,33 @@ export default function AAMSContent() {
               <p className="text-center text-lg text-neutral-dark mb-4 max-w-3xl mx-auto">
                 Producers at agencies use AAMS Producer free forever to track their own commissions, catch carrier underpayments, and make sure they get paid every dollar they earned on their split.
               </p>
-              <p className="text-center text-sm text-teal-700 font-semibold mb-10 max-w-3xl mx-auto">
+              <p className="text-center text-sm text-cyan-800 font-semibold mb-10 max-w-3xl mx-auto">
                 Your split is capped at 90% new / 80% renewal because the agency keeps 10% / 20%. Pure tracking, manual reconciliation. Upgrade to Solo Agent if you want autonomous reconciliation.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
                     <Image src="/images/ams-app/reconciliation.png" alt="Producer reconciliation" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Manual Reconciliation</h3>
                   <p className="text-neutral-dark">Upload your commission statements and reconcile against your tracked policies. See what matched and what is missing.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
                     <Image src="/images/ams-app/carriers.png" alt="Carrier tracking" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Carrier Tracking</h3>
                   <p className="text-neutral-dark">All your appointed carriers in one place. Progressive, Travelers, Safeco, and the rest of the major P&C carriers.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
                     <Image src="/images/ams-app/ledger.png" alt="Producer ledger" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Capped Split Ledger</h3>
                   <p className="text-neutral-dark">Track every commission dollar against your agency split. Capped at 90% new / 80% renewal so the math reflects what actually lands in your pocket.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-teal-500">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
                     <Image src="/images/ams-app/f1-dark-dashboard.png" alt="Dashboard dark mode" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Dark Mode</h3>
@@ -321,7 +321,7 @@ export default function AAMSContent() {
                 onClick={() => setView('producer')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isProducer
-                    ? 'bg-teal-500 text-white shadow-lg'
+                    ? 'bg-cyan-700 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -332,7 +332,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agent')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgent
-                    ? 'bg-teal-700 text-white shadow-lg'
+                    ? 'bg-teal-600 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -361,11 +361,11 @@ export default function AAMSContent() {
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 {/* Producer Free */}
-                <div className="bg-white border-2 border-teal-500 rounded-2xl p-8 shadow-xl flex flex-col relative">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="bg-white border-2 border-cyan-700 rounded-2xl p-8 shadow-xl flex flex-col relative">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                     FREE FOREVER
                   </div>
-                  <div className="text-sm font-semibold text-teal-600 mb-1">AAMS PRODUCER</div>
+                  <div className="text-sm font-semibold text-cyan-700 mb-1">AAMS PRODUCER</div>
                   <div className="text-5xl font-bold mb-1">$0</div>
                   <div className="text-neutral-dark mb-3 text-sm">forever</div>
                   <div className="text-xs text-neutral-dark mb-6 italic text-left">
@@ -390,7 +390,7 @@ export default function AAMSContent() {
                       </li>
                     ))}
                   </ul>
-                  <a href="https://ams.metropointtech.com/login?plan=producer&promo=PRODUCER_FREE" className="block w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://ams.metropointtech.com/login?plan=producer&promo=PRODUCER_FREE" className="block w-full py-3 bg-cyan-700 hover:bg-cyan-800 text-white font-semibold rounded-lg transition text-center">
                     Get Started Free
                   </a>
                 </div>
