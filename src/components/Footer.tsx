@@ -74,8 +74,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-neutral-light mt-8 pt-8 text-center text-sm text-blue-100">
+        <div className="border-t border-neutral-light mt-8 pt-8 text-center text-sm text-blue-100 space-y-2">
           <p>&copy; 2026 Metro Point Technology LLC. All rights reserved.</p>
+          <p className="space-x-4">
+            <Link href="/privacy-policy" className="hover:text-accent transition">Privacy Policy</Link>
+            <span aria-hidden="true">&middot;</span>
+            <Link href="/terms-of-service" className="hover:text-accent transition">Terms of Service</Link>
+          </p>
         </div>
       </div>
     </footer>
