@@ -67,7 +67,9 @@ What's your biggest headache right now?`,
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+      background-image: url('/jack-avatar.png');
+      background-size: cover;
+      background-position: center;
       border: none;
       color: white;
       cursor: pointer;
@@ -77,6 +79,7 @@ What's your biggest headache right now?`,
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
     }
 
     .mpt-chat-widget .chat-toggle-button:hover {
@@ -135,13 +138,14 @@ What's your biggest headache right now?`,
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
+      background-image: url('/jack-avatar.png');
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 12px;
-      font-weight: 600;
-      font-size: 14px;
+      overflow: hidden;
     }
 
     .mpt-chat-widget .header-text h3 {
@@ -416,15 +420,12 @@ What's your biggest headache right now?`,
       this.widget.innerHTML = `
         <div class="chat-toggle-button" role="button" tabindex="0" aria-label="Open chat">
           <div class="pulse-animation"></div>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M21 15C21 15.53 20.79 16.04 20.41 16.41C20.04 16.79 19.53 17 19 17H7L3 21V5C3 4.47 3.21 3.96 3.59 3.59C3.96 3.21 4.47 3 5 3H19C19.53 3 20.04 3.21 20.41 3.59C20.79 3.96 21 4.47 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </div>
 
         <div class="chat-window" style="display: none;">
           <div class="chat-header">
             <div class="header-content">
-              <div class="avatar">🤖</div>
+              <div class="avatar"></div>
               <div class="header-text">
                 <h3>Jack</h3>
                 <p><span class="status-indicator"></span>Online • Built for Insurance</p>
