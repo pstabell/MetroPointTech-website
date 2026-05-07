@@ -24,7 +24,7 @@ PRODUCT — AAMS (Autonomous Agency Management System):
 - NOT just another AMS — it is a digital employee that acts on data, not just stores it
 - Handles commission tracking, reconciliation, market shopping, compliance monitoring autonomously
 - AI agents that read PDFs, match policy numbers, detect underpayments, and flag commission leakage
-- Handles the 20-40% of commission data that IVANS cannot process (MGAs, wholesale brokers, regional carriers)
+- Handles the 20-40% of commission data that the standard carrier-download system cannot process (MGAs, wholesale brokers, regional carriers)
 - Reduces commission leakage by catching errors humans miss
 
 PRODUCT — AAMS CRM (NOW LIVE):
@@ -43,12 +43,12 @@ PRICING:
 - No setup fees, no exit fees, cancel anytime, full data portability
 - 14-day free trial, no credit card required
 
-KEY DIFFERENTIATORS vs Applied Epic, Vertafore, HawkSoft:
+KEY DIFFERENTIATORS vs legacy AMS platforms:
 - 73% cheaper than legacy platforms
 - Zero setup fees vs $2,500+ competitors charge
 - AI-powered autonomous reconciliation vs manual processes
 - Full data portability, export all data in minutes
-- Every carrier supported, not just IVANS-connected ones
+- Every carrier supported, not just carrier-download-connected ones
 - Built for the modern agent, not a 1990s architecture
 
 FREE TOOLS:

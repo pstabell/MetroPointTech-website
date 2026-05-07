@@ -31,7 +31,7 @@ const plans = [
       'Monthly training and fine-tuning to your workflow',
     ],
     idealFor: 'Agencies that need two systems connected and want to offload repetitive back-office work to an AI that never sleeps.',
-    platformExamples: 'e.g. HawkSoft + accounting software, or EZLynx + AgencyZoom',
+    platformExamples: 'e.g. AMS + accounting software, or AMS + sales automation',
   },
   {
     name: 'AI Agent Premium',
@@ -54,8 +54,8 @@ const plans = [
       'Advanced carrier portal and CRM integrations',
       'Twice the monthly training and optimization time',
     ],
-    idealFor: 'Agencies running HawkSoft + AgencyZoom + accounting software + carrier portals + CRM that need everything tied together seamlessly.',
-    platformExamples: 'e.g. Applied Epic + AgencyZoom + QuickBooks + carrier portals + CRM',
+    idealFor: 'Agencies running an AMS + sales automation + accounting software + carrier portals + CRM that need everything tied together seamlessly.',
+    platformExamples: 'e.g. AMS + sales automation + QuickBooks + carrier portals + CRM',
   },
   {
     name: 'AI Agent Enterprise',
@@ -78,21 +78,21 @@ const plans = [
       'Double the monthly training and optimization time',
     ],
     idealFor: 'Agencies with 10+ producers and multiple operational systems that want to replace their entire back-office team with a coordinated AI workforce.',
-    platformExamples: 'e.g. Applied Epic + AgencyZoom + QuickBooks + 3 carrier portals + Salesforce + DocuSign + Google Workspace + HubSpot',
+    platformExamples: 'e.g. AMS + sales automation + QuickBooks + 3 carrier portals + CRM + DocuSign + Google Workspace + marketing platform',
   },
 ]
 
 const compatiblePlatforms = [
-  'Vertafore AMS360',
-  'HawkSoft',
-  'Applied Epic',
-  'EZLynx',
-  'AgencyZoom',
+  'Agency Management Systems',
+  'Sales Automation Tools',
   'QuickBooks',
   'Xero',
-  'Salesforce',
-  'HubSpot',
+  'CRM Platforms',
+  'Marketing Platforms',
   'Carrier Portals',
+  'Email and Calendar',
+  'Document Signing',
+  'Cloud Storage',
 ]
 
 export default function AIAgentTeamsPage() {

@@ -94,7 +94,7 @@ export default function AAMSPage() {
             Why Agencies Switch to AAMS
           </h2>
           <p className="text-lg text-neutral-dark text-center max-w-3xl mx-auto mb-12">
-            IVANS handles 60-80% of your commission downloads, but the remaining 20-40% — MGAs, wholesale brokers, regional carriers, complex commercial lines — lands on your desk as PDFs and spreadsheets with zero automation. AAMS handles every carrier, every line, every format.
+            The standard carrier-download system handles 60-80% of your commission downloads, but the remaining 20-40% — MGAs, wholesale brokers, regional carriers, complex commercial lines — lands on your desk as PDFs and spreadsheets with zero automation. AAMS handles every carrier, every line, every format.
           </p>
 
           {/* Competitive Pricing Table */}
@@ -120,28 +120,28 @@ export default function AAMSPage() {
                     <td className="text-center p-4 text-green-600">None</td>
                   </tr>
                   <tr className="bg-white border-b border-gray-200">
-                    <td className="p-4 text-neutral-dark">Applied Epic</td>
+                    <td className="p-4 text-neutral-dark">Legacy enterprise AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$200 - $500/user</td>
                     <td className="text-center p-4 text-red-500">No</td>
                     <td className="text-center p-4 text-red-500">$5,000+</td>
                     <td className="text-center p-4 text-red-500">Multi-year</td>
                   </tr>
                   <tr className="bg-gray-50 border-b border-gray-200">
-                    <td className="p-4 text-neutral-dark">Vertafore AMS360</td>
+                    <td className="p-4 text-neutral-dark">Mid-market legacy AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$150 - $400/user</td>
                     <td className="text-center p-4 text-red-500">No</td>
                     <td className="text-center p-4 text-red-500">$3,000+</td>
                     <td className="text-center p-4 text-red-500">Multi-year</td>
                   </tr>
                   <tr className="bg-white border-b border-gray-200">
-                    <td className="p-4 text-neutral-dark">EZLynx</td>
+                    <td className="p-4 text-neutral-dark">Web-based legacy AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$100 - $300/user</td>
                     <td className="text-center p-4 text-red-500">No</td>
                     <td className="text-center p-4 text-red-500">$1,500+</td>
                     <td className="text-center p-4 text-red-500">Annual</td>
                   </tr>
                   <tr className="bg-gray-50 border-b border-gray-200">
-                    <td className="p-4 text-neutral-dark">HawkSoft</td>
+                    <td className="p-4 text-neutral-dark">Independent agency AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$200 - $300 flat</td>
                     <td className="text-center p-4 text-red-500">No</td>
                     <td className="text-center p-4 text-red-500">$2,000+</td>
@@ -158,7 +158,7 @@ export default function AAMSPage() {
               </table>
             </div>
             <p className="text-sm text-neutral-dark text-center mt-4">
-              A 10-user agency with AAMS AI pays $1,099/month. The same agency on Applied Epic pays $2,000 - $5,000/month with no AI.
+              A 10-user agency with AAMS AI pays $1,099/month. The same agency on a legacy enterprise AMS pays $2,000 - $5,000/month with no AI.
             </p>
           </div>
 
@@ -201,7 +201,7 @@ export default function AAMSPage() {
               <div className="text-4xl mb-4">&#9889;</div>
               <h3 className="text-xl font-bold mb-3">Every Carrier, Every Line</h3>
               <p className="text-neutral-dark">
-                IVANS gets you 60-80% of the way. The remaining 20-40% — MGAs, wholesale brokers, non-standard carriers, stripped transactions — lands on your desk. AAMS processes every statement in any format. PDF, Excel, CSV. No limitations.
+                The standard carrier-download system gets you 60-80% of the way. The remaining 20-40% — MGAs, wholesale brokers, non-standard carriers, stripped transactions — lands on your desk. AAMS processes every statement in any format. PDF, Excel, CSV. No limitations.
               </p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-md text-center">

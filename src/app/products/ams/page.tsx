@@ -287,7 +287,7 @@ export default function AMSProduct() {
 
           <div className="mt-12 text-center">
             <p className="text-primary mb-6">
-              <strong>Setup fees fund integration development:</strong> Applied Epic ($5,000), QuickBooks ($3,000), custom integrations quoted based on complexity
+              <strong>Setup fees fund integration development:</strong> Legacy AMS integrations ($5,000), QuickBooks ($3,000), custom integrations quoted based on complexity
             </p>
             <Link
               href="/contact"

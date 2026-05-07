@@ -63,7 +63,7 @@ export const QUESTIONS: Question[] = [
   { key: 'primary_carriers', label: 'Primary carriers appointed with', type: 'long-text', required: true, sectionKey: 'agency-basics', helper: 'List all that apply, plus any others' },
 
   // Your systems
-  { key: 'primary_ams', label: 'Primary agency management system', type: 'select', required: true, sectionKey: 'your-systems', options: ['Applied Epic', 'Vertafore AMS360', 'HawkSoft', 'EZLynx', 'NowCerts', 'AgencyZoom', 'Other'] },
+  { key: 'primary_ams', label: 'Primary agency management system (please specify)', type: 'short-text', required: true, sectionKey: 'your-systems', placeholder: 'e.g. your current AMS name' },
   { key: 'second_platform', label: 'Second platform the agent should integrate with', type: 'long-text', required: true, sectionKey: 'your-systems', helper: 'Carrier portal, commission software, Google Drive, SharePoint, email inbox, or other', placeholder: 'e.g. QuickBooks for commission reconciliation' },
   { key: 'platform_access_method', label: 'How should the agent access each platform?', type: 'select', required: true, sectionKey: 'your-systems', options: ['API credentials', 'Login credentials', 'CSV imports', 'Email attachments', 'Mix — I will detail later'] },
   { key: 'platform_check_frequency', label: 'How often should the agent check those platforms?', type: 'select', required: true, sectionKey: 'your-systems', options: ['Real-time', 'Hourly', 'Daily', 'Weekly', 'On-demand only'] },
