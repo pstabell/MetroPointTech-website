@@ -262,9 +262,13 @@ const INLINE_IMAGE_POOL_FALLBACK = [
 const SUPABASE_PUBLIC_BASE =
   "https://umedbjslspilqakwnapa.supabase.co/storage/v1/object/public/email-images/";
 
-// Read a broad pool of images from Supabase storage at request time.
-// Draws from several categories so blogs don't all look the same.
-// Renames in the Image Library take effect on the next blog render.
+// Read a broad pool of images from the mkt_image_metadata table at
+// request time. Patrick scar 2026-05-12: the storage list() approach
+// silently failed for the anon role even after we opened anon SELECT on
+// storage.objects, because the bucket stores files at the top level with
+// UUID names — the category lives in mkt_image_metadata.category_slug,
+// not in the storage path. Query the table directly, build full public
+// URLs from storage_filename.
 async function loadInlinePool(): Promise<string[]> {
   const categories = [
     "agency-staff",
@@ -275,13 +279,15 @@ async function loadInlinePool(): Promise<string[]> {
   ];
   try {
     const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    const all: string[] = [];
-    for (const cat of categories) {
-      const { data } = await sb.storage.from("email-images").list(cat, { limit: 500 });
-      (data || []).forEach((f) => {
-        if (/\.(jpg|jpeg|png|gif|webp)$/i.test(f.name)) all.push(cat + "/" + f.name);
-      });
-    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data } = await (sb as any)
+      .from("mkt_image_metadata")
+      .select("storage_filename, category_slug")
+      .in("category_slug", categories);
+    const rows = (data || []) as Array<{ storage_filename: string; category_slug: string }>;
+    const all = rows
+      .filter((r) => r.storage_filename && /\.(jpg|jpeg|png|gif|webp)$/i.test(r.storage_filename))
+      .map((r) => r.storage_filename);
     return all.length > 0 ? all : INLINE_IMAGE_POOL_FALLBACK;
   } catch {
     return INLINE_IMAGE_POOL_FALLBACK;
