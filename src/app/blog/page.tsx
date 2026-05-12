@@ -29,6 +29,7 @@ interface BlogPost {
   category: string;
   readTime: string;
   isLegacy?: boolean;
+  featured_image_url?: string | null;
 }
 
 // The 6 legacy posts are now in Supabase (migrated 2026-04-21 with
@@ -66,7 +67,7 @@ async function loadSupabasePosts(): Promise<BlogPost[]> {
     const { data } = await sb
       .from("mkt_blog_posts")
       .select(
-        "id, slug, title, seo_meta_description, product_or_service, published_at, body"
+        "id, slug, title, seo_meta_description, product_or_service, published_at, body, featured_image_url"
       )
       .eq("status", "published")
       .order("published_at", { ascending: false });
@@ -89,6 +90,7 @@ async function loadSupabasePosts(): Promise<BlogPost[]> {
         readTime: body
           ? `${Math.max(1, Math.round(body.length / 1500))} min read`
           : "",
+        featured_image_url: (row.featured_image_url as string) || null,
       } as BlogPost;
     });
   } catch {
@@ -133,33 +135,47 @@ export default async function BlogPage() {
                 className="block group"
               >
                 <article className="border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-accent transition-all duration-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span
-                      className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColor(
-                        post.category
-                      )}`}
-                    >
-                      {post.category}
-                    </span>
-                    {post.date && (
-                      <span className="text-sm text-neutral-light">
-                        {post.date}
-                      </span>
+                  <div className="flex flex-col md:flex-row gap-6">
+                    {post.featured_image_url && (
+                      <div className="w-full md:w-48 h-32 rounded-lg overflow-hidden flex-shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={post.featured_image_url}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
                     )}
-                    {post.readTime && (
-                      <span className="text-sm text-neutral-light">
-                        {post.readTime}
-                      </span>
-                    )}
-                  </div>
-                  <h2 className="text-xl md:text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors mb-3">
-                    {post.title}
-                  </h2>
-                  <p className="text-neutral-light leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  <div className="mt-4 text-accent font-semibold text-sm group-hover:underline">
-                    Read more &rarr;
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span
+                          className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColor(
+                            post.category
+                          )}`}
+                        >
+                          {post.category}
+                        </span>
+                        {post.date && (
+                          <span className="text-sm text-neutral-light">
+                            {post.date}
+                          </span>
+                        )}
+                        {post.readTime && (
+                          <span className="text-sm text-neutral-light">
+                            {post.readTime}
+                          </span>
+                        )}
+                      </div>
+                      <h2 className="text-xl md:text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors mb-3">
+                        {post.title}
+                      </h2>
+                      <p className="text-neutral-light leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                      <div className="mt-4 text-accent font-semibold text-sm group-hover:underline">
+                        Read more &rarr;
+                      </div>
+                    </div>
                   </div>
                 </article>
               </Link>
