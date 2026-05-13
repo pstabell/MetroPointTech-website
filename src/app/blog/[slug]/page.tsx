@@ -353,6 +353,43 @@ const STRIP_PREFIXES = [
   "Title:",
 ];
 
+// Maven sometimes packages a full campaign drop inside the blog body:
+// landing page scaffolding (### Hero, ### Pain Section, ### Solution Section,
+// ### Social Proof, ### Offer Section, ### CTA Section, ### Footer Compliance
+// Copy) followed by ## Form Copy and ## Email 1/2/3 sections. None of that
+// belongs on the public blog page — emails go to mkt_campaigns, form copy
+// goes to the landing page, scaffolding labels are author guidance.
+//
+// stripScaffolding removes:
+//   1. The everything-from-here-down internal sections (## Form Copy, ## Email N,
+//      ## Landing Page Form, etc.)
+//   2. Scaffolding section labels inside the article (### Hero, ### Pain Section,
+//      etc.) — keep the content, drop the label
+//   3. The wrapper "## Landing Page" heading — it's a container, not a section
+//
+// Anything outside these patterns flows through untouched, so legacy blog
+// posts that don't carry the scaffolding are unaffected.
+const INTERNAL_SECTION_RE = /^(##\s+)(Form\s+Copy|Email\s+\d+|Landing\s+Page\s+Form|Compliance\s+Notes?|Internal\s+Notes?|SEO\s+Notes?|Production\s+Notes?)\s*$/i;
+const SCAFFOLD_H3_RE = /^###\s+(Hero|Pain\s+Section|Solution\s+Section|Social\s+Proof|Offer\s+Section|CTA\s+Section|Footer\s+Compliance\s+Copy|Headline|Subhead|Button|Subject)\s*$/i;
+const LANDING_WRAPPER_RE = /^##\s+Landing\s+Page\s*$/i;
+
+function stripScaffolding(raw: string): string {
+  const lines = raw.split("\n");
+  const out: string[] = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    // Hit an internal-only section heading — truncate everything from here down.
+    if (INTERNAL_SECTION_RE.test(trimmed)) break;
+    // Drop the "## Landing Page" wrapper heading entirely.
+    if (LANDING_WRAPPER_RE.test(trimmed)) continue;
+    // Drop scaffolding subsection labels (keep their content).
+    if (SCAFFOLD_H3_RE.test(trimmed)) continue;
+    out.push(line);
+  }
+  // Collapse any runs of 3+ blank lines that the strips might leave behind.
+  return out.join("\n").replace(/\n{3,}/g, "\n\n");
+}
+
 function renderMarkdownBlocks(raw: string): Block[] {
   const lines = raw.split("\n");
   const out: Block[] = [];
@@ -484,7 +521,7 @@ export default async function BlogPostPage({
   const post = await resolvePost(slug);
   if (!post) notFound();
 
-  const blocks = renderMarkdownBlocks(post.content);
+  const blocks = renderMarkdownBlocks(stripScaffolding(post.content));
   // Find all h2 section starts. Decide image count by article length — short
   // posts get 2 inline images, longer posts (5+ sections) get 3. Combined
   // with the featured image at top that's 3–4 images per post, our target.
