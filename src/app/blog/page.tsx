@@ -9,8 +9,8 @@ export const fetchCache = "force-no-store";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-  alternates: { canonical: '/blog' },
     "Insights on AI infrastructure, insurance technology, commission tracking, and building software that works. From the team at Metro Point Technology.",
+  alternates: { canonical: '/blog' },
 };
 
 // Supabase creds — env-first, hardcoded public anon key as belt-and-suspenders
