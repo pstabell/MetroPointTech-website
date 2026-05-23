@@ -11,9 +11,28 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata' })
 
 export const metadata: Metadata = {
-  title: 'Metro Point Technology | Autonomous Insurance Software',
+  metadataBase: new URL('https://metropointtech.com'),
+  title: {
+    default: 'Metro Point Technology | Autonomous Insurance Software',
+    template: '%s | Metro Point Technology',
+  },
   description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
   keywords: 'AAMS, autonomous agency management system, agentic AI, zero-touch operations, insurance software, commission tracking, insurance CRM',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Metro Point Technology',
+    title: 'Metro Point Technology | Autonomous Insurance Software',
+    description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
+    url: 'https://metropointtech.com',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Metro Point Technology | Autonomous Insurance Software',
+    description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
+  },
 }
 
 export default function RootLayout({
