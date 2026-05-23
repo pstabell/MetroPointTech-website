@@ -7,8 +7,9 @@ export const revalidate = 0;
 export const fetchCache = "force-no-store";
 
 export const metadata: Metadata = {
-  title: "Blog | Metro Point Technology",
+  title: "Blog",
   description:
+  alternates: { canonical: '/blog' },
     "Insights on AI infrastructure, insurance technology, commission tracking, and building software that works. From the team at Metro Point Technology.",
 };
 

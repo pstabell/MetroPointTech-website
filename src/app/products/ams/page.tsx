@@ -2,8 +2,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AMS Platform - Agency Management System | Metro Point Technology',
+  title: 'AMS Platform - Agency Management System',
   description: 'Multi-tenant commission platform with Mirror Architecture. Real-time agent visibility as admin reconciles carrier statements.',
+  alternates: { canonical: '/products/ams' },
 }
 
 export default function AMSProduct() {

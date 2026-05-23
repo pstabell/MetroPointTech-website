@@ -4,6 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Meet Our Team",
   description:
+  alternates: { canonical: '/team' },
     "Meet the management team behind Metro Point Technology. 15 team members — one visionary founder and 14 AI-powered professionals — delivering enterprise-level results 24/7.",
 };
 

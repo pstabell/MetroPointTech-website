@@ -3,8 +3,9 @@ import type { Metadata } from 'next'
 import AAMSContent from '@/components/AAMSContent'
 
 export const metadata: Metadata = {
-  title: 'AAMS — Autonomous Agency Management System | Metro Point Technology',
+  title: 'AAMS — Autonomous Agency Management System',
   description: 'The autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations for insurance agencies. 14-day free trial.',
+  alternates: { canonical: '/AAMS' },
 }
 
 export default function AAMSPage() {

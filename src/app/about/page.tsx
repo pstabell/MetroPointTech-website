@@ -2,8 +2,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us | Metro Point Technology',
+  title: 'About Us',
   description: 'Learn about Patrick Stabell and Metro Point Technology. 30 years of insurance experience building software that actually works.',
+  alternates: { canonical: '/about' },
 }
 
 export default function About() {

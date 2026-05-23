@@ -3,8 +3,9 @@ import { Metadata } from 'next'
 import AIAgentCheckout from '@/components/AIAgentCheckout'
 
 export const metadata: Metadata = {
-  title: 'AI Agent Teams | Metro Point Technology',
+  title: 'AI Agent Teams',
   description: 'Your own dedicated AI employees, connected to your agency systems. 24/7 back-office automation for insurance agencies. Three plans: Basic ($499.99/mo), Premium ($999.99/mo), and Enterprise ($2,499.99/mo).',
+  alternates: { canonical: '/ai-agent-teams' },
   keywords: 'AI agent, insurance automation, back office automation, commission reconciliation, agency management, AI employee, insurance technology',
 }
 

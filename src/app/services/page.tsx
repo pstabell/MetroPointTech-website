@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Services | Metro Point Technology',
+  title: 'Services',
   description: 'Technology services that actually make sense. System optimization, integrations, custom development, and AI-powered solutions - all delivered with a personal touch.',
+  alternates: { canonical: '/services' },
 }
 
 const services = [

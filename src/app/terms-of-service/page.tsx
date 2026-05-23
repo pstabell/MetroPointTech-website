@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Metro Point Technology',
+  title: 'Terms of Service',
   description: 'Terms governing use of Metro Point Technology LLC Software as a Service products.',
+  alternates: { canonical: '/terms-of-service' },
 }
 
 export default function TermsOfService() {

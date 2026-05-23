@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import FreeToolPage from '@/components/FreeToolPage'
 
 export const metadata: Metadata = {
-  title: 'Periodic Review Checklist | Free Insurance Agency Tool | Metro Point Technology',
+  title: 'Periodic Review Checklist | Free Insurance Agency Tool',
   description: 'A free periodic review checklist for insurance agencies to keep renewals, remarkets, client follow-ups, and operational reviews on schedule.',
+  alternates: { canonical: '/periodic-review-checklist' },
 }
 
 export default function PeriodicReviewChecklistPage() {

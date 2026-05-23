@@ -2,8 +2,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI Commission Tracker | Metro Point Technology',
+  title: 'AI Commission Tracker',
   description: 'Track policies, reconcile carrier statements, and catch every dollar. Start with a free trial.',
+  alternates: { canonical: '/products/commission-tracker' },
 }
 
 export default function CommissionTrackerProduct() {

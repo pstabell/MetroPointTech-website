@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Checkout Cancelled | Metro Point Technology',
+  title: 'Checkout Cancelled',
 }
 
 export default function CheckoutCancelledPage() {

@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AAMS CRM | AI-Powered Sales & Quoting | Metro Point Technology',
+  title: 'AAMS CRM | AI-Powered Sales & Quoting',
   description: 'Autonomous CRM built for insurance agencies. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99.99/user/mo add-on to AAMS Platform.',
+  alternates: { canonical: '/AAMS-CRM' },
   keywords: 'insurance CRM, AI sales, ACORD forms, insurance quoting, renewal management, agency CRM, insurance pipeline',
 }
 

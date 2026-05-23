@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import FreeToolPage from '@/components/FreeToolPage'
 
 export const metadata: Metadata = {
-  title: 'Month-End Variance Worksheet | Free Insurance Agency Tool | Metro Point Technology',
+  title: 'Month-End Variance Worksheet | Free Insurance Agency Tool',
   description: 'A free month-end variance worksheet for insurance agencies to spot commission, premium, receivable, and carrier statement exceptions before close.',
+  alternates: { canonical: '/month-end-variance-worksheet' },
 }
 
 export default function MonthEndVarianceWorksheetPage() {

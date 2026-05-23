@@ -2,8 +2,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'WRAP Proposal Generator | Metro Point Technology',
+  title: 'WRAP Proposal Generator',
   description: 'Create professional WRAP (Wealth Risk Analysis & Protection) proposals in minutes. Beautiful Word documents with your agency branding.',
+  alternates: { canonical: '/products/wrap-proposal-generator' },
 }
 
 export default function WRAPProposalGeneratorProduct() {
