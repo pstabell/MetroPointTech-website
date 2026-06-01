@@ -10,9 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/AAMS/agents', priority: 0.9, changeFrequency: 'weekly' },
     { url: '/AAMS/agencies', priority: 0.9, changeFrequency: 'weekly' },
     { url: '/AAMS-CRM', priority: 0.8, changeFrequency: 'weekly' },
-    { url: '/ams-app', priority: 0.8, changeFrequency: 'weekly' },
-    { url: '/ams-app/agents', priority: 0.8, changeFrequency: 'weekly' },
-    { url: '/ams-app/agencies', priority: 0.8, changeFrequency: 'weekly' },
+    // /ams-app* removed 2026-06-01: those routes 307-redirect to /AAMS*, and
+    // listing redirecting URLs in the sitemap triggered Google Search Console
+    // "page with redirect" / "redirect error" indexing notices. The canonical
+    // /AAMS pages above are what should be indexed.
     { url: '/products/ams', priority: 0.7, changeFrequency: 'weekly' },
     { url: '/products/commission-tracker', priority: 0.7, changeFrequency: 'weekly' },
     { url: '/products/wrap-proposal-generator', priority: 0.7, changeFrequency: 'weekly' },
