@@ -35,6 +35,41 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.metropointtech.com/#organization',
+      name: 'Metro Point Technology',
+      url: 'https://www.metropointtech.com',
+      logo: 'https://www.metropointtech.com/logo.svg',
+      description:
+        'Autonomous insurance agency software built by an active agent with 30 years of experience. AAMS delivers zero-touch commission reconciliation, agentic workflows, and autonomous operations.',
+      founder: { '@type': 'Person', name: 'Patrick Stabell' },
+      areaServed: { '@type': 'Country', name: 'United States' },
+      sameAs: ['https://github.com/pstabell'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.metropointtech.com/#website',
+      url: 'https://www.metropointtech.com',
+      name: 'Metro Point Technology',
+      publisher: { '@id': 'https://www.metropointtech.com/#organization' },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'AAMS — Autonomous Agency Management System',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      url: 'https://www.metropointtech.com/AAMS',
+      description:
+        'Autonomous agency management system for insurance agencies and independent agents — zero-touch commission reconciliation, agent and policy management, and AI-powered CRM.',
+      publisher: { '@id': 'https://www.metropointtech.com/#organization' },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -44,6 +79,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${alata.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="min-h-screen flex flex-col">
         <Navbar />
