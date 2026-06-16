@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://metropointtech.com'),
+  metadataBase: new URL('https://www.metropointtech.com'),
   title: {
     default: 'Metro Point Technology | Autonomous Insurance Software',
     template: '%s | Metro Point Technology',

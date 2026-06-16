@@ -2,8 +2,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI Commission Tracker',
-  description: 'Track policies, reconcile carrier statements, and catch every dollar. Start with a free trial.',
+  title: 'Insurance Commission Tracking Software',
+  description: 'Insurance commission tracking software for agencies and independent agents. Track policies, reconcile carrier statements, and catch every dollar of commission. Start with a free trial.',
+  keywords: 'insurance commission tracking software, insurance commission tracker, insurance commission software, commission reconciliation software',
   alternates: { canonical: '/products/commission-tracker' },
 }
 

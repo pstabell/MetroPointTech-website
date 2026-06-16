@@ -507,8 +507,15 @@ export async function generateMetadata({
   const post = await resolvePost(slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} | Metro Point Technology Blog`,
+    title: post.title,
     description: post.content.slice(0, 160) + "...",
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.content.slice(0, 160) + "...",
+      url: `/blog/${slug}`,
+    },
   };
 }
 
