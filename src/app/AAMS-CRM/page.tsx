@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AAMS CRM | AI-Powered Sales & Quoting',
-  description: 'Autonomous CRM built for insurance agencies. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99.99/user/mo add-on to AAMS Platform.',
+  title: 'AAMS CRM | AI AMS CRM for Insurance Agencies',
+  description: 'AAMS CRM is the AI insurance agency CRM built into your AMS. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99.99/user/mo add-on to AAMS Platform.',
   alternates: { canonical: '/AAMS-CRM' },
-  keywords: 'insurance CRM, AI sales, ACORD forms, insurance quoting, renewal management, agency CRM, insurance pipeline',
+  keywords: 'ams crm, insurance CRM, insurance agency CRM, AI sales, ACORD forms, insurance quoting, renewal management, agency CRM, insurance pipeline',
 }
 
 const screenshots = [

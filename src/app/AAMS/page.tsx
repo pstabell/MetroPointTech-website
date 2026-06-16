@@ -4,7 +4,8 @@ import AAMSContent from '@/components/AAMSContent'
 
 export const metadata: Metadata = {
   title: 'AAMS — Autonomous Agency Management System',
-  description: 'The autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations for insurance agencies. 14-day free trial.',
+  description: 'AAMS is an autonomous agency management system for insurance agencies — the AI evolution of legacy AMS platforms, with agentic workflows, real-time agent visibility, and zero-touch operations. 14-day free trial.',
+  keywords: 'autonomous agency management system, AMS platform, insurance agency management software, agentic AI for insurance, insurance AMS',
   alternates: { canonical: '/AAMS' },
 }
 
