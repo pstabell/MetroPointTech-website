@@ -45,6 +45,12 @@ export default function Navbar() {
             <Link href="/contact" className="text-primary hover:text-primary transition">
               Contact
             </Link>
+            <a
+              href="https://ams.metropointtech.com/login"
+              className="text-primary hover:text-primary transition"
+            >
+              Log In
+            </a>
             <Link
               href="/contact"
               className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition"
@@ -95,6 +101,12 @@ export default function Navbar() {
             <Link href="/contact" className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition">
               Contact
             </Link>
+            <a
+              href="https://ams.metropointtech.com/login"
+              className="block px-4 py-2 text-primary hover:bg-neutral-lighter rounded transition"
+            >
+              Log In
+            </a>
             <Link
               href="/contact"
               className="block mx-4 mt-4 bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition text-center"
