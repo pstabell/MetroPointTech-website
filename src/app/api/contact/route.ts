@@ -46,8 +46,10 @@ export async function POST(request: NextRequest) {
         type: 'lead',
         source: 'Website',
         source_detail: `MetroPointTech.com Contact Form - ${body.product}`,
-        notes: `Product Interest: ${body.product}\nMessage: ${body.message}`,
-        tags: ['website-lead', 'product-inquiry'],
+        notes: `Product Interest: ${body.product}\nMessage: ${body.message}\nSMS consent: ${body.smsConsent ? `YES (opted in via website contact form on ${new Date().toISOString()})` : 'no'}`,
+        tags: body.smsConsent
+          ? ['website-lead', 'product-inquiry', 'sms-opt-in']
+          : ['website-lead', 'product-inquiry'],
         email_status: 'active'
       })
       .select('id')

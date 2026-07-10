@@ -10,7 +10,8 @@ export default function Contact() {
     phone: '',
     company: '',
     product: '',
-    message: ''
+    message: '',
+    smsConsent: false
   })
 
   const [submitted, setSubmitted] = useState(false)
@@ -40,9 +41,10 @@ export default function Contact() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const target = e.target as HTMLInputElement
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [target.name]: target.type === 'checkbox' ? target.checked : target.value
     })
   }
 
@@ -174,6 +176,26 @@ export default function Contact() {
                       className="w-full px-4 py-3 border border-neutral-lighter rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-neutral resize-none"
                       placeholder="Tell us about your needs..."
                     />
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="smsConsent"
+                      name="smsConsent"
+                      checked={formData.smsConsent}
+                      onChange={handleChange}
+                      className="mt-1 h-5 w-5 flex-shrink-0 rounded border-neutral-lighter text-accent focus:ring-accent"
+                    />
+                    <label htmlFor="smsConsent" className="text-sm text-neutral-light leading-relaxed">
+                      Yes, you can text me. By checking this box, I agree to receive appointment reminders,
+                      payment links, and account notification text messages from Metro Point Technology at the
+                      phone number provided. Consent is not a condition of purchase. Message frequency varies.
+                      Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our{' '}
+                      <a href="/privacy-policy" className="text-primary hover:text-primary-dark underline">Privacy Policy</a>
+                      {' '}and{' '}
+                      <a href="/terms-of-service" className="text-primary hover:text-primary-dark underline">Terms of Service</a>.
+                    </label>
                   </div>
 
                   <button
