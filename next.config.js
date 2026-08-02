@@ -29,6 +29,12 @@ const nextConfig = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      { source: '/ai4', destination: '/ai4.html' },
+      { source: '/ai4/', destination: '/ai4.html' },
+    ]
+  },
 }
 
 module.exports = nextConfig
