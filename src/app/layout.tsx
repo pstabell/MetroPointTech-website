@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.metropointtech.com'),
+  metadataBase: new URL('https://www.aamshub.com'),
   title: {
     default: 'Metro Point Technology | Autonomous Insurance Software',
     template: '%s | Metro Point Technology',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Metro Point Technology',
     title: 'Metro Point Technology | Autonomous Insurance Software',
     description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
-    url: 'https://metropointtech.com',
+    url: 'https://aamshub.com',
   },
   twitter: {
     card: 'summary_large_image',
@@ -40,10 +40,10 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://www.metropointtech.com/#organization',
+      '@id': 'https://www.aamshub.com/#organization',
       name: 'Metro Point Technology',
-      url: 'https://www.metropointtech.com',
-      logo: 'https://www.metropointtech.com/logo.svg',
+      url: 'https://www.aamshub.com',
+      logo: 'https://www.aamshub.com/logo.svg',
       description:
         'Autonomous insurance agency software built by an active agent with 30 years of experience. AAMS delivers zero-touch commission reconciliation, agentic workflows, and autonomous operations.',
       founder: { '@type': 'Person', name: 'Patrick Stabell' },
@@ -52,20 +52,20 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://www.metropointtech.com/#website',
-      url: 'https://www.metropointtech.com',
+      '@id': 'https://www.aamshub.com/#website',
+      url: 'https://www.aamshub.com',
       name: 'Metro Point Technology',
-      publisher: { '@id': 'https://www.metropointtech.com/#organization' },
+      publisher: { '@id': 'https://www.aamshub.com/#organization' },
     },
     {
       '@type': 'SoftwareApplication',
       name: 'AAMS — Autonomous Agency Management System',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
-      url: 'https://www.metropointtech.com/AAMS',
+      url: 'https://www.aamshub.com/AAMS',
       description:
         'Autonomous agency management system for insurance agencies and independent agents — zero-touch commission reconciliation, agent and policy management, and AI-powered CRM.',
-      publisher: { '@id': 'https://www.metropointtech.com/#organization' },
+      publisher: { '@id': 'https://www.aamshub.com/#organization' },
     },
   ],
 }

@@ -253,7 +253,7 @@ export default function Contact() {
                 <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl p-6">
                   <h3 className="font-semibold text-neutral mb-3">Prefer to start immediately?</h3>
                   <a
-                    href="https://www.metropointtech.com/ams-app"
+                    href="https://www.aamshub.com/ams-app"
                     className="inline-block bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition"
                   >
                     Start Free 14-Day Trial

@@ -244,7 +244,7 @@ export default function CommissionCalculatorPage() {
                   Stop losing revenue to commission errors. Upload your commission statements and see exactly where the money goes.
                 </p>
                 <a
-                  href="https://www.metropointtech.com/ams-app"
+                  href="https://www.aamshub.com/ams-app"
                   className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition shadow-lg"
                 >
                   Start Your Free Trial

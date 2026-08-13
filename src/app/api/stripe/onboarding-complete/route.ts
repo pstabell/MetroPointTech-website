@@ -26,7 +26,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET_ONBOARDING || ''
 
 function siteOrigin(req: NextRequest): string {
-  return process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin || 'https://www.metropointtech.com'
+  return process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin || 'https://www.aamshub.com'
 }
 
 function tierFromSessionMetadata(session: Stripe.Checkout.Session): 'basic' | 'premium' | 'enterprise' | null {

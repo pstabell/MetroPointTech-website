@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Commission Calculator | Metro Point Technology',
     description: 'Free commission calculator for insurance agents. Compare expected vs actual carrier commission and surface underpayments.',
-    url: 'https://metropointtech.com/commission-calculator',
+    url: 'https://aamshub.com/commission-calculator',
   },
 }
 

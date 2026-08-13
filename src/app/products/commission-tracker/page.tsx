@@ -25,7 +25,7 @@ export default function CommissionTrackerProduct() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.metropointtech.com/ams-app"
+                href="https://www.aamshub.com/ams-app"
                 className="bg-accent text-white hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Start Free 14-Day Trial
@@ -246,7 +246,7 @@ export default function CommissionTrackerProduct() {
             No credit card required. See how much you've been leaving on the table.
           </p>
           <a
-            href="https://www.metropointtech.com/ams-app"
+            href="https://www.aamshub.com/ams-app"
             className="inline-block bg-accent text-white hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition"
           >
             Get Started Free

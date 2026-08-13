@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE = 'https://www.metropointtech.com';
+const BASE = 'https://www.aamshub.com';
 
 // Supabase — public anon key fallback mirrors blog/[slug]/page.tsx so the
 // sitemap can enumerate published posts at request time.

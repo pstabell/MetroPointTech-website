@@ -206,7 +206,7 @@ Sign 4: Your team is spending too much time on manual follow-up. Every hour spen
 
 Sign 5: You have no visibility into commission trends. Without a system tracking your commissions over time, you cannot see patterns. Which carriers pay on time? Which ones consistently underpay? What is your recovery rate?
 
-If your agency is seeing any of these warning signs, take a closer look at AI Commission Tracker at metropointtech.com/ams-app and see how much time and revenue you could recover.`,
+If your agency is seeing any of these warning signs, take a closer look at AI Commission Tracker at aamshub.com/ams-app and see how much time and revenue you could recover.`,
   },
   "automated-reconciliation-saves-10-hours": {
     title: "How Automated Reconciliation Saves Insurance Agencies 10+ Hours a Month",
@@ -223,7 +223,7 @@ The time savings are significant. What used to take 10 hours can be done in unde
 
 Agencies that switch to automated reconciliation typically discover they were missing 2 to 5 percent of their expected commissions. On a book of $500,000 in annual commission revenue, that is $10,000 to $25,000 per year recovered.
 
-AI Commission Tracker helps teams focus on exceptions instead of rebuilding the process every month. Learn more at metropointtech.com/ams-app.`,
+AI Commission Tracker helps teams focus on exceptions instead of rebuilding the process every month. Learn more at aamshub.com/ams-app.`,
   },
   "hidden-cost-of-spreadsheet-commission-tracking": {
     title: "The Hidden Cost of Spreadsheet Commission Tracking",
@@ -244,7 +244,7 @@ The fourth hidden cost is missed revenue. Without automated matching between car
 
 The fifth hidden cost is opportunity cost. Every hour your team spends on manual reconciliation is an hour they are not spending on clients, renewals, or growth.
 
-See how AI Commission Tracker helps agencies reduce manual work and catch more errors at metropointtech.com/ams-app.`,
+See how AI Commission Tracker helps agencies reduce manual work and catch more errors at aamshub.com/ams-app.`,
   },
 };
 

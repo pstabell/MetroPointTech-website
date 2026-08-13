@@ -527,7 +527,7 @@ What's your biggest headache right now?`,
         return;
       }
       if (action === 'contact_sales') {
-        window.open('https://www.metropointtech.com/contact', '_blank');
+        window.open('https://www.aamshub.com/contact', '_blank');
         return;
       }
 
@@ -698,7 +698,7 @@ What's your biggest headache right now?`,
           interest: userInfo.primaryInterest || 'commission_tracking'
         };
         
-        await fetch('https://www.metropointtech.com/api/contact', {
+        await fetch('https://www.aamshub.com/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(crmData)

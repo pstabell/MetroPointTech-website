@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AAMS for Insurance Agents | Metro Point Technology',
     description: 'AAMS for solo and producer-level insurance agents. Commission tracking and autonomous workflows for $19.99 per month.',
-    url: 'https://metropointtech.com/AAMS/agents',
+    url: 'https://aamshub.com/AAMS/agents',
   },
 }
 

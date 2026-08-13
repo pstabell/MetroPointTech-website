@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact | Metro Point Technology',
     description: 'Get in touch with Metro Point Technology about AAMS or our autonomous insurance software.',
-    url: 'https://metropointtech.com/contact',
+    url: 'https://aamshub.com/contact',
   },
 }
 
