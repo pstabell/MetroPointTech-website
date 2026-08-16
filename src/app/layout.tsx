@@ -98,6 +98,17 @@ export default function RootLayout({
         />
         <Analytics />
         <SpeedInsights />
+        {/* Google Analytics 4 — property "aamshub.com" */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZHVH1EHVX1"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-ZHVH1EHVX1');
+        `}</Script>
         <Script id="mkt-hub-analytics" strategy="afterInteractive">{`
           (function(){
             var d='https://mpt-marketing-hub.vercel.app/api/analytics/drain';
