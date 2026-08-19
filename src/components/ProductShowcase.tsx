@@ -3,6 +3,25 @@ import Link from 'next/link'
 export default function ProductShowcase() {
   const products = [
     {
+      name: 'Avaizo',
+      subtitle: 'AI Sales, Service & Support Advisor',
+      description: 'Ava answers every call, text, and website chat for any business, 24/7 — trained on your own info. She books jobs, takes orders, and captures every lead, so you never miss a customer.',
+      icon: '🎧',
+      features: [
+        'Answers phone, text, and website chat around the clock',
+        'Trained on your own products, services, and prices',
+        'Books appointments, takes orders, captures every lead',
+        'Transfers to a real person on request',
+        'Live in minutes — no tech skills needed',
+      ],
+      pricing: 'From $29/mo',
+      setupFee: '14-day free trial • No credit card required',
+      link: 'https://avaizo.com',
+      cta: 'Visit Avaizo',
+      highlight: false,
+      borderColor: 'accent',
+    },
+    {
       name: 'AAMS Platform',
       subtitle: 'Autonomous Agency Management',
       description: 'The autonomous evolution of legacy AMS. Zero-touch commission reconciliation, agentic workflows, and real-time agent visibility — your agency on autopilot.',
@@ -129,16 +148,31 @@ export default function ProductShowcase() {
               </div>
 
               <div className="p-8 pt-0">
-                <Link
-                  href={product.link}
-                  className={`block text-center px-6 py-3 rounded-lg font-semibold transition ${
-                    product.highlight
-                      ? 'bg-accent text-white hover:bg-accent-dark'
-                      : 'bg-primary text-white hover:bg-primary-dark'
-                  }`}
-                >
-                  {product.cta}
-                </Link>
+                {product.link.startsWith('http') ? (
+                  <a
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block text-center px-6 py-3 rounded-lg font-semibold transition ${
+                      product.highlight
+                        ? 'bg-accent text-white hover:bg-accent-dark'
+                        : 'bg-primary text-white hover:bg-primary-dark'
+                    }`}
+                  >
+                    {product.cta}
+                  </a>
+                ) : (
+                  <Link
+                    href={product.link}
+                    className={`block text-center px-6 py-3 rounded-lg font-semibold transition ${
+                      product.highlight
+                        ? 'bg-accent text-white hover:bg-accent-dark'
+                        : 'bg-primary text-white hover:bg-primary-dark'
+                    }`}
+                  >
+                    {product.cta}
+                  </Link>
+                )}
               </div>
             </div>
           ))}
