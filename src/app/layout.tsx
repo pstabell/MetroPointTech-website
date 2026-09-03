@@ -13,8 +13,8 @@ const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.aamshub.com'),
   title: {
-    default: 'Metro Point Technology | Autonomous Insurance Software',
-    template: '%s | Metro Point Technology',
+    default: 'Agenient | Autonomous Insurance Software',
+    template: '%s | Agenient',
   },
   description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
   keywords: 'AAMS, autonomous agency management system, agentic AI, zero-touch operations, insurance software, commission tracking, insurance CRM',
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'Metro Point Technology',
-    title: 'Metro Point Technology | Autonomous Insurance Software',
+    siteName: 'Agenient',
+    title: 'Agenient | Autonomous Insurance Software',
     description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
     url: 'https://aamshub.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Metro Point Technology | Autonomous Insurance Software',
+    title: 'Agenient | Autonomous Insurance Software',
     description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
   },
 }
@@ -78,6 +78,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${alata.variable}`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"

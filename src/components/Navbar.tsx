@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import AgenientWordmark from '@/components/AgenientWordmark'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,13 +11,9 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-[120px]">
         <div className="flex justify-between items-center w-full">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <img
-              src="/logo-animated.svg"
-              alt="Metro Point Technology, LLC"
-              className="h-30 w-auto"
-            />
+          {/* Logo — Agenient SPIN wordmark (animated, header) */}
+          <Link href="/" className="flex items-center" aria-label="Agenient home">
+            <AgenientWordmark variant="spin" size="clamp(30px, 4.2vw, 46px)" />
           </Link>
 
           {/* Desktop Navigation */}
