@@ -16,6 +16,7 @@ export default function AgenientWordmark({
   variant = 'stretch',
   size = '140px',
   dark = false,
+  mono,
   title = 'Agenient',
   className,
   style,
@@ -23,14 +24,17 @@ export default function AgenientWordmark({
   variant?: AgenientVariant
   size?: string
   dark?: boolean
+  /** Render the whole mark in one solid color (e.g. '#fff') for use on a colored/brand-gradient
+   *  background where the two brand colors would blend in. Overrides the emerald/violet split. */
+  mono?: string
   title?: string
   className?: string
   style?: React.CSSProperties
 }) {
   const uid = useId().replace(/:/g, '')
   const gradId = `agGrad-${uid}`
-  const em = dark ? '#34d39e' : '#10b981'
-  const vi = dark ? '#8b6bf0' : '#6d28d9'
+  const em = mono ?? (dark ? '#34d39e' : '#10b981')
+  const vi = mono ?? (dark ? '#8b6bf0' : '#6d28d9')
   const spin = variant === 'spin'
   const starSize = spin ? '0.886em' : '0.857em' // 124px / 120px @140px
   const starTop = spin ? '-0.45em' : '-0.436em' // -63px / -61px @140px
