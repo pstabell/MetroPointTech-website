@@ -81,10 +81,10 @@ export default function AAMSContent() {
           {isProducer ? (
             <div>
               <p className="text-center text-lg text-neutral-dark mb-4 max-w-3xl mx-auto">
-                Agent commission tracking, free forever. Producers at agencies use AAMS Producer to track their agency commission statements, catch carrier underpayments along the way, and make sure they get paid right on every commission they earn.
+                Agent commission tracking, free forever. Producers at agencies use Agenient AAMS Producer to track their agency commission statements, catch carrier underpayments along the way, and make sure they get paid right on every commission they earn.
               </p>
               <p className="text-center text-sm text-cyan-800 font-semibold mb-10 max-w-3xl mx-auto">
-                Manual reconciliation. Upgrade to AAMS Solo Agent any time to manage 100% of your commissions and turn on autonomous reconciliation.
+                Manual reconciliation. Upgrade to Agenient AAMS Solo Agent any time to manage 100% of your commissions and turn on autonomous reconciliation.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
@@ -120,7 +120,7 @@ export default function AAMSContent() {
           ) : isAgent ? (
             <div>
               <p className="text-center text-lg text-neutral-dark mb-10 max-w-3xl mx-auto">
-                Solo agents use AAMS Solo to track their own commissions, catch discrepancies, and make sure they get paid every dollar they earned.
+                Solo agents use Agenient AAMS Solo to track their own commissions, catch discrepancies, and make sure they get paid every dollar they earned.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
@@ -156,7 +156,7 @@ export default function AAMSContent() {
           ) : (
             <div>
               <p className="text-center text-lg text-neutral-dark mb-10 max-w-3xl mx-auto">
-                Agency owners and managers use AAMS Agency to reconcile carrier statements, manage agents, and oversee all commissions across the entire team.
+                Agency owners and managers use Agenient AAMS Agency to reconcile carrier statements, manage agents, and oversee all commissions across the entire team.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
@@ -365,7 +365,7 @@ export default function AAMSContent() {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                     FREE FOREVER
                   </div>
-                  <div className="text-sm font-semibold text-cyan-700 mb-1">AAMS PRODUCER</div>
+                  <div className="text-sm font-semibold text-cyan-700 mb-1">Agenient AAMS PRODUCER</div>
                   <div className="text-5xl font-bold mb-1">$0</div>
                   <div className="text-neutral-dark mb-3 text-sm">forever</div>
                   <div className="text-xs text-neutral-dark mb-6 italic text-left">
@@ -399,7 +399,7 @@ export default function AAMSContent() {
                 {/* Upgrade hook */}
                 <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl p-8 shadow-lg flex flex-col text-left">
                   <div className="text-sm font-semibold text-blue-100 mb-1">READY TO MANAGE 100% OF YOUR COMMISSIONS?</div>
-                  <div className="text-3xl font-bold mb-4">Upgrade to AAMS Solo Agent</div>
+                  <div className="text-3xl font-bold mb-4">Upgrade to Agenient AAMS Solo Agent</div>
                   <p className="text-blue-100 mb-6">
                     Drop the split cap and track 100% of your commissions — yours plus anything you handle as your own book. Move up to Pro or Autopilot to add autonomous reconciliation on top, so the system runs your commission ops while you focus on selling.
                   </p>
@@ -424,7 +424,7 @@ export default function AAMSContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* Starter */}
               <div className="bg-white border-2 border-teal-400 rounded-2xl p-6 shadow-lg flex flex-col">
-                <div className="text-sm font-semibold text-teal-600 mb-1">AAMS STARTER</div>
+                <div className="text-sm font-semibold text-teal-600 mb-1">Agenient AAMS STARTER</div>
                 <div className="text-4xl font-bold mb-1">$19.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -457,7 +457,7 @@ export default function AAMSContent() {
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   MOST POPULAR
                 </div>
-                <div className="text-sm font-semibold text-teal-600 mb-1">AAMS PRO</div>
+                <div className="text-sm font-semibold text-teal-600 mb-1">Agenient AAMS PRO</div>
                 <div className="text-4xl font-bold mb-1">$49.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -490,7 +490,7 @@ export default function AAMSContent() {
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   BEST VALUE
                 </div>
-                <div className="text-sm font-semibold text-teal-700 mb-1">AAMS AUTOPILOT</div>
+                <div className="text-sm font-semibold text-teal-700 mb-1">Agenient AAMS AUTOPILOT</div>
                 <div className="text-4xl font-bold mb-1">$79.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -522,13 +522,13 @@ export default function AAMSContent() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {/* Self-Service */}
                 <div className="bg-white border-2 border-violet-400 rounded-2xl p-8 shadow-lg flex flex-col">
-                  <div className="text-sm font-semibold text-violet-600 mb-1">AAMS AGENCY</div>
+                  <div className="text-sm font-semibold text-violet-600 mb-1">Agenient AAMS AGENCY</div>
                   <div className="text-sm text-neutral-dark mb-4">Self-Service</div>
                   <div className="text-5xl font-bold mb-1">$99.99</div>
                   <div className="text-neutral-dark mb-6">per month</div>
                   <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
                     {[
-                      { feature: 'Everything in AAMS Solo', included: true },
+                      { feature: 'Everything in Agenient AAMS Solo', included: true },
                       { feature: 'Multi-Agent Management', included: true },
                       { feature: 'Commission Splits & Chargebacks', included: true },
                       { feature: 'Admin Panel & Role Hierarchy', included: true },
@@ -557,7 +557,7 @@ export default function AAMSContent() {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-semibold px-4 py-1 rounded-full">
                     MOST POPULAR
                   </div>
-                  <div className="text-sm font-semibold text-violet-600 mb-1">AAMS AGENCY</div>
+                  <div className="text-sm font-semibold text-violet-600 mb-1">Agenient AAMS AGENCY</div>
                   <div className="text-sm text-neutral-dark mb-4">With AI Agent</div>
                   <div className="text-5xl font-bold mb-1">$199.99</div>
                   <div className="text-neutral-dark mb-6">per month</div>
@@ -590,7 +590,7 @@ export default function AAMSContent() {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-700 text-white text-xs font-semibold px-4 py-1 rounded-full">
                     BEST VALUE
                   </div>
-                  <div className="text-sm font-semibold text-violet-700 mb-1">AAMS AGENCY AI</div>
+                  <div className="text-sm font-semibold text-violet-700 mb-1">Agenient AAMS AGENCY AI</div>
                   <div className="text-sm text-neutral-dark mb-4">Plus — 3 Seats Bundled</div>
                   <div className="text-5xl font-bold mb-1">$299.99</div>
                   <div className="text-neutral-dark mb-6">per month</div>
@@ -627,10 +627,10 @@ export default function AAMSContent() {
           )}
 
           <p className="text-sm text-neutral-dark mt-8">
-            AAMS Producer is free forever for producers at agencies — no credit card, capped commission split.
-            AAMS Starter ($19.99) and AAMS Agency Self-Service ($99.99) come with a 14-day free trial — no credit card required.
-            AAMS Pro, Autopilot, and Agency AI also include a 14-day free trial but require a credit card at signup.
-            AAMS Agency AI Plus ($299.99) has no trial — it is a volume-discount plan billed on day one. Cancel anytime.
+            Agenient AAMS Producer is free forever for producers at agencies — no credit card, capped commission split.
+            Agenient AAMS Starter ($19.99) and Agenient AAMS Agency Self-Service ($99.99) come with a 14-day free trial — no credit card required.
+            Agenient AAMS Pro, Autopilot, and Agency AI also include a 14-day free trial but require a credit card at signup.
+            Agenient AAMS Agency AI Plus ($299.99) has no trial — it is a volume-discount plan billed on day one. Cancel anytime.
           </p>
         </div>
       </section>

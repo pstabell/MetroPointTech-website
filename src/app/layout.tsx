@@ -41,7 +41,7 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': 'https://www.aamshub.com/#organization',
-      name: 'Agenient',
+      name: 'Metro Point Technology',
       url: 'https://www.aamshub.com',
       logo: 'https://www.aamshub.com/logo.svg',
       description:

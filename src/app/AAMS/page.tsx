@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import AAMSContent from '@/components/AAMSContent'
 
 export const metadata: Metadata = {
-  title: 'AAMS — Autonomous Agency Management System',
-  description: 'AAMS is an autonomous agency management system for insurance agencies — the AI evolution of legacy AMS platforms, with agentic workflows, real-time agent visibility, and zero-touch operations. 14-day free trial.',
+  title: 'Agenient AAMS — Autonomous Agency Management System',
+  description: 'Agenient AAMS is an autonomous agency management system for insurance agencies — the AI evolution of legacy AMS platforms, with agentic workflows, real-time agent visibility, and zero-touch operations. 14-day free trial.',
   keywords: 'autonomous agency management system, AMS platform, insurance agency management software, agentic AI for insurance, insurance AMS',
   alternates: { canonical: '/AAMS' },
 }
@@ -24,7 +24,7 @@ export default function AAMSPage() {
                 Your Agency, on Autopilot. Zero-Touch Operations.
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Legacy AMS platforms are just digital filing cabinets. AAMS is a digital employee.
+                Legacy AMS platforms are just digital filing cabinets. Agenient AAMS is a digital employee.
                 Autonomous commission reconciliation, agentic workflows, and zero-touch operations
                 that run your agency while you focus on selling.
               </p>
@@ -49,7 +49,7 @@ export default function AAMSPage() {
             <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-white/30">
               <Image
                 src="/images/ams-app/dashboard.png"
-                alt="AAMS Dashboard — Autonomous Commission Reconciliation"
+                alt="Agenient AAMS Dashboard — Autonomous Commission Reconciliation"
                 width={1920}
                 height={1080}
                 className="w-full h-auto"
@@ -93,10 +93,10 @@ export default function AAMSPage() {
       <section className="py-16 md:py-24 bg-neutral-lightest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-            Why Agencies Switch to AAMS
+            Why Agencies Switch to Agenient AAMS
           </h2>
           <p className="text-lg text-neutral-dark text-center max-w-3xl mx-auto mb-12">
-            The standard carrier-download system handles 60-80% of your commission downloads, but the remaining 20-40% — MGAs, wholesale brokers, regional carriers, complex commercial lines — lands on your desk as PDFs and spreadsheets with zero automation. AAMS handles every carrier, every line, every format.
+            The standard carrier-download system handles 60-80% of your commission downloads, but the remaining 20-40% — MGAs, wholesale brokers, regional carriers, complex commercial lines — lands on your desk as PDFs and spreadsheets with zero automation. Agenient AAMS handles every carrier, every line, every format.
           </p>
 
           {/* Competitive Pricing Table */}
@@ -115,7 +115,7 @@ export default function AAMSPage() {
                 </thead>
                 <tbody>
                   <tr className="bg-accent/10 border-2 border-accent font-semibold">
-                    <td className="p-4">AAMS</td>
+                    <td className="p-4">Agenient AAMS</td>
                     <td className="text-center p-4">$99 - $199/mo</td>
                     <td className="text-center p-4 text-green-600">Yes</td>
                     <td className="text-center p-4 text-green-600">$0</td>
@@ -160,7 +160,7 @@ export default function AAMSPage() {
               </table>
             </div>
             <p className="text-sm text-neutral-dark text-center mt-4">
-              A 10-user agency with AAMS AI pays $1,099/month. The same agency on a legacy enterprise AMS pays $2,000 - $5,000/month with no AI.
+              A 10-user agency with Agenient AAMS AI pays $1,099/month. The same agency on a legacy enterprise AMS pays $2,000 - $5,000/month with no AI.
             </p>
           </div>
 
@@ -196,14 +196,14 @@ export default function AAMSPage() {
               <div className="text-4xl mb-4">&#128176;</div>
               <h3 className="text-xl font-bold mb-3">Commission Leakage</h3>
               <p className="text-neutral-dark">
-                Most agencies lose 1-5% of commission revenue to undetected errors. AAMS catches every discrepancy autonomously. One recovered payment pays for the entire year.
+                Most agencies lose 1-5% of commission revenue to undetected errors. Agenient AAMS catches every discrepancy autonomously. One recovered payment pays for the entire year.
               </p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-md text-center">
               <div className="text-4xl mb-4">&#9889;</div>
               <h3 className="text-xl font-bold mb-3">Every Carrier, Every Line</h3>
               <p className="text-neutral-dark">
-                The standard carrier-download system gets you 60-80% of the way. The remaining 20-40% — MGAs, wholesale brokers, non-standard carriers, stripped transactions — lands on your desk. AAMS processes every statement in any format. PDF, Excel, CSV. No limitations.
+                The standard carrier-download system gets you 60-80% of the way. The remaining 20-40% — MGAs, wholesale brokers, non-standard carriers, stripped transactions — lands on your desk. Agenient AAMS processes every statement in any format. PDF, Excel, CSV. No limitations.
               </p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-md text-center">
@@ -224,7 +224,7 @@ export default function AAMSPage() {
             Your Agency Deserves Autonomy
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Legacy AMS platforms make you do the work. AAMS does the work for you. Autonomous reconciliation, zero-touch operations, and agentic workflows — starting today.
+            Legacy AMS platforms make you do the work. Agenient AAMS does the work for you. Autonomous reconciliation, zero-touch operations, and agentic workflows — starting today.
           </p>
           <a
             href={trialUrl}

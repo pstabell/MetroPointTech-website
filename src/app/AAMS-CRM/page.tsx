@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AAMS CRM | AI AMS CRM for Insurance Agencies',
-  description: 'AAMS CRM is the AI insurance agency CRM built into your AMS. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99.99/user/mo add-on to AAMS Platform.',
+  title: 'Agenient CRM | AI AMS CRM for Insurance Agencies',
+  description: 'Agenient CRM is the AI insurance agency CRM built into your AMS. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99.99/user/mo add-on to Agenient AAMS.',
   alternates: { canonical: '/AAMS-CRM' },
   keywords: 'ams crm, insurance CRM, insurance agency CRM, AI sales, ACORD forms, insurance quoting, renewal management, agency CRM, insurance pipeline',
 }
@@ -67,7 +67,7 @@ export default function AAMSCRMPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block px-4 py-2 bg-accent/20 text-accent-light rounded-full text-sm font-medium mb-6">
-                AAMS Platform Add-On
+                Agenient AAMS Add-On
               </span>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 AI-Powered CRM
@@ -84,7 +84,7 @@ export default function AAMSCRMPage() {
                   href="https://ams.metropointtech.com/login"
                   className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg text-center"
                 >
-                  Add CRM to Your AAMS
+                  Add CRM to Your Agenient AAMS
                 </Link>
                 <a
                   href="#screenshots"
@@ -94,13 +94,13 @@ export default function AAMSCRMPage() {
                 </a>
               </div>
               <p className="text-sm text-blue-200 mt-4">
-                Requires AAMS Platform subscription (Agency tier)
+                Requires Agenient AAMS subscription (Agency tier)
               </p>
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-white/30">
               <Image
                 src="/images/crm/02-dashboard.png"
-                alt="AAMS CRM Dashboard"
+                alt="Agenient CRM Dashboard"
                 width={1920}
                 height={1080}
                 className="w-full h-auto"
@@ -118,7 +118,7 @@ export default function AAMSCRMPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              What AAMS CRM Does For Your Agency
+              What Agenient CRM Does For Your Agency
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
               Two AI agents, 18 form generators, and a pipeline that enforces compliance
@@ -179,7 +179,7 @@ export default function AAMSCRMPage() {
               Simple Pricing
             </h2>
             <p className="text-lg text-neutral-light max-w-2xl mx-auto">
-              AAMS CRM is an add-on to the AAMS Platform. You must have an active AAMS Agency subscription to add CRM.
+              Agenient CRM is an add-on to the Agenient AAMS. You must have an active Agenient AAMS Agency subscription to add CRM.
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default function AAMSCRMPage() {
             <div className="bg-white rounded-2xl shadow-xl ring-2 ring-primary overflow-hidden">
               <div className="p-8 md:p-10">
                 <div className="text-5xl mb-4">📇</div>
-                <h3 className="text-2xl font-bold text-primary mb-2">AAMS CRM</h3>
+                <h3 className="text-2xl font-bold text-primary mb-2">Agenient CRM</h3>
                 <p className="text-accent font-semibold mb-6">AI-Powered Sales & Quoting</p>
 
                 <div className="border-t border-neutral-lighter pt-6 mb-6">
@@ -195,7 +195,7 @@ export default function AAMSCRMPage() {
                     <span className="text-4xl font-bold text-primary">$99.99</span>
                     <span className="text-neutral-light">/user/month</span>
                   </div>
-                  <p className="text-sm text-neutral-light">Add-on to AAMS Agency ($199.99/mo)</p>
+                  <p className="text-sm text-neutral-light">Add-on to Agenient AAMS Agency ($199.99/mo)</p>
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -220,14 +220,14 @@ export default function AAMSCRMPage() {
                   href="https://ams.metropointtech.com/login"
                   className="block w-full text-center bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
                 >
-                  Add CRM to My AAMS
+                  Add CRM to My Agenient AAMS
                 </Link>
               </div>
             </div>
 
             <div className="mt-6 text-center space-y-2">
               <p className="text-sm text-neutral-light">
-                Don't have AAMS yet? <Link href="/AAMS/agencies" className="text-accent font-semibold hover:underline">Sign up for AAMS Agency first</Link>
+                Don't have Agenient AAMS yet? <Link href="/AAMS/agencies" className="text-accent font-semibold hover:underline">Sign up for Agenient AAMS Agency first</Link>
               </p>
               <p className="text-sm text-neutral-light">
                 Solo agents: upgrade to the Agency tier ($199.99/mo), then add CRM for $99.99/user/mo.
@@ -252,20 +252,20 @@ export default function AAMSCRMPage() {
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Your team should be closing new business, not buried in follow-ups and paperwork.
-            Add AAMS CRM and let Closer and Pulse handle the rest.
+            Add Agenient CRM and let Closer and Pulse handle the rest.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="https://ams.metropointtech.com/login"
               className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
             >
-              Add CRM to Your AAMS
+              Add CRM to Your Agenient AAMS
             </Link>
             <Link
               href="/AAMS/agencies"
               className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
             >
-              Get AAMS First
+              Get Agenient AAMS First
             </Link>
           </div>
           <p className="mt-8 text-sm text-blue-200">
