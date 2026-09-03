@@ -382,7 +382,7 @@ What's your biggest headache right now?`,
 
     @media (max-width: 768px) {
       .mpt-chat-widget { bottom: 16px; right: 16px; left: 16px; }
-      .mpt-chat-widget .chat-window { width: 100%; height: 450px; }
+      .mpt-chat-widget .chat-window { width: 100%; height: 450px; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); }
       .mpt-chat-widget .chat-toggle-button { width: 56px; height: 56px; }
     }
   `;
