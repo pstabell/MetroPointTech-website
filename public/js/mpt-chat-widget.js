@@ -29,9 +29,9 @@ Autonomous Agency Management System — built by an agent with 30 years of exper
       { text: '📞 Talk to the team', action: 'contact_sales' }
     ]
   } : {
-    welcome: `Hey! I'm Geni — built BY insurance pros, FOR insurance pros.
+    welcome: `Hi! I'm Geni, your Agenient assistant.
 
-Legacy AMS platforms are just filing cabinets. Ours is a digital employee. Autonomous reconciliation, zero-touch operations, agentic workflows.
+Legacy AMS platforms are just filing cabinets. Agenient is a digital employee — autonomous reconciliation, zero-touch operations, agentic workflows.
 
 What's your biggest headache right now?`,
     buttons: [
@@ -428,7 +428,7 @@ What's your biggest headache right now?`,
               <div class="avatar"></div>
               <div class="header-text">
                 <h3>Geni</h3>
-                <p><span class="status-indicator"></span>Online • Built for Insurance</p>
+                <p><span class="status-indicator"></span>Online • Agenient assistant</p>
               </div>
             </div>
             <button class="close-button" aria-label="Close chat">
