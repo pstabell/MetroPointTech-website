@@ -70,7 +70,7 @@ export default function ClaudeDiscordFixPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-8 text-center">The Problem</h2>
+            <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">The Problem</h2>
             <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
               <p className="text-lg text-neutral mb-4">
                 Claude Code&apos;s official Discord channels plugin has a confirmed bug in v2.1.85
@@ -103,7 +103,7 @@ export default function ClaudeDiscordFixPage() {
       <section className="py-16 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-8 text-center">Our Solution</h2>
+            <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Our Solution</h2>
             <p className="text-lg text-neutral mb-8 text-center">
               A custom MCP server that bypasses the broken channels plugin and connects directly to Discord.
             </p>
@@ -137,19 +137,19 @@ export default function ClaudeDiscordFixPage() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="font-bold text-primary mb-2">Event-Driven</h3>
+                <h3 className="font-bold text-slate-800 mb-2">Event-Driven</h3>
                 <p className="text-neutral-light">No polling. Messages arrive instantly via Discord&apos;s WebSocket gateway. Eliminates the state management bug in the official plugin.</p>
               </div>
               <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="font-bold text-primary mb-2">Standard MCP Protocol</h3>
+                <h3 className="font-bold text-slate-800 mb-2">Standard MCP Protocol</h3>
                 <p className="text-neutral-light">Full compatibility with Claude Code. Uses the official MCP SDK. Drop-in replacement for the channels plugin.</p>
               </div>
               <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="font-bold text-primary mb-2">Direct Connection</h3>
+                <h3 className="font-bold text-slate-800 mb-2">Direct Connection</h3>
                 <p className="text-neutral-light">No middleman plugin to fail. Your bot connects directly to Discord and pushes notifications to Claude Code.</p>
               </div>
               <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="font-bold text-primary mb-2">Production Tested</h3>
+                <h3 className="font-bold text-slate-800 mb-2">Production Tested</h3>
                 <p className="text-neutral-light">We run 13 AI agents on Discord using this architecture. It handles DMs, mentions, multi-channel, and auto-restart.</p>
               </div>
             </div>
@@ -161,26 +161,26 @@ export default function ClaudeDiscordFixPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-8 text-center">What&apos;s in the Download</h2>
+            <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">What&apos;s in the Download</h2>
             <div className="space-y-4">
               <div className="flex items-start">
                 <span className="text-accent mr-3 text-xl flex-shrink-0">&#10003;</span>
                 <div>
-                  <span className="font-semibold text-primary">server.mjs</span>
+                  <span className="font-semibold text-slate-800">server.mjs</span>
                   <span className="text-neutral-light"> &mdash; Complete MCP server template with Discord gateway connection, message handling, tool definitions (reply, fetch, react, edit), and graceful shutdown</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-accent mr-3 text-xl flex-shrink-0">&#10003;</span>
                 <div>
-                  <span className="font-semibold text-primary">package.json</span>
+                  <span className="font-semibold text-slate-800">package.json</span>
                   <span className="text-neutral-light"> &mdash; Dependencies and configuration ready to npm install</span>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-accent mr-3 text-xl flex-shrink-0">&#10003;</span>
                 <div>
-                  <span className="font-semibold text-primary">README.md</span>
+                  <span className="font-semibold text-slate-800">README.md</span>
                   <span className="text-neutral-light"> &mdash; Setup guide, architecture explanation, troubleshooting, and customization instructions</span>
                 </div>
               </div>
@@ -215,7 +215,7 @@ export default function ClaudeDiscordFixPage() {
             ) : (
               <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-xl p-8 space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-primary mb-1">
+                  <label htmlFor="name" className="block text-sm font-semibold text-slate-800 mb-1">
                     Full Name
                   </label>
                   <input
@@ -229,7 +229,7 @@ export default function ClaudeDiscordFixPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-primary mb-1">
+                  <label htmlFor="email" className="block text-sm font-semibold text-slate-800 mb-1">
                     Email
                   </label>
                   <input
@@ -243,7 +243,7 @@ export default function ClaudeDiscordFixPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-primary mb-1">
+                  <label htmlFor="company" className="block text-sm font-semibold text-slate-800 mb-1">
                     Company
                   </label>
                   <input
@@ -284,7 +284,7 @@ export default function ClaudeDiscordFixPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-primary mb-6">Built by Metro Point Technology</h2>
+            <h2 className="text-3xl font-bold text-slate-800 mb-6">Built by Metro Point Technology</h2>
             <p className="text-lg text-neutral mb-6">
               We build intelligent software solutions for businesses. Our engineering team runs
               production AI systems at scale &mdash; 13 autonomous agents coordinating through Discord,

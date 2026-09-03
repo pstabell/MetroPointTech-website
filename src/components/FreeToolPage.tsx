@@ -65,7 +65,7 @@ export default function FreeToolPage({
                 </a>
                 <a
                   href={trialUrl}
-                  className="bg-white text-primary hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                  className="bg-white text-slate-800 hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
                 >
                   {secondaryCta}
                 </a>
@@ -93,7 +93,7 @@ export default function FreeToolPage({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <div className="text-3xl font-bold text-primary">{stat.value}</div>
+                <div className="text-3xl font-bold text-slate-800">{stat.value}</div>
                 <div className="text-sm text-neutral-dark mt-1">{stat.label}</div>
               </div>
             ))}

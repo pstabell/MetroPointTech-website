@@ -12,7 +12,7 @@ export default function AgenciesRedirect() {
   }, [router])
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Agenient AAMS for Insurance Agencies</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Agenient AAMS for Insurance Agencies</h1>
       <p className="text-lg text-gray-600 max-w-2xl">
         Multi-producer commission management, agency-wide reconciliation, and autonomous operations from $99 to $999 per month. Loading the agency experience…
       </p>

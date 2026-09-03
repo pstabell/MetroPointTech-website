@@ -84,10 +84,10 @@ export default function ProductShowcase() {
     <section id="products" className="py-16 md:py-24 bg-neutral-lighter">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
             Autonomous Product Suite
           </h2>
-          <p className="text-xl text-primary max-w-3xl mx-auto">
+          <p className="text-xl text-slate-800 max-w-3xl mx-auto">
             From solo agent to full agency — autonomous operations at every level.
           </p>
         </div>
@@ -109,22 +109,22 @@ export default function ProductShowcase() {
 
               <div className="p-8 flex-grow">
                 <div className="text-5xl mb-4">{product.icon}</div>
-                <h3 className="text-2xl font-bold text-primary mb-2">{product.name}</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">{product.name}</h3>
                 <p className="text-accent font-semibold mb-4">{product.subtitle}</p>
-                <p className="text-primary mb-6">{product.description}</p>
+                <p className="text-slate-800 mb-6">{product.description}</p>
 
                 <ul className="space-y-3 mb-8">
                   {product.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-accent mr-2 flex-shrink-0">✓</span>
-                      <span className="text-sm text-primary">{feature}</span>
+                      <span className="text-sm text-slate-800">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <div className="border-t border-neutral-lighter pt-6 mb-6">
-                  <div className="text-2xl font-bold text-primary mb-1">{product.pricing}</div>
-                  <div className="text-sm text-primary">{product.setupFee}</div>
+                  <div className="text-2xl font-bold text-slate-800 mb-1">{product.pricing}</div>
+                  <div className="text-sm text-slate-800">{product.setupFee}</div>
                 </div>
               </div>
 

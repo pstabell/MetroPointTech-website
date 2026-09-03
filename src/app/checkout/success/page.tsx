@@ -10,7 +10,7 @@ export default function CheckoutSuccessPage() {
     <div className="min-h-screen bg-neutral-lighter flex items-center justify-center px-4">
       <div className="max-w-lg w-full bg-white rounded-2xl shadow-xl p-10 text-center">
         <div className="text-6xl mb-6">✅</div>
-        <h1 className="text-3xl font-bold text-primary mb-4">
+        <h1 className="text-3xl font-bold text-slate-800 mb-4">
           Welcome to Metro Point Technology!
         </h1>
         <p className="text-lg text-neutral-light mb-6">
@@ -18,7 +18,7 @@ export default function CheckoutSuccessPage() {
           email with your next steps to get started.
         </p>
         <div className="bg-neutral-lighter rounded-xl p-6 mb-8 text-left">
-          <h2 className="text-lg font-bold text-primary mb-3">What happens next:</h2>
+          <h2 className="text-lg font-bold text-slate-800 mb-3">What happens next:</h2>
           <ol className="space-y-3 text-neutral-light">
             <li className="flex gap-3">
               <span className="text-accent font-bold">1.</span>

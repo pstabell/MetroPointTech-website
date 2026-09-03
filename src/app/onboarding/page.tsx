@@ -151,10 +151,10 @@ function OnboardingInner() {
     return (
       <div className="min-h-screen bg-neutral-lighter py-16 px-4">
         <div className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-10">
-          <h1 className="text-3xl font-bold text-primary mb-2">Onboarding Discovery Form</h1>
+          <h1 className="text-3xl font-bold text-slate-800 mb-2">Onboarding Discovery Form</h1>
           <p className="text-neutral-light mb-8">Enter your client number to start or resume your discovery form. Your client number is in your welcome email from Metro Point Technology.</p>
 
-          <label className="block text-sm font-medium text-primary mb-2">Client number</label>
+          <label className="block text-sm font-medium text-slate-800 mb-2">Client number</label>
           <input
             type="text"
             value={clientNumberInput}
@@ -183,12 +183,12 @@ function OnboardingInner() {
       <div className="min-h-screen bg-neutral-lighter py-16 px-4">
         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-10 text-center">
           <div className="text-6xl mb-6">✅</div>
-          <h1 className="text-3xl font-bold text-primary mb-3">Discovery form submitted</h1>
+          <h1 className="text-3xl font-bold text-slate-800 mb-3">Discovery form submitted</h1>
           <p className="text-neutral-light mb-6 text-lg">Thank you. Your responses are in our queue.</p>
 
           <div className="bg-neutral-lighter rounded-xl p-6 text-left mb-8">
             <p className="text-sm text-neutral-light mb-1">Client number</p>
-            <p className="text-2xl font-mono font-bold text-primary">{loaded.customer.clientNumber}</p>
+            <p className="text-2xl font-mono font-bold text-slate-800">{loaded.customer.clientNumber}</p>
           </div>
 
           <div className="text-left space-y-4 text-neutral-light">
@@ -210,7 +210,7 @@ function OnboardingInner() {
             </div>
           </div>
 
-          <p className="text-sm text-neutral-light mt-8">Questions? Email <a href="mailto:support@metropointtech.com" className="text-primary underline">support@metropointtech.com</a></p>
+          <p className="text-sm text-neutral-light mt-8">Questions? Email <a href="mailto:support@metropointtech.com" className="text-slate-800 underline">support@metropointtech.com</a></p>
         </div>
       </div>
     )
@@ -229,7 +229,7 @@ function OnboardingInner() {
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-6 sticky top-4 z-10">
             <div className="flex items-center justify-between mb-3">
               <div>
-                <h1 className="text-xl font-bold text-primary">Discovery Form — AI Agent {tierLabel}</h1>
+                <h1 className="text-xl font-bold text-slate-800">Discovery Form — AI Agent {tierLabel}</h1>
                 <p className="text-sm text-neutral-light font-mono">{loaded.customer.clientNumber} · {loaded.customer.email}</p>
               </div>
               <div className="text-right text-sm">
@@ -253,13 +253,13 @@ function OnboardingInner() {
           {/* Sections */}
           {groupedSections.map(({ section, questions }) => (
             <div key={section.key} className="bg-white rounded-2xl shadow-lg p-8 mb-6">
-              <h2 className="text-2xl font-bold text-primary mb-6 pb-3 border-b border-gray-200">
+              <h2 className="text-2xl font-bold text-slate-800 mb-6 pb-3 border-b border-gray-200">
                 {section.title}
               </h2>
               <div className="space-y-6">
                 {questions.map(q => (
                   <div key={q.key}>
-                    <label className="block text-sm font-medium text-primary mb-1">
+                    <label className="block text-sm font-medium text-slate-800 mb-1">
                       {q.label}
                       {q.required && <span className="text-red-500 ml-1">*</span>}
                     </label>

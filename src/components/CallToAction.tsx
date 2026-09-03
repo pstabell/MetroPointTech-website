@@ -19,7 +19,7 @@ export default function CallToAction() {
           </Link>
           <Link
             href="/products/commission-tracker"
-            className="bg-white text-primary hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition inline-block"
+            className="bg-white text-slate-800 hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition inline-block"
           >
             Start Free Trial
           </Link>

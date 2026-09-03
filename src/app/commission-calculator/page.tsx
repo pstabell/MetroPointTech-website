@@ -93,7 +93,7 @@ export default function CommissionCalculatorPage() {
       <section className="py-10 md:py-14 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white border-2 border-primary/20 rounded-xl p-6 md:p-8 shadow-lg">
-            <h2 className="text-xl font-bold text-primary mb-6">Enter Your Numbers</h2>
+            <h2 className="text-xl font-bold text-slate-800 mb-6">Enter Your Numbers</h2>
 
             <div className="space-y-5">
               {/* Total Annual Book Premium */}
@@ -208,7 +208,7 @@ export default function CommissionCalculatorPage() {
 
               {/* Breakdown */}
               <div className="bg-neutral-lighter rounded-xl p-6">
-                <h3 className="font-bold text-primary mb-4">Breakdown</h3>
+                <h3 className="font-bold text-slate-800 mb-4">Breakdown</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center py-2 border-b border-gray-200">
                     <span className="text-neutral-light">Total Annual Premium</span>
@@ -227,7 +227,7 @@ export default function CommissionCalculatorPage() {
                     <span className="font-semibold">{formatCurrency(actualNum)}</span>
                   </div>
                   <div className="flex justify-between items-center py-2">
-                    <span className="font-bold text-primary">Commission Gap</span>
+                    <span className="font-bold text-slate-800">Commission Gap</span>
                     <span className={`font-bold text-lg ${getStatusStyles().text}`}>
                       {commissionGap > 0 ? formatCurrency(commissionGap) : '$0'} ({leakPercentage > 0 ? leakPercentage.toFixed(1) : '0'}%)
                     </span>

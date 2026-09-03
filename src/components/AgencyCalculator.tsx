@@ -117,7 +117,7 @@ export default function AgencyCalculator() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* LEFT COLUMN: Inputs */}
           <div className="bg-white border-2 border-primary/20 rounded-xl p-6 md:p-8 shadow-lg">
-            <h3 className="text-xl font-bold text-primary mb-6">
+            <h3 className="text-xl font-bold text-slate-800 mb-6">
               Your Agency Numbers
             </h3>
 

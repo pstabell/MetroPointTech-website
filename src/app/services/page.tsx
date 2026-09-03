@@ -130,7 +130,7 @@ export default function ServicesPage() {
       <section id="services" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               What We Do Best
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
@@ -150,7 +150,7 @@ export default function ServicesPage() {
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-primary mb-2">{service.title}</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">{service.title}</h3>
                 <p className={`text-lg font-medium bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-4`}>
                   {service.tagline}
                 </p>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               How We Work Together
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
@@ -215,7 +215,7 @@ export default function ServicesPage() {
               <div key={index} className="text-center">
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <div className="text-accent font-bold text-sm mb-2">STEP {item.step}</div>
-                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                 <p className="text-neutral-light">{item.description}</p>
               </div>
             ))}
@@ -228,7 +228,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
                 Why Work With Us?
               </h2>
               <div className="space-y-6">
@@ -237,7 +237,7 @@ export default function ServicesPage() {
                     🎯
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-primary mb-1">We Speak Human</h3>
+                    <h3 className="text-xl font-bold text-slate-800 mb-1">We Speak Human</h3>
                     <p className="text-neutral-light">No tech jargon or confusing acronyms. We explain things in plain English and make sure you actually understand what we're building.</p>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export default function ServicesPage() {
                     💪
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-primary mb-1">Business-First Thinking</h3>
+                    <h3 className="text-xl font-bold text-slate-800 mb-1">Business-First Thinking</h3>
                     <p className="text-neutral-light">We're not just coders - we understand business. Every solution is designed to actually move the needle on what matters to you.</p>
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export default function ServicesPage() {
                     🤝
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-primary mb-1">Real Partnership</h3>
+                    <h3 className="text-xl font-bold text-slate-800 mb-1">Real Partnership</h3>
                     <p className="text-neutral-light">We're not a faceless agency. You'll work directly with people who know your project inside and out, and who actually care about your success.</p>
                   </div>
                 </div>
@@ -264,7 +264,7 @@ export default function ServicesPage() {
                     ⚡
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-primary mb-1">AI-Accelerated Delivery</h3>
+                    <h3 className="text-xl font-bold text-slate-800 mb-1">AI-Accelerated Delivery</h3>
                     <p className="text-neutral-light">We use AI tools internally to work faster and smarter. That means quicker turnarounds and better results for you.</p>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ export default function ServicesPage() {
                 <div className="bg-white rounded-2xl p-8 shadow-xl">
                   <div className="text-center">
                     <div className="text-5xl mb-4">💡</div>
-                    <h3 className="text-2xl font-bold text-primary mb-4">Not Sure Where to Start?</h3>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-4">Not Sure Where to Start?</h3>
                     <p className="text-neutral-light mb-6">
                       That's totally fine. Book a free discovery call and we'll figure it out together. 
                       No commitment, no hard sell - just a conversation.

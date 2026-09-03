@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
       </section>
 
       <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-primary leading-relaxed space-y-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-800 leading-relaxed space-y-8">
           <div>
             <h2 className="text-2xl font-bold mb-3">1. Introduction</h2>
             <p className="mb-3">Metro Point Technology LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Software as a Service (SaaS) products, including AMS-App (insurance agency management system) and related services (collectively, the "Services").</p>

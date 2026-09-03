@@ -32,7 +32,7 @@ export default function CommissionTrackerProduct() {
               </a>
               <Link
                 href="#features"
-                className="bg-white text-primary hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                className="bg-white text-slate-800 hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 See Features
               </Link>
@@ -49,49 +49,49 @@ export default function CommissionTrackerProduct() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
                 The Problem
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">Carriers make mistakes on commission statements</span>
+                  <span className="text-slate-800">Carriers make mistakes on commission statements</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">Spreadsheets are error-prone and time-consuming</span>
+                  <span className="text-slate-800">Spreadsheets are error-prone and time-consuming</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">Manual reconciliation takes 10+ hours per month</span>
+                  <span className="text-slate-800">Manual reconciliation takes 10+ hours per month</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">Lost commissions add up to thousands per year</span>
+                  <span className="text-slate-800">Lost commissions add up to thousands per year</span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
                 The Solution
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Automated carrier statement import</span>
+                  <span className="text-slate-800">Automated carrier statement import</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Smart policy-to-payment matching</span>
+                  <span className="text-slate-800">Smart policy-to-payment matching</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Catch discrepancies automatically</span>
+                  <span className="text-slate-800">Catch discrepancies automatically</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Reconcile in 30 minutes instead of 8 hours</span>
+                  <span className="text-slate-800">Reconcile in 30 minutes instead of 8 hours</span>
                 </li>
               </ul>
             </div>
@@ -103,10 +103,10 @@ export default function CommissionTrackerProduct() {
       <section className="py-16 md:py-24 bg-neutral-lighter" id="features">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               Features Built by an Agent, for Agents
             </h2>
-            <p className="text-xl text-primary">
+            <p className="text-xl text-slate-800">
               Every feature solves a real problem we've encountered
             </p>
           </div>
@@ -114,48 +114,48 @@ export default function CommissionTrackerProduct() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">📋</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Policy Management</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Policy Management</h3>
+              <p className="text-slate-800">
                 Track all your policies in one place. NEW, RWL, END, CAN - all transaction types supported with automated calculations.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">🔄</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Automated Reconciliation</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Automated Reconciliation</h3>
+              <p className="text-slate-800">
                 Import carrier statements, auto-match to policies, identify discrepancies. No more manual spreadsheet nightmares.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Revenue Reports</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Revenue Reports</h3>
+              <p className="text-slate-800">
                 Policy Revenue Ledger with custom column selection. Export to CSV and Excel with subtotals. Professional reports in seconds.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">🔍</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Search & Filter</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Search & Filter</h3>
+              <p className="text-slate-800">
                 Find any policy instantly. Filter by customer, carrier, MGA, policy type, date range. Advanced search that actually works.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">💰</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Commission Rules</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Commission Rules</h3>
+              <p className="text-slate-800">
                 Policy type-specific commission rates. Multi-level rule matching. Automatic rate selection. Real-time commission calculation.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">🔒</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Bank-Level Security</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Bank-Level Security</h3>
+              <p className="text-slate-800">
                 Secure cloud database (Supabase). Automatic backups. SOC 2 compliant infrastructure. Your data is safe.
               </p>
             </div>
@@ -166,19 +166,19 @@ export default function CommissionTrackerProduct() {
       {/* Growth Path */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
             Grows With Your Business
           </h2>
-          <p className="text-xl text-primary mb-12">
+          <p className="text-xl text-slate-800 mb-12">
             Start as a solo agent. Upgrade to Agency Mode when you hire your first agent.
           </p>
 
           <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">Solo Agent</h3>
-                <p className="text-primary mb-4">Track your own commissions</p>
-                <ul className="text-left space-y-2 text-primary">
+                <h3 className="text-2xl font-bold mb-4 text-slate-800">Solo Agent</h3>
+                <p className="text-slate-800 mb-4">Track your own commissions</p>
+                <ul className="text-left space-y-2 text-slate-800">
                   <li>✓ Full reconciliation capabilities</li>
                   <li>✓ Policy & commission tracking</li>
                   <li>✓ Reports & exports</li>
@@ -186,9 +186,9 @@ export default function CommissionTrackerProduct() {
               </div>
 
               <div className="border-l-2 border-accent/20 pl-8">
-                <h3 className="text-2xl font-bold mb-4 text-primary">→ Agency Mode</h3>
-                <p className="text-primary mb-4">When you hire your first agent</p>
-                <ul className="text-left space-y-2 text-primary">
+                <h3 className="text-2xl font-bold mb-4 text-slate-800">→ Agency Mode</h3>
+                <p className="text-slate-800 mb-4">When you hire your first agent</p>
+                <ul className="text-left space-y-2 text-slate-800">
                   <li>✓ Multi-agent tracking</li>
                   <li>✓ Mirror Architecture</li>
                   <li>✓ Real-time agent visibility</li>
@@ -203,34 +203,34 @@ export default function CommissionTrackerProduct() {
       <section className="py-16 md:py-24 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               Trusted by Independent Agents
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8">
-              <p className="text-primary mb-4 italic">
+              <p className="text-slate-800 mb-4 italic">
                 "I recovered $3,200 in missing commissions in my first month. The auto-matching feature is incredible."
               </p>
-              <div className="font-semibold text-primary">Sarah M.</div>
-              <div className="text-sm text-primary">Independent Agent, FL</div>
+              <div className="font-semibold text-slate-800">Sarah M.</div>
+              <div className="text-sm text-slate-800">Independent Agent, FL</div>
             </div>
 
             <div className="bg-white rounded-xl p-8">
-              <p className="text-primary mb-4 italic">
+              <p className="text-slate-800 mb-4 italic">
                 "Reconciliation used to take me 8 hours. Now it takes 30 minutes. This tool paid for itself immediately."
               </p>
-              <div className="font-semibold text-primary">Mike T.</div>
-              <div className="text-sm text-primary">Agency Owner, TX</div>
+              <div className="font-semibold text-slate-800">Mike T.</div>
+              <div className="text-sm text-slate-800">Agency Owner, TX</div>
             </div>
 
             <div className="bg-white rounded-xl p-8">
-              <p className="text-primary mb-4 italic">
+              <p className="text-slate-800 mb-4 italic">
                 "Finally, a tool built by someone who actually understands the insurance business. Game changer."
               </p>
-              <div className="font-semibold text-primary">Jennifer L.</div>
-              <div className="text-sm text-primary">Independent Agent, CA</div>
+              <div className="font-semibold text-slate-800">Jennifer L.</div>
+              <div className="text-sm text-slate-800">Independent Agent, CA</div>
             </div>
           </div>
         </div>

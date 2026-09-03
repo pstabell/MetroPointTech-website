@@ -9,21 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Agenient brand colors — emerald "Agen" + violet "ient" (locked 2026-09-02)
+        // Agenient palette — coordinated with the AAMS app interior (teal + violet accents)
         primary: {
-          DEFAULT: '#6D28D9', // Agenient violet — primary brand surfaces, headings, buttons
-          dark: '#5B21B6',    // Darker violet for hover states
-          light: '#8B6BF0',   // Lighter violet (dark-bg tint)
+          DEFAULT: '#7C3AED', // Violet-600 — primary surfaces, headings, buttons (app violet family)
+          dark: '#6D28D9',    // Deeper violet for hover states
+          light: '#8B5CF6',   // App violet-500 tint
         },
         accent: {
-          DEFAULT: '#10B981', // Agenient emerald — highlights, CTAs, checkmarks
-          dark: '#059669',    // Darker emerald for hover
-          light: '#34D399',   // Lighter emerald (dark-bg tint)
+          DEFAULT: '#14B8A6', // Teal-500 — highlights, CTAs (matches the app's primary accent)
+          dark: '#0D9488',    // Teal-600 for hover
+          light: '#2DD4BF',   // Teal-400 tint
         },
         neutral: {
-          DEFAULT: '#1f2937', // Dark text
-          light: '#6b7280',   // Secondary text
-          lighter: '#f9fafb', // Backgrounds
+          DEFAULT: '#0f172a', // slate-900 — primary text (matches app light mode)
+          light: '#475569',   // slate-600 — secondary text
+          lighter: '#f8fafc', // slate-50 — section backgrounds
         }
       },
       fontFamily: {

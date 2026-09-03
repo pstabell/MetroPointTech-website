@@ -18,7 +18,7 @@ export default function TermsOfService() {
       </section>
 
       <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-primary leading-relaxed space-y-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-800 leading-relaxed space-y-8">
           <div>
             <h2 className="text-2xl font-bold mb-3">1. Agreement to Terms</h2>
             <p className="mb-3">By accessing or using Metro Point Technology LLC's ("Metro Point," "we," "our," or "us") Software as a Service products, including AMS-App and related services (the "Services"), you ("Customer," "you," or "your") agree to be bound by these Terms of Service ("Terms"). If you are entering into these Terms on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms.</p>

@@ -33,7 +33,7 @@ export default function WRAPProposalGeneratorProduct() {
               </a>
               <Link
                 href="#features"
-                className="bg-white text-primary hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                className="bg-white text-slate-800 hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 See Features
               </Link>
@@ -56,19 +56,19 @@ export default function WRAPProposalGeneratorProduct() {
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">WRAP proposals take hours to create manually</span>
+                  <span className="text-slate-800">WRAP proposals take hours to create manually</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">Word templates are clunky and error-prone</span>
+                  <span className="text-slate-800">Word templates are clunky and error-prone</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">Hard to maintain consistent branding</span>
+                  <span className="text-slate-800">Hard to maintain consistent branding</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-3 text-xl flex-shrink-0">✗</span>
-                  <span className="text-primary">Comparing multiple carriers is tedious</span>
+                  <span className="text-slate-800">Comparing multiple carriers is tedious</span>
                 </li>
               </ul>
             </div>
@@ -80,19 +80,19 @@ export default function WRAPProposalGeneratorProduct() {
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Build proposals in 10 minutes instead of 2 hours</span>
+                  <span className="text-slate-800">Build proposals in 10 minutes instead of 2 hours</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Clean web interface, professional output</span>
+                  <span className="text-slate-800">Clean web interface, professional output</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Add your agency logo and team photos</span>
+                  <span className="text-slate-800">Add your agency logo and team photos</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
-                  <span className="text-primary">Compare up to 10 coverage types side-by-side</span>
+                  <span className="text-slate-800">Compare up to 10 coverage types side-by-side</span>
                 </li>
               </ul>
             </div>
@@ -104,10 +104,10 @@ export default function WRAPProposalGeneratorProduct() {
       <section className="py-16 md:py-24 bg-neutral-lighter" id="features">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               Everything You Need for High-Net-Worth Proposals
             </h2>
-            <p className="text-xl text-primary">
+            <p className="text-xl text-slate-800">
               Professional features for presenting complex insurance portfolios
             </p>
           </div>
@@ -115,48 +115,48 @@ export default function WRAPProposalGeneratorProduct() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">📋</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">10 Coverage Types</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">10 Coverage Types</h3>
+              <p className="text-slate-800">
                 Homeowners, Auto, Umbrella, Watercraft, Jewelry, Fine Art, Cyber, Condo, Wind/Hurricane, and Custom coverage types. Everything your HNW clients need.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">👥</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Your Team Showcase</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Your Team Showcase</h3>
+              <p className="text-slate-800">
                 Add up to 4 agents with photos, titles, and contact info. 2x2 grid layout keeps everyone on one page. Perfect for team presentations.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">🎨</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Agency Branding</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Agency Branding</h3>
+              <p className="text-slate-800">
                 Upload your agency logo. Consistent navy and gold color scheme throughout. Professional appearance that builds trust.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">💰</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Savings Calculator</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Savings Calculator</h3>
+              <p className="text-slate-800">
                 Automatic calculation of total savings. Shows current vs. proposed premiums with percentage reduction. Let the numbers sell themselves.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">📄</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Clean Word Output</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Clean Word Output</h3>
+              <p className="text-slate-800">
                 Export to fully-editable Word documents. Professional formatting with tables, headers, and page numbers. Ready to email or print.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-8">
               <div className="text-4xl mb-4">💾</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">Load Sample Data</h3>
-              <p className="text-primary">
+              <h3 className="text-xl font-bold mb-3 text-slate-800">Load Sample Data</h3>
+              <p className="text-slate-800">
                 One-click sample data to see the full proposal. Perfect for testing or showing your team how it works.
               </p>
             </div>
@@ -171,7 +171,7 @@ export default function WRAPProposalGeneratorProduct() {
             <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
               Supported Coverage Types
             </h2>
-            <p className="text-xl text-primary">
+            <p className="text-xl text-slate-800">
               Everything your high-net-worth clients need in one proposal
             </p>
           </div>
@@ -191,7 +191,7 @@ export default function WRAPProposalGeneratorProduct() {
             ].map((coverage) => (
               <div key={coverage.name} className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg p-6 text-center">
                 <div className="text-4xl mb-2">{coverage.icon}</div>
-                <div className="font-semibold text-primary">{coverage.name}</div>
+                <div className="font-semibold text-slate-800">{coverage.name}</div>
               </div>
             ))}
           </div>
@@ -201,21 +201,21 @@ export default function WRAPProposalGeneratorProduct() {
       {/* CTA */}
       <section className="py-16 md:py-24 bg-gradient-to-r from-accent to-accent-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
             Start Creating Professional WRAP Proposals
           </h2>
-          <p className="text-xl mb-8 text-primary">
+          <p className="text-xl mb-8 text-slate-800">
             Free to use. No sign-up required. Export to Word instantly.
           </p>
           <a
             href="https://wrap.metropointtech.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-primary hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition"
+            className="inline-block bg-white text-slate-800 hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition"
           >
             Try It Now
           </a>
-          <p className="mt-6 text-sm text-primary">
+          <p className="mt-6 text-sm text-slate-800">
             Built by an insurance agent, for insurance agents
           </p>
         </div>

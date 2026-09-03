@@ -141,7 +141,7 @@ export default function AIAgentTeamsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               What Your AI Agent Handles
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
@@ -184,7 +184,7 @@ export default function AIAgentTeamsPage() {
             ].map((item, index) => (
               <div key={index} className="bg-neutral-lighter rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1">
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                 <p className="text-neutral-light leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -196,7 +196,7 @@ export default function AIAgentTeamsPage() {
       <section id="plans" className="py-20 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               Choose Your Plan
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
@@ -220,7 +220,7 @@ export default function AIAgentTeamsPage() {
                   </span>
                 )}
 
-                <h3 className={`text-2xl font-bold mb-2 ${plan.accent ? 'text-white' : 'text-primary'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${plan.accent ? 'text-white' : 'text-slate-800'}`}>
                   {plan.name}
                 </h3>
                 <p className={`text-lg mb-6 ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
@@ -241,7 +241,7 @@ export default function AIAgentTeamsPage() {
                   <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
                     Includes {plan.monthlyHours}/month of agent training & optimization
                   </p>
-                  <p className={`text-sm font-medium mt-1 ${plan.accent ? 'text-violet-100' : 'text-primary'}`}>
+                  <p className={`text-sm font-medium mt-1 ${plan.accent ? 'text-violet-100' : 'text-slate-800'}`}>
                     Up to {plan.platforms} platform connections
                   </p>
                 </div>
@@ -262,7 +262,7 @@ export default function AIAgentTeamsPage() {
 
                 {/* Ideal For */}
                 <div className={`rounded-xl p-4 mb-8 ${plan.accent ? 'bg-white/10' : 'bg-neutral-lighter'}`}>
-                  <p className={`text-sm font-medium mb-1 ${plan.accent ? 'text-violet-100' : 'text-primary'}`}>
+                  <p className={`text-sm font-medium mb-1 ${plan.accent ? 'text-violet-100' : 'text-slate-800'}`}>
                     Ideal for:
                   </p>
                   <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
@@ -283,7 +283,7 @@ export default function AIAgentTeamsPage() {
       {/* Compatible Platforms */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
             Connects to the Platforms You Already Use
           </h2>
           <p className="text-lg text-neutral-light mb-10 max-w-2xl mx-auto">
@@ -293,7 +293,7 @@ export default function AIAgentTeamsPage() {
             {compatiblePlatforms.map((platform, index) => (
               <span
                 key={index}
-                className="bg-neutral-lighter text-primary font-medium px-5 py-3 rounded-xl text-sm hover:shadow-md transition-all"
+                className="bg-neutral-lighter text-slate-800 font-medium px-5 py-3 rounded-xl text-sm hover:shadow-md transition-all"
               >
                 {platform}
               </span>
@@ -306,7 +306,7 @@ export default function AIAgentTeamsPage() {
       <section className="py-20 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               How It Works
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
@@ -344,7 +344,7 @@ export default function AIAgentTeamsPage() {
               <div key={index} className="text-center">
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <div className="text-accent font-bold text-sm mb-2">STEP {item.step}</div>
-                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                 <p className="text-neutral-light">{item.description}</p>
               </div>
             ))}
@@ -357,7 +357,7 @@ export default function AIAgentTeamsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
                 Enterprise-Grade Security. Personal Service.
               </h2>
               <div className="space-y-6">
@@ -388,7 +388,7 @@ export default function AIAgentTeamsPage() {
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-primary mb-1">{item.title}</h3>
+                      <h3 className="text-xl font-bold text-slate-800 mb-1">{item.title}</h3>
                       <p className="text-neutral-light">{item.description}</p>
                     </div>
                   </div>
@@ -400,7 +400,7 @@ export default function AIAgentTeamsPage() {
                 <div className="bg-white rounded-2xl p-8 shadow-xl">
                   <div className="text-center">
                     <div className="text-5xl mb-4">🏢</div>
-                    <h3 className="text-2xl font-bold text-primary mb-4">Built by Insurance People</h3>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-4">Built by Insurance People</h3>
                     <p className="text-neutral-light mb-4">
                       Metro Point Technology is led by Patrick Stabell — an active insurance agent with
                       30 years in the industry. We don't just understand the technology. We understand

@@ -310,7 +310,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Leadership Row - immediately visible */}
           <div className="mb-10">
-            <h2 className="text-2xl font-bold text-primary mb-6 text-center">
+            <h2 className="text-2xl font-bold text-slate-800 mb-6 text-center">
               Leadership Team
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -322,7 +322,7 @@ export default function TeamPage() {
 
           {/* Full Team */}
           <div>
-            <h2 className="text-2xl font-bold text-primary mb-6 text-center">
+            <h2 className="text-2xl font-bold text-slate-800 mb-6 text-center">
               Department Managers
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -355,7 +355,7 @@ export default function TeamPage() {
             </a>
             <a
               href="/services"
-              className="bg-white text-primary hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+              className="bg-white text-slate-800 hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
             >
               Our Services
             </a>
@@ -410,7 +410,7 @@ function TeamCard({
         {/* Info */}
         <div className={featured ? "flex-1" : "text-center"}>
           <h3
-            className={`font-bold text-primary ${
+            className={`font-bold text-slate-800 ${
               featured ? "text-2xl" : "text-xl"
             }`}
           >
@@ -437,7 +437,7 @@ function TeamCard({
             {member.story}
           </p>
           <div className={featured ? "" : "text-left"}>
-            <h4 className="text-xs font-bold text-primary uppercase tracking-wide mb-2">
+            <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wide mb-2">
               Capabilities
             </h4>
             <ul className="space-y-1">

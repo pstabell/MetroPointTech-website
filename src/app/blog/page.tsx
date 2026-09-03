@@ -42,7 +42,7 @@ const LEGACY_POSTS: BlogPost[] = [];
 function categoryColor(cat: string) {
   switch (cat) {
     case "AI Infrastructure":
-      return "bg-primary/10 text-primary";
+      return "bg-primary/10 text-slate-800";
     case "Insurance":
       return "bg-accent/10 text-accent-dark";
     default:
@@ -167,7 +167,7 @@ export default async function BlogPage() {
                           </span>
                         )}
                       </div>
-                      <h2 className="text-xl md:text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors mb-3">
+                      <h2 className="text-xl md:text-2xl font-serif font-bold text-slate-800 group-hover:text-accent transition-colors mb-3">
                         {post.title}
                       </h2>
                       <p className="text-neutral-light leading-relaxed">

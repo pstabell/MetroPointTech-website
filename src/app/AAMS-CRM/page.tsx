@@ -117,7 +117,7 @@ export default function AAMSCRMPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               What Agenient CRM Does For Your Agency
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
@@ -129,7 +129,7 @@ export default function AAMSCRMPage() {
             {features.map((feature, index) => (
               <div key={index} className="bg-neutral-lighter rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1">
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-primary mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{feature.title}</h3>
                 <p className="text-neutral-light leading-relaxed">{feature.description}</p>
               </div>
             ))}
@@ -141,7 +141,7 @@ export default function AAMSCRMPage() {
       <section id="screenshots" className="py-20 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               See It In Action
             </h2>
             <p className="text-xl text-neutral-light max-w-2xl mx-auto">
@@ -162,7 +162,7 @@ export default function AAMSCRMPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-primary mb-2">{shot.title}</h3>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">{shot.title}</h3>
                   <p className="text-neutral-light text-sm">{shot.description}</p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function AAMSCRMPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
               Simple Pricing
             </h2>
             <p className="text-lg text-neutral-light max-w-2xl mx-auto">
@@ -187,12 +187,12 @@ export default function AAMSCRMPage() {
             <div className="bg-white rounded-2xl shadow-xl ring-2 ring-primary overflow-hidden">
               <div className="p-8 md:p-10">
                 <div className="text-5xl mb-4">📇</div>
-                <h3 className="text-2xl font-bold text-primary mb-2">Agenient CRM</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">Agenient CRM</h3>
                 <p className="text-accent font-semibold mb-6">AI-Powered Sales & Quoting</p>
 
                 <div className="border-t border-neutral-lighter pt-6 mb-6">
                   <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-4xl font-bold text-primary">$99.99</span>
+                    <span className="text-4xl font-bold text-slate-800">$99.99</span>
                     <span className="text-neutral-light">/user/month</span>
                   </div>
                   <p className="text-sm text-neutral-light">Add-on to Agenient AAMS Agency ($199.99/mo)</p>
@@ -211,7 +211,7 @@ export default function AAMSCRMPage() {
                   ].map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <span className="text-accent mr-2 flex-shrink-0">✓</span>
-                      <span className="text-sm text-primary">{feature}</span>
+                      <span className="text-sm text-slate-800">{feature}</span>
                     </li>
                   ))}
                 </ul>

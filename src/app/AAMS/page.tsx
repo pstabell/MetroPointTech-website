@@ -37,7 +37,7 @@ export default function AAMSPage() {
                 </a>
                 <a
                   href="#how-it-works"
-                  className="bg-white text-primary hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                  className="bg-white text-slate-800 hover:bg-neutral-lighter px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
                 >
                   See How It Works
                 </a>
@@ -65,19 +65,19 @@ export default function AAMSPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary">Zero-Touch</div>
+              <div className="text-3xl font-bold text-slate-800">Zero-Touch</div>
               <div className="text-sm text-neutral-dark mt-1">Autonomous Operations</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">100%</div>
+              <div className="text-3xl font-bold text-slate-800">100%</div>
               <div className="text-sm text-neutral-dark mt-1">Commission Visibility</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">Agentic</div>
+              <div className="text-3xl font-bold text-slate-800">Agentic</div>
               <div className="text-sm text-neutral-dark mt-1">AI-Powered Workflows</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">3 Personas</div>
+              <div className="text-3xl font-bold text-slate-800">3 Personas</div>
               <div className="text-sm text-neutral-dark mt-1">Producer, Solo Agent & Agency</div>
             </div>
           </div>
@@ -169,11 +169,11 @@ export default function AAMSPage() {
             <h3 className="text-2xl font-bold text-center mb-8">The Industry Is Moving to Autonomous</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
-                <div className="text-4xl font-bold text-primary mb-2">72%</div>
+                <div className="text-4xl font-bold text-slate-800 mb-2">72%</div>
                 <p className="text-sm text-neutral-dark">of agencies say commercial submissions need greater automation</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
-                <div className="text-4xl font-bold text-primary mb-2">51%</div>
+                <div className="text-4xl font-bold text-slate-800 mb-2">51%</div>
                 <p className="text-sm text-neutral-dark">want data uploads from management systems fully automated</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
@@ -181,7 +181,7 @@ export default function AAMSPage() {
                 <p className="text-sm text-neutral-dark">now prioritize real-time data over traditional policy downloads (up from 12% in 2024)</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
-                <div className="text-4xl font-bold text-primary mb-2">700+</div>
+                <div className="text-4xl font-bold text-slate-800 mb-2">700+</div>
                 <p className="text-sm text-neutral-dark">industry professionals surveyed</p>
               </div>
             </div>

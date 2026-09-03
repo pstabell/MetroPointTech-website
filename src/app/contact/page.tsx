@@ -192,9 +192,9 @@ export default function Contact() {
                       payment links, and account notification text messages from Metro Point Technology at the
                       phone number provided. Consent is not a condition of purchase. Message frequency varies.
                       Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our{' '}
-                      <a href="/privacy-policy" className="text-primary hover:text-primary-dark underline">Privacy Policy</a>
+                      <a href="/privacy-policy" className="text-slate-800 hover:text-primary-dark underline">Privacy Policy</a>
                       {' '}and{' '}
-                      <a href="/terms-of-service" className="text-primary hover:text-primary-dark underline">Terms of Service</a>.
+                      <a href="/terms-of-service" className="text-slate-800 hover:text-primary-dark underline">Terms of Service</a>.
                     </label>
                   </div>
 
@@ -220,7 +220,7 @@ export default function Contact() {
                 <div className="bg-neutral-lighter rounded-xl p-6">
                   <div className="text-3xl mb-3">📧</div>
                   <h3 className="font-semibold text-neutral mb-2">Email</h3>
-                  <a href="mailto:sales@metropointtech.com" className="text-primary hover:text-primary-dark">
+                  <a href="mailto:sales@metropointtech.com" className="text-slate-800 hover:text-primary-dark">
                     sales@metropointtech.com
                   </a>
                 </div>
@@ -228,7 +228,7 @@ export default function Contact() {
                 <div className="bg-neutral-lighter rounded-xl p-6">
                   <div className="text-3xl mb-3">📞</div>
                   <h3 className="font-semibold text-neutral mb-2">Phone</h3>
-                  <a href="tel:+12394267058" className="text-primary hover:text-primary-dark">
+                  <a href="tel:+12394267058" className="text-slate-800 hover:text-primary-dark">
                     (239) 426-7058
                   </a>
                 </div>

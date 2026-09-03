@@ -675,14 +675,14 @@ export default async function BlogPostPage({
             );
             if (block.kind === "h2") {
               return withImg(
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mt-12 mb-4 leading-snug clear-both">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-800 mt-12 mb-4 leading-snug clear-both">
                   {renderInline(block.text)}
                 </h2>
               );
             }
             if (block.kind === "h3") {
               return withImg(
-                <h3 className="text-xl font-serif font-semibold text-primary mt-8 mb-3">
+                <h3 className="text-xl font-serif font-semibold text-slate-800 mt-8 mb-3">
                   {renderInline(block.text)}
                 </h3>
               );
@@ -703,7 +703,7 @@ export default async function BlogPostPage({
               // starting with "> " becomes one. Much larger than body,
               // brand-navy, accent left bar, generous margins.
               return withImg(
-                <blockquote className="mpt-pullquote border-l-4 border-accent pl-6 md:pl-8 my-10 md:my-12 text-2xl md:text-3xl font-serif italic text-primary leading-snug">
+                <blockquote className="mpt-pullquote border-l-4 border-accent pl-6 md:pl-8 my-10 md:my-12 text-2xl md:text-3xl font-serif italic text-slate-800 leading-snug">
                   {renderInline(block.text)}
                 </blockquote>
               );
@@ -712,7 +712,7 @@ export default async function BlogPostPage({
             // size and line-height so readers see where reading starts.
             if (isFirstPara) {
               return withImg(
-                <p className="text-xl md:text-2xl font-serif text-neutral leading-relaxed mb-8 first-letter:text-6xl md:first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">
+                <p className="text-xl md:text-2xl font-serif text-neutral leading-relaxed mb-8 first-letter:text-6xl md:first-letter:text-7xl first-letter:font-serif first-letter:font-bold first-letter:text-slate-800 first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">
                   {renderInline(block.text)}
                 </p>
               );
@@ -731,7 +731,7 @@ export default async function BlogPostPage({
       {/* CTA */}
       <section className="py-12 bg-neutral-lighter">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-serif font-bold text-primary mb-4">
+          <h2 className="text-2xl font-serif font-bold text-slate-800 mb-4">
             Want to learn more?
           </h2>
           <p className="text-neutral-light mb-6 text-center">
