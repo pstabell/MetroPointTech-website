@@ -20,7 +20,7 @@
   const isAAMS = window.location.pathname.includes('AAMS') || window.location.pathname.includes('ams-app');
 
   const CHAT_MESSAGES = isAAMS ? {
-    welcome: `Hey there! I'm Jack, your Agenient AAMS assistant.
+    welcome: `Hey there! I'm Geni, your Agenient AAMS assistant.
 
 Autonomous Agency Management System — built by an agent with 30 years of experience. What can I help you with?`,
     buttons: [
@@ -29,7 +29,7 @@ Autonomous Agency Management System — built by an agent with 30 years of exper
       { text: '📞 Talk to the team', action: 'contact_sales' }
     ]
   } : {
-    welcome: `Hey! I'm Jack — built BY insurance pros, FOR insurance pros.
+    welcome: `Hey! I'm Geni — built BY insurance pros, FOR insurance pros.
 
 Legacy AMS platforms are just filing cabinets. Ours is a digital employee. Autonomous reconciliation, zero-touch operations, agentic workflows.
 
@@ -43,9 +43,9 @@ What's your biggest headache right now?`,
 
   const styles = `
     .mpt-chat-widget {
-      --primary-color: #003B5C;
-      --primary-hover: #002940;
-      --accent-color: #D4AF37;
+      --primary-color: #7C3AED;
+      --primary-hover: #6D28D9;
+      --accent-color: #14B8A6;
       --secondary-color: #F8FAFC;
       --text-color: #1F2937;
       --border-color: #E5E7EB;
@@ -67,7 +67,7 @@ What's your biggest headache right now?`,
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background-image: url('/jack-avatar.png');
+      background-image: url('/geni-avatar.png');
       background-size: cover;
       background-position: center;
       border: none;
@@ -138,7 +138,7 @@ What's your biggest headache right now?`,
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-image: url('/jack-avatar.png');
+      background-image: url('/geni-avatar.png');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -427,7 +427,7 @@ What's your biggest headache right now?`,
             <div class="header-content">
               <div class="avatar"></div>
               <div class="header-text">
-                <h3>Jack</h3>
+                <h3>Geni</h3>
                 <p><span class="status-indicator"></span>Online • Built for Insurance</p>
               </div>
             </div>
