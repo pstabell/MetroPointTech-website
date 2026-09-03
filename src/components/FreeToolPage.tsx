@@ -77,7 +77,7 @@ export default function FreeToolPage({
             <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-white/30 bg-white">
               <Image
                 src="/images/ams-app/dashboard.png"
-                alt="AAMS dashboard preview"
+                alt="Agenient AAMS dashboard preview"
                 width={1920}
                 height={1080}
                 className="w-full h-auto"

@@ -14,12 +14,12 @@ export default function MonthEndVarianceWorksheetPage() {
       title="Month-End Variance Worksheet"
       description="Close the month with fewer surprises. Use this worksheet to compare expected commission, carrier statements, deposits, receivables, and agency production before small variances turn into revenue leakage."
       primaryCta="Use the Worksheet"
-      secondaryCta="Automate This in AAMS"
+      secondaryCta="Automate This in Agenient AAMS"
       stats={[
         { value: '5 Steps', label: 'Month-End Review Flow' },
         { value: 'Carrier', label: 'Statement Reconciliation' },
         { value: 'Premium', label: 'Production Variance Check' },
-        { value: 'AAMS', label: 'Automation Ready' },
+        { value: 'Agenient AAMS', label: 'Automation Ready' },
       ]}
       toolTitle="A simple close process for agency financial control"
       toolIntro="Run this worksheet before finalizing the month. It gives producers, account managers, and agency owners a shared checklist for finding mismatches between what was written, what was billed, what was deposited, and what was paid."
@@ -70,11 +70,11 @@ export default function MonthEndVarianceWorksheetPage() {
         },
         {
           title: 'Prepare for automation',
-          body: 'AAMS turns this review into an operating workflow by reconciling carrier statements, commissions, and exceptions automatically.',
+          body: 'Agenient AAMS turns this review into an operating workflow by reconciling carrier statements, commissions, and exceptions automatically.',
         },
       ]}
       finalHeadline="Stop closing the month blind"
-      finalBody="Use the worksheet manually today, then let AAMS automate commission reconciliation, exception routing, and agency operations going forward."
+      finalBody="Use the worksheet manually today, then let Agenient AAMS automate commission reconciliation, exception routing, and agency operations going forward."
     />
   )
 }

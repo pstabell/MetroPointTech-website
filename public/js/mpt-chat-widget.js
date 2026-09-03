@@ -20,11 +20,11 @@
   const isAAMS = window.location.pathname.includes('AAMS') || window.location.pathname.includes('ams-app');
 
   const CHAT_MESSAGES = isAAMS ? {
-    welcome: `Hey there! I'm Jack, your AAMS assistant.
+    welcome: `Hey there! I'm Jack, your Agenient AAMS assistant.
 
 Autonomous Agency Management System — built by an agent with 30 years of experience. What can I help you with?`,
     buttons: [
-      { text: '💬 What is AAMS?', action: 'exploring' },
+      { text: '💬 What is Agenient AAMS?', action: 'exploring' },
       { text: '📊 Autonomous commission tracking', action: 'track_commissions' },
       { text: '📞 Talk to the team', action: 'contact_sales' }
     ]
@@ -36,7 +36,7 @@ Legacy AMS platforms are just filing cabinets. Ours is a digital employee. Auton
 What's your biggest headache right now?`,
     buttons: [
       { text: '💰 Autonomous commission tracking', action: 'commission_tracking' },
-      { text: '📋 AAMS for Agents & Agencies', action: 'ams_platform' },
+      { text: '📋 Agenient AAMS for Agents & Agencies', action: 'ams_platform' },
       { text: '📞 Talk to the team', action: 'contact_sales' }
     ]
   };

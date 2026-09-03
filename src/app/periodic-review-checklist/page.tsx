@@ -14,12 +14,12 @@ export default function PeriodicReviewChecklistPage() {
       title="Periodic Review Checklist"
       description="Keep client reviews, renewals, remarkets, policy cleanup, and service follow-ups from slipping through the cracks. This checklist gives your agency a repeatable operating rhythm."
       primaryCta="Use the Checklist"
-      secondaryCta="Automate This in AAMS"
+      secondaryCta="Automate This in Agenient AAMS"
       stats={[
         { value: '90 Days', label: 'Renewal Review Window' },
         { value: 'Client', label: 'Coverage Conversation' },
         { value: 'Policy', label: 'Data Quality Check' },
-        { value: 'AAMS', label: 'Follow-Up Automation' },
+        { value: 'Agenient AAMS', label: 'Follow-Up Automation' },
       ]}
       toolTitle="A recurring review rhythm for insurance agencies"
       toolIntro="Use this checklist weekly, monthly, or before renewals. It gives your team a standard way to review upcoming policy events, client needs, remarketing decisions, missing data, and follow-up ownership."
@@ -70,11 +70,11 @@ export default function PeriodicReviewChecklistPage() {
         },
         {
           title: 'Turn reviews into workflow',
-          body: 'AAMS helps convert review outcomes into tasks, reminders, renewal actions, and operational follow-up without manual tracking.',
+          body: 'Agenient AAMS helps convert review outcomes into tasks, reminders, renewal actions, and operational follow-up without manual tracking.',
         },
       ]}
       finalHeadline="Make every review cycle intentional"
-      finalBody="Use the checklist manually today, then let AAMS automate client review workflows, renewal follow-up, and agency operating rhythm."
+      finalBody="Use the checklist manually today, then let Agenient AAMS automate client review workflows, renewal follow-up, and agency operating rhythm."
     />
   )
 }
