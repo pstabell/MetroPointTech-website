@@ -19,7 +19,7 @@ COMPANY:
 - Website: aamshub.com
 - Founded by a 30-year insurance industry veteran
 
-PRODUCT — AAMS (Autonomous Agency Management System):
+PRODUCT — Agenient AAMS (Autonomous Agency Management System):
 - An AI-powered back office that works 24/7
 - NOT just another AMS — it is a digital employee that acts on data, not just stores it
 - Handles commission tracking, reconciliation, market shopping, compliance monitoring autonomously
@@ -27,7 +27,7 @@ PRODUCT — AAMS (Autonomous Agency Management System):
 - Handles the 20-40% of commission data that the standard carrier-download system cannot process (MGAs, wholesale brokers, regional carriers)
 - Reduces commission leakage by catching errors humans miss
 
-PRODUCT — AAMS CRM (NOW LIVE):
+PRODUCT — Agenient CRM (NOW LIVE):
 - AI-powered CRM with autonomous agents Closer and Pulse built in
 - Closer: shops policies, sends ACORD forms to MGAs, compares quotes side-by-side, flags coverage red flags
 - Pulse: manages renewals (90/60/30 day reminders), client health scoring, follow-up scheduling
@@ -37,8 +37,8 @@ PRODUCT — AAMS CRM (NOW LIVE):
 - Available at crm.metropointtech.com
 
 PRICING:
-- AAMS: $99.99/user/month — commission tracking, reconciliation, policy management, AI back office
-- AAMS CRM: $99.99/user/month — sales pipeline, ACORD forms, MGA submissions, quote comparison, Closer + Pulse AI agents
+- Agenient AAMS: $99.99/user/month — commission tracking, reconciliation, policy management, AI back office
+- Agenient CRM: $99.99/user/month — sales pipeline, ACORD forms, MGA submissions, quote comparison, Closer + Pulse AI agents
 - Both together: $198/user/month
 - No setup fees, no exit fees, cancel anytime, full data portability
 - 14-day free trial, no credit card required
@@ -152,9 +152,9 @@ export async function POST(request: NextRequest) {
     const page = context?.page || '';
     let pageContext = '';
     if (page.toLowerCase().includes('aams') || page.toLowerCase().includes('ams-app')) {
-      pageContext = '\n\nThe visitor is currently on the AAMS product page. Focus on AAMS product details, features, and pricing.';
+      pageContext = '\n\nThe visitor is currently on the Agenient AAMS product page. Focus on Agenient AAMS product details, features, and pricing.';
     } else if (page.toLowerCase().includes('commission-calculator')) {
-      pageContext = '\n\nThe visitor is currently on the Commission Leak Calculator page. Focus on commission leakage, how the calculator works, and how AAMS solves commission tracking problems.';
+      pageContext = '\n\nThe visitor is currently on the Commission Leak Calculator page. Focus on commission leakage, how the calculator works, and how Agenient AAMS solves commission tracking problems.';
     } else if (page) {
       pageContext = `\n\nThe visitor is currently on the ${page} page.`;
     }
@@ -163,8 +163,8 @@ export async function POST(request: NextRequest) {
     let actionContext = '';
     if (action) {
       const actionMap: Record<string, string> = {
-        commission_tracking: 'The visitor is interested in commission tracking. Focus on how AAMS handles commission reconciliation, detects underpayments, and catches leakage.',
-        ams_platform: 'The visitor is interested in the AAMS platform overall. Give an overview of autonomous agency management features.',
+        commission_tracking: 'The visitor is interested in commission tracking. Focus on how Agenient AAMS handles commission reconciliation, detects underpayments, and catches leakage.',
+        ams_platform: 'The visitor is interested in the Agenient AAMS platform overall. Give an overview of autonomous agency management features.',
         exploring: 'The visitor is just exploring. Be welcoming, ask what type of insurance they write, and gently qualify them.',
         pricing: 'The visitor wants to know about pricing. Share the pricing tiers clearly.',
         demo: 'The visitor wants a demo. Direct them to the free trial or suggest calling (239) 426-7058 for a live demo.',
