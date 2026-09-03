@@ -12,8 +12,8 @@ export default function PrivacyPolicy() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-blue-100">Metro Point Technology LLC</p>
-          <p className="text-blue-100 text-sm mt-2">Effective Date: January 15, 2025 &middot; Last Updated: January 15, 2025</p>
+          <p className="text-violet-100">Metro Point Technology LLC</p>
+          <p className="text-violet-100 text-sm mt-2">Effective Date: January 15, 2025 &middot; Last Updated: January 15, 2025</p>
         </div>
       </section>
 

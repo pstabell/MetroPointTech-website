@@ -55,11 +55,11 @@ export default function ClaudeDiscordFixPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Claude Code Discord Channels Fix
             </h1>
-            <p className="text-xl mb-4 text-blue-100">
+            <p className="text-xl mb-4 text-violet-100">
               GitHub Issue #36477 broke Discord channels in Claude Code v2.1.85.
               We built a custom MCP server that replaces the broken plugin entirely.
             </p>
-            <p className="text-lg text-blue-200">
+            <p className="text-lg text-violet-200">
               Event-driven architecture. Zero polling. Production-tested on 13 AI agents.
             </p>
           </div>
@@ -194,7 +194,7 @@ export default function ClaudeDiscordFixPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg mx-auto">
             <h2 className="text-3xl font-bold text-white mb-4 text-center">Download the Fix</h2>
-            <p className="text-blue-200 mb-8 text-center">
+            <p className="text-violet-200 mb-8 text-center">
               Enter your info below and we&apos;ll send you the template package instantly.
             </p>
 

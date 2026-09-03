@@ -282,7 +282,7 @@ export default function TeamPage() {
             </div>
 
             {/* Right Side - Meet Our Team */}
-            <div className="md:border-l md:border-blue-400/20 md:pl-12">
+            <div className="md:border-l md:border-violet-400/20 md:pl-12">
               <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Meet Our<br />Management Team
               </h1>
@@ -340,7 +340,7 @@ export default function TeamPage() {
           <h2 className="text-3xl font-bold mb-6">
             Ready to Work with a Team That Never Stops?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-violet-100 mb-8">
             Metro Point Technology runs a 24/7 operation with the depth of an
             enterprise team and the agility of a startup. If you need software
             built, problems solved, or operations automated, we are already

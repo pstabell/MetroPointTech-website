@@ -398,9 +398,9 @@ export default function AAMSContent() {
 
                 {/* Upgrade hook */}
                 <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl p-8 shadow-lg flex flex-col text-left">
-                  <div className="text-sm font-semibold text-blue-100 mb-1">READY TO MANAGE 100% OF YOUR COMMISSIONS?</div>
+                  <div className="text-sm font-semibold text-violet-100 mb-1">READY TO MANAGE 100% OF YOUR COMMISSIONS?</div>
                   <div className="text-3xl font-bold mb-4">Upgrade to Agenient AAMS Solo Agent</div>
-                  <p className="text-blue-100 mb-6">
+                  <p className="text-violet-100 mb-6">
                     Drop the split cap and track 100% of your commissions — yours plus anything you handle as your own book. Move up to Pro or Autopilot to add autonomous reconciliation on top, so the system runs your commission ops while you focus on selling.
                   </p>
                   <ul className="space-y-2 mb-8 text-sm flex-grow">
@@ -409,7 +409,7 @@ export default function AAMSContent() {
                     <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Coaching & Alerts (Pro & Autopilot)</li>
                     <li className="flex items-center gap-2"><span className="text-accent">✓</span> Email Statement Forwarding (Autopilot)</li>
                   </ul>
-                  <div className="text-xs text-blue-200 mb-3">Starter $19.99/mo · Autonomous from $49.99/mo · 14-day free trial</div>
+                  <div className="text-xs text-violet-200 mb-3">Starter $19.99/mo · Autonomous from $49.99/mo · 14-day free trial</div>
                   <button
                     onClick={() => setView('agent')}
                     className="block w-full py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition text-center"

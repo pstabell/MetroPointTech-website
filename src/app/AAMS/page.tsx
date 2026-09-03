@@ -23,7 +23,7 @@ export default function AAMSPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Your Agency, on Autopilot. Zero-Touch Operations.
               </h1>
-              <p className="text-xl mb-8 text-blue-100">
+              <p className="text-xl mb-8 text-violet-100">
                 Legacy AMS platforms are just digital filing cabinets. Agenient AAMS is a digital employee.
                 Autonomous commission reconciliation, agentic workflows, and zero-touch operations
                 that run your agency while you focus on selling.
@@ -42,7 +42,7 @@ export default function AAMSPage() {
                   See How It Works
                 </a>
               </div>
-              <p className="text-sm text-blue-200 mt-4">
+              <p className="text-sm text-violet-200 mt-4">
                 No credit card required. Cancel anytime.
               </p>
             </div>
@@ -223,7 +223,7 @@ export default function AAMSPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Your Agency Deserves Autonomy
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-violet-100 mb-8 max-w-2xl mx-auto">
             Legacy AMS platforms make you do the work. Agenient AAMS does the work for you. Autonomous reconciliation, zero-touch operations, and agentic workflows — starting today.
           </p>
           <a

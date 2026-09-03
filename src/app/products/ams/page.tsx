@@ -18,7 +18,7 @@ export default function AMSProduct() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Agency Management System
             </h1>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-violet-100">
               Multi-tenant commission platform with revolutionary Mirror Architecture.
               Agents see commissions update in REAL-TIME as you reconcile carrier statements.
             </p>

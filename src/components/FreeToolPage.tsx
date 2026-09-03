@@ -55,7 +55,7 @@ export default function FreeToolPage({
             <div>
               <div className="text-accent font-semibold mb-4">{eyebrow}</div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
-              <p className="text-xl mb-8 text-blue-100">{description}</p>
+              <p className="text-xl mb-8 text-violet-100">{description}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#free-tool"
@@ -70,7 +70,7 @@ export default function FreeToolPage({
                   {secondaryCta}
                 </a>
               </div>
-              <p className="text-sm text-blue-200 mt-4">
+              <p className="text-sm text-violet-200 mt-4">
                 Free worksheet. No credit card required. Built for insurance agencies.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function FreeToolPage({
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">{finalHeadline}</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">{finalBody}</p>
+          <p className="text-xl text-violet-100 mb-8 max-w-2xl mx-auto">{finalBody}</p>
           <a
             href={trialUrl}
             className="inline-block bg-accent hover:bg-accent-dark text-white px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"

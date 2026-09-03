@@ -19,9 +19,9 @@ const services = [
       'Speed up slow workflows',
       'Train your team on best practices',
     ],
-    gradient: 'from-blue-500 to-cyan-400',
-    bgColor: 'bg-blue-50',
-    iconBg: 'bg-blue-100',
+    gradient: 'from-violet-500 to-cyan-400',
+    bgColor: 'bg-violet-50',
+    iconBg: 'bg-violet-100',
   },
   {
     icon: '🔗',
@@ -105,7 +105,7 @@ export default function ServicesPage() {
             <br />
             <span className="text-accent">Just Results.</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-violet-100 max-w-3xl mx-auto leading-relaxed">
             We're not here to sell you buzzwords. We're here to solve real problems, 
             streamline your operations, and help your business run smoother.
           </p>
@@ -308,7 +308,7 @@ export default function ServicesPage() {
             <br />
             <span className="text-accent">Work For You?</span>
           </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-violet-100 max-w-2xl mx-auto">
             Whether you've got a specific project in mind or just know something needs to change, 
             let's talk. The first call is always free.
           </p>
@@ -326,7 +326,7 @@ export default function ServicesPage() {
               Email Us Directly
             </a>
           </div>
-          <p className="mt-8 text-sm text-blue-200">
+          <p className="mt-8 text-sm text-violet-200">
             📞 Or call us at <a href="tel:+12394267058" className="underline hover:text-white">(239) 426-7058</a>
           </p>
         </div>

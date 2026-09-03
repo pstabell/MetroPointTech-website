@@ -74,7 +74,7 @@ export default function AAMSCRMPage() {
                 <br />
                 <span className="text-accent">Built for Insurance.</span>
               </h1>
-              <p className="text-xl mb-8 text-blue-100 leading-relaxed">
+              <p className="text-xl mb-8 text-violet-100 leading-relaxed">
                 Two AI agents manage your sales pipeline and renewals while you focus on relationships.
                 Closer shops policies and compares quotes. Pulse tracks renewals and triggers follow-ups.
                 18 ACORD form generators. Hard-gate compliance enforcement.
@@ -93,7 +93,7 @@ export default function AAMSCRMPage() {
                   See Screenshots
                 </a>
               </div>
-              <p className="text-sm text-blue-200 mt-4">
+              <p className="text-sm text-violet-200 mt-4">
                 Requires Agenient AAMS subscription (Agency tier)
               </p>
             </div>
@@ -250,7 +250,7 @@ export default function AAMSCRMPage() {
             <br />
             <span className="text-accent">Let AI Do It.</span>
           </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-violet-100 max-w-2xl mx-auto">
             Your team should be closing new business, not buried in follow-ups and paperwork.
             Add Agenient CRM and let Closer and Pulse handle the rest.
           </p>
@@ -268,7 +268,7 @@ export default function AAMSCRMPage() {
               Get Agenient AAMS First
             </Link>
           </div>
-          <p className="mt-8 text-sm text-blue-200">
+          <p className="mt-8 text-sm text-violet-200">
             Questions? Call us at <a href="tel:+12394267058" className="underline hover:text-white">(239) 426-7058</a>
           </p>
         </div>

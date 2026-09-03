@@ -106,7 +106,7 @@ export default function AgencyCalculator() {
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             Is Your Back Office Costing You Too Much? See How Much You Can Save By Switching To An AI Team.
           </h2>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-violet-100 max-w-2xl mx-auto">
             See how much your back office is really costing you and how much you
             could save with AI Commission Tracker
           </p>
@@ -381,10 +381,10 @@ export default function AgencyCalculator() {
               <div className="text-4xl md:text-5xl font-bold mb-2">
                 {formatCurrency(calculations.savingsYear)}
               </div>
-              <div className="text-blue-200 text-lg mb-1">
+              <div className="text-violet-200 text-lg mb-1">
                 per year ({formatCurrency(calculations.savingsMonth)}/month)
               </div>
-              <div className="text-blue-300 text-sm mb-6">
+              <div className="text-violet-300 text-sm mb-6">
                 That is a{' '}
                 {calculations.totalCurrentMonth > 0
                   ? Math.round(
@@ -401,7 +401,7 @@ export default function AgencyCalculator() {
               >
                 Start Your Free Trial
               </a>
-              <p className="text-sm text-blue-200 mt-3">
+              <p className="text-sm text-violet-200 mt-3">
                 No credit card required. 14-day free trial.
               </p>
             </div>

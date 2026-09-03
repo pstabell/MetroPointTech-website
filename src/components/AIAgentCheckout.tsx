@@ -58,7 +58,7 @@ export default function AIAgentCheckout({ plan, accent }: AIAgentCheckoutProps) 
             placeholder="Enter your business email"
             className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 ${
               accent
-                ? 'bg-white/10 border-white/20 text-white placeholder-blue-300 focus:ring-accent'
+                ? 'bg-white/10 border-white/20 text-white placeholder-violet-300 focus:ring-accent'
                 : 'bg-neutral-lighter border-gray-200 text-primary placeholder-gray-400 focus:ring-primary'
             }`}
             onKeyDown={e => e.key === 'Enter' && handleCheckout()}

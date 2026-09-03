@@ -18,7 +18,7 @@ export default function WRAPProposalGeneratorProduct() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               WRAP Proposal Generator
             </h1>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-violet-100">
               Create professional Wealth Risk Analysis & Protection proposals in minutes.
               Impress high-net-worth clients with beautiful, branded Word documents.
             </p>

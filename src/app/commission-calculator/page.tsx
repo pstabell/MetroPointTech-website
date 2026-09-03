@@ -83,7 +83,7 @@ export default function CommissionCalculatorPage() {
           <h1 className="text-3xl md:text-4xl font-bold mb-3">
             Free Commission Leak Calculator
           </h1>
-          <p className="text-lg md:text-xl text-blue-100">
+          <p className="text-lg md:text-xl text-violet-100">
             Find out if you're underpaid in 30 seconds
           </p>
         </div>
@@ -240,7 +240,7 @@ export default function CommissionCalculatorPage() {
                 <h3 className="text-2xl font-bold mb-3">
                   AI Commission Tracker catches these leaks automatically.
                 </h3>
-                <p className="text-blue-100 mb-6 text-lg">
+                <p className="text-violet-100 mb-6 text-lg">
                   Stop losing revenue to commission errors. Upload your commission statements and see exactly where the money goes.
                 </p>
                 <a
@@ -249,7 +249,7 @@ export default function CommissionCalculatorPage() {
                 >
                   Start Your Free Trial
                 </a>
-                <p className="text-sm text-blue-200 mt-3">No credit card required. 14-day free trial.</p>
+                <p className="text-sm text-violet-200 mt-3">No credit card required. 14-day free trial.</p>
               </div>
             </div>
           )}

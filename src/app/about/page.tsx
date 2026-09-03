@@ -16,7 +16,7 @@ export default function About() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             About Metro Point Technology
           </h1>
-          <p className="text-xl text-blue-100">
+          <p className="text-xl text-violet-100">
             Insurance software built by someone who actually works in the trenches
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Try Software Built by Agents?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-violet-100">
             See why agents trust tools built by someone who understands the business
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

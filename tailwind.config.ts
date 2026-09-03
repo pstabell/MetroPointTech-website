@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Metro Point Insurance Brand Colors - Exact match from metropointinsurance.com
+        // Agenient brand colors — emerald "Agen" + violet "ient" (locked 2026-09-02)
         primary: {
-          DEFAULT: '#003B5C', // Navy Blue - Buildings & main text
-          dark: '#002940',    // Darker navy for hover states
-          light: '#8BA5B8',   // Light blue - Building windows
+          DEFAULT: '#6D28D9', // Agenient violet — primary brand surfaces, headings, buttons
+          dark: '#5B21B6',    // Darker violet for hover states
+          light: '#8B6BF0',   // Lighter violet (dark-bg tint)
         },
         accent: {
-          DEFAULT: '#D4AF37', // Gold - Sun & swoosh
-          dark: '#C19B2B',    // Darker gold for hover
-          light: '#E5C158',   // Lighter gold
+          DEFAULT: '#10B981', // Agenient emerald — highlights, CTAs, checkmarks
+          dark: '#059669',    // Darker emerald for hover
+          light: '#34D399',   // Lighter emerald (dark-bg tint)
         },
         neutral: {
           DEFAULT: '#1f2937', // Dark text

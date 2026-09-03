@@ -6,12 +6,12 @@
 
 :root {
   /* Metro Point Insurance Brand Colors - Exact match */
-  --primary: #003B5C;        /* Navy Blue - Buildings & main text */
-  --primary-dark: #002940;   /* Darker navy for hover states */
-  --primary-light: #8BA5B8;  /* Light blue - Building windows */
-  --accent: #D4AF37;         /* Gold - Sun & swoosh */
-  --accent-dark: #C19B2B;    /* Darker gold for hover */
-  --accent-light: #E5C158;   /* Lighter gold */
+  --primary: #6D28D9;        /* Agenient violet - primary brand surfaces & headings */
+  --primary-dark: #5B21B6;   /* Darker violet for hover states */
+  --primary-light: #8B6BF0;  /* Lighter violet (dark-bg tint) */
+  --accent: #10B981;         /* Agenient emerald - highlights & CTAs */
+  --accent-dark: #059669;    /* Darker emerald for hover */
+  --accent-light: #34D399;   /* Lighter emerald (dark-bg tint) */
   --neutral: #1f2937;        /* Dark text */
   --neutral-light: #6b7280;  /* Secondary text */
   --neutral-lighter: #f9fafb; /* Backgrounds */

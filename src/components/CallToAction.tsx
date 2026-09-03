@@ -7,7 +7,7 @@ export default function CallToAction() {
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Ready for Autonomous Operations?
         </h2>
-        <p className="text-xl mb-8 text-blue-100">
+        <p className="text-xl mb-8 text-violet-100">
           Legacy AMS platforms make you do the work. Agenient does the work for you. Built by an active agent with 30 years of experience.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -24,7 +24,7 @@ export default function CallToAction() {
             Start Free Trial
           </Link>
         </div>
-        <p className="mt-6 text-sm text-blue-100">
+        <p className="mt-6 text-sm text-violet-100">
           No credit card required • 14-day free trial • Cancel anytime
         </p>
       </div>

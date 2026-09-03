@@ -115,7 +115,7 @@ export default function AIAgentTeamsPage() {
             <br />
             <span className="text-accent">Works 24/7. Never Quits.</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-violet-100 max-w-3xl mx-auto leading-relaxed">
             A dedicated AI agent hosted on our infrastructure, connected to your agency platforms,
             handling the back-office work that drains your team's time. Commission reconciliation,
             data entry, renewal tracking — done automatically.
@@ -223,7 +223,7 @@ export default function AIAgentTeamsPage() {
                 <h3 className={`text-2xl font-bold mb-2 ${plan.accent ? 'text-white' : 'text-primary'}`}>
                   {plan.name}
                 </h3>
-                <p className={`text-lg mb-6 ${plan.accent ? 'text-blue-200' : 'text-neutral-light'}`}>
+                <p className={`text-lg mb-6 ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
                   {plan.tagline}
                 </p>
 
@@ -233,15 +233,15 @@ export default function AIAgentTeamsPage() {
                     <span className={`text-4xl font-bold ${plan.accent ? 'text-accent-light' : 'text-accent'}`}>
                       {plan.monthlyPrice}
                     </span>
-                    <span className={plan.accent ? 'text-blue-200' : 'text-neutral-light'}>/month</span>
+                    <span className={plan.accent ? 'text-violet-200' : 'text-neutral-light'}>/month</span>
                   </div>
-                  <p className={`text-sm ${plan.accent ? 'text-blue-200' : 'text-neutral-light'}`}>
+                  <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
                     {plan.setupPrice} one-time setup ({plan.setupHours} of configuration)
                   </p>
-                  <p className={`text-sm ${plan.accent ? 'text-blue-200' : 'text-neutral-light'}`}>
+                  <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
                     Includes {plan.monthlyHours}/month of agent training & optimization
                   </p>
-                  <p className={`text-sm font-medium mt-1 ${plan.accent ? 'text-blue-100' : 'text-primary'}`}>
+                  <p className={`text-sm font-medium mt-1 ${plan.accent ? 'text-violet-100' : 'text-primary'}`}>
                     Up to {plan.platforms} platform connections
                   </p>
                 </div>
@@ -253,7 +253,7 @@ export default function AIAgentTeamsPage() {
                       <span className={`mt-0.5 flex-shrink-0 ${plan.accent ? 'text-accent-light' : 'text-accent'}`}>
                         {feature.startsWith('Everything') ? '★' : '✓'}
                       </span>
-                      <span className={plan.accent ? 'text-blue-100' : 'text-neutral-light'}>
+                      <span className={plan.accent ? 'text-violet-100' : 'text-neutral-light'}>
                         {feature}
                       </span>
                     </li>
@@ -262,13 +262,13 @@ export default function AIAgentTeamsPage() {
 
                 {/* Ideal For */}
                 <div className={`rounded-xl p-4 mb-8 ${plan.accent ? 'bg-white/10' : 'bg-neutral-lighter'}`}>
-                  <p className={`text-sm font-medium mb-1 ${plan.accent ? 'text-blue-100' : 'text-primary'}`}>
+                  <p className={`text-sm font-medium mb-1 ${plan.accent ? 'text-violet-100' : 'text-primary'}`}>
                     Ideal for:
                   </p>
-                  <p className={`text-sm ${plan.accent ? 'text-blue-200' : 'text-neutral-light'}`}>
+                  <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
                     {plan.idealFor}
                   </p>
-                  <p className={`text-xs mt-2 italic ${plan.accent ? 'text-blue-300' : 'text-neutral-light'}`}>
+                  <p className={`text-xs mt-2 italic ${plan.accent ? 'text-violet-300' : 'text-neutral-light'}`}>
                     {plan.platformExamples}
                   </p>
                 </div>
@@ -431,7 +431,7 @@ export default function AIAgentTeamsPage() {
             <br />
             <span className="text-accent">Robot Work.</span>
           </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-violet-100 max-w-2xl mx-auto">
             Your team should be selling, servicing, and growing your book.
             Let an AI agent handle the back-office grind. Book a free discovery call —
             no commitment, no hard sell.
@@ -450,7 +450,7 @@ export default function AIAgentTeamsPage() {
               Email Sales Directly
             </a>
           </div>
-          <p className="mt-8 text-sm text-blue-200">
+          <p className="mt-8 text-sm text-violet-200">
             Or call us at <a href="tel:+12394267058" className="underline hover:text-white">(239) 426-7058</a>
           </p>
         </div>

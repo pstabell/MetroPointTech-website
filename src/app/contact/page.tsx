@@ -56,7 +56,7 @@ export default function Contact() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Get In Touch
           </h1>
-          <p className="text-xl text-blue-100">
+          <p className="text-xl text-violet-100">
             Ready to see how our software can transform your agency? Let's talk.
           </p>
         </div>
