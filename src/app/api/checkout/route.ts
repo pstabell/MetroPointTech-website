@@ -7,9 +7,15 @@ import Stripe from 'stripe'
 /* Body: { plan: 'basic' | 'premium' | 'enterprise', email: string }   */
 /* ------------------------------------------------------------------ */
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2026-03-25.dahlia',
-})
+// Lazy Stripe init — instantiating at module scope throws "Neither apiKey nor config.authenticator
+// provided" at BUILD time when STRIPE_SECRET_KEY is absent (e.g. Preview deploys that don't carry the
+// prod secret), which fails the build during page-data collection. Instantiate per request instead;
+// production runtime behavior is unchanged (the key is present there).
+function getStripe(): Stripe {
+  return new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+    apiVersion: '2026-03-25.dahlia',
+  })
+}
 
 const PLANS: Record<string, { monthly: string; setup: string; name: string }> = {
   basic: {
@@ -47,6 +53,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Find or create Stripe customer
+  const stripe = getStripe()
   const customers = await stripe.customers.list({ email, limit: 1 })
   let customerId: string
   if (customers.data.length > 0) {

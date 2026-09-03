@@ -19,9 +19,13 @@ import { getSupabaseAdmin } from '@/lib/supabase-admin'
 /* STRIPE_WEBHOOK_SECRET_ONBOARDING env var.                            */
 /* ------------------------------------------------------------------ */
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2026-03-25.dahlia',
-})
+// Lazy Stripe init — a module-scope `new Stripe('')` throws at BUILD time when STRIPE_SECRET_KEY is
+// absent (e.g. Preview deploys), failing the build. Instantiate per request; runtime is unchanged.
+function getStripe(): Stripe {
+  return new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+    apiVersion: '2026-03-25.dahlia',
+  })
+}
 
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET_ONBOARDING || ''
 
@@ -47,6 +51,7 @@ export async function POST(req: NextRequest) {
 
   const rawBody = await req.text()
 
+  const stripe = getStripe()
   let event: Stripe.Event
   try {
     event = stripe.webhooks.constructEvent(rawBody, signature, WEBHOOK_SECRET)
