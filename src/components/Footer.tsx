@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import AgenientWordmark from '@/components/AgenientWordmark'
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">Metro Point Technology</h3>
+            <div className="mb-4"><AgenientWordmark variant="stretch" size="30px" dark /></div>
             <p className="text-blue-100 mb-4">
               Insurance software built by an agent with 30 years of experience.
               We understand what agents need because we've been there.
@@ -25,17 +26,17 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/AAMS" className="text-blue-100 hover:text-accent transition">
-                  AAMS Platform
+                  Agenient AAMS
                 </Link>
               </li>
               <li>
                 <Link href="/AAMS-CRM" className="text-blue-100 hover:text-accent transition">
-                  AAMS-CRM
+                  Agenient CRM
                 </Link>
               </li>
               <li>
                 <Link href="/AAMS/agents" className="text-blue-100 hover:text-accent transition">
-                  AAMS-Solo
+                  Agenient Solo
                 </Link>
               </li>
               <li>

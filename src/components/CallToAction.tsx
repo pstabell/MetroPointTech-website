@@ -8,7 +8,7 @@ export default function CallToAction() {
           Ready for Autonomous Operations?
         </h2>
         <p className="text-xl mb-8 text-blue-100">
-          Legacy AMS platforms make you do the work. AAMS does the work for you. Built by an active agent with 30 years of experience.
+          Legacy AMS platforms make you do the work. Agenient does the work for you. Built by an active agent with 30 years of experience.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

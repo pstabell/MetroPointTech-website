@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     default: 'Agenient | Autonomous Insurance Software',
     template: '%s | Agenient',
   },
-  description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
-  keywords: 'AAMS, autonomous agency management system, agentic AI, zero-touch operations, insurance software, commission tracking, insurance CRM',
+  description: 'Agenient AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
+  keywords: 'Agenient, Agenient AAMS, AAMS, autonomous agency management system, agentic AI, zero-touch operations, insurance software, commission tracking, insurance CRM',
   alternates: {
     canonical: '/',
   },
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Agenient',
     title: 'Agenient | Autonomous Insurance Software',
-    description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
+    description: 'Agenient AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
     url: 'https://aamshub.com',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Agenient | Autonomous Insurance Software',
-    description: 'AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
+    description: 'Agenient AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
   },
 }
 
@@ -41,11 +41,11 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': 'https://www.aamshub.com/#organization',
-      name: 'Metro Point Technology',
+      name: 'Agenient',
       url: 'https://www.aamshub.com',
       logo: 'https://www.aamshub.com/logo.svg',
       description:
-        'Autonomous insurance agency software built by an active agent with 30 years of experience. AAMS delivers zero-touch commission reconciliation, agentic workflows, and autonomous operations.',
+        'Autonomous insurance agency software built by an active agent with 30 years of experience. Agenient AAMS delivers zero-touch commission reconciliation, agentic workflows, and autonomous operations.',
       founder: { '@type': 'Person', name: 'Patrick Stabell' },
       areaServed: { '@type': 'Country', name: 'United States' },
       sameAs: ['https://github.com/pstabell'],
@@ -54,12 +54,12 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': 'https://www.aamshub.com/#website',
       url: 'https://www.aamshub.com',
-      name: 'Metro Point Technology',
+      name: 'Agenient',
       publisher: { '@id': 'https://www.aamshub.com/#organization' },
     },
     {
       '@type': 'SoftwareApplication',
-      name: 'AAMS — Autonomous Agency Management System',
+      name: 'Agenient AAMS — Autonomous Agency Management System',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       url: 'https://www.aamshub.com/AAMS',

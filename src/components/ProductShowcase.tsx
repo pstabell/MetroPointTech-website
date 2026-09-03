@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function ProductShowcase() {
   const products = [
     {
-      name: 'AAMS Platform',
+      name: 'Agenient AAMS',
       subtitle: 'Autonomous Agency Management',
       description: 'The autonomous evolution of legacy AMS. Zero-touch commission reconciliation, agentic workflows, and real-time agent visibility — your agency on autopilot.',
       icon: '🏢',
@@ -22,7 +22,7 @@ export default function ProductShowcase() {
       borderColor: 'accent',
     },
     {
-      name: 'AAMS CRM',
+      name: 'Agenient CRM',
       subtitle: 'AI-Powered Sales & Quoting',
       description: 'Autonomous CRM with AI agents built in. Closer shops policies and compares quotes. Pulse manages renewals and follow-ups. 18 ACORD form generators. Hard-gate compliance enforcement.',
       icon: '📇',
@@ -34,7 +34,7 @@ export default function ProductShowcase() {
         'MGA submission tracking & quote comparison',
       ],
       pricing: '$99.99/user/mo add-on',
-      setupFee: 'Requires AAMS Platform subscription',
+      setupFee: 'Requires Agenient AAMS subscription',
       link: '/AAMS-CRM',
       cta: 'See Details',
       highlight: false,
@@ -60,7 +60,7 @@ export default function ProductShowcase() {
       borderColor: 'accent',
     },
     {
-      name: 'AAMS Solo',
+      name: 'Agenient Solo',
       subtitle: 'For Independent Agents',
       description: 'Autonomous commission tracking that catches every dollar. Agentic reconciliation runs while you sell. The foundation that grows with you.',
       icon: '💰',
@@ -69,7 +69,7 @@ export default function ProductShowcase() {
         'Agentic reconciliation',
         'Statement import & matching',
         'Revenue ledger & reports',
-        'Upgrade to AAMS Agency as you grow',
+        'Upgrade to Agenient AAMS as you grow',
       ],
       pricing: 'Start Free Trial',
       setupFee: 'No credit card required',

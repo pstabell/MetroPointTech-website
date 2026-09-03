@@ -4,7 +4,7 @@ export default function ValueProposition() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Why Metro Point Technology?
+            Why Agenient?
           </h2>
           <p className="text-xl text-primary max-w-3xl mx-auto">
             We're not just developers who learned about insurance.
