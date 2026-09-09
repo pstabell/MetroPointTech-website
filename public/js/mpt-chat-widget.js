@@ -407,10 +407,13 @@ What's your biggest headache right now?`,
       this.addWelcomeMessage();
       this.bindEvents();
       
-      // Auto-open after 3 seconds
-      setTimeout(() => {
-        if (!this.isOpen) this.toggleWidget();
-      }, 3000);
+      // Auto-open on desktop only, after 5 seconds, without stealing focus.
+      // (Auto-opening on phones covered the hero and scored a 0.26 layout shift.)
+      if (window.innerWidth > 768) {
+        setTimeout(() => {
+          if (!this.isOpen) this.toggleWidget(false);
+        }, 5000);
+      }
     }
 
     createWidget() {
@@ -490,7 +493,7 @@ What's your biggest headache right now?`,
       });
     }
 
-    toggleWidget() {
+    toggleWidget(userInitiated = true) {
       this.isOpen = !this.isOpen;
       const chatWindow = this.widget.querySelector('.chat-window');
       const toggleBtn = this.widget.querySelector('.chat-toggle-button');
@@ -499,7 +502,7 @@ What's your biggest headache right now?`,
         this.widget.classList.add('open');
         chatWindow.style.display = 'flex';
         toggleBtn.style.display = 'none';
-        this.widget.querySelector('textarea').focus();
+        if (userInitiated) this.widget.querySelector('textarea').focus();
       } else {
         this.widget.classList.remove('open');
         setTimeout(() => {
