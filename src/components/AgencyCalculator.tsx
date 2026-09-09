@@ -396,7 +396,7 @@ export default function AgencyCalculator() {
                 % reduction in back office costs
               </div>
               <a
-                href="https://ams.metropointtech.com/login"
+                href="https://aams.agenient.com/login"
                 className="inline-block bg-accent hover:bg-accent-dark text-white px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"
               >
                 Start Your Free Trial

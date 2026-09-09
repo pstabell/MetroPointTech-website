@@ -26,7 +26,7 @@ type ToolPageProps = {
   finalBody: string
 }
 
-const trialUrl = 'https://ams.metropointtech.com/login'
+const trialUrl = 'https://aams.agenient.com/login'
 
 export default function FreeToolPage({
   eyebrow,

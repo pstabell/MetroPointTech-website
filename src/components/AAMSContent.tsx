@@ -391,7 +391,7 @@ export default function AAMSContent() {
                       </li>
                     ))}
                   </ul>
-                  <a href="https://ams.metropointtech.com/login?plan=producer&promo=PRODUCER_FREE" className="block w-full py-3 bg-cyan-700 hover:bg-cyan-800 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login?plan=producer&promo=PRODUCER_FREE" className="block w-full py-3 bg-cyan-700 hover:bg-cyan-800 text-white font-semibold rounded-lg transition text-center">
                     Get Started Free
                   </a>
                 </div>
@@ -447,7 +447,7 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
@@ -480,7 +480,7 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
@@ -511,7 +511,7 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
@@ -547,7 +547,7 @@ export default function AAMSContent() {
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $49.99/mo each</div>
-                  <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-violet-500 hover:bg-violet-600 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-500 hover:bg-violet-600 text-white font-semibold rounded-lg transition text-center">
                     Start Free 14-Day Trial
                   </a>
                 </div>
@@ -580,7 +580,7 @@ export default function AAMSContent() {
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $99.99/mo each</div>
-                  <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-center">
                     Start Free 14-Day Trial
                   </a>
                 </div>
@@ -611,7 +611,7 @@ export default function AAMSContent() {
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">3 users included. Save $100/mo vs buying seats separately. Extra users: $99.99/mo each.</div>
-                  <a href="https://ams.metropointtech.com/login" className="block w-full py-3 bg-violet-700 hover:bg-violet-800 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-700 hover:bg-violet-800 text-white font-semibold rounded-lg transition text-center">
                     Subscribe Now
                   </a>
                 </div>

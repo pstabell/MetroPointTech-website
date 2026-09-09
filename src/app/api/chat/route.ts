@@ -34,7 +34,7 @@ PRODUCT — Agenient CRM (NOW LIVE):
 - 18 ACORD form generators (personal + commercial) — auto-populated from contact data
 - 7-stage sales pipeline with hard-gate enforcement for surplus lines agency-billed policies
 - MGA submission tracking and quote comparison spreadsheet
-- Available at crm.metropointtech.com
+- Available at crm.agenient.com
 
 PRICING:
 - Agenient AAMS: $99.99/user/month — commission tracking, reconciliation, policy management, AI back office

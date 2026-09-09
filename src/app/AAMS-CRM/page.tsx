@@ -81,7 +81,7 @@ export default function AAMSCRMPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="https://ams.metropointtech.com/login"
+                  href="https://aams.agenient.com/login"
                   className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg text-center"
                 >
                   Add CRM to Your Agenient AAMS
@@ -217,7 +217,7 @@ export default function AAMSCRMPage() {
                 </ul>
 
                 <Link
-                  href="https://ams.metropointtech.com/login"
+                  href="https://aams.agenient.com/login"
                   className="block w-full text-center bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
                 >
                   Add CRM to My Agenient AAMS
@@ -256,7 +256,7 @@ export default function AAMSCRMPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://ams.metropointtech.com/login"
+              href="https://aams.agenient.com/login"
               className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
             >
               Add CRM to Your Agenient AAMS

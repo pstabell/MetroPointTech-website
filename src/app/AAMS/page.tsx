@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 export default function AAMSPage() {
-  const trialUrl = 'https://ams.metropointtech.com/login'
+  const trialUrl = 'https://aams.agenient.com/login'
 
   return (
     <div className="min-h-screen">

@@ -43,7 +43,7 @@ export default function Navbar() {
               Contact
             </Link>
             <a
-              href="https://ams.metropointtech.com/login"
+              href="https://aams.agenient.com/login"
               className="text-slate-800 hover:text-slate-800 transition"
             >
               Log In
@@ -99,7 +99,7 @@ export default function Navbar() {
               Contact
             </Link>
             <a
-              href="https://ams.metropointtech.com/login"
+              href="https://aams.agenient.com/login"
               className="block px-4 py-2 text-slate-800 hover:bg-neutral-lighter rounded transition"
             >
               Log In
