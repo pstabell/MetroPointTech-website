@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-[120px]">
         <div className="flex justify-between items-center w-full">
           {/* Logo — Agenient SPIN wordmark (animated, header) */}
-          <Link href="/" className="flex items-center" aria-label="Agenient home">
+          <Link href="/" className="flex items-center">
             <AgenientWordmark variant="spin" size="clamp(30px, 4.2vw, 46px)" />
           </Link>
 
@@ -58,6 +58,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
+            aria-label="Open menu"
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg text-slate-800 hover:bg-neutral-lighter transition"
           >

@@ -67,7 +67,7 @@ What's your biggest headache right now?`,
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background-image: url('/geni-avatar.png');
+      background-image: url('/geni-avatar.webp');
       background-size: cover;
       background-position: center;
       border: none;
@@ -138,7 +138,7 @@ What's your biggest headache right now?`,
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-image: url('/geni-avatar.png');
+      background-image: url('/geni-avatar.webp');
       background-size: cover;
       background-position: center;
       display: flex;

@@ -22,7 +22,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="font-semibold mb-4 text-slate-900">Products</h4>
+            <h3 className="font-semibold mb-4 text-slate-900">Products</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/AAMS" className="text-slate-600 hover:text-accent transition">
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4 text-slate-900">Company</h4>
+            <h3 className="font-semibold mb-4 text-slate-900">Company</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-slate-600 hover:text-accent transition">

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Alata } from 'next/font/google'
+import { Inter, Alata, Montserrat } from 'next/font/google'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -9,6 +9,7 @@ import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata' })
+const montserrat = Montserrat({ weight: '800', subsets: ['latin'], variable: '--font-montserrat', display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://agenient.com'),
@@ -76,11 +77,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${alata.variable}`}>
+    <html lang="en" className={`${inter.variable} ${alata.variable} ${montserrat.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"
@@ -104,9 +102,9 @@ export default function RootLayout({
         {/* Google Analytics 4 — property "agenient.com" */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZHVH1EHVX1"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4" strategy="afterInteractive">{`
+        <Script id="ga4" strategy="lazyOnload">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());

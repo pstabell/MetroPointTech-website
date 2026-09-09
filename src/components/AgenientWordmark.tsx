@@ -45,7 +45,7 @@ export default function AgenientWordmark({
       role="img"
       aria-label={title}
       style={{
-        fontFamily: "'Montserrat','Segoe UI',Arial,sans-serif",
+        fontFamily: "var(--font-montserrat),'Montserrat','Segoe UI',Arial,sans-serif",
         fontWeight: 800,
         fontSize: size,
         letterSpacing: '-0.0286em',
