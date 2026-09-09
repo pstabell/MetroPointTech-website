@@ -30,7 +30,7 @@ function getStripe(): Stripe {
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET_ONBOARDING || ''
 
 function siteOrigin(req: NextRequest): string {
-  return process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin || 'https://www.aamshub.com'
+  return process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin || 'https://agenient.com'
 }
 
 function tierFromSessionMetadata(session: Stripe.Checkout.Session): 'basic' | 'premium' | 'enterprise' | null {

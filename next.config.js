@@ -12,13 +12,13 @@ const nextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'agentcommissiontracker.com' }],
-        destination: 'https://www.aamshub.com/AAMS',
+        destination: 'https://agenient.com/AAMS',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.agentcommissiontracker.com' }],
-        destination: 'https://www.aamshub.com/AAMS',
+        destination: 'https://agenient.com/AAMS',
         permanent: true,
       },
       {

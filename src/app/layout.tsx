@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.aamshub.com'),
+  metadataBase: new URL('https://agenient.com'),
   title: {
     default: 'Agenient | Autonomous Insurance Software',
     template: '%s | Agenient',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Agenient',
     title: 'Agenient | Autonomous Insurance Software',
     description: 'Agenient AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
-    url: 'https://aamshub.com',
+    url: 'https://agenient.com',
   },
   twitter: {
     card: 'summary_large_image',
@@ -40,10 +40,10 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://www.aamshub.com/#organization',
+      '@id': 'https://agenient.com/#organization',
       name: 'Metro Point Technology',
-      url: 'https://www.aamshub.com',
-      logo: 'https://www.aamshub.com/logo.svg',
+      url: 'https://agenient.com',
+      logo: 'https://agenient.com/logo.svg',
       description:
         'Autonomous insurance agency software built by an active agent with 30 years of experience. Agenient AAMS delivers zero-touch commission reconciliation, agentic workflows, and autonomous operations.',
       founder: { '@type': 'Person', name: 'Patrick Stabell' },
@@ -52,20 +52,20 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://www.aamshub.com/#website',
-      url: 'https://www.aamshub.com',
+      '@id': 'https://agenient.com/#website',
+      url: 'https://agenient.com',
       name: 'Agenient',
-      publisher: { '@id': 'https://www.aamshub.com/#organization' },
+      publisher: { '@id': 'https://agenient.com/#organization' },
     },
     {
       '@type': 'SoftwareApplication',
       name: 'Agenient AAMS — Autonomous Agency Management System',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
-      url: 'https://www.aamshub.com/AAMS',
+      url: 'https://agenient.com/AAMS',
       description:
         'Autonomous agency management system for insurance agencies and independent agents — zero-touch commission reconciliation, agent and policy management, and AI-powered CRM.',
-      publisher: { '@id': 'https://www.aamshub.com/#organization' },
+      publisher: { '@id': 'https://agenient.com/#organization' },
     },
   ],
 }
@@ -101,7 +101,7 @@ export default function RootLayout({
         />
         <Analytics />
         <SpeedInsights />
-        {/* Google Analytics 4 — property "aamshub.com" */}
+        {/* Google Analytics 4 — property "agenient.com" */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZHVH1EHVX1"
           strategy="afterInteractive"

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://www.aamshub.com/sitemap.xml',
+    sitemap: 'https://agenient.com/sitemap.xml',
   };
 }

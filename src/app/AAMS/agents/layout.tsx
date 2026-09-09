@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Agenient AAMS for Insurance Agents | Agenient',
     description: 'Agenient AAMS for solo and producer-level insurance agents. Commission tracking and autonomous workflows for $19.99 per month.',
-    url: 'https://aamshub.com/AAMS/agents',
+    url: 'https://agenient.com/AAMS/agents',
   },
 }
 
