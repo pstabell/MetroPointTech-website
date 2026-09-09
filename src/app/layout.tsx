@@ -34,6 +34,13 @@ export const metadata: Metadata = {
     title: 'Agenient | Autonomous Insurance Software',
     description: 'Agenient AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
   },
+  // Bing Webmaster Tools site verification (added 2026-09-09). Bing re-checks this tag, so
+  // it must stay on the home page permanently -- removing it un-verifies agenient.com.
+  verification: {
+    other: {
+      'msvalidate.01': '456E95CDC849E711EDE5F690DFC3BD66',
+    },
+  },
 }
 
 const jsonLd = {
