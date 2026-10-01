@@ -1,21 +1,29 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import AgenientEmblem from '@/components/AgenientEmblem'
 import AgenientWordmark from '@/components/AgenientWordmark'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  // Pinned at the top on every page; slims down once the visitor scrolls (Patrick 2026-10-01)
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <nav className="bg-[#001F33] border-b border-[#1a3a52] shadow-lg shadow-black/30 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center min-h-[120px]">
-        <div className="flex justify-between items-center w-full min-h-[120px]">
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center transition-[min-height] duration-200 ${scrolled ? 'min-h-[72px]' : 'min-h-[120px]'}`}>
+        <div className={`flex justify-between items-center w-full transition-[min-height] duration-200 ${scrolled ? 'min-h-[72px]' : 'min-h-[120px]'}`}>
           {/* Logo — compass emblem + SPIN wordmark (white Agen + gold ient, sparkle i-dot) (Patrick 2026-10-01) */}
           <Link href="/" className="flex items-center gap-3" aria-label="Agenient home">
-            <AgenientEmblem size={56} />
-            <AgenientWordmark variant="spin" size="clamp(30px, 4.2vw, 46px)" dark />
+            <AgenientEmblem size={scrolled ? 40 : 56} />
+            <AgenientWordmark variant="spin" size={scrolled ? 'clamp(24px, 3vw, 32px)' : 'clamp(30px, 4.2vw, 46px)'} dark />
           </Link>
 
           {/* Desktop Navigation */}
