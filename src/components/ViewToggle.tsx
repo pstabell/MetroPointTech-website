@@ -23,7 +23,7 @@ export default function ViewToggle({ agencyExtra }: { agencyExtra?: React.ReactN
             onClick={() => setView('agent')}
             className={`px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
               view === 'agent'
-                ? 'bg-teal-600 text-white shadow-lg'
+                ? 'bg-teal-700 text-ivory shadow-lg'
                 : 'text-gray-600 hover:text-gray-800'
             }`}
           >
@@ -33,7 +33,7 @@ export default function ViewToggle({ agencyExtra }: { agencyExtra?: React.ReactN
             onClick={() => setView('agency')}
             className={`px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
               view === 'agency'
-                ? 'bg-violet-600 text-white shadow-lg'
+                ? 'bg-violet-600 text-ivory shadow-lg'
                 : 'text-gray-600 hover:text-gray-800'
             }`}
           >

@@ -15,7 +15,7 @@ export default function AAMSPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -23,7 +23,7 @@ export default function AAMSPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Your Agency, on Autopilot. Zero-Touch Operations.
               </h1>
-              <p className="text-xl mb-8 text-violet-100">
+              <p className="text-xl mb-8 text-[#C9D6E1]">
                 Legacy AMS platforms are just digital filing cabinets. Agenient AAMS is a digital employee.
                 Autonomous commission reconciliation, agentic workflows, and zero-touch operations
                 that run your agency while you focus on selling.
@@ -31,7 +31,7 @@ export default function AAMSPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href={trialUrl}
-                  className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                  className="bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
                 >
                   Start Free 14-Day Trial
                 </a>
@@ -42,7 +42,7 @@ export default function AAMSPage() {
                   See How It Works
                 </a>
               </div>
-              <p className="text-sm text-violet-200 mt-4">
+              <p className="text-sm text-[#A9BFCF] mt-4">
                 No credit card required. Cancel anytime.
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function AAMSPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-primary text-white">
+                  <tr className="bg-primary text-ivory">
                     <th className="text-left p-4 rounded-tl-lg">Platform</th>
                     <th className="text-center p-4">Monthly Cost</th>
                     <th className="text-center p-4">AI Included</th>
@@ -117,42 +117,42 @@ export default function AAMSPage() {
                   <tr className="bg-accent/10 border-2 border-accent font-semibold">
                     <td className="p-4">Agenient AAMS</td>
                     <td className="text-center p-4">$99 - $199/mo</td>
-                    <td className="text-center p-4 text-green-600">Yes</td>
-                    <td className="text-center p-4 text-green-600">$0</td>
-                    <td className="text-center p-4 text-green-600">None</td>
+                    <td className="text-center p-4 text-green-700">Yes</td>
+                    <td className="text-center p-4 text-green-700">$0</td>
+                    <td className="text-center p-4 text-green-700">None</td>
                   </tr>
                   <tr className="bg-white border-b border-gray-200">
                     <td className="p-4 text-neutral-dark">Legacy enterprise AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$200 - $500/user</td>
-                    <td className="text-center p-4 text-red-500">No</td>
-                    <td className="text-center p-4 text-red-500">$5,000+</td>
-                    <td className="text-center p-4 text-red-500">Multi-year</td>
+                    <td className="text-center p-4 text-red-600">No</td>
+                    <td className="text-center p-4 text-red-600">$5,000+</td>
+                    <td className="text-center p-4 text-red-600">Multi-year</td>
                   </tr>
                   <tr className="bg-gray-50 border-b border-gray-200">
                     <td className="p-4 text-neutral-dark">Mid-market legacy AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$150 - $400/user</td>
-                    <td className="text-center p-4 text-red-500">No</td>
-                    <td className="text-center p-4 text-red-500">$3,000+</td>
-                    <td className="text-center p-4 text-red-500">Multi-year</td>
+                    <td className="text-center p-4 text-red-600">No</td>
+                    <td className="text-center p-4 text-red-600">$3,000+</td>
+                    <td className="text-center p-4 text-red-600">Multi-year</td>
                   </tr>
                   <tr className="bg-white border-b border-gray-200">
                     <td className="p-4 text-neutral-dark">Web-based legacy AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$100 - $300/user</td>
-                    <td className="text-center p-4 text-red-500">No</td>
-                    <td className="text-center p-4 text-red-500">$1,500+</td>
-                    <td className="text-center p-4 text-red-500">Annual</td>
+                    <td className="text-center p-4 text-red-600">No</td>
+                    <td className="text-center p-4 text-red-600">$1,500+</td>
+                    <td className="text-center p-4 text-red-600">Annual</td>
                   </tr>
                   <tr className="bg-gray-50 border-b border-gray-200">
                     <td className="p-4 text-neutral-dark">Independent agency AMS</td>
                     <td className="text-center p-4 text-neutral-dark">$200 - $300 flat</td>
-                    <td className="text-center p-4 text-red-500">No</td>
-                    <td className="text-center p-4 text-red-500">$2,000+</td>
-                    <td className="text-center p-4 text-red-500">Annual</td>
+                    <td className="text-center p-4 text-red-600">No</td>
+                    <td className="text-center p-4 text-red-600">$2,000+</td>
+                    <td className="text-center p-4 text-red-600">Annual</td>
                   </tr>
                   <tr className="bg-white">
                     <td className="p-4 text-neutral-dark">Manual (Admin Employee)</td>
                     <td className="text-center p-4 text-neutral-dark">$3,000 - $5,000</td>
-                    <td className="text-center p-4 text-red-500">No</td>
+                    <td className="text-center p-4 text-red-600">No</td>
                     <td className="text-center p-4 text-neutral-dark">Training</td>
                     <td className="text-center p-4 text-neutral-dark">Ongoing</td>
                   </tr>
@@ -177,7 +177,7 @@ export default function AAMSPage() {
                 <p className="text-sm text-neutral-dark">want data uploads from management systems fully automated</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
-                <div className="text-4xl font-bold text-accent mb-2">29%</div>
+                <div className="text-4xl font-bold text-gold-ink mb-2">29%</div>
                 <p className="text-sm text-neutral-dark">now prioritize real-time data over traditional policy downloads (up from 12% in 2024)</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
@@ -218,17 +218,17 @@ export default function AAMSPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Your Agency Deserves Autonomy
           </h2>
-          <p className="text-xl text-violet-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-[#C9D6E1] mb-8 max-w-2xl mx-auto">
             Legacy AMS platforms make you do the work. Agenient AAMS does the work for you. Autonomous reconciliation, zero-touch operations, and agentic workflows — starting today.
           </p>
           <a
             href={trialUrl}
-            className="inline-block bg-accent hover:bg-accent-dark text-white px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"
+            className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"
           >
             Start Your Free Trial
           </a>

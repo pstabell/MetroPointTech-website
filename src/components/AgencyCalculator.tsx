@@ -101,12 +101,12 @@ export default function AgencyCalculator() {
   return (
     <div id="calculator" className="mt-16">
       {/* Navy Blue Hero Band */}
-      <div className="bg-gradient-to-br from-primary to-primary-dark text-white py-10 rounded-xl mb-10">
+      <div className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-10 rounded-xl mb-10">
         <div className="text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             Is Your Back Office Costing You Too Much? See How Much You Can Save By Switching To An AI Team.
           </h2>
-          <p className="text-lg md:text-xl text-violet-100 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[#C9D6E1] max-w-2xl mx-auto">
             See how much your back office is really costing you and how much you
             could save with AI Commission Tracker
           </p>
@@ -374,17 +374,17 @@ export default function AgencyCalculator() {
             </div>
 
             {/* Annual Savings Highlight */}
-            <div className="bg-gradient-to-br from-primary to-primary-dark rounded-xl p-6 md:p-8 text-white text-center">
+            <div className="bg-gradient-to-br from-primary to-primary-dark rounded-xl p-6 md:p-8 text-ivory text-center">
               <div className="text-sm font-semibold text-accent mb-2 uppercase tracking-wide">
                 Your Annual Savings
               </div>
               <div className="text-4xl md:text-5xl font-bold mb-2">
                 {formatCurrency(calculations.savingsYear)}
               </div>
-              <div className="text-violet-200 text-lg mb-1">
+              <div className="text-[#A9BFCF] text-lg mb-1">
                 per year ({formatCurrency(calculations.savingsMonth)}/month)
               </div>
-              <div className="text-violet-300 text-sm mb-6">
+              <div className="text-[#8BA5B8] text-sm mb-6">
                 That is a{' '}
                 {calculations.totalCurrentMonth > 0
                   ? Math.round(
@@ -397,11 +397,11 @@ export default function AgencyCalculator() {
               </div>
               <a
                 href="https://aams.agenient.com/login"
-                className="inline-block bg-accent hover:bg-accent-dark text-white px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"
+                className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"
               >
                 Start Your Free Trial
               </a>
-              <p className="text-sm text-violet-200 mt-3">
+              <p className="text-sm text-[#A9BFCF] mt-3">
                 No credit card required. 14-day free trial.
               </p>
             </div>

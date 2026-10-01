@@ -12,7 +12,7 @@ export default function CommissionTrackerProduct() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-accent font-semibold mb-4">FOR INDEPENDENT AGENTS</div>
@@ -26,7 +26,7 @@ export default function CommissionTrackerProduct() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://agenient.com/ams-app"
-                className="bg-accent text-white hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                className="bg-accent text-[#001F33] hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Start Free 14-Day Trial
               </a>
@@ -78,19 +78,19 @@ export default function CommissionTrackerProduct() {
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Automated carrier statement import</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Smart policy-to-payment matching</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Catch discrepancies automatically</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Reconcile in 30 minutes instead of 8 hours</span>
                 </li>
               </ul>
@@ -237,7 +237,7 @@ export default function CommissionTrackerProduct() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-primary-dark text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-primary-dark text-ivory">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Start Your Free 14-Day Trial
@@ -247,7 +247,7 @@ export default function CommissionTrackerProduct() {
           </p>
           <a
             href="https://agenient.com/ams-app"
-            className="inline-block bg-accent text-white hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition"
+            className="inline-block bg-accent text-[#001F33] hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition"
           >
             Get Started Free
           </a>

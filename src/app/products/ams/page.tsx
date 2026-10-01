@@ -11,21 +11,21 @@ export default function AMSProduct() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <div className="text-accent font-semibold mb-4">FOR INSURANCE AGENCIES</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Agency Management System
             </h1>
-            <p className="text-xl mb-8 text-violet-100">
+            <p className="text-xl mb-8 text-[#C9D6E1]">
               Multi-tenant commission platform with revolutionary Mirror Architecture.
               Agents see commissions update in REAL-TIME as you reconcile carrier statements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                className="bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Request Demo
               </Link>
@@ -80,7 +80,7 @@ export default function AMSProduct() {
               <p className="text-lg text-slate-800 mb-4">
                 <strong>Traditional way:</strong> Admin reconciles month-end, creates spreadsheet, emails to agents. Agents wait weeks to see their numbers.
               </p>
-              <p className="text-lg text-slate-800 font-semibold text-accent">
+              <p className="text-lg text-slate-800 font-semibold text-gold-ink">
                 <strong>Mirror Architecture:</strong> Admin reconciles a carrier statement → Agent sees update immediately. No waiting. No spreadsheets. No email.
               </p>
             </div>
@@ -107,7 +107,7 @@ export default function AMSProduct() {
               <p className="text-slate-800 mb-4">
                 Agent enters policy, commission shows as "Due". Waiting for carrier statement to arrive.
               </p>
-              <div className="text-sm text-accent font-semibold">
+              <div className="text-sm text-gold-ink font-semibold">
                 Agent knows it's coming
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function AMSProduct() {
               <p className="text-slate-800 mb-4">
                 Admin matches carrier statement → Agent sees update INSTANTLY. Commission amount confirmed.
               </p>
-              <div className="text-sm text-accent font-semibold">
+              <div className="text-sm text-gold-ink font-semibold">
                 Agent sees it in real-time
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function AMSProduct() {
               <p className="text-slate-800 mb-4">
                 Admin marks as paid → Appears in agent's commission statement. Agent balance updated.
               </p>
-              <div className="text-sm text-accent font-semibold">
+              <div className="text-sm text-gold-ink font-semibold">
                 Agent gets paid
               </div>
             </div>
@@ -264,7 +264,7 @@ export default function AMSProduct() {
 
             <div className="bg-accent/10 rounded-xl p-6 flex flex-col md:flex-row justify-between items-center ring-2 ring-accent">
               <div>
-                <div className="text-accent font-semibold text-sm mb-1">MOST POPULAR</div>
+                <div className="text-gold-ink font-semibold text-sm mb-1">MOST POPULAR</div>
                 <h3 className="text-xl font-bold text-slate-800">Pro Agency</h3>
                 <p className="text-slate-800">6-20 agents</p>
               </div>
@@ -292,7 +292,7 @@ export default function AMSProduct() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
+              className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition"
             >
               Schedule Demo
             </Link>

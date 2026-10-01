@@ -168,7 +168,7 @@ function OnboardingInner() {
           <button
             onClick={() => loadForm(clientNumberInput)}
             disabled={loading || !clientNumberInput}
-            className="mt-6 w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-xl transition disabled:opacity-50"
+            className="mt-6 w-full bg-primary hover:bg-primary-dark text-ivory font-semibold py-4 rounded-xl transition disabled:opacity-50"
           >
             {loading ? 'Loading…' : 'Continue'}
           </button>
@@ -193,19 +193,19 @@ function OnboardingInner() {
 
           <div className="text-left space-y-4 text-neutral-light">
             <div className="flex gap-3">
-              <span className="text-accent font-bold">1.</span>
+              <span className="text-gold-ink font-bold">1.</span>
               <span>Catalyst (our internal project manager) is reviewing your responses right now and building a tailored setup plan for your {loaded.customer.tier} tier.</span>
             </div>
             <div className="flex gap-3">
-              <span className="text-accent font-bold">2.</span>
+              <span className="text-gold-ink font-bold">2.</span>
               <span>Patrick Stabell will reach out within one business day to schedule your first training hour, matched to your agency&apos;s specific needs.</span>
             </div>
             <div className="flex gap-3">
-              <span className="text-accent font-bold">3.</span>
+              <span className="text-gold-ink font-bold">3.</span>
               <span>After your first training call, Atlas will wire up your agent(s) to your platforms. You&apos;ll get a separate email with a secure upload link for any API credentials.</span>
             </div>
             <div className="flex gap-3">
-              <span className="text-accent font-bold">4.</span>
+              <span className="text-gold-ink font-bold">4.</span>
               <span>You&apos;ll receive a &quot;your agent is live&quot; email the moment your agents go operational.</span>
             </div>
           </div>
@@ -284,7 +284,7 @@ function OnboardingInner() {
             <button
               onClick={handleSubmit}
               disabled={submitting || loaded.progressPercent < 100}
-              className="w-full bg-accent hover:bg-accent-dark text-white font-bold py-4 rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-accent hover:bg-accent-dark text-[#001F33] font-bold py-4 rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting
                 ? 'Submitting…'

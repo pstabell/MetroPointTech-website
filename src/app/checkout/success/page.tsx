@@ -21,36 +21,36 @@ export default function CheckoutSuccessPage() {
           <h2 className="text-lg font-bold text-slate-800 mb-3">What happens next:</h2>
           <ol className="space-y-3 text-neutral-light">
             <li className="flex gap-3">
-              <span className="text-accent font-bold">1.</span>
+              <span className="text-gold-ink font-bold">1.</span>
               <span>You'll receive a confirmation email within a few minutes</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-accent font-bold">2.</span>
+              <span className="text-gold-ink font-bold">2.</span>
               <span>Our team will reach out within 24 hours to schedule your setup session</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-accent font-bold">3.</span>
+              <span className="text-gold-ink font-bold">3.</span>
               <span>We'll connect your platforms and configure your dedicated AI agent</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-accent font-bold">4.</span>
+              <span className="text-gold-ink font-bold">4.</span>
               <span>Your agent goes live and starts handling back-office tasks</span>
             </li>
           </ol>
         </div>
         <p className="text-sm text-neutral-light mb-6">
           Questions? Email us at{' '}
-          <a href="mailto:support@metropointtech.com" className="text-accent hover:underline">
+          <a href="mailto:support@metropointtech.com" className="text-gold-ink hover:underline">
             support@metropointtech.com
           </a>{' '}
           or call{' '}
-          <a href="tel:+12394267058" className="text-accent hover:underline">
+          <a href="tel:+12394267058" className="text-gold-ink hover:underline">
             (239) 426-7058
           </a>
         </p>
         <Link
           href="/"
-          className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-xl font-semibold transition-all"
+          className="inline-block bg-primary hover:bg-primary-dark text-ivory px-8 py-3 rounded-xl font-semibold transition-all"
         >
           Back to Homepage
         </Link>

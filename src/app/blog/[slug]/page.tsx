@@ -589,11 +589,11 @@ export default async function BlogPostPage({
   return (
     <main>
       {/* Header */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-8 md:py-10">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-8 md:py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
-            className="text-white/70 hover:text-white text-sm mb-3 inline-block"
+            className="text-ivory/70 hover:text-ivory text-sm mb-3 inline-block"
           >
             &larr; Back to Blog
           </Link>
@@ -602,13 +602,13 @@ export default async function BlogPostPage({
               {post.category}
             </span>
             {post.date && (
-              <span className="text-sm text-white/70">{post.date}</span>
+              <span className="text-sm text-ivory/70">{post.date}</span>
             )}
             {post.readTime && (
-              <span className="text-sm text-white/70">{post.readTime}</span>
+              <span className="text-sm text-ivory/70">{post.readTime}</span>
             )}
           </div>
-          <h1 className="text-3xl md:text-4xl font-serif font-bold text-white">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold text-ivory">
             {post.title}
           </h1>
         </div>
@@ -741,7 +741,7 @@ export default async function BlogPostPage({
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-3 rounded-lg font-semibold transition"
+            className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-3 rounded-lg font-semibold transition"
           >
             Contact Us
           </Link>

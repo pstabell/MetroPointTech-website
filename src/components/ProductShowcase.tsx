@@ -81,13 +81,13 @@ export default function ProductShowcase() {
   ]
 
   return (
-    <section id="products" className="py-16 md:py-24 bg-neutral-lighter">
+    <section id="products" className="py-16 md:py-24 bg-[#001F33]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-ivory mb-4">
             Autonomous Product Suite
           </h2>
-          <p className="text-xl text-slate-800 max-w-3xl mx-auto">
+          <p className="text-xl text-[#A9BFCF] max-w-3xl mx-auto">
             From solo agent to full agency — autonomous operations at every level.
           </p>
         </div>
@@ -96,35 +96,34 @@ export default function ProductShowcase() {
           {products.map((product) => (
             <div
               key={product.name}
-              className={`bg-white rounded-xl shadow-lg overflow-hidden flex flex-col ${
-                product.borderColor === 'accent' ? 'ring-2 ring-accent transform lg:scale-105' :
-                product.borderColor === 'primary' ? 'ring-2 ring-primary' : ''
+              className={`bg-[#0d2137] border border-[#1a3a52] rounded-xl shadow-2xl shadow-black/30 overflow-hidden flex flex-col ${
+                product.highlight ? 'ring-2 ring-[#D4AF37] transform lg:scale-105' : 'ring-1 ring-[#2a4a62]'
               }`}
             >
               {product.highlight && (
-                <div className="bg-accent text-white text-center py-2 text-sm font-semibold">
+                <div className="bg-[#D4AF37] text-[#001F33] text-center py-2 text-sm font-bold tracking-wide">
                   MOST POPULAR
                 </div>
               )}
 
               <div className="p-8 flex-grow">
                 <div className="text-5xl mb-4">{product.icon}</div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-2">{product.name}</h3>
-                <p className="text-accent font-semibold mb-4">{product.subtitle}</p>
-                <p className="text-slate-800 mb-6">{product.description}</p>
+                <h3 className="text-2xl font-bold text-ivory mb-2">{product.name}</h3>
+                <p className="text-[#D4AF37] font-semibold mb-4">{product.subtitle}</p>
+                <p className="text-[#A9BFCF] mb-6">{product.description}</p>
 
                 <ul className="space-y-3 mb-8">
                   {product.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-accent mr-2 flex-shrink-0">✓</span>
-                      <span className="text-sm text-slate-800">{feature}</span>
+                      <span className="text-[#D4AF37] mr-2 flex-shrink-0">✓</span>
+                      <span className="text-sm text-[#A9BFCF]">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="border-t border-neutral-lighter pt-6 mb-6">
-                  <div className="text-2xl font-bold text-slate-800 mb-1">{product.pricing}</div>
-                  <div className="text-sm text-slate-800">{product.setupFee}</div>
+                <div className="border-t border-[#1a3a52] pt-6 mb-6">
+                  <div className="text-2xl font-bold text-ivory mb-1">{product.pricing}</div>
+                  <div className="text-sm text-[#8BA5B8]">{product.setupFee}</div>
                 </div>
               </div>
 
@@ -133,8 +132,8 @@ export default function ProductShowcase() {
                   href={product.link}
                   className={`block text-center px-6 py-3 rounded-lg font-semibold transition ${
                     product.highlight
-                      ? 'bg-accent text-white hover:bg-accent-dark'
-                      : 'bg-primary text-white hover:bg-primary-dark'
+                      ? 'bg-[#D4AF37] text-[#001F33] font-bold hover:bg-[#E5C158] shadow-lg shadow-[#D4AF37]/20'
+                      : 'border-2 border-[#2a4a62] text-ivory hover:border-[#D4AF37] hover:text-[#E5C158]'
                   }`}
                 >
                   {product.cta}

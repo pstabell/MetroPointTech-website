@@ -20,13 +20,13 @@ export default function CheckoutCancelledPage() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/ai-agent-teams"
-            className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-3 rounded-xl font-semibold transition-all"
+            className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-3 rounded-xl font-semibold transition-all"
           >
             Back to Plans
           </Link>
           <Link
             href="/contact"
-            className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-xl font-semibold transition-all"
+            className="inline-block bg-primary hover:bg-primary-dark text-ivory px-8 py-3 rounded-xl font-semibold transition-all"
           >
             Talk to Us
           </Link>

@@ -8,8 +8,8 @@
 
   const MPT_CHAT_CONFIG = {
     apiUrl: '/api/chat',
-    primaryColor: '#003B5C',
-    secondaryColor: '#F8FAFC',
+    primaryColor: '#0d2137',
+    secondaryColor: '#0a1a2e',
     position: 'bottom-right',
     companyName: 'Metro Point Technology',
     businessFocus: 'insurance',
@@ -43,16 +43,21 @@ What's your biggest headache right now?`,
 
   const styles = `
     .mpt-chat-widget {
-      --primary-color: #7C3AED;
-      --primary-hover: #6D28D9;
-      --accent-color: #14B8A6;
-      --secondary-color: #F8FAFC;
-      --text-color: #1F2937;
-      --border-color: #E5E7EB;
-      --success-color: #059669;
+      --primary-color: #0d2137;
+      --primary-hover: #001F33;
+      --accent-color: #D4AF37;
+      --accent-hover: #E5C158;
+      --on-accent: #001F33;
+      --secondary-color: #0a1a2e;
+      --surface-color: #0d2137;
+      --bubble-color: #0d2137;
+      --text-color: #E6EDF3;
+      --muted-color: #8BA5B8;
+      --border-color: #1a3a52;
+      --success-color: #22d3ee;
       --font-family: 'Inter', system-ui, -apple-system, sans-serif;
       --border-radius: 12px;
-      --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.55);
       
       position: fixed;
       bottom: 24px;
@@ -89,7 +94,7 @@ What's your biggest headache right now?`,
     .mpt-chat-widget .pulse-animation {
       position: absolute;
       top: -2px; left: -2px; right: -2px; bottom: -2px;
-      border: 2px solid var(--primary-color);
+      border: 2px solid var(--accent-color);
       border-radius: 50%;
       animation: mpt-pulse 2s infinite;
     }
@@ -103,7 +108,8 @@ What's your biggest headache right now?`,
     .mpt-chat-widget .chat-window {
       width: 380px;
       height: 550px;
-      background: white;
+      background: var(--secondary-color);
+      border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
       display: flex;
@@ -121,8 +127,9 @@ What's your biggest headache right now?`,
     }
 
     .mpt-chat-widget .chat-header {
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
-      color: white;
+      background: linear-gradient(135deg, #003B5C 0%, #001F33 100%);
+      border-bottom: 2px solid var(--accent-color);
+      color: #F2EAD9;
       padding: 16px 20px;
       display: flex;
       align-items: center;
@@ -152,13 +159,13 @@ What's your biggest headache right now?`,
       margin: 0 0 2px 0;
       font-size: 15px;
       font-weight: 600;
-      color: #FFFFFF !important;
+      color: #F2EAD9 !important;
     }
 
     .mpt-chat-widget .header-text p {
       margin: 0;
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.9) !important;
+      color: #A9BFCF !important;
     }
 
     .mpt-chat-widget .status-indicator {
@@ -179,7 +186,7 @@ What's your biggest headache right now?`,
     .mpt-chat-widget .close-button {
       background: none;
       border: none;
-      color: white;
+      color: #F2EAD9;
       cursor: pointer;
       padding: 8px;
       border-radius: 6px;
@@ -194,7 +201,7 @@ What's your biggest headache right now?`,
       flex: 1;
       overflow-y: auto;
       padding: 16px;
-      background: #FAFBFC;
+      background: var(--secondary-color);
     }
 
     .mpt-chat-widget .message {
@@ -214,21 +221,21 @@ What's your biggest headache right now?`,
     .mpt-chat-widget .message.bot .message-content { float: left; }
     .mpt-chat-widget .message.user .message-content { float: right; }
 
-    /* Bot messages - light gray bubble */
+    /* Bot messages - raised dark bubble */
     .mpt-chat-widget .message.bot .message-text {
-      background: #F3F4F6;
-      border: none;
+      background: var(--bubble-color);
+      border: 1px solid var(--border-color);
       border-radius: 4px 16px 16px 16px;
       padding: 12px 16px;
       font-size: 14px;
       line-height: 1.5;
-      color: #1F2937;
+      color: var(--text-color);
     }
 
-    /* User messages - navy blue bubble */
+    /* User messages */
     .mpt-chat-widget .message.user .message-text {
-      background: var(--primary-color);
-      color: white;
+      background: #D4AF37;
+      color: #001F33;
       border: none;
       border-radius: 16px 16px 4px 16px;
       padding: 12px 16px;
@@ -244,9 +251,9 @@ What's your biggest headache right now?`,
     }
 
     .mpt-chat-widget .action-button {
-      background: white;
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
+      background: transparent;
+      border: 2px solid var(--accent-color);
+      color: var(--accent-hover);
       padding: 10px 14px;
       border-radius: 20px;
       cursor: pointer;
@@ -257,20 +264,20 @@ What's your biggest headache right now?`,
     }
 
     .mpt-chat-widget .action-button:hover {
-      background: var(--primary-color);
-      color: white;
+      background: var(--accent-color);
+      color: var(--on-accent);
     }
 
     .mpt-chat-widget .message-time {
       clear: both;
       font-size: 11px;
-      color: #6B7280;
+      color: var(--muted-color);
       margin-top: 4px;
       text-align: center;
     }
 
     .mpt-chat-widget .typing-indicator {
-      background: white;
+      background: var(--bubble-color);
       border: 1px solid var(--border-color);
       border-radius: 16px;
       padding: 12px 16px;
@@ -282,7 +289,7 @@ What's your biggest headache right now?`,
     .mpt-chat-widget .typing-indicator span {
       width: 6px;
       height: 6px;
-      background: #9CA3AF;
+      background: var(--muted-color);
       border-radius: 50%;
       animation: typing 1.4s infinite;
     }
@@ -296,7 +303,7 @@ What's your biggest headache right now?`,
     }
 
     .mpt-chat-widget .chat-input {
-      background: white;
+      background: var(--surface-color);
       border-top: 1px solid var(--border-color);
       padding: 12px 16px;
     }
@@ -317,21 +324,25 @@ What's your biggest headache right now?`,
       resize: none;
       max-height: 80px;
       min-height: 40px;
+      background: var(--secondary-color);
+      color: var(--text-color);
       transition: border-color 0.2s;
     }
 
+    .mpt-chat-widget .input-container textarea::placeholder { color: var(--muted-color); }
+
     .mpt-chat-widget .input-container textarea:focus {
       outline: none;
-      border-color: var(--primary-color);
+      border-color: var(--accent-color);
     }
 
     .mpt-chat-widget .send-button {
-      background: var(--primary-color);
+      background: var(--accent-color);
       border: none;
       border-radius: 50%;
       width: 40px;
       height: 40px;
-      color: white;
+      color: var(--on-accent);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -340,11 +351,12 @@ What's your biggest headache right now?`,
     }
 
     .mpt-chat-widget .send-button:hover:not(:disabled) {
-      background: var(--primary-hover);
+      background: var(--accent-hover);
     }
 
     .mpt-chat-widget .send-button:disabled {
-      background: #D1D5DB;
+      background: var(--border-color);
+      color: var(--muted-color);
       cursor: not-allowed;
     }
 
@@ -353,7 +365,7 @@ What's your biggest headache right now?`,
       flex-direction: column;
       gap: 8px;
       padding: 10px 16px 14px;
-      background: var(--secondary-color);
+      background: var(--surface-color);
       border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
 
@@ -363,8 +375,8 @@ What's your biggest headache right now?`,
 
     .mpt-chat-widget .quick-solutions .action-button {
       background: var(--secondary-color);
-      color: var(--primary-color);
-      border: 1.5px solid var(--primary-color);
+      color: var(--accent-hover);
+      border: 1.5px solid var(--accent-color);
       padding: 10px 16px;
       border-radius: 8px;
       font-size: 14px;
@@ -376,8 +388,8 @@ What's your biggest headache right now?`,
     }
 
     .mpt-chat-widget .quick-solutions .action-button:hover {
-      background: var(--primary-color);
-      color: white;
+      background: var(--accent-color);
+      color: var(--on-accent);
     }
 
     @media (max-width: 768px) {

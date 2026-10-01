@@ -5,16 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Alata&display=swap');
 
 :root {
-  /* Metro Point Insurance Brand Colors - Exact match */
-  --primary: #7C3AED;        /* Violet-600 - primary surfaces & headings (app violet) */
-  --primary-dark: #6D28D9;   /* Deeper violet for hover states */
-  --primary-light: #8B5CF6;  /* App violet-500 tint */
-  --accent: #14B8A6;         /* Teal-500 - highlights & CTAs (matches app accent) */
-  --accent-dark: #0D9488;    /* Teal-600 for hover */
-  --accent-light: #2DD4BF;   /* Teal-400 tint */
-  --neutral: #1f2937;        /* Dark text */
-  --neutral-light: #6b7280;  /* Secondary text */
-  --neutral-lighter: #f9fafb; /* Backgrounds */
+  /* Agenient "Navy & Gold" — matches the AAMS app login page */
+  --primary: #0d2137;        /* Navy card / primary surfaces */
+  --primary-dark: #001F33;   /* Deepest navy */
+  --primary-light: #1a3a52;  /* Navy border */
+  --accent: #D4AF37;         /* Gold — CTAs & highlights */
+  --accent-dark: #C29D2B;    /* Gold, darker */
+  --accent-light: #E5C158;   /* Gold hover */
+  --neutral: #001F33;        /* Navy text on light surfaces */
+  --neutral-light: #4A6478;  /* Slate-blue secondary text (light pages) */
+  --neutral-lighter: #F3F5F8; /* Pale slate background (light pages) */
 }
 
 * {
@@ -42,6 +42,27 @@ a {
   text-decoration: none;
 }
 
+/* Gold buttons always carry navy text (white on gold fails WCAG AA). Covers the
+   bg-accent + text-white pairs still used on the inner pages. */
+.bg-accent.text-white,
+.bg-accent .text-white {
+  color: #001F33;
+}
+
+/* Agenient emblem (AgenientEmblem.tsx): sunburst ring turns once per 240s, as in the AAMS v15 source.
+   No motion when the visitor asks for reduced motion. */
+.agenient-emblem-spin {
+  transform-box: view-box;
+  transform-origin: 120px 120px;
+  animation: agEmblemSpin 240s linear infinite;
+}
+@keyframes agEmblemSpin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .agenient-emblem-spin { animation: none; }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -54,7 +75,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #001F33;
 }
 
 ::-webkit-scrollbar-thumb {

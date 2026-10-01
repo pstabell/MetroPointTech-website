@@ -19,9 +19,9 @@ const services = [
       'Speed up slow workflows',
       'Train your team on best practices',
     ],
-    gradient: 'from-violet-500 to-cyan-400',
-    bgColor: 'bg-violet-50',
-    iconBg: 'bg-violet-100',
+    gradient: 'from-[#003B5C] to-[#0E7490]',
+    bgColor: 'bg-neutral-lighter',
+    iconBg: 'bg-[#E3EAF0]',
   },
   {
     icon: '🔗',
@@ -34,9 +34,9 @@ const services = [
       'Set up automated workflows',
       'Real-time syncing between systems',
     ],
-    gradient: 'from-purple-500 to-pink-400',
-    bgColor: 'bg-purple-50',
-    iconBg: 'bg-purple-100',
+    gradient: 'from-[#003B5C] to-[#0E7490]',
+    bgColor: 'bg-neutral-lighter',
+    iconBg: 'bg-[#E3EAF0]',
   },
   {
     icon: '🛠️',
@@ -49,9 +49,9 @@ const services = [
       'Custom business tools & dashboards',
       'Internal systems & workflows',
     ],
-    gradient: 'from-orange-500 to-amber-400',
-    bgColor: 'bg-orange-50',
-    iconBg: 'bg-orange-100',
+    gradient: 'from-[#003B5C] to-[#0E7490]',
+    bgColor: 'bg-neutral-lighter',
+    iconBg: 'bg-[#E3EAF0]',
   },
   {
     icon: '🤖',
@@ -64,9 +64,9 @@ const services = [
       'Intelligent chatbots & assistants',
       'Automated analysis & reporting',
     ],
-    gradient: 'from-green-500 to-emerald-400',
-    bgColor: 'bg-green-50',
-    iconBg: 'bg-green-100',
+    gradient: 'from-[#003B5C] to-[#0E7490]',
+    bgColor: 'bg-neutral-lighter',
+    iconBg: 'bg-[#E3EAF0]',
   },
   {
     icon: '📞',
@@ -79,9 +79,9 @@ const services = [
       'Call recording & voicemail transcription',
       'Keep your existing phone numbers',
     ],
-    gradient: 'from-teal-500 to-cyan-400',
-    bgColor: 'bg-teal-50',
-    iconBg: 'bg-teal-100',
+    gradient: 'from-[#003B5C] to-[#0E7490]',
+    bgColor: 'bg-neutral-lighter',
+    iconBg: 'bg-[#E3EAF0]',
   },
 ]
 
@@ -89,7 +89,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory py-24 overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
@@ -105,20 +105,20 @@ export default function ServicesPage() {
             <br />
             <span className="text-accent">Just Results.</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-violet-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-[#C9D6E1] max-w-3xl mx-auto leading-relaxed">
             We're not here to sell you buzzwords. We're here to solve real problems, 
             streamline your operations, and help your business run smoother.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Let's Talk →
             </Link>
             <a
               href="#services"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
+              className="inline-block bg-white/10 hover:bg-white/20 text-ivory px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
             >
               See Our Services
             </a>
@@ -162,7 +162,7 @@ export default function ServicesPage() {
                 <ul className="space-y-2">
                   {service.highlights.map((highlight, i) => (
                     <li key={i} className="flex items-center text-neutral">
-                      <span className="text-accent mr-2">✓</span>
+                      <span className="text-gold-ink mr-2">✓</span>
                       {highlight}
                     </li>
                   ))}
@@ -214,7 +214,7 @@ export default function ServicesPage() {
             ].map((item, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <div className="text-accent font-bold text-sm mb-2">STEP {item.step}</div>
+                <div className="text-gold-ink font-bold text-sm mb-2">STEP {item.step}</div>
                 <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                 <p className="text-neutral-light">{item.description}</p>
               </div>
@@ -282,7 +282,7 @@ export default function ServicesPage() {
                     </p>
                     <Link
                       href="/contact"
-                      className="inline-block bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition-all"
+                      className="inline-block bg-primary hover:bg-primary-dark text-ivory px-6 py-3 rounded-xl font-semibold transition-all"
                     >
                       Schedule a Call
                     </Link>
@@ -295,7 +295,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-dark text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
@@ -308,26 +308,26 @@ export default function ServicesPage() {
             <br />
             <span className="text-accent">Work For You?</span>
           </h2>
-          <p className="text-xl mb-8 text-violet-100 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-[#C9D6E1] max-w-2xl mx-auto">
             Whether you've got a specific project in mind or just know something needs to change, 
             let's talk. The first call is always free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+              className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
             >
               Get Started →
             </Link>
             <a
               href="mailto:support@metropointtech.com"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
+              className="inline-block bg-white/10 hover:bg-white/20 text-ivory px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
             >
               Email Us Directly
             </a>
           </div>
-          <p className="mt-8 text-sm text-violet-200">
-            📞 Or call us at <a href="tel:+12394267058" className="underline hover:text-white">(239) 426-7058</a>
+          <p className="mt-8 text-sm text-[#A9BFCF]">
+            📞 Or call us at <a href="tel:+12394267058" className="underline hover:text-ivory">(239) 426-7058</a>
           </p>
         </div>
       </section>

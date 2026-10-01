@@ -48,18 +48,18 @@ export default function ClaudeDiscordFixPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-accent font-semibold mb-4">OPEN SOURCE FIX</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Claude Code Discord Channels Fix
             </h1>
-            <p className="text-xl mb-4 text-violet-100">
+            <p className="text-xl mb-4 text-[#C9D6E1]">
               GitHub Issue #36477 broke Discord channels in Claude Code v2.1.85.
               We built a custom MCP server that replaces the broken plugin entirely.
             </p>
-            <p className="text-lg text-violet-200">
+            <p className="text-lg text-[#A9BFCF]">
               Event-driven architecture. Zero polling. Production-tested on 13 AI agents.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function ClaudeDiscordFixPage() {
             <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
               <p className="text-lg text-neutral mb-4">
                 Claude Code&apos;s official Discord channels plugin has a confirmed bug in v2.1.85
-                (<a href="https://github.com/anthropics/claude-code/issues/36477" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-dark underline">GitHub Issue #36477</a>).
+                (<a href="https://github.com/anthropics/claude-code/issues/36477" target="_blank" rel="noopener noreferrer" className="text-gold-ink hover:text-primary underline">GitHub Issue #36477</a>).
               </p>
               <ul className="space-y-3 text-neutral">
                 <li className="flex items-start">
@@ -120,7 +120,7 @@ export default function ClaudeDiscordFixPage() {
                   <div className="w-0.5 h-8 bg-accent"></div>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="bg-accent text-white px-6 py-3 rounded-lg text-center">
+                  <div className="bg-accent text-[#001F33] px-6 py-3 rounded-lg text-center">
                     Custom MCP Server<br /><span className="text-xs opacity-90">discord.js + @modelcontextprotocol/sdk</span>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function ClaudeDiscordFixPage() {
                   <div className="w-0.5 h-8 bg-accent"></div>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="bg-primary text-white px-6 py-3 rounded-lg text-center">
+                  <div className="bg-primary text-ivory px-6 py-3 rounded-lg text-center">
                     Claude Code<br /><span className="text-xs opacity-75">stdio transport &bull; MCP protocol</span>
                   </div>
                 </div>
@@ -164,21 +164,21 @@ export default function ClaudeDiscordFixPage() {
             <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">What&apos;s in the Download</h2>
             <div className="space-y-4">
               <div className="flex items-start">
-                <span className="text-accent mr-3 text-xl flex-shrink-0">&#10003;</span>
+                <span className="text-gold-ink mr-3 text-xl flex-shrink-0">&#10003;</span>
                 <div>
                   <span className="font-semibold text-slate-800">server.mjs</span>
                   <span className="text-neutral-light"> &mdash; Complete MCP server template with Discord gateway connection, message handling, tool definitions (reply, fetch, react, edit), and graceful shutdown</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <span className="text-accent mr-3 text-xl flex-shrink-0">&#10003;</span>
+                <span className="text-gold-ink mr-3 text-xl flex-shrink-0">&#10003;</span>
                 <div>
                   <span className="font-semibold text-slate-800">package.json</span>
                   <span className="text-neutral-light"> &mdash; Dependencies and configuration ready to npm install</span>
                 </div>
               </div>
               <div className="flex items-start">
-                <span className="text-accent mr-3 text-xl flex-shrink-0">&#10003;</span>
+                <span className="text-gold-ink mr-3 text-xl flex-shrink-0">&#10003;</span>
                 <div>
                   <span className="font-semibold text-slate-800">README.md</span>
                   <span className="text-neutral-light"> &mdash; Setup guide, architecture explanation, troubleshooting, and customization instructions</span>
@@ -193,8 +193,8 @@ export default function ClaudeDiscordFixPage() {
       <section id="download" className="py-16 bg-gradient-to-br from-primary to-primary-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">Download the Fix</h2>
-            <p className="text-violet-200 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-ivory mb-4 text-center">Download the Fix</h2>
+            <p className="text-[#A9BFCF] mb-8 text-center">
               Enter your info below and we&apos;ll send you the template package instantly.
             </p>
 
@@ -266,7 +266,7 @@ export default function ClaudeDiscordFixPage() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full bg-accent hover:bg-accent-dark disabled:opacity-50 text-white px-6 py-4 rounded-lg text-lg font-semibold transition"
+                  className="w-full bg-accent hover:bg-accent-dark disabled:opacity-50 text-[#001F33] px-6 py-4 rounded-lg text-lg font-semibold transition"
                 >
                   {status === 'submitting' ? 'Processing...' : 'Download MCP Server Template'}
                 </button>
@@ -297,13 +297,13 @@ export default function ClaudeDiscordFixPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                className="bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Contact Us
               </a>
               <a
                 href="/services"
-                className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                className="bg-primary hover:bg-primary-dark text-ivory px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Our Services
               </a>

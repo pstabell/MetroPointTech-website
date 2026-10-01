@@ -11,12 +11,12 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             About Metro Point Technology
           </h1>
-          <p className="text-xl text-violet-100">
+          <p className="text-xl text-[#C9D6E1]">
             Insurance software built by someone who actually works in the trenches
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function About() {
       <section className="py-16 md:py-24 bg-neutral-lighter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold-ink mb-4">
               Our Philosophy
             </h2>
           </div>
@@ -100,18 +100,18 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-primary-dark text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-primary-dark text-ivory">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Try Software Built by Agents?
           </h2>
-          <p className="text-xl mb-8 text-violet-100">
+          <p className="text-xl mb-8 text-[#C9D6E1]">
             See why agents trust tools built by someone who understands the business
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
+              className="bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition"
             >
               Schedule a Demo
             </Link>

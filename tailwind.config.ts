@@ -9,22 +9,46 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Agenient palette — coordinated with the AAMS app interior (teal + violet accents)
+        // Agenient palette — "Navy & Gold" (matches the AAMS app login page)
         primary: {
-          DEFAULT: '#7C3AED', // Violet-600 — primary surfaces, headings, buttons (app violet family)
-          dark: '#6D28D9',    // Deeper violet for hover states
-          light: '#8B5CF6',   // App violet-500 tint
+          DEFAULT: '#0d2137', // Navy card — primary surfaces, buttons
+          dark: '#001F33',    // Deepest navy — page background / hover
+          light: '#1a3a52',   // Navy border / raised surface
         },
         accent: {
-          DEFAULT: '#14B8A6', // Teal-500 — highlights, CTAs (matches the app's primary accent)
-          dark: '#0D9488',    // Teal-600 for hover
-          light: '#2DD4BF',   // Teal-400 tint
+          DEFAULT: '#D4AF37', // Gold — CTAs and highlights (navy text on it)
+          dark: '#C29D2B',    // Gold hover (darker)
+          light: '#E5C158',   // Gold hover (lighter, as on the login page)
         },
         neutral: {
-          DEFAULT: '#0f172a', // slate-900 — primary text (matches app light mode)
-          light: '#475569',   // slate-600 — secondary text
-          lighter: '#f8fafc', // slate-50 — section backgrounds
-        }
+          DEFAULT: '#001F33', // Navy — primary text on light surfaces
+          light: '#4A6478',   // Slate-blue (darkened) — secondary text on light inner pages
+          lighter: '#F3F5F8', // Pale slate — light section background on inner pages
+        },
+        gold: {
+          DEFAULT: '#D4AF37', // Login-page gold — on navy only
+          light: '#E5C158',
+          ink: '#856515',     // Dark gold for TEXT on white/pale surfaces (>=4.6:1, WCAG AA)
+        },
+        ivory: '#F2EAD9', // Warm ivory — all former white TEXT (Patrick 2026-10-01). Not for backgrounds.
+        navy: {
+          950: '#001F33',
+          900: '#0a1a2e',
+          850: '#0d2137',
+          800: '#003B5C',
+          700: '#1a3a52',
+          600: '#2a4a62',
+        },
+        slateblue: {
+          DEFAULT: '#8BA5B8',
+          soft: '#A9BFCF',
+          dim: '#6a9ab8',
+          mute: '#5a7a94',
+        },
+        aqua: {
+          deep: '#0E7490',
+          bright: '#22d3ee',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

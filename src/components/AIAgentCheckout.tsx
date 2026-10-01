@@ -58,7 +58,7 @@ export default function AIAgentCheckout({ plan, accent }: AIAgentCheckoutProps) 
             placeholder="Enter your business email"
             className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 ${
               accent
-                ? 'bg-white/10 border-white/20 text-white placeholder-violet-300 focus:ring-accent'
+                ? 'bg-white/10 border-white/20 text-ivory placeholder-[#8BA5B8] focus:ring-accent'
                 : 'bg-neutral-lighter border-gray-200 text-slate-800 placeholder-gray-400 focus:ring-primary'
             }`}
             onKeyDown={e => e.key === 'Enter' && handleCheckout()}
@@ -71,8 +71,8 @@ export default function AIAgentCheckout({ plan, accent }: AIAgentCheckoutProps) 
         disabled={loading}
         className={`block w-full text-center py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-wait ${
           accent
-            ? 'bg-accent hover:bg-accent-dark text-white shadow-lg'
-            : 'bg-primary hover:bg-primary-dark text-white'
+            ? 'bg-accent hover:bg-accent-dark text-[#001F33] shadow-lg'
+            : 'bg-primary hover:bg-primary-dark text-ivory'
         }`}
       >
         {loading ? 'Redirecting to Checkout...' : showEmail ? 'Continue to Checkout' : 'Get Started'}

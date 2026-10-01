@@ -11,14 +11,14 @@ export default function WRAPProposalGeneratorProduct() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-accent font-semibold mb-4">FOR HIGH-NET-WORTH AGENTS</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               WRAP Proposal Generator
             </h1>
-            <p className="text-xl mb-8 text-violet-100">
+            <p className="text-xl mb-8 text-[#C9D6E1]">
               Create professional Wealth Risk Analysis & Protection proposals in minutes.
               Impress high-net-worth clients with beautiful, branded Word documents.
             </p>
@@ -27,7 +27,7 @@ export default function WRAPProposalGeneratorProduct() {
                 href="https://wrap.metropointtech.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                className="bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Try It Free
               </a>
@@ -50,7 +50,7 @@ export default function WRAPProposalGeneratorProduct() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gold-ink mb-6">
                 The Problem
               </h2>
               <ul className="space-y-4">
@@ -74,24 +74,24 @@ export default function WRAPProposalGeneratorProduct() {
             </div>
 
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gold-ink mb-6">
                 The Solution
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Build proposals in 10 minutes instead of 2 hours</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Clean web interface, professional output</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Add your agency logo and team photos</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3 text-xl flex-shrink-0">✓</span>
+                  <span className="text-gold-ink mr-3 text-xl flex-shrink-0">✓</span>
                   <span className="text-slate-800">Compare up to 10 coverage types side-by-side</span>
                 </li>
               </ul>
@@ -168,7 +168,7 @@ export default function WRAPProposalGeneratorProduct() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold-ink mb-4">
               Supported Coverage Types
             </h2>
             <p className="text-xl text-slate-800">

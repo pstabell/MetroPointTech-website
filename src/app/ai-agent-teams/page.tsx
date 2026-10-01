@@ -100,7 +100,7 @@ export default function AIAgentTeamsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
@@ -115,7 +115,7 @@ export default function AIAgentTeamsPage() {
             <br />
             <span className="text-accent">Works 24/7. Never Quits.</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-violet-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-[#C9D6E1] max-w-3xl mx-auto leading-relaxed">
             A dedicated AI agent hosted on our infrastructure, connected to your agency platforms,
             handling the back-office work that drains your team's time. Commission reconciliation,
             data entry, renewal tracking — done automatically.
@@ -123,13 +123,13 @@ export default function AIAgentTeamsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#plans"
-              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               See Plans & Pricing
             </a>
             <Link
               href="/contact"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
+              className="inline-block bg-white/10 hover:bg-white/20 text-ivory px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
             >
               Book a Discovery Call
             </Link>
@@ -210,38 +210,38 @@ export default function AIAgentTeamsPage() {
                 key={index}
                 className={`relative rounded-2xl p-8 md:p-10 transition-all hover:shadow-2xl ${
                   plan.accent
-                    ? 'bg-gradient-to-br from-primary to-primary-dark text-white ring-4 ring-accent shadow-xl'
+                    ? 'bg-gradient-to-br from-primary to-primary-dark text-ivory ring-4 ring-accent shadow-xl'
                     : 'bg-white shadow-lg'
                 }`}
               >
                 {plan.badge && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white text-sm font-bold px-4 py-1 rounded-full">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-[#001F33] text-sm font-bold px-4 py-1 rounded-full">
                     {plan.badge}
                   </span>
                 )}
 
-                <h3 className={`text-2xl font-bold mb-2 ${plan.accent ? 'text-white' : 'text-slate-800'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${plan.accent ? 'text-ivory' : 'text-slate-800'}`}>
                   {plan.name}
                 </h3>
-                <p className={`text-lg mb-6 ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
+                <p className={`text-lg mb-6 ${plan.accent ? 'text-[#A9BFCF]' : 'text-neutral-light'}`}>
                   {plan.tagline}
                 </p>
 
                 {/* Pricing */}
                 <div className="mb-8">
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className={`text-4xl font-bold ${plan.accent ? 'text-accent-light' : 'text-accent'}`}>
+                    <span className={`text-4xl font-bold ${plan.accent ? 'text-accent-light' : 'text-gold-ink'}`}>
                       {plan.monthlyPrice}
                     </span>
-                    <span className={plan.accent ? 'text-violet-200' : 'text-neutral-light'}>/month</span>
+                    <span className={plan.accent ? 'text-[#A9BFCF]' : 'text-neutral-light'}>/month</span>
                   </div>
-                  <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
+                  <p className={`text-sm ${plan.accent ? 'text-[#A9BFCF]' : 'text-neutral-light'}`}>
                     {plan.setupPrice} one-time setup ({plan.setupHours} of configuration)
                   </p>
-                  <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
+                  <p className={`text-sm ${plan.accent ? 'text-[#A9BFCF]' : 'text-neutral-light'}`}>
                     Includes {plan.monthlyHours}/month of agent training & optimization
                   </p>
-                  <p className={`text-sm font-medium mt-1 ${plan.accent ? 'text-violet-100' : 'text-slate-800'}`}>
+                  <p className={`text-sm font-medium mt-1 ${plan.accent ? 'text-[#C9D6E1]' : 'text-slate-800'}`}>
                     Up to {plan.platforms} platform connections
                   </p>
                 </div>
@@ -250,10 +250,10 @@ export default function AIAgentTeamsPage() {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className={`mt-0.5 flex-shrink-0 ${plan.accent ? 'text-accent-light' : 'text-accent'}`}>
+                      <span className={`mt-0.5 flex-shrink-0 ${plan.accent ? 'text-accent-light' : 'text-gold-ink'}`}>
                         {feature.startsWith('Everything') ? '★' : '✓'}
                       </span>
-                      <span className={plan.accent ? 'text-violet-100' : 'text-neutral-light'}>
+                      <span className={plan.accent ? 'text-[#C9D6E1]' : 'text-neutral-light'}>
                         {feature}
                       </span>
                     </li>
@@ -262,13 +262,13 @@ export default function AIAgentTeamsPage() {
 
                 {/* Ideal For */}
                 <div className={`rounded-xl p-4 mb-8 ${plan.accent ? 'bg-white/10' : 'bg-neutral-lighter'}`}>
-                  <p className={`text-sm font-medium mb-1 ${plan.accent ? 'text-violet-100' : 'text-slate-800'}`}>
+                  <p className={`text-sm font-medium mb-1 ${plan.accent ? 'text-[#C9D6E1]' : 'text-slate-800'}`}>
                     Ideal for:
                   </p>
-                  <p className={`text-sm ${plan.accent ? 'text-violet-200' : 'text-neutral-light'}`}>
+                  <p className={`text-sm ${plan.accent ? 'text-[#A9BFCF]' : 'text-neutral-light'}`}>
                     {plan.idealFor}
                   </p>
-                  <p className={`text-xs mt-2 italic ${plan.accent ? 'text-violet-300' : 'text-neutral-light'}`}>
+                  <p className={`text-xs mt-2 italic ${plan.accent ? 'text-[#8BA5B8]' : 'text-neutral-light'}`}>
                     {plan.platformExamples}
                   </p>
                 </div>
@@ -343,7 +343,7 @@ export default function AIAgentTeamsPage() {
             ].map((item, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <div className="text-accent font-bold text-sm mb-2">STEP {item.step}</div>
+                <div className="text-gold-ink font-bold text-sm mb-2">STEP {item.step}</div>
                 <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                 <p className="text-neutral-light">{item.description}</p>
               </div>
@@ -419,7 +419,7 @@ export default function AIAgentTeamsPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-dark text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
@@ -431,7 +431,7 @@ export default function AIAgentTeamsPage() {
             <br />
             <span className="text-accent">Robot Work.</span>
           </h2>
-          <p className="text-xl mb-8 text-violet-100 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-[#C9D6E1] max-w-2xl mx-auto">
             Your team should be selling, servicing, and growing your book.
             Let an AI agent handle the back-office grind. Book a free discovery call —
             no commitment, no hard sell.
@@ -439,19 +439,19 @@ export default function AIAgentTeamsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+              className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
             >
               Book a Discovery Call
             </Link>
             <a
               href="mailto:sales@metropointtech.com"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
+              className="inline-block bg-white/10 hover:bg-white/20 text-ivory px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
             >
               Email Sales Directly
             </a>
           </div>
-          <p className="mt-8 text-sm text-violet-200">
-            Or call us at <a href="tel:+12394267058" className="underline hover:text-white">(239) 426-7058</a>
+          <p className="mt-8 text-sm text-[#A9BFCF]">
+            Or call us at <a href="tel:+12394267058" className="underline hover:text-ivory">(239) 426-7058</a>
           </p>
         </div>
       </section>

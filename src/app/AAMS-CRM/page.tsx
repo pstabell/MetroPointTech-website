@@ -57,7 +57,7 @@ export default function AAMSCRMPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
@@ -74,7 +74,7 @@ export default function AAMSCRMPage() {
                 <br />
                 <span className="text-accent">Built for Insurance.</span>
               </h1>
-              <p className="text-xl mb-8 text-violet-100 leading-relaxed">
+              <p className="text-xl mb-8 text-[#C9D6E1] leading-relaxed">
                 Two AI agents manage your sales pipeline and renewals while you focus on relationships.
                 Closer shops policies and compares quotes. Pulse tracks renewals and triggers follow-ups.
                 18 ACORD form generators. Hard-gate compliance enforcement.
@@ -82,18 +82,18 @@ export default function AAMSCRMPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="https://aams.agenient.com/login"
-                  className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg text-center"
+                  className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg text-center"
                 >
                   Add CRM to Your Agenient AAMS
                 </Link>
                 <a
                   href="#screenshots"
-                  className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm text-center"
+                  className="inline-block bg-white/10 hover:bg-white/20 text-ivory px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm text-center"
                 >
                   See Screenshots
                 </a>
               </div>
-              <p className="text-sm text-violet-200 mt-4">
+              <p className="text-sm text-[#A9BFCF] mt-4">
                 Requires Agenient AAMS subscription (Agency tier)
               </p>
             </div>
@@ -188,7 +188,7 @@ export default function AAMSCRMPage() {
               <div className="p-8 md:p-10">
                 <div className="text-5xl mb-4">📇</div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-2">Agenient CRM</h3>
-                <p className="text-accent font-semibold mb-6">AI-Powered Sales & Quoting</p>
+                <p className="text-gold-ink font-semibold mb-6">AI-Powered Sales & Quoting</p>
 
                 <div className="border-t border-neutral-lighter pt-6 mb-6">
                   <div className="flex items-baseline gap-2 mb-1">
@@ -210,7 +210,7 @@ export default function AAMSCRMPage() {
                     'Role-based access (Admin, Manager, Agent, Owner)',
                   ].map((feature, i) => (
                     <li key={i} className="flex items-start">
-                      <span className="text-accent mr-2 flex-shrink-0">✓</span>
+                      <span className="text-gold-ink mr-2 flex-shrink-0">✓</span>
                       <span className="text-sm text-slate-800">{feature}</span>
                     </li>
                   ))}
@@ -218,7 +218,7 @@ export default function AAMSCRMPage() {
 
                 <Link
                   href="https://aams.agenient.com/login"
-                  className="block w-full text-center bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
+                  className="block w-full text-center bg-primary hover:bg-primary-dark text-ivory py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
                 >
                   Add CRM to My Agenient AAMS
                 </Link>
@@ -227,7 +227,7 @@ export default function AAMSCRMPage() {
 
             <div className="mt-6 text-center space-y-2">
               <p className="text-sm text-neutral-light">
-                Don't have Agenient AAMS yet? <Link href="/AAMS/agencies" className="text-accent font-semibold hover:underline">Sign up for Agenient AAMS Agency first</Link>
+                Don't have Agenient AAMS yet? <Link href="/AAMS/agencies" className="text-gold-ink font-semibold hover:underline">Sign up for Agenient AAMS Agency first</Link>
               </p>
               <p className="text-sm text-neutral-light">
                 Solo agents: upgrade to the Agency tier ($199.99/mo), then add CRM for $99.99/user/mo.
@@ -238,7 +238,7 @@ export default function AAMSCRMPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-dark text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
@@ -250,26 +250,26 @@ export default function AAMSCRMPage() {
             <br />
             <span className="text-accent">Let AI Do It.</span>
           </h2>
-          <p className="text-xl mb-8 text-violet-100 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 text-[#C9D6E1] max-w-2xl mx-auto">
             Your team should be closing new business, not buried in follow-ups and paperwork.
             Add Agenient CRM and let Closer and Pulse handle the rest.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="https://aams.agenient.com/login"
-              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+              className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-xl text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
             >
               Add CRM to Your Agenient AAMS
             </Link>
             <Link
               href="/AAMS/agencies"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
+              className="inline-block bg-white/10 hover:bg-white/20 text-ivory px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
             >
               Get Agenient AAMS First
             </Link>
           </div>
-          <p className="mt-8 text-sm text-violet-200">
-            Questions? Call us at <a href="tel:+12394267058" className="underline hover:text-white">(239) 426-7058</a>
+          <p className="mt-8 text-sm text-[#A9BFCF]">
+            Questions? Call us at <a href="tel:+12394267058" className="underline hover:text-ivory">(239) 426-7058</a>
           </p>
         </div>
       </section>

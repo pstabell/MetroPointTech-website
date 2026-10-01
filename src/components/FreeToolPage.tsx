@@ -49,17 +49,17 @@ export default function FreeToolPage({
 }: ToolPageProps) {
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="text-accent font-semibold mb-4">{eyebrow}</div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
-              <p className="text-xl mb-8 text-violet-100">{description}</p>
+              <p className="text-xl mb-8 text-[#C9D6E1]">{description}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#free-tool"
-                  className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+                  className="bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
                 >
                   {primaryCta}
                 </a>
@@ -70,7 +70,7 @@ export default function FreeToolPage({
                   {secondaryCta}
                 </a>
               </div>
-              <p className="text-sm text-violet-200 mt-4">
+              <p className="text-sm text-[#A9BFCF] mt-4">
                 Free worksheet. No credit card required. Built for insurance agencies.
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function FreeToolPage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {steps.map((step) => (
               <div key={step.label} className="bg-white rounded-xl p-8 shadow-md">
-                <div className="text-sm font-semibold text-accent mb-3">{step.label}</div>
+                <div className="text-sm font-semibold text-gold-ink mb-3">{step.label}</div>
                 <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                 <p className="text-neutral-dark">{step.body}</p>
               </div>
@@ -124,7 +124,7 @@ export default function FreeToolPage({
               <div className="space-y-4">
                 {worksheetItems.map((item, index) => (
                   <div key={item} className="flex gap-4 border-b border-gray-100 pb-4 last:border-0">
-                    <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-primary text-ivory flex items-center justify-center font-bold flex-shrink-0">
                       {index + 1}
                     </div>
                     <p className="text-neutral-dark pt-1">{item}</p>
@@ -162,13 +162,13 @@ export default function FreeToolPage({
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">{finalHeadline}</h2>
-          <p className="text-xl text-violet-100 mb-8 max-w-2xl mx-auto">{finalBody}</p>
+          <p className="text-xl text-[#C9D6E1] mb-8 max-w-2xl mx-auto">{finalBody}</p>
           <a
             href={trialUrl}
-            className="inline-block bg-accent hover:bg-accent-dark text-white px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"
+            className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-10 py-4 rounded-lg text-xl font-semibold transition shadow-lg"
           >
             Start Your Free Trial
           </a>

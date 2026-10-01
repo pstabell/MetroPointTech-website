@@ -51,12 +51,12 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Get In Touch
           </h1>
-          <p className="text-xl text-violet-100">
+          <p className="text-xl text-[#C9D6E1]">
             Ready to see how our software can transform your agency? Let's talk.
           </p>
         </div>
@@ -185,7 +185,7 @@ export default function Contact() {
                       name="smsConsent"
                       checked={formData.smsConsent}
                       onChange={handleChange}
-                      className="mt-1 h-5 w-5 flex-shrink-0 rounded border-neutral-lighter text-accent focus:ring-accent"
+                      className="mt-1 h-5 w-5 flex-shrink-0 rounded border-neutral-lighter text-gold-ink focus:ring-accent"
                     />
                     <label htmlFor="smsConsent" className="text-sm text-neutral-light leading-relaxed">
                       Yes, you can text me. By checking this box, I agree to receive appointment reminders,
@@ -200,7 +200,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
+                    className="w-full bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition"
                   >
                     Send Message
                   </button>
@@ -254,7 +254,7 @@ export default function Contact() {
                   <h3 className="font-semibold text-neutral mb-3">Prefer to start immediately?</h3>
                   <a
                     href="https://agenient.com/ams-app"
-                    className="inline-block bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition"
+                    className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-6 py-3 rounded-lg font-semibold transition"
                   >
                     Start Free 14-Day Trial
                   </a>

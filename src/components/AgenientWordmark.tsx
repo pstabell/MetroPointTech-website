@@ -3,11 +3,12 @@ import { useId } from 'react'
 
 /**
  * Agenient wordmark — the brand IS the name (locked 2026-09-02, Patrick).
- * Two variants, both Montserrat 800, "Agen" emerald + "ient" violet, sparkle for the i-dot:
+ * Two variants, both Montserrat 800, "Agen" navy/ivory + "ient" gold, sparkle for the i-dot:
  *   - "stretch": STATIC, sparkle rotated 45°, FULL-height i. Main static lockup (Patrick's favorite).
  *   - "spin":    ANIMATED, sparkle spins one full turn / 15s, shaved i (scaleY .8). Header/hero.
  * All geometry is in `em`, so a single `size` (the font-size) scales the whole mark, sparkle and
- * offsets included — faithful to the approved source at 140px. `dark` swaps to the brighter tints.
+ * offsets included — faithful to the approved source at 140px. `dark` = on navy (ivory + login gold);
+ * light = on white (navy + deep gold #A8842A, 3.5:1 — logo/large-text AA).
  * See brand notes: STRETCH keeps its full i on purpose; SPIN/SPARKLE shave it (intentional).
  */
 export type AgenientVariant = 'stretch' | 'spin'
@@ -25,7 +26,7 @@ export default function AgenientWordmark({
   size?: string
   dark?: boolean
   /** Render the whole mark in one solid color (e.g. '#fff') for use on a colored/brand-gradient
-   *  background where the two brand colors would blend in. Overrides the emerald/violet split. */
+   *  background where the two brand colors would blend in. Overrides the two-tone split. */
   mono?: string
   title?: string
   className?: string
@@ -33,8 +34,8 @@ export default function AgenientWordmark({
 }) {
   const uid = useId().replace(/:/g, '')
   const gradId = `agGrad-${uid}`
-  const em = mono ?? (dark ? '#34d39e' : '#10b981')
-  const vi = mono ?? (dark ? '#8b6bf0' : '#6d28d9')
+  const em = mono ?? (dark ? '#F2EAD9' : '#001F33')
+  const vi = mono ?? (dark ? '#D4AF37' : '#A8842A')
   const spin = variant === 'spin'
   const starSize = spin ? '0.886em' : '0.857em' // 124px / 120px @140px
   const starTop = spin ? '-0.45em' : '-0.436em' // -63px / -61px @140px

@@ -78,12 +78,12 @@ export default function CommissionCalculatorPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Band */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-8 md:py-10">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-8 md:py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">
             Free Commission Leak Calculator
           </h1>
-          <p className="text-lg md:text-xl text-violet-100">
+          <p className="text-lg md:text-xl text-[#C9D6E1]">
             Find out if you're underpaid in 30 seconds
           </p>
         </div>
@@ -173,8 +173,8 @@ export default function CommissionCalculatorPage() {
                 disabled={!canCalculate}
                 className={`flex-1 py-3 rounded-lg text-lg font-semibold transition ${
                   canCalculate
-                    ? 'bg-accent hover:bg-accent-dark text-white cursor-pointer'
-                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    ? 'bg-accent hover:bg-accent-dark text-[#001F33] cursor-pointer'
+                    : 'bg-gray-200 text-gray-600 cursor-not-allowed'
                 }`}
               >
                 Calculate My Leak
@@ -195,7 +195,7 @@ export default function CommissionCalculatorPage() {
             <div className="mt-8 space-y-6">
               {/* Status Banner */}
               <div className={`${getStatusStyles().bg} border-2 ${getStatusStyles().border} rounded-xl p-6 text-center`}>
-                <div className={`inline-block ${getStatusStyles().badge} text-white text-xs font-bold px-3 py-1 rounded-full mb-3`}>
+                <div className={`inline-block ${getStatusStyles().badge} text-ivory text-xs font-bold px-3 py-1 rounded-full mb-3`}>
                   {leakPercentage < 1 ? 'HEALTHY' : leakPercentage <= 3 ? 'WARNING' : 'LEAK DETECTED'}
                 </div>
                 <div className={`text-3xl md:text-4xl font-bold ${getStatusStyles().text} mb-2`}>
@@ -236,20 +236,20 @@ export default function CommissionCalculatorPage() {
               </div>
 
               {/* CTA Section */}
-              <div className="bg-gradient-to-br from-primary to-primary-dark rounded-xl p-6 md:p-8 text-white text-center">
+              <div className="bg-gradient-to-br from-primary to-primary-dark rounded-xl p-6 md:p-8 text-ivory text-center">
                 <h3 className="text-2xl font-bold mb-3">
                   AI Commission Tracker catches these leaks automatically.
                 </h3>
-                <p className="text-violet-100 mb-6 text-lg">
+                <p className="text-[#C9D6E1] mb-6 text-lg">
                   Stop losing revenue to commission errors. Upload your commission statements and see exactly where the money goes.
                 </p>
                 <a
                   href="https://agenient.com/ams-app"
-                  className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition shadow-lg"
+                  className="inline-block bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition shadow-lg"
                 >
                   Start Your Free Trial
                 </a>
-                <p className="text-sm text-violet-200 mt-3">No credit card required. 14-day free trial.</p>
+                <p className="text-sm text-[#A9BFCF] mt-3">No credit card required. 14-day free trial.</p>
               </div>
             </div>
           )}
@@ -262,21 +262,21 @@ export default function CommissionCalculatorPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Why Commission Leaks Happen</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold mb-3">1</div>
+              <div className="w-10 h-10 bg-primary text-ivory rounded-full flex items-center justify-center text-lg font-bold mb-3">1</div>
               <h3 className="font-bold mb-2">Rate Changes</h3>
               <p className="text-sm text-neutral-light">
                 Carriers adjust commission schedules and agents don't always catch when rates drop mid-term.
               </p>
             </div>
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold mb-3">2</div>
+              <div className="w-10 h-10 bg-primary text-ivory rounded-full flex items-center justify-center text-lg font-bold mb-3">2</div>
               <h3 className="font-bold mb-2">Missed Payments</h3>
               <p className="text-sm text-neutral-light">
                 Policies renew, but the commission payment never arrives. Without tracking, it goes unnoticed.
               </p>
             </div>
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold mb-3">3</div>
+              <div className="w-10 h-10 bg-primary text-ivory rounded-full flex items-center justify-center text-lg font-bold mb-3">3</div>
               <h3 className="font-bold mb-2">Chargebacks</h3>
               <p className="text-sm text-neutral-light">
                 Cancellations and chargebacks eat into your commissions. Are they all legitimate?

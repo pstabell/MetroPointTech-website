@@ -251,7 +251,7 @@ export default function TeamPage() {
   return (
     <div className="min-h-screen">
       {/* Hero with Patrick + Team Intro */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-10">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Side - Patrick */}
@@ -269,29 +269,29 @@ export default function TeamPage() {
                 </div>
                 <div className="font-bold text-lg">{team[0].name}</div>
                 <div className="text-accent font-semibold text-sm">{team[0].title}</div>
-                <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mt-1">
+                <span className="inline-block bg-accent text-[#001F33] text-xs px-2 py-0.5 rounded-full mt-1">
                   Founder
                 </span>
               </div>
               {/* Bio box to the right of photo */}
               <div className="bg-white/10 rounded-xl p-5 max-w-xs">
-                <p className="text-white text-sm leading-relaxed">
+                <p className="text-ivory text-sm leading-relaxed">
                   Patrick brings 30 years of insurance industry experience to every decision. He started as a licensed agent, worked every role in the agency, and founded Metro Point Technology with a radical idea: build an entire company where AI team members handle execution while a seasoned veteran sets the vision.
                 </p>
               </div>
             </div>
 
             {/* Right Side - Meet Our Team */}
-            <div className="md:border-l md:border-violet-400/20 md:pl-12">
-              <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <div className="md:border-l md:border-[#1a3a52] md:pl-12">
+              <h1 className="text-2xl md:text-3xl font-bold text-ivory mb-4">
                 Meet Our<br />Management Team
               </h1>
-              <p className="text-white mb-3">
+              <p className="text-ivory mb-3">
                 15 team members. One visionary founder with 30 years of industry
                 experience. 14 AI-powered professionals operating 24/7 with the
                 capacity of 150 people.
               </p>
-              <p className="text-white text-sm mb-3">
+              <p className="text-ivory text-sm mb-3">
                 This is not a future concept. This is how we operate today. Every
                 team member listed here is active, accountable, and delivering real
                 results right now.
@@ -335,12 +335,12 @@ export default function TeamPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-gradient-to-br from-primary to-primary-dark text-white">
+      <section className="py-16 bg-gradient-to-br from-primary to-primary-dark text-ivory">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Work with a Team That Never Stops?
           </h2>
-          <p className="text-xl text-violet-100 mb-8">
+          <p className="text-xl text-[#C9D6E1] mb-8">
             Metro Point Technology runs a 24/7 operation with the depth of an
             enterprise team and the agility of a startup. If you need software
             built, problems solved, or operations automated, we are already
@@ -349,7 +349,7 @@ export default function TeamPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
+              className="bg-accent hover:bg-accent-dark text-[#001F33] px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
             >
               Contact Us
             </a>
@@ -416,16 +416,16 @@ function TeamCard({
           >
             {member.name}
           </h3>
-          <p className="text-accent font-semibold">{member.title}</p>
+          <p className="text-gold-ink font-semibold">{member.title}</p>
           <p className="text-neutral-light text-sm mb-1">
             {member.department}
           </p>
           {member.isHuman ? (
-            <span className="inline-block bg-accent text-white text-xs px-2 py-0.5 rounded-full mb-3">
+            <span className="inline-block bg-accent text-[#001F33] text-xs px-2 py-0.5 rounded-full mb-3">
               Founder
             </span>
           ) : (
-            <span className="inline-block bg-primary text-white text-xs px-2 py-0.5 rounded-full mb-3">
+            <span className="inline-block bg-primary text-ivory text-xs px-2 py-0.5 rounded-full mb-3">
               AI-Powered &middot; {member.model}
             </span>
           )}
@@ -443,7 +443,7 @@ function TeamCard({
             <ul className="space-y-1">
               {member.capabilities.map((cap, i) => (
                 <li key={i} className="text-sm text-neutral-light flex items-start">
-                  <span className="text-accent mr-2 flex-shrink-0">&#10003;</span>
+                  <span className="text-gold-ink mr-2 flex-shrink-0">&#10003;</span>
                   {cap}
                 </li>
               ))}

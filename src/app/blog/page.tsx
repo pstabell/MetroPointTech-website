@@ -44,7 +44,7 @@ function categoryColor(cat: string) {
     case "AI Infrastructure":
       return "bg-primary/10 text-slate-800";
     case "Insurance":
-      return "bg-accent/10 text-accent-dark";
+      return "bg-accent/10 text-gold-ink";
     default:
       return "bg-neutral-lighter text-neutral";
   }
@@ -112,12 +112,12 @@ export default async function BlogPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-10 md:py-12">
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-3 text-white">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-3 text-ivory">
             Blog
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-ivory/90 max-w-3xl mx-auto">
             Insights on AI infrastructure, insurance technology,
             <br />
             and building software that actually ships
@@ -167,13 +167,13 @@ export default async function BlogPage() {
                           </span>
                         )}
                       </div>
-                      <h2 className="text-xl md:text-2xl font-serif font-bold text-slate-800 group-hover:text-accent transition-colors mb-3">
+                      <h2 className="text-xl md:text-2xl font-serif font-bold text-slate-800 group-hover:text-gold-ink transition-colors mb-3">
                         {post.title}
                       </h2>
                       <p className="text-neutral-light leading-relaxed">
                         {post.excerpt}
                       </p>
-                      <div className="mt-4 text-accent font-semibold text-sm group-hover:underline">
+                      <div className="mt-4 text-gold-ink font-semibold text-sm group-hover:underline">
                         Read more &rarr;
                       </div>
                     </div>

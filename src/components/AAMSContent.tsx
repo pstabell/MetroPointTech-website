@@ -59,7 +59,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agent')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgent
-                    ? 'bg-teal-600 text-white shadow-lg'
+                    ? 'bg-teal-700 text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -69,7 +69,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agency')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgency
-                    ? 'bg-violet-600 text-white shadow-lg'
+                    ? 'bg-violet-600 text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -202,7 +202,7 @@ export default function AAMSContent() {
           <div className="space-y-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <div className={`w-14 h-14 ${stepBg} text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>1</div>
+                <div className={`w-14 h-14 ${stepBg} text-ivory rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>1</div>
                 <h3 className="text-2xl font-bold mb-4">Upload Your Statements</h3>
                 <p className="text-lg text-neutral-dark">
                   {isAgency
@@ -223,7 +223,7 @@ export default function AAMSContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className="md:order-2">
-                <div className={`w-14 h-14 ${stepBg} text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>2</div>
+                <div className={`w-14 h-14 ${stepBg} text-ivory rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>2</div>
                 <h3 className="text-2xl font-bold mb-4">
                   {isProducer ? 'Manual Reconciliation' : 'Agentic Reconciliation'}
                 </h3>
@@ -246,7 +246,7 @@ export default function AAMSContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <div className={`w-14 h-14 ${stepBg} text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>3</div>
+                <div className={`w-14 h-14 ${stepBg} text-ivory rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>3</div>
                 <h3 className="text-2xl font-bold mb-4">Get Paid Right</h3>
                 <p className="text-lg text-neutral-dark">
                   {isAgency
@@ -332,7 +332,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agent')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgent
-                    ? 'bg-teal-600 text-white shadow-lg'
+                    ? 'bg-teal-700 text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -342,7 +342,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agency')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgency
-                    ? 'bg-violet-600 text-white shadow-lg'
+                    ? 'bg-violet-600 text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -387,7 +387,7 @@ export default function AAMSContent() {
                         <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
                           {item.included ? '✓' : '✗'}
                         </span>
-                        <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                        <span className={item.included ? '' : 'text-gray-500'}>{item.feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -397,22 +397,22 @@ export default function AAMSContent() {
                 </div>
 
                 {/* Upgrade hook */}
-                <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl p-8 shadow-lg flex flex-col text-left">
-                  <div className="text-sm font-semibold text-violet-100 mb-1">READY TO MANAGE 100% OF YOUR COMMISSIONS?</div>
+                <div className="bg-gradient-to-br from-primary to-primary-dark text-ivory rounded-2xl p-8 shadow-lg flex flex-col text-left">
+                  <div className="text-sm font-semibold text-[#C9D6E1] mb-1">READY TO MANAGE 100% OF YOUR COMMISSIONS?</div>
                   <div className="text-3xl font-bold mb-4">Upgrade to Agenient AAMS Solo Agent</div>
-                  <p className="text-violet-100 mb-6">
+                  <p className="text-[#C9D6E1] mb-6">
                     Drop the split cap and track 100% of your commissions — yours plus anything you handle as your own book. Move up to Pro or Autopilot to add autonomous reconciliation on top, so the system runs your commission ops while you focus on selling.
                   </p>
                   <ul className="space-y-2 mb-8 text-sm flex-grow">
-                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> Manage 100% of commissions — no split cap</li>
-                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Agentic Reconciliation (Pro & Autopilot)</li>
-                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> AI Coaching & Alerts (Pro & Autopilot)</li>
-                    <li className="flex items-center gap-2"><span className="text-accent">✓</span> Email Statement Forwarding (Autopilot)</li>
+                    <li className="flex items-center gap-2"><span className="text-gold-ink">✓</span> Manage 100% of commissions — no split cap</li>
+                    <li className="flex items-center gap-2"><span className="text-gold-ink">✓</span> AI Agentic Reconciliation (Pro & Autopilot)</li>
+                    <li className="flex items-center gap-2"><span className="text-gold-ink">✓</span> AI Coaching & Alerts (Pro & Autopilot)</li>
+                    <li className="flex items-center gap-2"><span className="text-gold-ink">✓</span> Email Statement Forwarding (Autopilot)</li>
                   </ul>
-                  <div className="text-xs text-violet-200 mb-3">Starter $19.99/mo · Autonomous from $49.99/mo · 14-day free trial</div>
+                  <div className="text-xs text-[#A9BFCF] mb-3">Starter $19.99/mo · Autonomous from $49.99/mo · 14-day free trial</div>
                   <button
                     onClick={() => setView('agent')}
-                    className="block w-full py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition text-center"
+                    className="block w-full py-3 bg-accent hover:bg-accent-dark text-[#001F33] font-semibold rounded-lg transition text-center"
                   >
                     See Solo Agent Plans
                   </button>
@@ -424,7 +424,7 @@ export default function AAMSContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* Starter */}
               <div className="bg-white border-2 border-teal-400 rounded-2xl p-6 shadow-lg flex flex-col">
-                <div className="text-sm font-semibold text-teal-600 mb-1">Agenient AAMS STARTER</div>
+                <div className="text-sm font-semibold text-teal-700 mb-1">Agenient AAMS STARTER</div>
                 <div className="text-4xl font-bold mb-1">$19.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -443,21 +443,21 @@ export default function AAMSContent() {
                       <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
                         {item.included ? '✓' : '✗'}
                       </span>
-                      <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                      <span className={item.included ? '' : 'text-gray-500'}>{item.feature}</span>
                     </li>
                   ))}
                 </ul>
-                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-ivory font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
 
               {/* Pro */}
               <div className="bg-white border-2 border-teal-600 rounded-2xl p-6 shadow-xl flex flex-col relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-ivory text-xs font-semibold px-3 py-1 rounded-full">
                   MOST POPULAR
                 </div>
-                <div className="text-sm font-semibold text-teal-600 mb-1">Agenient AAMS PRO</div>
+                <div className="text-sm font-semibold text-teal-700 mb-1">Agenient AAMS PRO</div>
                 <div className="text-4xl font-bold mb-1">$49.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -476,18 +476,18 @@ export default function AAMSContent() {
                       <span className={item.included ? 'text-green-500' : 'text-gray-300'}>
                         {item.included ? '✓' : '✗'}
                       </span>
-                      <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                      <span className={item.included ? '' : 'text-gray-500'}>{item.feature}</span>
                     </li>
                   ))}
                 </ul>
-                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-ivory font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
 
               {/* Autopilot */}
               <div className="bg-white border-2 border-teal-700 rounded-2xl p-6 shadow-lg flex flex-col relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-ivory text-xs font-semibold px-3 py-1 rounded-full">
                   BEST VALUE
                 </div>
                 <div className="text-sm font-semibold text-teal-700 mb-1">Agenient AAMS AUTOPILOT</div>
@@ -511,7 +511,7 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-white font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-ivory font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
@@ -542,19 +542,19 @@ export default function AAMSContent() {
                         <span className={item.included ? 'text-violet-500' : 'text-gray-300'}>
                           {item.included ? '✓' : '✗'}
                         </span>
-                        <span className={item.included ? '' : 'text-gray-400'}>{item.feature}</span>
+                        <span className={item.included ? '' : 'text-gray-500'}>{item.feature}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $49.99/mo each</div>
-                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-500 hover:bg-violet-600 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-ivory font-semibold rounded-lg transition text-center">
                     Start Free 14-Day Trial
                   </a>
                 </div>
 
                 {/* AI */}
                 <div className="bg-white border-2 border-violet-600 rounded-2xl p-8 shadow-xl flex flex-col relative">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-semibold px-4 py-1 rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-600 text-ivory text-xs font-semibold px-4 py-1 rounded-full">
                     MOST POPULAR
                   </div>
                   <div className="text-sm font-semibold text-violet-600 mb-1">Agenient AAMS AGENCY</div>
@@ -580,14 +580,14 @@ export default function AAMSContent() {
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $99.99/mo each</div>
-                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-ivory font-semibold rounded-lg transition text-center">
                     Start Free 14-Day Trial
                   </a>
                 </div>
 
                 {/* AI Plus */}
                 <div className="bg-white border-2 border-violet-700 rounded-2xl p-8 shadow-lg flex flex-col relative">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-700 text-white text-xs font-semibold px-4 py-1 rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-700 text-ivory text-xs font-semibold px-4 py-1 rounded-full">
                     BEST VALUE
                   </div>
                   <div className="text-sm font-semibold text-violet-700 mb-1">Agenient AAMS AGENCY AI</div>
@@ -611,7 +611,7 @@ export default function AAMSContent() {
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">3 users included. Save $100/mo vs buying seats separately. Extra users: $99.99/mo each.</div>
-                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-700 hover:bg-violet-800 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-700 hover:bg-violet-800 text-ivory font-semibold rounded-lg transition text-center">
                     Subscribe Now
                   </a>
                 </div>
