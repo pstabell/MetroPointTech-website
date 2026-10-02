@@ -22,15 +22,15 @@ export default function AAMSContent() {
   const isAgency = view === 'agency'
 
   const borderColor = isAgency
-    ? 'border-violet-600'
+    ? 'border-primary'
     : isProducer
-    ? 'border-cyan-700'
-    : 'border-primary'
+    ? 'border-gold-ink'
+    : 'border-accent'
   const stepBg = isAgency
-    ? 'bg-violet-600'
+    ? 'bg-primary text-ivory'
     : isProducer
-    ? 'bg-cyan-700'
-    : 'bg-primary'
+    ? 'bg-gold-ink text-ivory'
+    : 'bg-accent text-[#001F33]'
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function AAMSContent() {
                 onClick={() => setView('producer')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isProducer
-                    ? 'bg-cyan-700 text-white shadow-lg'
+                    ? 'bg-gold-ink text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -59,7 +59,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agent')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgent
-                    ? 'bg-teal-700 text-ivory shadow-lg'
+                    ? 'bg-accent text-[#001F33] shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -69,7 +69,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agency')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgency
-                    ? 'bg-violet-600 text-ivory shadow-lg'
+                    ? 'bg-primary text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -83,33 +83,33 @@ export default function AAMSContent() {
               <p className="text-center text-lg text-neutral-dark mb-4 max-w-3xl mx-auto">
                 Agent commission tracking, free forever. Producers at agencies use Agenient AAMS Producer to track their agency commission statements, catch carrier underpayments along the way, and make sure they get paid right on every commission they earn.
               </p>
-              <p className="text-center text-sm text-cyan-800 font-semibold mb-10 max-w-3xl mx-auto">
+              <p className="text-center text-sm text-gold-ink font-semibold mb-10 max-w-3xl mx-auto">
                 Manual reconciliation. Upgrade to Agenient AAMS Solo Agent any time to manage 100% of your commissions and turn on autonomous reconciliation.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-gold-ink">
                     <Image src="/images/ams-app/p-reconciliation.png" alt="Agency commission statement reconciliation" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Reconcile Your Agency Statement</h3>
                   <p className="text-neutral-dark">Upload the agency commission statement you receive each cycle and reconcile it against the policies you've tracked. See what matched and what is missing.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-gold-ink">
                     <Image src="/images/ams-app/p-carriers.png" alt="Catch carrier underpayments" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Catch Carrier Underpayments</h3>
                   <p className="text-neutral-dark">Spot when a carrier short-pays a commission against the policy you wrote. Win for the agency, win for your wallet.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-gold-ink">
                     <Image src="/images/ams-app/p-ledger.png" alt="Personal revenue ledger" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Personal Revenue Ledger</h3>
                   <p className="text-neutral-dark">Every commission dollar tracked in one ledger you control. Yours, separate from the agency's books, exportable any time.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-gold-ink">
                     <Image src="/images/ams-app/p-dark-dashboard.png" alt="Dashboard dark mode" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Dark Mode</h3>
@@ -124,28 +124,28 @@ export default function AAMSContent() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-accent">
                     <Image src="/images/ams-app/reconciliation.png" alt="Commission reconciliation" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Upload & Reconcile</h3>
                   <p className="text-neutral-dark">Import your commission statements and instantly see what matched, what is missing, and what needs attention.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-accent">
                     <Image src="/images/ams-app/carriers.png" alt="Carrier management" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Carrier Management</h3>
                   <p className="text-neutral-dark">All your carriers in one place. Progressive, Travelers, Safeco, and many more P&C carriers supported.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-accent">
                     <Image src="/images/ams-app/ledger.png" alt="Policy revenue ledger" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Policy Revenue Ledger</h3>
                   <p className="text-neutral-dark">Track every commission dollar across all your policies in one clear ledger.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-accent">
                     <Image src="/images/ams-app/f1-dark-dashboard.png" alt="Dashboard dark mode" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Dark Mode</h3>
@@ -160,28 +160,28 @@ export default function AAMSContent() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-violet-600">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
                     <Image src="/images/ams-app/f2-dashboard.png" alt="Agency dashboard" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Agency Dashboard</h3>
                   <p className="text-neutral-dark">See all commissions, policies, and transactions across your entire agency in one view.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-violet-600">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
                     <Image src="/images/ams-app/f2-reconciliation.png" alt="Agency reconciliation" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Agency Reconciliation</h3>
                   <p className="text-neutral-dark">Upload carrier commission statements and reconcile across all agents and house accounts.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-violet-600">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
                     <Image src="/images/ams-app/f2-admin.png" alt="Admin panel" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Admin Panel</h3>
                   <p className="text-neutral-dark">Manage users, carriers, commission rules, and column mappings from one central control panel.</p>
                 </div>
                 <div>
-                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-violet-600">
+                  <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
                     <Image src="/images/ams-app/f2-dark-dashboard.png" alt="Agency dark mode" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Dark Mode</h3>
@@ -202,7 +202,7 @@ export default function AAMSContent() {
           <div className="space-y-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <div className={`w-14 h-14 ${stepBg} text-ivory rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>1</div>
+                <div className={`w-14 h-14 ${stepBg} rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>1</div>
                 <h3 className="text-2xl font-bold mb-4">Upload Your Statements</h3>
                 <p className="text-lg text-neutral-dark">
                   {isAgency
@@ -223,7 +223,7 @@ export default function AAMSContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div className="md:order-2">
-                <div className={`w-14 h-14 ${stepBg} text-ivory rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>2</div>
+                <div className={`w-14 h-14 ${stepBg} rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>2</div>
                 <h3 className="text-2xl font-bold mb-4">
                   {isProducer ? 'Manual Reconciliation' : 'Agentic Reconciliation'}
                 </h3>
@@ -246,7 +246,7 @@ export default function AAMSContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <div className={`w-14 h-14 ${stepBg} text-ivory rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>3</div>
+                <div className={`w-14 h-14 ${stepBg} rounded-full flex items-center justify-center text-2xl font-bold mb-6`}>3</div>
                 <h3 className="text-2xl font-bold mb-4">Get Paid Right</h3>
                 <p className="text-lg text-neutral-dark">
                   {isAgency
@@ -321,7 +321,7 @@ export default function AAMSContent() {
                 onClick={() => setView('producer')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isProducer
-                    ? 'bg-cyan-700 text-white shadow-lg'
+                    ? 'bg-gold-ink text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -332,7 +332,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agent')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgent
-                    ? 'bg-teal-700 text-ivory shadow-lg'
+                    ? 'bg-accent text-[#001F33] shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -342,7 +342,7 @@ export default function AAMSContent() {
                 onClick={() => setView('agency')}
                 className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   isAgency
-                    ? 'bg-violet-600 text-ivory shadow-lg'
+                    ? 'bg-primary text-ivory shadow-lg'
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -361,11 +361,11 @@ export default function AAMSContent() {
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 {/* Producer Free */}
-                <div className="bg-white border-2 border-cyan-700 rounded-2xl p-8 shadow-xl flex flex-col relative">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="bg-white border-2 border-gold-ink rounded-2xl p-8 shadow-xl flex flex-col relative">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-ink text-ivory text-xs font-semibold px-3 py-1 rounded-full">
                     FREE FOREVER
                   </div>
-                  <div className="text-sm font-semibold text-cyan-700 mb-1">Agenient AAMS PRODUCER</div>
+                  <div className="text-sm font-semibold text-gold-ink mb-1">Agenient AAMS PRODUCER</div>
                   <div className="text-5xl font-bold mb-1">$0</div>
                   <div className="text-neutral-dark mb-3 text-sm">forever</div>
                   <div className="text-xs text-neutral-dark mb-6 italic text-left">
@@ -391,7 +391,7 @@ export default function AAMSContent() {
                       </li>
                     ))}
                   </ul>
-                  <a href="https://aams.agenient.com/login?plan=producer&promo=PRODUCER_FREE" className="block w-full py-3 bg-cyan-700 hover:bg-cyan-800 text-white font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login?plan=producer&promo=PRODUCER_FREE" className="block w-full py-3 bg-gold-ink hover:bg-[#6f5412] text-ivory font-semibold rounded-lg transition text-center">
                     Get Started Free
                   </a>
                 </div>
@@ -423,8 +423,8 @@ export default function AAMSContent() {
             /* Solo Agent Comparison — 3 columns */
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* Starter */}
-              <div className="bg-white border-2 border-teal-400 rounded-2xl p-6 shadow-lg flex flex-col">
-                <div className="text-sm font-semibold text-teal-700 mb-1">Agenient AAMS STARTER</div>
+              <div className="bg-white border-2 border-accent-light rounded-2xl p-6 shadow-lg flex flex-col">
+                <div className="text-sm font-semibold text-gold-ink mb-1">Agenient AAMS STARTER</div>
                 <div className="text-4xl font-bold mb-1">$19.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -447,17 +447,17 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-ivory font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-accent hover:bg-accent-dark text-[#001F33] font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
 
               {/* Pro */}
-              <div className="bg-white border-2 border-teal-600 rounded-2xl p-6 shadow-xl flex flex-col relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-ivory text-xs font-semibold px-3 py-1 rounded-full">
+              <div className="bg-white border-2 border-accent rounded-2xl p-6 shadow-xl flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-[#001F33] text-xs font-semibold px-3 py-1 rounded-full">
                   MOST POPULAR
                 </div>
-                <div className="text-sm font-semibold text-teal-700 mb-1">Agenient AAMS PRO</div>
+                <div className="text-sm font-semibold text-gold-ink mb-1">Agenient AAMS PRO</div>
                 <div className="text-4xl font-bold mb-1">$49.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -480,17 +480,17 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-ivory font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-accent hover:bg-accent-dark text-[#001F33] font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
 
               {/* Autopilot */}
-              <div className="bg-white border-2 border-teal-700 rounded-2xl p-6 shadow-lg flex flex-col relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-ivory text-xs font-semibold px-3 py-1 rounded-full">
+              <div className="bg-white border-2 border-accent rounded-2xl p-6 shadow-lg flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-[#001F33] text-xs font-semibold px-3 py-1 rounded-full">
                   BEST VALUE
                 </div>
-                <div className="text-sm font-semibold text-teal-700 mb-1">Agenient AAMS AUTOPILOT</div>
+                <div className="text-sm font-semibold text-gold-ink mb-1">Agenient AAMS AUTOPILOT</div>
                 <div className="text-4xl font-bold mb-1">$79.99</div>
                 <div className="text-neutral-dark mb-6 text-sm">per month</div>
                 <ul className="text-left space-y-2 mb-8 flex-grow text-sm">
@@ -511,7 +511,7 @@ export default function AAMSContent() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-teal-700 hover:bg-teal-800 text-ivory font-semibold rounded-lg transition text-center">
+                <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-accent hover:bg-accent-dark text-[#001F33] font-semibold rounded-lg transition text-center">
                   Start Free Trial
                 </a>
               </div>
@@ -521,8 +521,8 @@ export default function AAMSContent() {
             <div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {/* Self-Service */}
-                <div className="bg-white border-2 border-violet-400 rounded-2xl p-8 shadow-lg flex flex-col">
-                  <div className="text-sm font-semibold text-violet-600 mb-1">Agenient AAMS AGENCY</div>
+                <div className="bg-white border-2 border-primary-light rounded-2xl p-8 shadow-lg flex flex-col">
+                  <div className="text-sm font-semibold text-primary mb-1">Agenient AAMS AGENCY</div>
                   <div className="text-sm text-neutral-dark mb-4">Self-Service</div>
                   <div className="text-5xl font-bold mb-1">$99.99</div>
                   <div className="text-neutral-dark mb-6">per month</div>
@@ -539,7 +539,7 @@ export default function AAMSContent() {
                       { feature: 'Email Auto-Processing', included: false },
                     ].map((item) => (
                       <li key={item.feature} className="flex items-center gap-2">
-                        <span className={item.included ? 'text-violet-500' : 'text-gray-300'}>
+                        <span className={item.included ? 'text-gold-ink' : 'text-gray-300'}>
                           {item.included ? '✓' : '✗'}
                         </span>
                         <span className={item.included ? '' : 'text-gray-500'}>{item.feature}</span>
@@ -547,17 +547,17 @@ export default function AAMSContent() {
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $49.99/mo each</div>
-                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-ivory font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-primary hover:bg-primary-dark text-ivory font-semibold rounded-lg transition text-center">
                     Start Free 14-Day Trial
                   </a>
                 </div>
 
                 {/* AI */}
-                <div className="bg-white border-2 border-violet-600 rounded-2xl p-8 shadow-xl flex flex-col relative">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-600 text-ivory text-xs font-semibold px-4 py-1 rounded-full">
+                <div className="bg-white border-2 border-primary rounded-2xl p-8 shadow-xl flex flex-col relative">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-ivory text-xs font-semibold px-4 py-1 rounded-full">
                     MOST POPULAR
                   </div>
-                  <div className="text-sm font-semibold text-violet-600 mb-1">Agenient AAMS AGENCY</div>
+                  <div className="text-sm font-semibold text-primary mb-1">Agenient AAMS AGENCY</div>
                   <div className="text-sm text-neutral-dark mb-4">With AI Agent</div>
                   <div className="text-5xl font-bold mb-1">$199.99</div>
                   <div className="text-neutral-dark mb-6">per month</div>
@@ -574,23 +574,23 @@ export default function AAMSContent() {
                       { feature: 'Email Auto-Processing', included: true },
                     ].map((item) => (
                       <li key={item.feature} className="flex items-center gap-2">
-                        <span className="text-violet-500">✓</span>
+                        <span className="text-gold-ink">✓</span>
                         <span>{item.feature}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">1 user included. Extra users: $99.99/mo each</div>
-                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-600 hover:bg-violet-700 text-ivory font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-primary hover:bg-primary-dark text-ivory font-semibold rounded-lg transition text-center">
                     Start Free 14-Day Trial
                   </a>
                 </div>
 
                 {/* AI Plus */}
-                <div className="bg-white border-2 border-violet-700 rounded-2xl p-8 shadow-lg flex flex-col relative">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-700 text-ivory text-xs font-semibold px-4 py-1 rounded-full">
+                <div className="bg-white border-2 border-primary rounded-2xl p-8 shadow-lg flex flex-col relative">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-ivory text-xs font-semibold px-4 py-1 rounded-full">
                     BEST VALUE
                   </div>
-                  <div className="text-sm font-semibold text-violet-700 mb-1">Agenient AAMS AGENCY AI</div>
+                  <div className="text-sm font-semibold text-primary mb-1">Agenient AAMS AGENCY AI</div>
                   <div className="text-sm text-neutral-dark mb-4">Plus — 3 Seats Bundled</div>
                   <div className="text-5xl font-bold mb-1">$299.99</div>
                   <div className="text-neutral-dark mb-6">per month</div>
@@ -605,13 +605,13 @@ export default function AAMSContent() {
                       { feature: 'Priority Onboarding', included: true },
                     ].map((item) => (
                       <li key={item.feature} className="flex items-center gap-2">
-                        <span className="text-violet-600">✓</span>
+                        <span className="text-primary">✓</span>
                         <span>{item.feature}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="text-xs text-neutral-dark mb-4">3 users included. Save $100/mo vs buying seats separately. Extra users: $99.99/mo each.</div>
-                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-violet-700 hover:bg-violet-800 text-ivory font-semibold rounded-lg transition text-center">
+                  <a href="https://aams.agenient.com/login" className="block w-full py-3 bg-primary hover:bg-primary-dark text-ivory font-semibold rounded-lg transition text-center">
                     Subscribe Now
                   </a>
                 </div>
