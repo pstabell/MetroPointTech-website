@@ -89,28 +89,28 @@ export default function AAMSContent() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
-                    <Image src="/images/ams-app/reconciliation.png" alt="Agency commission statement reconciliation" width={1440} height={900} className="w-full h-auto" />
+                    <Image src="/images/ams-app/p-reconciliation.png" alt="Agency commission statement reconciliation" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Reconcile Your Agency Statement</h3>
                   <p className="text-neutral-dark">Upload the agency commission statement you receive each cycle and reconcile it against the policies you've tracked. See what matched and what is missing.</p>
                 </div>
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
-                    <Image src="/images/ams-app/carriers.png" alt="Catch carrier underpayments" width={1440} height={900} className="w-full h-auto" />
+                    <Image src="/images/ams-app/p-carriers.png" alt="Catch carrier underpayments" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Catch Carrier Underpayments</h3>
                   <p className="text-neutral-dark">Spot when a carrier short-pays a commission against the policy you wrote. Win for the agency, win for your wallet.</p>
                 </div>
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
-                    <Image src="/images/ams-app/ledger.png" alt="Personal revenue ledger" width={1440} height={900} className="w-full h-auto" />
+                    <Image src="/images/ams-app/p-ledger.png" alt="Personal revenue ledger" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Personal Revenue Ledger</h3>
                   <p className="text-neutral-dark">Every commission dollar tracked in one ledger you control. Yours, separate from the agency's books, exportable any time.</p>
                 </div>
                 <div>
                   <div className="rounded-xl overflow-hidden shadow-lg border-2 border-cyan-700">
-                    <Image src="/images/ams-app/f1-dark-dashboard.png" alt="Dashboard dark mode" width={1440} height={900} className="w-full h-auto" />
+                    <Image src="/images/ams-app/p-dark-dashboard.png" alt="Dashboard dark mode" width={1440} height={900} className="w-full h-auto" />
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-2">Dark Mode</h3>
                   <p className="text-neutral-dark">Switch between light and dark themes. Same comfort as the paid tiers.</p>
@@ -214,7 +214,7 @@ export default function AAMSContent() {
               </div>
               <div className={`rounded-xl overflow-hidden shadow-lg border-2 ${borderColor}`}>
                 <Image
-                  src={isAgency ? '/images/ams-app/f2-reconciliation.png' : '/images/ams-app/reconciliation.png'}
+                  src={isAgency ? '/images/ams-app/f2-reconciliation.png' : isProducer ? '/images/ams-app/p-reconciliation.png' : '/images/ams-app/reconciliation.png'}
                   alt="Upload and import commission statements"
                   width={1440} height={900} className="w-full h-auto"
                 />
@@ -237,7 +237,7 @@ export default function AAMSContent() {
               </div>
               <div className={`md:order-1 rounded-xl overflow-hidden shadow-lg border-2 ${borderColor}`}>
                 <Image
-                  src={isAgency ? '/images/ams-app/f2-policies.png' : '/images/ams-app/ledger.png'}
+                  src={isAgency ? '/images/ams-app/f2-policies.png' : isProducer ? '/images/ams-app/p-ledger.png' : '/images/ams-app/ledger.png'}
                   alt="Reconciliation"
                   width={1440} height={900} className="w-full h-auto"
                 />
@@ -258,7 +258,7 @@ export default function AAMSContent() {
               </div>
               <div className={`rounded-xl overflow-hidden shadow-lg border-2 ${borderColor}`}>
                 <Image
-                  src={isAgency ? '/images/ams-app/f2-reports.png' : '/images/ams-app/reports.png'}
+                  src={isAgency ? '/images/ams-app/f2-reports.png' : isProducer ? '/images/ams-app/p-reports.png' : '/images/ams-app/reports.png'}
                   alt="Commission reports"
                   width={1440} height={900} className="w-full h-auto"
                 />
@@ -276,7 +276,7 @@ export default function AAMSContent() {
             <div>
               <div className={`rounded-xl overflow-hidden shadow-lg border-2 ${borderColor}`}>
                 <Image
-                  src={isAgency ? '/images/ams-app/f2-customers.png' : '/images/ams-app/customers.png'}
+                  src={isAgency ? '/images/ams-app/f2-customers.png' : isProducer ? '/images/ams-app/p-customers.png' : '/images/ams-app/customers.png'}
                   alt={isAgency ? 'Agency customer management' : 'Customer management'}
                   width={1440} height={900} className="w-full h-auto"
                 />
@@ -293,7 +293,7 @@ export default function AAMSContent() {
             <div>
               <div className={`rounded-xl overflow-hidden shadow-lg border-2 ${borderColor}`}>
                 <Image
-                  src={isAgency ? '/images/ams-app/f2-carriers.png' : '/images/ams-app/ledger-reports.png'}
+                  src={isAgency ? '/images/ams-app/f2-carriers.png' : isProducer ? '/images/ams-app/p-ledger-reports.png' : '/images/ams-app/ledger-reports.png'}
                   alt={isAgency ? 'Agency carrier management' : 'Detailed ledger reports'}
                   width={1440} height={900} className="w-full h-auto"
                 />
