@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { graph, organization, website } from '@/lib/structured-data'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const alata = Alata({ weight: '400', subsets: ['latin'], variable: '--font-alata' })
@@ -43,40 +44,9 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': 'https://agenient.com/#organization',
-      name: 'Metro Point Technology',
-      url: 'https://agenient.com',
-      logo: 'https://agenient.com/logo.svg',
-      description:
-        'Autonomous insurance agency software built by an active agent with 30 years of experience. Agenient AAMS delivers zero-touch commission reconciliation, agentic workflows, and autonomous operations.',
-      founder: { '@type': 'Person', name: 'Patrick Stabell' },
-      areaServed: { '@type': 'Country', name: 'United States' },
-      sameAs: ['https://github.com/pstabell'],
-    },
-    {
-      '@type': 'WebSite',
-      '@id': 'https://agenient.com/#website',
-      url: 'https://agenient.com',
-      name: 'Agenient',
-      publisher: { '@id': 'https://agenient.com/#organization' },
-    },
-    {
-      '@type': 'SoftwareApplication',
-      name: 'Agenient AAMS — Autonomous Agency Management System',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web',
-      url: 'https://agenient.com/AAMS',
-      description:
-        'Autonomous agency management system for insurance agencies and independent agents — zero-touch commission reconciliation, agent and policy management, and AI-powered CRM.',
-      publisher: { '@id': 'https://agenient.com/#organization' },
-    },
-  ],
-}
+// Site-wide JSON-LD: the company and the website. Product, price and breadcrumb data live on each page
+// (src/lib/structured-data.ts), so every page describes what it actually shows.
+const jsonLd = graph(organization, website)
 
 export default function RootLayout({
   children,
@@ -89,7 +59,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
       </head>
       <body className="min-h-screen flex flex-col">

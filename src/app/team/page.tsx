@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import JsonLd from "@/components/JsonLd";
+import { graph, breadcrumb } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Meet Our Team",
@@ -250,6 +252,7 @@ const team: TeamMember[] = [
 export default function TeamPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(breadcrumb(['Meet Our Team', '/team']))} />
       {/* Hero with Patrick + Team Intro */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

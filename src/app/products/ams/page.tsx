@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { graph, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'AMS Platform - Agency Management System',
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
 export default function AMSProduct() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(breadcrumb(['AMS Platform', '/products/ams']))} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

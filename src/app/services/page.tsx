@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { graph, breadcrumb, servicesFromServicesPage } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -88,6 +90,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(...servicesFromServicesPage(services), breadcrumb(['Services', '/services']))} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory py-24 overflow-hidden">
         {/* Decorative elements */}

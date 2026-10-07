@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import AIAgentCheckout from '@/components/AIAgentCheckout'
+import JsonLd from '@/components/JsonLd'
+import { graph, aiAgentTeamsService, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'AI Agent Teams',
@@ -99,6 +101,7 @@ const compatiblePlatforms = [
 export default function AIAgentTeamsPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(aiAgentTeamsService, breadcrumb(['AI Agent Teams', '/ai-agent-teams']))} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { graph, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Agenient AAMS for Insurance Agents',
@@ -12,5 +14,10 @@ export const metadata: Metadata = {
 }
 
 export default function AamsAgentsLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      {children}
+      <JsonLd data={graph(breadcrumb(['Agenient AAMS', '/AAMS'], ['For Insurance Agents', '/AAMS/agents']))} />
+    </>
+  )
 }

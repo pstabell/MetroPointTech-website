@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import FreeToolPage from '@/components/FreeToolPage'
+import JsonLd from '@/components/JsonLd'
+import { graph, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Month-End Variance Worksheet | Free Insurance Agency Tool',
@@ -9,6 +11,8 @@ export const metadata: Metadata = {
 
 export default function MonthEndVarianceWorksheetPage() {
   return (
+    <>
+      <JsonLd data={graph(breadcrumb(['Month-End Variance Worksheet', '/month-end-variance-worksheet']))} />
     <FreeToolPage
       eyebrow="FREE INSURANCE AGENCY TOOL"
       title="Month-End Variance Worksheet"
@@ -76,5 +80,6 @@ export default function MonthEndVarianceWorksheetPage() {
       finalHeadline="Stop closing the month blind"
       finalBody="Use the worksheet manually today, then let Agenient AAMS automate commission reconciliation, exception routing, and agency operations going forward."
     />
+    </>
   )
 }

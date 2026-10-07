@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { graph, wrapProposalGeneratorApp, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'WRAP Proposal Generator',
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
 export default function WRAPProposalGeneratorProduct() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(wrapProposalGeneratorApp, breadcrumb(['WRAP Proposal Generator', '/products/wrap-proposal-generator']))} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

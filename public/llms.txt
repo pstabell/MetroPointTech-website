@@ -1,0 +1,45 @@
+# Agenient
+
+> Agenient is autonomous insurance agency software from Metro Point Technology LLC in Cape Coral, Florida. Its main product, Agenient AAMS, is an autonomous agency management system for insurance agencies, solo agents and producers: commission tracking, carrier statement reconciliation and agentic back-office workflows. It is built by Patrick Stabell, who has 30 years of hands-on experience running independent insurance agencies.
+
+Agenient is for independent insurance agencies, solo insurance agents, and producers who work at agencies. It replaces manual commission tracking and statement reconciliation with software and AI agents that do the back-office work.
+
+Published pricing (US dollars, from agenient.com/AAMS):
+
+- Agenient AAMS Producer: free forever for producers at agencies, with a capped commission split (90% new / 80% renewal).
+- Solo agent plans: Starter $19.99/month, Pro $49.99/month, Autopilot $79.99/month.
+- Agency plans: Self-Service $99.99/month (1 user, extra users $49.99/month each), With AI Agent $199.99/month (1 user, extra users $99.99/month each), AI Plus $299.99/month (3 users included).
+- Starter and Agency Self-Service have a 14-day free trial with no credit card. Pro, Autopilot and Agency With AI Agent have a 14-day free trial that needs a credit card at signup. Agency AI Plus has no trial and can be cancelled anytime.
+- Agenient CRM: $99.99 per user per month, an add-on to the Agenient AAMS Agency plan.
+- AI Agent Teams: Basic $499.99/month, Premium $999.99/month, Enterprise $2,499.99/month, each with a one-time setup fee.
+
+Contact: Support@MetroPointTech.com or (239) 426-7058. Customers sign in and start trials at https://aams.agenient.com/login.
+
+## Products
+
+- [Agenient AAMS](https://agenient.com/AAMS): The autonomous agency management system: commission tracking, agentic reconciliation, real-time agent visibility, and all plans and prices.
+- [Agenient AAMS for insurance agents](https://agenient.com/AAMS/agents): Solo and producer-level agents. Producers at agencies use it free; solo plans start at $19.99 per month.
+- [Agenient AAMS for insurance agencies](https://agenient.com/AAMS/agencies): Multi-producer commission management and agency-wide reconciliation.
+- [Agenient CRM](https://agenient.com/AAMS-CRM): AI insurance agency CRM built into the AMS, with AI agents for quoting and renewals, 18 ACORD form generators and a 7-stage pipeline.
+- [AI Agent Teams](https://agenient.com/ai-agent-teams): Dedicated AI back-office agents connected to an agency's existing systems, with three monthly plans.
+- [Insurance Commission Tracking Software](https://agenient.com/products/commission-tracker): Commission tracking and carrier statement reconciliation for agencies and independent agents.
+- [WRAP Proposal Generator](https://agenient.com/products/wrap-proposal-generator): Free tool that creates WRAP (Wealth Risk Analysis & Protection) proposals as Word documents.
+
+## Free tools
+
+- [Commission Calculator](https://agenient.com/commission-calculator): Compare expected and actual carrier commission and find underpayments.
+- [Month-End Variance Worksheet](https://agenient.com/month-end-variance-worksheet): Spot commission, premium, receivable and carrier statement exceptions before month-end close.
+- [Periodic Review Checklist](https://agenient.com/periodic-review-checklist): Keep renewals, remarkets and client follow-ups on schedule.
+
+## Company
+
+- [About](https://agenient.com/about): Patrick Stabell and Metro Point Technology.
+- [Team](https://agenient.com/team): The management team: one founder and AI-powered team members.
+- [Services](https://agenient.com/services): System optimization, integrations, custom development and AI solutions.
+- [Contact](https://agenient.com/contact): Questions, demos and support.
+- [Blog](https://agenient.com/blog): Articles on insurance technology, commission tracking and AI infrastructure.
+
+## Optional
+
+- [Privacy Policy](https://agenient.com/privacy-policy): How Metro Point Technology LLC handles personal information.
+- [Terms of Service](https://agenient.com/terms-of-service): Terms for Metro Point Technology LLC software products.

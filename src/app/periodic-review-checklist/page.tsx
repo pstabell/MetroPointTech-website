@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import FreeToolPage from '@/components/FreeToolPage'
+import JsonLd from '@/components/JsonLd'
+import { graph, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Periodic Review Checklist | Free Insurance Agency Tool',
@@ -9,6 +11,8 @@ export const metadata: Metadata = {
 
 export default function PeriodicReviewChecklistPage() {
   return (
+    <>
+      <JsonLd data={graph(breadcrumb(['Periodic Review Checklist', '/periodic-review-checklist']))} />
     <FreeToolPage
       eyebrow="FREE INSURANCE AGENCY TOOL"
       title="Periodic Review Checklist"
@@ -76,5 +80,6 @@ export default function PeriodicReviewChecklistPage() {
       finalHeadline="Make every review cycle intentional"
       finalBody="Use the checklist manually today, then let Agenient AAMS automate client review workflows, renewal follow-up, and agency operating rhythm."
     />
+    </>
   )
 }

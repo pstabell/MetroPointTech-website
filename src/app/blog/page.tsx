@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
+import JsonLd from "@/components/JsonLd";
+import { graph, breadcrumb } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -111,6 +113,7 @@ export default async function BlogPage() {
 
   return (
     <main>
+      <JsonLd data={graph(breadcrumb(['Blog', '/blog']))} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

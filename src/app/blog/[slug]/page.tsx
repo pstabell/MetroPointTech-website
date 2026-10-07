@@ -2,6 +2,8 @@ import * as React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
+import JsonLd from "@/components/JsonLd";
+import { graph, breadcrumb } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -588,6 +590,7 @@ export default async function BlogPostPage({
 
   return (
     <main>
+      <JsonLd data={graph(breadcrumb(['Blog', '/blog'], [post.title, `/blog/${slug}`]))} />
       {/* Header */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-8 md:py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

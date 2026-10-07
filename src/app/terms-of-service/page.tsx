@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { graph, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
 export default function TermsOfService() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(breadcrumb(['Terms of Service', '/terms-of-service']))} />
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Terms of Service</h1>

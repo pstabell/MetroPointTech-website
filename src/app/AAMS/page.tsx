@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import AAMSContent from '@/components/AAMSContent'
+import JsonLd from '@/components/JsonLd'
+import { graph, aamsSoftware, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Agenient AAMS — Autonomous Agency Management System',
@@ -14,6 +16,7 @@ export default function AAMSPage() {
 
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(aamsSoftware, breadcrumb(['Agenient AAMS', '/AAMS']))} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

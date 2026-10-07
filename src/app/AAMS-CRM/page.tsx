@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { graph, crmSoftware, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Agenient CRM | AI AMS CRM for Insurance Agencies',
@@ -56,6 +58,7 @@ const features = [
 export default function AAMSCRMPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={graph(crmSoftware, breadcrumb(['Agenient CRM', '/AAMS-CRM']))} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark text-ivory py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

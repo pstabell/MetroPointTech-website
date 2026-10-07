@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { graph, commissionCalculatorApp, breadcrumb } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Commission Calculator',
@@ -12,5 +14,10 @@ export const metadata: Metadata = {
 }
 
 export default function CommissionCalculatorLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      {children}
+      <JsonLd data={graph(commissionCalculatorApp, breadcrumb(['Commission Calculator', '/commission-calculator']))} />
+    </>
+  )
 }
