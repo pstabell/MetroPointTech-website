@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import MicrosoftClarity from '@/components/MicrosoftClarity'
 import { graph, organization, website } from '@/lib/structured-data'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -114,6 +115,8 @@ export default function RootLayout({
             window.addEventListener('popstate',send);
           })();
         `}</Script>
+        {/* Microsoft Clarity — public pages only (see the component for the excluded paths) */}
+        <MicrosoftClarity />
       </body>
     </html>
   )

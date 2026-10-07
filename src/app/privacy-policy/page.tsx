@@ -62,6 +62,7 @@ export default function PrivacyPolicy() {
               <li><strong>Performance Cookies:</strong> Help us understand how you use our Services</li>
               <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
             </ul>
+            <p className="mt-3">We use Microsoft Clarity to understand how visitors use our website; Clarity uses cookies and records anonymized interactions such as clicks and scrolling, and you can learn how Microsoft handles that data in the <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="underline">Microsoft Privacy Statement</a>.</p>
           </div>
 
           <div>
