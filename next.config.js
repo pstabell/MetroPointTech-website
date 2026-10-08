@@ -39,6 +39,13 @@ const nextConfig = {
       { source: '/ams-app', destination: '/AAMS', permanent: true },
       { source: '/ams-app/agents', destination: AAMS_AGENT_VIEW, permanent: true },
       { source: '/ams-app/agencies', destination: AAMS_AGENCY_VIEW, permanent: true },
+      // The Claude Code Discord post is about our own engineering, so its home is metropointtechnology.com; that site
+      // sends its copies of the AAMS posts here.
+      {
+        source: '/blog/how-we-fixed-claude-code-broken-discord-channels',
+        destination: 'https://www.metropointtechnology.com/blog/how-we-fixed-claude-code-broken-discord-channels',
+        permanent: true,
+      },
     ]
   },
   async rewrites() {

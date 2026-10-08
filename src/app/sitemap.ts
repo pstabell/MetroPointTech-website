@@ -18,12 +18,14 @@ export const revalidate = 0;
 // with the same slug is de-duped below.
 const LEGACY_BLOG_SLUGS = [
   'why-insurance-agencies-lose-thousands-to-commission-errors',
-  'how-we-fixed-claude-code-broken-discord-channels',
   'how-to-dispute-underpaid-commissions-with-carriers',
   '5-signs-your-agency-needs-a-commission-tracker',
   'automated-reconciliation-saves-10-hours',
   'hidden-cost-of-spreadsheet-commission-tracking',
 ];
+
+// Posts whose home is another site: this site redirects them there (next.config.js), so they stay out of the sitemap.
+const BLOG_SLUGS_HOSTED_ELSEWHERE = new Set(['how-we-fixed-claude-code-broken-discord-channels']);
 
 type BlogRow = { slug: string; published_at: string | null };
 
@@ -86,6 +88,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugDates = new Map<string, Date>();
   for (const slug of LEGACY_BLOG_SLUGS) slugDates.set(slug, now);
   for (const row of published) {
+    if (BLOG_SLUGS_HOSTED_ELSEWHERE.has(row.slug)) continue;
     slugDates.set(row.slug, row.published_at ? new Date(row.published_at) : now);
   }
 

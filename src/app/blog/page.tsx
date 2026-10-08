@@ -41,6 +41,12 @@ interface BlogPost {
 // an empty state instead of crashing. All rendering goes through Supabase.
 const LEGACY_POSTS: BlogPost[] = [];
 
+// Posts whose home is another site (next.config.js redirects them there): the list links straight to that copy.
+const POSTS_HOSTED_ELSEWHERE: Record<string, string> = {
+  'how-we-fixed-claude-code-broken-discord-channels':
+    'https://www.metropointtechnology.com/blog/how-we-fixed-claude-code-broken-discord-channels',
+};
+
 function categoryColor(cat: string) {
   switch (cat) {
     case "AI Infrastructure":
@@ -135,7 +141,7 @@ export default async function BlogPage() {
             {posts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={POSTS_HOSTED_ELSEWHERE[post.slug] ?? `/blog/${post.slug}`}
                 className="block group"
               >
                 <article className="border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-accent transition-all duration-200">

@@ -21,9 +21,8 @@ export const metadata: Metadata = {
   },
   description: 'Agenient AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
   keywords: 'Agenient, Agenient AAMS, AAMS, autonomous agency management system, agentic AI, zero-touch operations, insurance software, commission tracking, insurance CRM',
-  alternates: {
-    canonical: '/',
-  },
+  // No site-wide canonical: each page names its own (the home page in page.tsx). A default here pointed every page
+  // without one at the home page.
   openGraph: {
     type: 'website',
     siteName: 'Agenient',

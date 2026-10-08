@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
 import ProductShowcase from '@/components/ProductShowcase'
@@ -6,6 +7,10 @@ import CallToAction from '@/components/CallToAction'
 import ExplainerVideo from '@/components/ExplainerVideo'
 import JsonLd from '@/components/JsonLd'
 import { graph, aamsSoftware, crmSoftware, aiAgentTeamsService } from '@/lib/structured-data'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 export default function Home() {
   return (
