@@ -25,7 +25,7 @@ export default function CallToAction() {
           </Link>
         </div>
         <p className="mt-6 text-sm text-[#8BA5B8]">
-          No credit card required • 14-day free trial • Cancel anytime
+          No card needed on Producer, Starter and Agency Self-Service • 14-day free trial • Cancel anytime
         </p>
       </div>
     </section>

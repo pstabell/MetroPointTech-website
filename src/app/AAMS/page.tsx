@@ -46,7 +46,7 @@ export default function AAMSPage() {
                 </a>
               </div>
               <p className="text-sm text-[#A9BFCF] mt-4">
-                No credit card required. Cancel anytime.
+                No card needed on Producer, Starter and Agency Self-Service. Cancel anytime.
               </p>
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-white/30">
@@ -213,7 +213,7 @@ export default function AAMSPage() {
               <div className="text-4xl mb-4">&#128274;</div>
               <h3 className="text-xl font-bold mb-3">No Lock-In, No Exit Fees</h3>
               <p className="text-neutral-dark">
-                14-day free trial. No credit card required. No setup fees. No multi-year contracts. No exit fees. Export all your data in minutes and take it with you. We earn your business every month.
+                14-day free trial, with no card needed on Producer, Starter and Agency Self-Service. No setup fees. No multi-year contracts. No exit fees. Export all your data in minutes and take it with you. We earn your business every month.
               </p>
             </div>
           </div>

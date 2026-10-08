@@ -259,7 +259,7 @@ export default function Contact() {
                     Start Free 14-Day Trial
                   </a>
                   <p className="text-sm text-neutral-light mt-3">
-                    No credit card required
+                    No card needed on Producer, Starter and Agency Self-Service
                   </p>
                 </div>
               </div>
