@@ -57,7 +57,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${alata.variable} ${montserrat.variable}`}>
       <head>
+        {/* Agenient emblem (Patrick 2026-10-08: Google showed the old Metro Point Technology icon). The .ico comes
+            first for search engines and older browsers; files built by scripts/make-favicons.mjs. */}
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}

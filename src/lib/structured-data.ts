@@ -23,7 +23,7 @@ export const organization = {
   logo: `${SITE}/logo.svg`,
   description:
     'Autonomous insurance agency software built by an active agent with 30 years of experience. Agenient AAMS delivers zero-touch commission reconciliation, agentic workflows, and autonomous operations.',
-  brand: { '@type': 'Brand', name: 'Agenient' },
+  brand: { '@type': 'Brand', name: 'Agenient', logo: `${SITE}/agenient-emblem-512.png` },
   email: 'Support@MetroPointTech.com',
   telephone: '+1-239-426-7058',
   address: {
