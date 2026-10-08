@@ -46,6 +46,7 @@ export const organization = {
     name: 'Patrick Stabell',
     url: `${SITE}/about`,
     sameAs: [
+      'https://patrickstabell.com/',
       'https://www.linkedin.com/in/patrickstabell',
       'https://metropointinsurance.com/about.html',
       'https://www.metropointtechnology.com/about',
