@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumb } from "@/lib/structured-data";
+import { graph, breadcrumb, ORG_ID, SITE } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -28,6 +28,9 @@ type ResolvedPost = {
   featured_image_url?: string | null;
   deck?: string | null;
   image_seed?: string | null;
+  // The post's own meta description (written for search) and its ISO publish time, from Supabase.
+  description?: string | null;
+  published_at?: string | null;
 };
 
 async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
@@ -37,7 +40,7 @@ async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
     const { data } = await sb
       .from("mkt_blog_posts")
       .select(
-        "title, body, product_or_service, published_at, featured_image_url, deck, image_seed"
+        "title, body, seo_meta_description, product_or_service, published_at, featured_image_url, deck, image_seed"
       )
       .eq(column, key)
       .eq("status", "published")
@@ -62,6 +65,8 @@ async function loadFromSupabase(key: string): Promise<ResolvedPost | null> {
       featured_image_url: (data.featured_image_url as string) || null,
       deck: (data.deck as string) || null,
       image_seed: (data.image_seed as string) || null,
+      description: (data.seo_meta_description as string) || null,
+      published_at: (data.published_at as string) || null,
     };
   } catch {
     return null;
@@ -500,6 +505,29 @@ async function resolvePost(slug: string): Promise<ResolvedPost | null> {
   return { ...legacy };
 }
 
+// Plain-text excerpt for posts without a meta description: the article body with its markdown and author-only
+// scaffolding removed, cut at a word boundary. The old description was the first 160 raw characters, markdown and all.
+function plainExcerpt(markdown: string, max = 160): string {
+  const text = stripScaffolding(markdown)
+    .split("\n")
+    .filter((line) => !/^\s*#/.test(line))
+    .map((line) => line.replace(/^\s*(?:[-+*]|\d+\.)\s+/, ""))
+    .join(" ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`>]+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(" ");
+  return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.-]+$/, "") + "…";
+}
+
+function postDescription(post: ResolvedPost): string {
+  return post.description?.trim() || plainExcerpt(post.content);
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -508,15 +536,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await resolvePost(slug);
   if (!post) return { title: "Post Not Found" };
+  const description = postDescription(post);
+  const images = post.featured_image_url ? [{ url: post.featured_image_url, alt: post.title }] : undefined;
   return {
     title: post.title,
-    description: post.content.slice(0, 160) + "...",
+    description,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       type: "article",
       title: post.title,
-      description: post.content.slice(0, 160) + "...",
+      description,
       url: `/blog/${slug}`,
+      ...(post.published_at ? { publishedTime: post.published_at } : {}),
+      ...(images ? { images } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+      ...(images ? { images } : {}),
     },
   };
 }
@@ -590,7 +628,24 @@ export default async function BlogPostPage({
 
   return (
     <main>
-      <JsonLd data={graph(breadcrumb(['Blog', '/blog'], [post.title, `/blog/${slug}`]))} />
+      <JsonLd
+        data={graph(
+          {
+            '@type': 'BlogPosting',
+            '@id': `${SITE}/blog/${slug}#article`,
+            headline: post.title,
+            description: postDescription(post),
+            url: `${SITE}/blog/${slug}`,
+            mainEntityOfPage: `${SITE}/blog/${slug}`,
+            ...(post.published_at ? { datePublished: post.published_at } : {}),
+            ...(post.featured_image_url ? { image: post.featured_image_url } : {}),
+            author: { '@id': ORG_ID },
+            publisher: { '@id': ORG_ID },
+            inLanguage: 'en-US',
+          },
+          breadcrumb(['Blog', '/blog'], [post.title, `/blog/${slug}`])
+        )}
+      />
       {/* Header */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-8 md:py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
