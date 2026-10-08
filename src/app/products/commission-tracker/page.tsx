@@ -28,7 +28,7 @@ export default function CommissionTrackerProduct() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://agenient.com/ams-app"
+                href="https://agenient.com/AAMS"
                 className="bg-accent text-[#001F33] hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition text-center"
               >
                 Start Free 14-Day Trial
@@ -249,7 +249,7 @@ export default function CommissionTrackerProduct() {
             No credit card required. See how much you've been leaving on the table.
           </p>
           <a
-            href="https://agenient.com/ams-app"
+            href="https://agenient.com/AAMS"
             className="inline-block bg-accent text-[#001F33] hover:bg-accent-dark px-8 py-4 rounded-lg text-lg font-semibold transition"
           >
             Get Started Free

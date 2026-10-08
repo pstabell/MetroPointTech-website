@@ -52,8 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes: Array<{ url: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
     { url: '/', priority: 1.0, changeFrequency: 'weekly' },
     { url: '/AAMS', priority: 0.9, changeFrequency: 'weekly' },
-    { url: '/AAMS/agents', priority: 0.9, changeFrequency: 'weekly' },
-    { url: '/AAMS/agencies', priority: 0.9, changeFrequency: 'weekly' },
+    // /AAMS/agents and /AAMS/agencies removed 2026-10-08: they are redirects to views of /AAMS now.
     { url: '/AAMS-CRM', priority: 0.8, changeFrequency: 'weekly' },
     // /ams-app* removed 2026-06-01: those routes 307-redirect to /AAMS*, and
     // listing redirecting URLs in the sitemap triggered Google Search Console

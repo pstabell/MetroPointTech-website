@@ -230,7 +230,7 @@ export default function AAMSCRMPage() {
 
             <div className="mt-6 text-center space-y-2">
               <p className="text-sm text-neutral-light">
-                Don't have Agenient AAMS yet? <Link href="/AAMS/agencies" className="text-gold-ink font-semibold hover:underline">Sign up for Agenient AAMS Agency first</Link>
+                Don't have Agenient AAMS yet? <Link href="/AAMS?view=agency#features" className="text-gold-ink font-semibold hover:underline">Sign up for Agenient AAMS Agency first</Link>
               </p>
               <p className="text-sm text-neutral-light">
                 Solo agents: upgrade to the Agency tier ($199.99/mo), then add CRM for $99.99/user/mo.
@@ -265,7 +265,7 @@ export default function AAMSCRMPage() {
               Add CRM to Your Agenient AAMS
             </Link>
             <Link
-              href="/AAMS/agencies"
+              href="/AAMS?view=agency#features"
               className="inline-block bg-white/10 hover:bg-white/20 text-ivory px-8 py-4 rounded-xl text-lg font-semibold transition-all backdrop-blur-sm"
             >
               Get Agenient AAMS First

@@ -18,8 +18,8 @@ Contact: Support@MetroPointTech.com or (239) 426-7058. Customers sign in and sta
 ## Products
 
 - [Agenient AAMS](https://agenient.com/AAMS): The autonomous agency management system: commission tracking, agentic reconciliation, real-time agent visibility, and all plans and prices.
-- [Agenient AAMS for insurance agents](https://agenient.com/AAMS/agents): Solo and producer-level agents. Producers at agencies use it free; solo plans start at $19.99 per month.
-- [Agenient AAMS for insurance agencies](https://agenient.com/AAMS/agencies): Multi-producer commission management and agency-wide reconciliation.
+- [Agenient AAMS for insurance agents](https://agenient.com/AAMS?view=agent): Solo and producer-level agents. Producers at agencies use it free; solo plans start at $19.99 per month.
+- [Agenient AAMS for insurance agencies](https://agenient.com/AAMS?view=agency): Multi-producer commission management and agency-wide reconciliation.
 - [Agenient CRM](https://agenient.com/AAMS-CRM): AI insurance agency CRM built into the AMS, with AI agents for quoting and renewals, 18 ACORD form generators and a 7-stage pipeline.
 - [AI Agent Teams](https://agenient.com/ai-agent-teams): Dedicated AI back-office agents connected to an agency's existing systems, with three monthly plans.
 - [Insurance Commission Tracking Software](https://agenient.com/products/commission-tracker): Commission tracking and carrier statement reconciliation for agencies and independent agents.

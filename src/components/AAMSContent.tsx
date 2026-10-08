@@ -10,6 +10,12 @@ export default function AAMSContent() {
   const [view, setView] = useState<View>('agency')
 
   useEffect(() => {
+    // ?view= comes from the /AAMS/agents and /AAMS/agencies redirects (next.config.js) and links that name a view.
+    const fromUrl = new URLSearchParams(window.location.search).get('view')
+    if (fromUrl === 'producer' || fromUrl === 'agent' || fromUrl === 'agency') {
+      setView(fromUrl)
+      return
+    }
     const saved = localStorage.getItem('ams_landing_view')
     if (saved === 'producer' || saved === 'agent' || saved === 'agency') {
       setView(saved)

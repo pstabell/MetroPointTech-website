@@ -36,7 +36,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/AAMS/agents" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
+                <Link href="/AAMS?view=agent#features" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
                   Agenient Solo
                 </Link>
               </li>
