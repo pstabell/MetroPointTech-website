@@ -39,7 +39,18 @@ export const organization = {
     email: 'Support@MetroPointTech.com',
     url: `${SITE}/contact`,
   },
-  founder: { '@type': 'Person', name: 'Patrick Stabell' },
+  // sameAs ties Patrick's own pages together so search engines treat them as one person (Patrick 2026-10-08:
+  // old employer posts were outranking his own pages for his name).
+  founder: {
+    '@type': 'Person',
+    name: 'Patrick Stabell',
+    url: `${SITE}/about`,
+    sameAs: [
+      'https://www.linkedin.com/in/patrickstabell',
+      'https://metropointinsurance.com/about.html',
+      'https://www.metropointtechnology.com/about',
+    ],
+  },
   areaServed: { '@type': 'Country', name: 'United States' },
   sameAs: ['https://github.com/pstabell'],
 }
