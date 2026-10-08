@@ -37,7 +37,9 @@ export default function MicrosoftClarity() {
   if (excluded) return null
 
   return (
-    <Script id="microsoft-clarity" strategy="afterInteractive">{`
+    // lazyOnload: Clarity starts once the page has finished loading, so it never competes with the first render on a
+    // phone (SEO audit 2026-10-08, item 20). Google Analytics in layout.tsx loads the same way.
+    <Script id="microsoft-clarity" strategy="lazyOnload">{`
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
