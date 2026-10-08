@@ -66,6 +66,15 @@ const nextConfig = {
       { source: '/ai4/', destination: '/ai4.html' },
     ]
   },
+  async headers() {
+    return [
+      // The Ai4 landing page is a bio of Patrick that competed with patrickstabell.com in search (SEO audit 2026-10-08).
+      ...['/ai4', '/ai4/', '/ai4.html'].map((source) => ({
+        source,
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      })),
+    ]
+  },
 }
 
 module.exports = nextConfig
