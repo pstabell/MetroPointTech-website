@@ -53,6 +53,11 @@ export default function About() {
               Every feature in our products solves a real problem I've encountered while running an agency.
               If it doesn't work for us, we don't ship it. That's the Metro Point Technology difference.
             </p>
+
+            <p className="text-slate-800 mb-6">
+              More about me at <a href="https://patrickstabell.com/" className="text-gold-ink underline">patrickstabell.com</a> and on{' '}
+              <a href="https://www.linkedin.com/in/patrickstabell" className="text-gold-ink underline">LinkedIn</a>.
+            </p>
           </div>
         </div>
       </section>

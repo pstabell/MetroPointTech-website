@@ -78,6 +78,10 @@ export default function Footer() {
 
         <div className="border-t border-[#1a3a52] mt-8 pt-8 text-center text-sm text-[#8BA5B8] space-y-2">
           <p>&copy; 2026 Metro Point Technology LLC. All rights reserved.</p>
+          <p>
+            A <a href="https://www.metropointtechnology.com/" className="hover:text-[#D4AF37] transition">Metro Point Technology</a> company, founded by{' '}
+            <a href="https://patrickstabell.com/" className="hover:text-[#D4AF37] transition">Patrick Stabell</a>.
+          </p>
           <p className="space-x-4">
             <Link href="/privacy-policy" className="hover:text-[#D4AF37] transition">Privacy Policy</Link>
             <span aria-hidden="true">&middot;</span>

@@ -43,6 +43,7 @@ export const organization = {
   // old employer posts were outranking his own pages for his name).
   founder: {
     '@type': 'Person',
+    '@id': 'https://patrickstabell.com/#person',
     name: 'Patrick Stabell',
     url: `${SITE}/about`,
     sameAs: [
