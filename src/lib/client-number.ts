@@ -5,14 +5,20 @@
  * from a safe alphabet (no 0/O/1/I confusables). Not sequential —
  * sequential leaks how many customers we have, which is valuable
  * competitive intel we do not want to hand out.
+ *
+ * The number is the only key to the onboarding form, so it is drawn from
+ * the CSPRNG (crypto.randomInt), not Math.random (security fix 2026-10-13).
+ * The format is unchanged so existing numbers and links keep working.
  */
+
+import { randomInt } from 'crypto'
 
 const ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789' // 32 chars, no 0/O/1/I
 
 export function generateClientNumber(): string {
   let suffix = ''
   for (let i = 0; i < 6; i++) {
-    suffix += ALPHABET[Math.floor(Math.random() * ALPHABET.length)]
+    suffix += ALPHABET[randomInt(ALPHABET.length)]
   }
   return `MPT-${suffix}`
 }

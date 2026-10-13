@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
 import { isValidClientNumber } from '@/lib/client-number'
+import { guardOnboarding, recordMiss } from '@/lib/rate-limit'
 import { questionsForTier, sectionsForTier, type Tier } from '@/lib/onboarding-questions'
 
 /* ------------------------------------------------------------------ */
@@ -14,6 +15,9 @@ import { questionsForTier, sectionsForTier, type Tier } from '@/lib/onboarding-q
 /* ------------------------------------------------------------------ */
 
 export async function POST(req: NextRequest) {
+  const blocked = guardOnboarding(req, 'load', 30)
+  if (blocked) return blocked
+
   let body: { clientNumber?: string }
   try {
     body = await req.json()
@@ -41,6 +45,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: customerError.message }, { status: 500 })
   }
   if (!customer) {
+    recordMiss(req)
     return NextResponse.json({ error: 'Client number not found. Double-check the number in your welcome email.' }, { status: 404 })
   }
 

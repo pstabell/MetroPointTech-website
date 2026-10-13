@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
 import { isValidClientNumber } from '@/lib/client-number'
+import { guardOnboarding, recordMiss } from '@/lib/rate-limit'
 import { computeProgressPercent, questionsForTier, type Tier } from '@/lib/onboarding-questions'
 
 /* ------------------------------------------------------------------ */
@@ -15,6 +16,10 @@ import { computeProgressPercent, questionsForTier, type Tier } from '@/lib/onboa
 /* ------------------------------------------------------------------ */
 
 export async function POST(req: NextRequest) {
+  // Auto-save fires on every debounced change, so the general limit is generous.
+  const blocked = guardOnboarding(req, 'save', 300)
+  if (blocked) return blocked
+
   let body: { clientNumber?: string; responses?: Record<string, unknown> }
   try {
     body = await req.json()
@@ -42,6 +47,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: customerError.message }, { status: 500 })
   }
   if (!customer) {
+    recordMiss(req)
     return NextResponse.json({ error: 'Client number not found' }, { status: 404 })
   }
   if (customer.onboarding_complete) {
