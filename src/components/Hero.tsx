@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative py-20 md:py-32" style={{ background: 'linear-gradient(180deg, #001F33 0%, #003B5C 55%, #001F33 100%)' }}>
+    <section className="relative pt-10 pb-20 md:pt-14 md:pb-32" style={{ background: 'linear-gradient(180deg, #001F33 0%, #003B5C 55%, #001F33 100%)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-ivory">
