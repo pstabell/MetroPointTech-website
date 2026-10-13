@@ -200,7 +200,7 @@ export const commissionCalculatorApp = freeWebApp('Commission Calculator', '/com
 
 export const wrapProposalGeneratorApp = {
   ...freeWebApp('WRAP Proposal Generator', '/products/wrap-proposal-generator',
-    'Create professional WRAP (Wealth Risk Analysis & Protection) proposals in minutes. Beautiful Word documents with your agency branding. Free to use, no sign-up required, export to Word instantly.'),
+    'Create professional WRAP (Wealth Risk Analysis & Protection) proposals in minutes. Beautiful Word documents with your agency branding. Free to use, no credit card, export to Word instantly.'),
   alternateName: 'WRAP Insurance Proposal Generator',
   applicationSubCategory: 'Insurance proposal software',
   // The tool itself; the product page above is the canonical description of it.

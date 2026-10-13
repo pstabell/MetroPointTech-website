@@ -64,7 +64,7 @@ export default function WRAPProposalGeneratorProduct() {
               </Link>
             </div>
             <p className="mt-4 text-sm">
-              Free to use • No sign-up required • Export to Word instantly
+              Free to use • No credit card • Export to Word instantly
             </p>
           </div>
         </div>
@@ -282,7 +282,7 @@ export default function WRAPProposalGeneratorProduct() {
             Start Creating Professional WRAP Proposals
           </h2>
           <p className="text-xl mb-8 text-slate-800">
-            Free to use. No sign-up required. Export to Word instantly.
+            Free to use. No credit card. Export to Word instantly.
           </p>
           <a
             href="https://wrap.metropointtech.com"
