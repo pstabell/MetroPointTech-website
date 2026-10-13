@@ -198,8 +198,64 @@ const freeWebApp = (name: string, path: string, description: string) => ({
 export const commissionCalculatorApp = freeWebApp('Commission Calculator', '/commission-calculator',
   'Free commission calculator for insurance agents. Compare expected vs actual carrier commission, surface underpayments, and quantify revenue leakage on every policy.')
 
-export const wrapProposalGeneratorApp = freeWebApp('WRAP Proposal Generator', '/products/wrap-proposal-generator',
-  'Create professional WRAP (Wealth Risk Analysis & Protection) proposals in minutes. Beautiful Word documents with your agency branding. Free to use, no sign-up required, export to Word instantly.')
+export const wrapProposalGeneratorApp = {
+  ...freeWebApp('WRAP Proposal Generator', '/products/wrap-proposal-generator',
+    'Create professional WRAP (Wealth Risk Analysis & Protection) proposals in minutes. Beautiful Word documents with your agency branding. Free to use, no sign-up required, export to Word instantly.'),
+  alternateName: 'WRAP Insurance Proposal Generator',
+  applicationSubCategory: 'Insurance proposal software',
+  // The tool itself; the product page above is the canonical description of it.
+  installUrl: 'https://wrap.metropointtech.com/',
+  // Features as built in the app (wrap-proposal-generator repo: coverage-templates.ts, extract-pdf-data, generate-word).
+  featureList: [
+    '10 coverage types: Homeowners, Condo, Wind/Hurricane, Auto, Umbrella/Excess, Watercraft, Jewelry & Valuables, Cyber, Fine Arts, Other',
+    'Reads current declaration pages and new carrier proposals (PDF) and fills in the form',
+    'Expiring vs. renewal premium summary with total savings',
+    'Agency logo and up to 4 team members with photos',
+    'Editable Word (.docx) export',
+    'One-click sample data',
+  ],
+}
+
+// FAQ shown on the WRAP product page; the same text feeds its FAQPage schema so the two never drift.
+export const wrapFaq: { q: string; a: string }[] = [
+  {
+    q: 'What is a WRAP insurance proposal?',
+    a: 'WRAP stands for Wealth Risk Analysis & Protection. It is one proposal document that puts a client\'s whole personal insurance program in one place: homes, condos, wind, autos, umbrella, watercraft, jewelry, fine art and cyber, with the expiring coverage and premium next to what you are proposing.',
+  },
+  {
+    q: 'Who is the WRAP Proposal Generator for?',
+    a: 'Independent agents and agencies who write high-net-worth personal lines and present renewals or remarketed accounts to clients with several policies.',
+  },
+  {
+    q: 'Can it read my client\'s declaration pages?',
+    a: 'Yes. Upload the client\'s current declaration pages and the new carrier proposals as PDFs. The generator pulls client details, carriers, premiums, limits and deductibles into the form, and you review every field before you create the proposal.',
+  },
+  {
+    q: 'What does the finished proposal include?',
+    a: 'A Private Client Insurance Proposal cover page with your agency logo, a contents page, a welcome letter, an about-your-agency page, your team with photos and contact details, current and proposed coverage details for each line, a premium summary comparing expiring and renewal premiums with the total savings, and recommendations and next steps with your notes.',
+  },
+  {
+    q: 'What file format do I get?',
+    a: 'A fully editable Microsoft Word (.docx) document, so you can adjust wording before you email or print it.',
+  },
+  {
+    q: 'Does it quote or rate policies?',
+    a: 'No. You bring the quotes from your carriers or rater; the generator turns them into one branded, side-by-side proposal for the client.',
+  },
+  {
+    q: 'How much does it cost?',
+    a: 'The WRAP Proposal Generator is free to use.',
+  },
+]
+
+export const faqPage = (items: { q: string; a: string }[]) => ({
+  '@type': 'FAQPage',
+  mainEntity: items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+})
 
 // The /services page offers, verbatim from src/app/services/page.tsx (no prices are published there).
 export const servicesFromServicesPage = (items: { title: string; description: string }[]) =>

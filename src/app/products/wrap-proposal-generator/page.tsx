@@ -1,25 +1,47 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import JsonLd from '@/components/JsonLd'
-import { graph, wrapProposalGeneratorApp, breadcrumb } from '@/lib/structured-data'
+import { graph, wrapProposalGeneratorApp, wrapFaq, faqPage, breadcrumb } from '@/lib/structured-data'
+
+// Target queries (SEO 2026-10-13): insurance proposal generator, high-net-worth insurance proposal,
+// personal lines proposal software, WRAP proposal generator.
+const TITLE = 'WRAP: Free Insurance Proposal Generator for HNW Agents'
+const DESCRIPTION = 'Free insurance proposal generator for high-net-worth agents. Compare current vs. proposed premiums across 10 coverage types and export a branded Word proposal.'
+const URL = 'https://agenient.com/products/wrap-proposal-generator'
 
 export const metadata: Metadata = {
-  title: 'WRAP Proposal Generator',
-  description: 'Create professional WRAP (Wealth Risk Analysis & Protection) proposals in minutes. Beautiful Word documents with your agency branding.',
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: 'insurance proposal generator, insurance proposal software, high net worth insurance proposal, personal lines proposal, WRAP proposal, renewal proposal',
   alternates: { canonical: '/products/wrap-proposal-generator' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Agenient',
+    title: `${TITLE} | Agenient`,
+    description: DESCRIPTION,
+    url: URL,
+    // Named explicitly: with a page-level openGraph object the root opengraph-image.png was not emitted here.
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630, alt: 'Agenient - Autonomous Insurance Software' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${TITLE} | Agenient`,
+    description: DESCRIPTION,
+    images: ['/twitter-image.png'],
+  },
 }
 
 export default function WRAPProposalGeneratorProduct() {
   return (
     <div className="min-h-screen">
-      <JsonLd data={graph(wrapProposalGeneratorApp, breadcrumb(['WRAP Proposal Generator', '/products/wrap-proposal-generator']))} />
+      <JsonLd data={graph(wrapProposalGeneratorApp, faqPage(wrapFaq), breadcrumb(['WRAP Proposal Generator', '/products/wrap-proposal-generator']))} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-accent font-semibold mb-4">FOR HIGH-NET-WORTH AGENTS</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              WRAP Proposal Generator
+              WRAP Insurance Proposal Generator
             </h1>
             <p className="text-xl mb-8 text-[#C9D6E1]">
               Create professional Wealth Risk Analysis & Protection proposals in minutes.
@@ -198,6 +220,58 @@ export default function WRAPProposalGeneratorProduct() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 md:py-24 bg-neutral-lighter">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+              How to Build an Insurance Proposal in Four Steps
+            </h2>
+            <p className="text-xl text-slate-800">
+              From declaration pages to a client-ready Word document
+            </p>
+          </div>
+
+          <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { step: '1', title: 'Add your agency', text: 'Upload your agency logo and add up to 4 team members with photos, titles and contact details.' },
+              { step: '2', title: 'Upload the PDFs', text: 'Drop in the client\'s current declaration pages and the new carrier proposals. The generator fills in carriers, premiums, limits and deductibles for you to review.' },
+              { step: '3', title: 'Choose the coverages', text: 'Pick from 10 coverage types and adjust any field. Expiring and renewal premiums total up automatically, with the savings shown.' },
+              { step: '4', title: 'Export to Word', text: 'Download an editable Word proposal with a cover page, contents, coverage details, premium summary and next steps.' },
+            ].map((s) => (
+              <li key={s.step} className="bg-white rounded-xl p-8">
+                <div className="text-3xl font-bold text-gold-ink mb-3">{s.step}</div>
+                <h3 className="text-xl font-bold mb-3 text-slate-800">{s.title}</h3>
+                <p className="text-slate-800">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* FAQ (same text feeds the FAQPage schema above) */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gold-ink mb-10 text-center">
+            Insurance Proposal Generator FAQ
+          </h2>
+          <div className="space-y-8">
+            {wrapFaq.map(({ q, a }) => (
+              <div key={q}>
+                <h3 className="text-xl font-bold mb-2 text-slate-800">{q}</h3>
+                <p className="text-slate-800">{a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-slate-800">
+            Tracking the commission on the policies you write? See the free{' '}
+            <Link href="/commission-calculator" className="text-gold-ink underline">insurance commission calculator</Link>{' '}
+            and{' '}
+            <Link href="/products/commission-tracker" className="text-gold-ink underline">insurance commission tracking software</Link>.
+          </p>
         </div>
       </section>
 

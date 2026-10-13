@@ -142,6 +142,17 @@ export default function ProductShowcase() {
             </div>
           ))}
         </div>
+
+        <p className="text-center text-[#A9BFCF] mt-12">
+          Free tools for agents:{' '}
+          <Link href="/products/wrap-proposal-generator" className="text-[#D4AF37] hover:text-[#E5C158] underline">
+            WRAP insurance proposal generator
+          </Link>{' '}
+          and{' '}
+          <Link href="/commission-calculator" className="text-[#D4AF37] hover:text-[#E5C158] underline">
+            commission calculator
+          </Link>
+        </p>
       </div>
     </section>
   )

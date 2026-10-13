@@ -47,7 +47,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/products/wrap-proposal-generator" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
-                  WRAP Proposal Generator
+                  WRAP Insurance Proposal Generator
                 </Link>
               </li>
             </ul>
