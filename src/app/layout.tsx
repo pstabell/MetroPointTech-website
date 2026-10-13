@@ -28,7 +28,8 @@ export const metadata: Metadata = {
     siteName: 'Agenient',
     title: 'Agenient | Autonomous Insurance Software',
     description: 'Agenient AAMS — the autonomous evolution of legacy AMS platforms. Zero-touch commission reconciliation, agentic workflows, and autonomous operations built by an active agent with 30 years of experience.',
-    url: 'https://agenient.com',
+    // No og:url here: pages without their own openGraph inherited the home page's URL. Pages name it via
+    // pageMetadata (src/lib/seo.ts).
   },
   twitter: {
     card: 'summary_large_image',

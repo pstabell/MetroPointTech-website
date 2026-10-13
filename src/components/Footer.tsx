@@ -42,7 +42,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/ai-agent-teams" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
-                  AI Agents
+                  AI Agents for Agencies
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/commission-tracker" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
+                  Commission Tracking Software
                 </Link>
               </li>
               <li>
@@ -70,6 +75,16 @@ export default function Footer() {
               <li>
                 <Link href="/commission-calculator" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
                   Commission Leak Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/month-end-variance-worksheet" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
+                  Month-End Variance Worksheet
+                </Link>
+              </li>
+              <li>
+                <Link href="/periodic-review-checklist" className="text-[#8BA5B8] hover:text-[#D4AF37] transition">
+                  Periodic Review Checklist
                 </Link>
               </li>
             </ul>

@@ -60,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // listing redirecting URLs in the sitemap triggered Google Search Console
     // "page with redirect" / "redirect error" indexing notices. The canonical
     // /AAMS pages above are what should be indexed.
-    { url: '/products/ams', priority: 0.7, changeFrequency: 'weekly' },
+    // /products/ams removed 2026-10-13: an older duplicate of /AAMS with a price table that did not match; it 308s there.
     { url: '/products/commission-tracker', priority: 0.8, changeFrequency: 'weekly' },
     { url: '/products/wrap-proposal-generator', priority: 0.7, changeFrequency: 'weekly' },
     { url: '/commission-calculator', priority: 0.7, changeFrequency: 'monthly' },
@@ -69,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/services', priority: 0.6, changeFrequency: 'monthly' },
     { url: '/ai-agent-teams', priority: 0.6, changeFrequency: 'monthly' },
     { url: '/about', priority: 0.5, changeFrequency: 'monthly' },
-    { url: '/team', priority: 0.5, changeFrequency: 'monthly' },
+    // /team left out 2026-10-13: it copies metropointtechnology.com/team and names that page as its canonical.
     { url: '/contact', priority: 0.5, changeFrequency: 'monthly' },
     { url: '/blog', priority: 0.7, changeFrequency: 'daily' },
     { url: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly' },

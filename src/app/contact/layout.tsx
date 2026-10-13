@@ -1,17 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import JsonLd from '@/components/JsonLd'
 import { graph, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Get in touch with Metro Point Technology. Questions about Agenient AAMS, the agent commission tracker, or our autonomous insurance software — we respond personally.',
-  alternates: { canonical: '/contact' },
-  openGraph: {
-    title: 'Contact | Metro Point Technology',
-    description: 'Get in touch with Metro Point Technology about Agenient AAMS or our autonomous insurance software.',
-    url: 'https://agenient.com/contact',
-  },
-}
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Contact Us',
+  description: 'Questions about Agenient AAMS, the commission tracker or our AI agents for insurance agencies? Get in touch with Metro Point Technology; we respond personally.',
+  path: '/contact',
+})
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
   return (

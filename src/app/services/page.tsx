@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import JsonLd from '@/components/JsonLd'
 import { graph, breadcrumb, servicesFromServicesPage } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Technology services that actually make sense. System optimization, integrations, custom development, and AI-powered solutions - all delivered with a personal touch.',
-  alternates: { canonical: '/services' },
-}
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Integration, Automation and AI Services',
+  description: 'Technology services that make sense: system optimization, integrations, custom development and AI-powered solutions, delivered with a personal touch.',
+  path: '/services',
+})
 
 const services = [
   {

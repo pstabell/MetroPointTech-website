@@ -2,8 +2,8 @@
 // Perplexity, Gemini, Claude) read the products, prices and company facts correctly.
 // Every fact and price here is copied from what the site already shows. When a price or plan changes on a
 // page, change it here too (AAMS plans: src/components/AAMSContent.tsx; CRM: src/app/AAMS-CRM/page.tsx;
-// AI Agent Teams: src/app/ai-agent-teams/page.tsx). /products/ams carries an older price table that does
-// not match /AAMS, so it is deliberately left out of the offers below.
+// AI Agent Teams: src/app/ai-agent-teams/page.tsx). /products/ams (an older price table that did not match
+// /AAMS) was retired 2026-10-13 and 308s to /AAMS.
 
 export const SITE = 'https://agenient.com'
 export const ORG_ID = `${SITE}/#organization`

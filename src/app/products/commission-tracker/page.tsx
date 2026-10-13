@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import JsonLd from '@/components/JsonLd'
 import { graph, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
   title: 'Insurance Commission Tracking Software',
-  description: 'Insurance commission tracking software for agencies and independent agents. Track policies, reconcile carrier statements, and catch every dollar of commission. Start with a free trial.',
+  description: 'Insurance commission tracking software for agencies and independent agents. Track policies, reconcile carrier statements and catch every dollar of commission.',
+  path: '/products/commission-tracker',
   keywords: 'insurance commission tracking software, insurance commission tracker, insurance commission software, commission reconciliation software',
-  alternates: { canonical: '/products/commission-tracker' },
-}
+})
 
 export default function CommissionTrackerProduct() {
   return (
@@ -18,9 +20,9 @@ export default function CommissionTrackerProduct() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-ivory py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="text-accent font-semibold mb-4">FOR INDEPENDENT AGENTS</div>
+            <div className="text-accent font-semibold mb-4">AI COMMISSION TRACKER FOR INDEPENDENT AGENTS</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              AI Commission Tracker
+              Insurance Commission Tracking Software
             </h1>
             <p className="text-xl mb-8">
               Insurance agents lose thousands of dollars every year to commission errors.

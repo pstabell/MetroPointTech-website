@@ -1,15 +1,17 @@
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import AAMSContent from '@/components/AAMSContent'
 import JsonLd from '@/components/JsonLd'
 import { graph, aamsSoftware, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'Agenient AAMS — Autonomous Agency Management System',
-  description: 'Agenient AAMS is an autonomous agency management system for insurance agencies — the AI evolution of legacy AMS platforms, with agentic workflows, real-time agent visibility, and zero-touch operations. 14-day free trial.',
-  keywords: 'autonomous agency management system, AMS platform, insurance agency management software, agentic AI for insurance, insurance AMS',
-  alternates: { canonical: '/AAMS' },
-}
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'AI Agency Management System for Insurance',
+  description: 'Agenient AAMS is an AI agency management system for insurance agencies: agentic workflows, real-time agent visibility, zero-touch operations. 14-day free trial.',
+  path: '/AAMS',
+  keywords: 'AI agency management system, autonomous agency management system, insurance agency management software, insurance AMS, agentic AI for insurance',
+})
 
 export default function AAMSPage() {
   const trialUrl = 'https://aams.agenient.com/login'

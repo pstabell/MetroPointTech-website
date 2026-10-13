@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import FreeToolPage from '@/components/FreeToolPage'
 import JsonLd from '@/components/JsonLd'
 import { graph, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'Periodic Review Checklist | Free Insurance Agency Tool',
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Periodic Policy Review Checklist for Insurance Agencies',
   description: 'A free periodic review checklist for insurance agencies to keep renewals, remarkets, client follow-ups, and operational reviews on schedule.',
-  alternates: { canonical: '/periodic-review-checklist' },
-}
+  path: '/periodic-review-checklist',
+})
 
 export default function PeriodicReviewChecklistPage() {
   return (

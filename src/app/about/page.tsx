@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import JsonLd from '@/components/JsonLd'
 import { graph, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'About Us',
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'About Agenient and Metro Point Technology',
   description: 'Learn about Patrick Stabell and Metro Point Technology. 30 years of insurance experience building software that actually works.',
-  alternates: { canonical: '/about' },
-}
+  path: '/about',
+})
 
 export default function About() {
   return (

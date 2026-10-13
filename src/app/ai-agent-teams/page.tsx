@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import AIAgentCheckout from '@/components/AIAgentCheckout'
 import JsonLd from '@/components/JsonLd'
 import { graph, aiAgentTeamsService, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'AI Agent Teams',
-  description: 'Your own dedicated AI employees, connected to your agency systems. 24/7 back-office automation for insurance agencies. Three plans: Basic ($499.99/mo), Premium ($999.99/mo), and Enterprise ($2,499.99/mo).',
-  alternates: { canonical: '/ai-agent-teams' },
-  keywords: 'AI agent, insurance automation, back office automation, commission reconciliation, agency management, AI employee, insurance technology',
-}
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'AI Agents for Insurance Agencies',
+  description: 'Dedicated AI agents connected to your agency systems for 24/7 back-office automation. Basic $499.99/mo, Premium $999.99/mo, Enterprise $2,499.99/mo.',
+  path: '/ai-agent-teams',
+  keywords: 'AI agents for insurance agencies, insurance back office automation, AI employee, commission reconciliation',
+})
 
 const plans = [
   {
@@ -111,7 +113,7 @@ export default function AIAgentTeamsPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-2 bg-accent/20 text-accent-light rounded-full text-sm font-medium mb-6">
-            AI-Powered Back-Office Automation
+            AI Agents for Insurance Agencies: Back-Office Automation
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Your Own AI Employee.

@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import FreeToolPage from '@/components/FreeToolPage'
 import JsonLd from '@/components/JsonLd'
 import { graph, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'Month-End Variance Worksheet | Free Insurance Agency Tool',
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Month-End Variance Worksheet for Insurance Agencies',
   description: 'A free month-end variance worksheet for insurance agencies to spot commission, premium, receivable, and carrier statement exceptions before close.',
-  alternates: { canonical: '/month-end-variance-worksheet' },
-}
+  path: '/month-end-variance-worksheet',
+})
 
 export default function MonthEndVarianceWorksheetPage() {
   return (

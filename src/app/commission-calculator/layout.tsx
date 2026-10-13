@@ -1,17 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import JsonLd from '@/components/JsonLd'
 import { graph, commissionCalculatorApp, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'Commission Calculator',
-  description: 'Free commission calculator for insurance agents. Compare expected vs actual carrier commission, surface underpayments, and quantify revenue leakage on every policy.',
-  alternates: { canonical: '/commission-calculator' },
-  openGraph: {
-    title: 'Commission Calculator | Metro Point Technology',
-    description: 'Free commission calculator for insurance agents. Compare expected vs actual carrier commission and surface underpayments.',
-    url: 'https://agenient.com/commission-calculator',
-  },
-}
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Free Insurance Commission Calculator',
+  description: 'Free insurance commission calculator. Compare expected vs actual carrier commission, surface underpayments and measure revenue leakage on every policy.',
+  path: '/commission-calculator',
+})
 
 export default function CommissionCalculatorLayout({ children }: { children: React.ReactNode }) {
   return (

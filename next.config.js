@@ -49,6 +49,8 @@ const nextConfig = {
       { source: '/AAMS/agents', destination: AAMS_AGENT_VIEW, permanent: true },
       { source: '/AAMS/agencies', destination: AAMS_AGENCY_VIEW, permanent: true },
       { source: '/ams-app', destination: '/AAMS', permanent: true },
+      // /products/ams was an older duplicate of /AAMS with a price table that no longer matched (SEO 2026-10-13).
+      { source: '/products/ams', destination: '/AAMS', permanent: true },
       { source: '/ams-app/agents', destination: AAMS_AGENT_VIEW, permanent: true },
       { source: '/ams-app/agencies', destination: AAMS_AGENCY_VIEW, permanent: true },
       // The Claude Code Discord post is about our own engineering, so its home is metropointtechnology.com; that site

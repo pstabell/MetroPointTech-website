@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from '@/lib/seo'
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 import JsonLd from "@/components/JsonLd";
@@ -8,12 +9,12 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 export const fetchCache = "force-no-store";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Insights on AI infrastructure, insurance technology, commission tracking, and building software that works. From the team at Metro Point Technology.",
-  alternates: { canonical: '/blog' },
-};
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Insurance Commission and Agency Operations Blog',
+  description: 'Insights on insurance technology, commission tracking and agency operations, and building software that works. From the team at Metro Point Technology.',
+  path: '/blog',
+})
 
 // Supabase creds — env-first, hardcoded public anon key as belt-and-suspenders
 // fallback so rotations do not silently break the blog list.

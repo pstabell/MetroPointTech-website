@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import JsonLd from '@/components/JsonLd'
 import { graph, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
   title: 'Terms of Service',
   description: 'Terms governing use of Metro Point Technology LLC Software as a Service products.',
-  alternates: { canonical: '/terms-of-service' },
-}
+  path: '/terms-of-service',
+})
 
 export default function TermsOfService() {
   return (

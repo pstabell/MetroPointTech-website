@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import JsonLd from '@/components/JsonLd'
 import { graph, crmSoftware, breadcrumb } from '@/lib/structured-data'
 
-export const metadata: Metadata = {
-  title: 'Agenient CRM | AI AMS CRM for Insurance Agencies',
-  description: 'Agenient CRM is the AI insurance agency CRM built into your AMS. AI agents Closer and Pulse handle quoting, renewals, and follow-ups. 18 ACORD form generators. 7-stage pipeline. $99.99/user/mo add-on to Agenient AAMS.',
-  alternates: { canonical: '/AAMS-CRM' },
-  keywords: 'ams crm, insurance CRM, insurance agency CRM, AI sales, ACORD forms, insurance quoting, renewal management, agency CRM, insurance pipeline',
-}
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Insurance Agency CRM Built Into Your AMS',
+  description: 'Agenient CRM is the insurance agency CRM built into your AMS. AI agents Closer and Pulse handle quoting, renewals and follow-ups. 18 ACORD form generators.',
+  path: '/AAMS-CRM',
+  keywords: 'insurance agency CRM, ams crm, insurance CRM, ACORD forms, insurance quoting, renewal management',
+})
 
 const screenshots = [
   { src: '/images/crm/02-dashboard.png', title: 'Agency Dashboard', description: 'Real-time overview of your pipeline, tasks, renewals, and agent activity — all in one place.' },
@@ -73,9 +75,9 @@ export default function AAMSCRMPage() {
                 Agenient AAMS Add-On
               </span>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                AI-Powered CRM
+                AI-Powered Insurance Agency CRM
                 <br />
-                <span className="text-accent">Built for Insurance.</span>
+                <span className="text-accent">Built Into Your AMS.</span>
               </h1>
               <p className="text-xl mb-8 text-[#C9D6E1] leading-relaxed">
                 Two AI agents manage your sales pipeline and renewals while you focus on relationships.

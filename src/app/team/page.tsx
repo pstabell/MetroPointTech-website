@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from '@/lib/seo'
 import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumb } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Meet Our Team",
-  description:
-    "Meet the management team behind Metro Point Technology. 15 team members — one visionary founder and 14 AI-powered professionals — delivering enterprise-level results 24/7.",
-  alternates: { canonical: '/team' },
-};
+// Target query and page SEO: see D:/Atlas/artifacts/seo-agenient-mpt-2026-10-13/plan.md
+export const metadata: Metadata = pageMetadata({
+  title: 'Meet Our Team',
+  description: 'Meet the management team behind Metro Point Technology, the company that builds Agenient: one founder and a team of AI-powered professionals.',
+  path: '/team',
+  canonical: 'https://www.metropointtechnology.com/team',
+})
 
 interface TeamMember {
   name: string;
