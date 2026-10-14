@@ -10,7 +10,10 @@ export default function Navbar() {
   // Pinned at the top on every page; slims down once the visitor scrolls (Patrick 2026-10-01)
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    // Two thresholds, not one: the bar is sticky and in the page flow, so slimming it by 48px moves the page
+    // up by 48px. With a single cut-off at 24px that move crossed the line again and the bar flipped between
+    // sizes in a loop (Patrick 2026-10-14: logo "tripping out", menu bar bouncing). Slim past 80, restore below 8.
+    const onScroll = () => setScrolled((was) => (was ? window.scrollY > 8 : window.scrollY > 80))
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
