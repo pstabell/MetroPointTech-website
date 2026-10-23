@@ -106,6 +106,6 @@
   <!-- Text: METRO POINT -->
   <text x="130" y="45" font-family="'Georgia', serif" font-size="28" font-weight="bold" fill="#003B5C">METRO POINT</text>
 
-  <!-- Text: TECHNOLOGY, LLC -->
-  <text x="130" y="70" font-family="'Georgia', serif" font-size="16" font-weight="normal" fill="#D4AF37" letter-spacing="2">TECHNOLOGY, LLC</text>
+  <!-- Text: TECHNOLOGY LLC -->
+  <text x="130" y="70" font-family="'Georgia', serif" font-size="16" font-weight="normal" fill="#6B520A" letter-spacing="2">TECHNOLOGY LLC</text>
 </svg>

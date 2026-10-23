@@ -237,7 +237,7 @@ export default function Contact() {
                   <div className="text-3xl mb-3">🏢</div>
                   <h3 className="font-semibold text-neutral mb-2">Office</h3>
                   <p className="text-neutral-light">
-                    Metro Point Technology, LLC<br />
+                    Metro Point Technology LLC<br />
                     Cape Coral, FL
                   </p>
                 </div>
