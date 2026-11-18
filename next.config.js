@@ -10,6 +10,27 @@ const AAMS_AGENCY_VIEW = '/AAMS?view=agency#features'
 // return URL or email in this repo or the AAMS app names aamshub.com.
 const AAMSHUB_HOSTS = ['aamshub.com', 'www.aamshub.com']
 
+// Content-Security-Policy (added 2026-11-18). This is the ONE place the policy lives; it is sent on every response.
+// It limits which sites the browser may run scripts from, so a script injected from anywhere else is blocked.
+// ANY NEW OUTSIDE SCRIPT (analytics, chat, video, Stripe.js, a review or booking widget, a CDN) MUST BE ADDED TO THIS
+// LIST, or the browser will silently refuse to load it. Exact hosts only: no "https:" and no "*".
+const SCRIPT_HOSTS = [
+  'https://www.googletagmanager.com', // Google Analytics 4 gtag.js (src/app/layout.tsx)
+  'https://www.clarity.ms', // Microsoft Clarity tag (src/components/MicrosoftClarity.tsx)
+  'https://scripts.clarity.ms', // clarity.js, which the Clarity tag loads at run time
+]
+// `next dev` only: React needs eval for hot reload, and Vercel Analytics loads its debug script from
+// va.vercel-scripts.com. Neither is in the production header (in production those scripts are served from this site).
+const DEV_ONLY_SCRIPT_SOURCES = process.env.NODE_ENV === 'development' ? ["'unsafe-eval'", 'https://va.vercel-scripts.com'] : []
+const CONTENT_SECURITY_POLICY = [
+  // 'unsafe-inline' stays for now: Next.js and the analytics snippets emit inline scripts (nonces are a later step).
+  ['script-src', "'self'", "'unsafe-inline'", ...DEV_ONLY_SCRIPT_SOURCES, ...SCRIPT_HOSTS].join(' '),
+  "object-src 'none'",
+  "base-uri 'self'",
+  // No other site is meant to show this site inside a frame.
+  "frame-ancestors 'self'",
+].join('; ')
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -70,6 +91,7 @@ const nextConfig = {
   },
   async headers() {
     return [
+      { source: '/:path*', headers: [{ key: 'Content-Security-Policy', value: CONTENT_SECURITY_POLICY }] },
       // The Ai4 landing page is a bio of Patrick that competed with patrickstabell.com in search (SEO audit 2026-10-08).
       ...['/ai4', '/ai4/', '/ai4.html'].map((source) => ({
         source,
