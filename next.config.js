@@ -36,9 +36,8 @@ const nextConfig = {
   images: {
     domains: [],
   },
-  experimental: {
-    serverComponentsExternalPackages: ['@supabase/supabase-js']
-  },
+  // Next.js 15 name for what Next.js 14 called experimental.serverComponentsExternalPackages (same effect).
+  serverExternalPackages: ['@supabase/supabase-js'],
   async redirects() {
     return [
       {
